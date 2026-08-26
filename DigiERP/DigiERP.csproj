@@ -64,9 +64,7 @@
     <Compile Update="Forms\Production\FrmProduction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Supplier\FrmSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Forms\Supplier\FrmSupplier.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -98,10 +96,11 @@
     <Folder Include="UserControl\Objective\ExRate\" />
     <Folder Include="UserControl\Objective\Bank\" />
     <Folder Include="UserControl\Objective\SalesTracking\" />
-    <Folder Include="UserControl\Order\" />
     <Folder Include="UserControl\Production\DesignAudit\" />
     <Folder Include="UserControl\Production\DesignDispatch\" />
     <Folder Include="UserControl\Production\MiscControlReport\" />
+    <Folder Include="UserControl\Production\Engineering\" />
+    <Folder Include="UserControl\Production\Spec\" />
     <Folder Include="UserControl\Production\TestValidationReport\" />
   </ItemGroup>
 

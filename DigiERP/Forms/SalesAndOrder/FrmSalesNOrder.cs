@@ -1,5 +1,4 @@
-﻿using DigiERP.UserControl.Customer.RFQ;
-using DigiERP.UserControl;
+﻿using MES.WebAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,23 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using DigiERP.UserControl.Customer.Quotation;
-using MES.Core.Model;
-using DigiERP.UserControl.SalesOrder;
-using DigiERP.UserControl.Customer;
-using DigiERP.UserControl.Customer.ShippingOrder;
-using DigiERP.UserControl.Customer.Receivables;
-using MES.WebAPI.Controllers;
-using DigiERP.Forms;
 
-namespace DigiERP
+namespace DigiERP.Forms.SalesAndOrder
 {
-    public partial class FrmSupplier : CommonForm
+    public partial class FrmSalesNOrder : Form
     {
         private bool isloaded = false;
-
-        private static string moduleId = "54406A92-A15C-4E20-90F2-57D7C033BF64";
-        public FrmSupplier()
+        private static string moduleId = "54406A92-A15C-4E20-90F2-57D7C033BE95";
+        public FrmSalesNOrder()
         {
             isloaded = false;
             InitializeComponent();
@@ -37,11 +27,12 @@ namespace DigiERP
             isloaded = true;
         }
 
+
         Dictionary<string, string> menuMappingDict = new Dictionary<string, string>();
         private void initMenu()
         {
             //throw new NotImplementedException();
-            var menuList = new MenuController().GetModuleList(FrmSupplier.moduleId);
+            var menuList = new MenuController().GetModuleList(FrmSalesNOrder.moduleId);
             if (!string.IsNullOrEmpty(menuList.ErrorMessage))
             {
                 MessageBox.Show(menuList.ErrorMessage);
@@ -149,6 +140,5 @@ namespace DigiERP
             }
             catch { }
         }
-
     }
 }

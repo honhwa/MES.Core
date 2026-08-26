@@ -1,4 +1,5 @@
-﻿using DigiERP.Forms.Settings;
+﻿using DigiERP.Forms.SalesAndOrder;
+using DigiERP.Forms.Settings;
 using DigiERP.Models;
 using DigiERP.UserControl.Auth;
 using MES.WebAPI.Models;
@@ -188,6 +189,22 @@ namespace DigiERP
         private void panel3_MouseMove(object sender, MouseEventArgs e)
         {
             panel3.Cursor = Cursors.Hand;
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            FrmSalesNOrder frmSalesNOrder = new FrmSalesNOrder();
+            frmSalesNOrder.ShowDialog();
+        }
+
+        private void panel4_MouseMove(object sender, MouseEventArgs e)
+        {
+            panel4.Cursor = Cursors.Hand;
+        }
+
+        private void panel4_MouseLeave(object sender, EventArgs e)
+        {
+            panel4.Cursor = Cursors.Default;
         }
     }
 }

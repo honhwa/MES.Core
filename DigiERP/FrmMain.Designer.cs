@@ -42,6 +42,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -214,6 +215,17 @@
             panel3.MouseLeave += panel3_MouseLeave;
             panel3.MouseMove += panel3_MouseMove;
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.Location = new Point(244, 256);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(152, 148);
+            panel4.TabIndex = 13;
+            panel4.Click += panel4_Click;
+            panel4.MouseLeave += panel4_MouseLeave;
+            panel4.MouseMove += panel4_MouseMove;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -222,6 +234,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(835, 452);
             ControlBox = false;
+            Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -263,5 +276,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Panel panel3;
+        private Panel panel4;
     }
 }
