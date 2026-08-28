@@ -38,7 +38,7 @@ namespace DigiERP
         private void panel1_DoubleClick(object sender, EventArgs e)
         {
             FrmCust frmCust = new FrmCust();
-            frmCust.ShowDialog();
+            frmCust.Show();
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -76,7 +76,7 @@ namespace DigiERP
         private void panel1_Click(object sender, EventArgs e)
         {
             FrmCust frmCust = new FrmCust();
-            frmCust.ShowDialog();
+            frmCust.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace DigiERP
         {
             FrmPasswordSetting frmPasswordSetting = new FrmPasswordSetting();
             frmPasswordSetting.SetAccount(_user.name);
-            frmPasswordSetting.ShowDialog();
+            frmPasswordSetting.Show();
         }
 
         private void btnPasswordManage_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace DigiERP
                 return;
             }
             FrmAuth frmAuth = new FrmAuth();
-            frmAuth.ShowDialog();
+            frmAuth.Show();
         }
 
         private void pnlFinancial_Click(object sender, EventArgs e)
@@ -129,13 +129,13 @@ namespace DigiERP
         private void panel2_Click(object sender, EventArgs e)
         {
             FrmSupplier frmSupplier = new FrmSupplier();
-            frmSupplier.ShowDialog(this);
+            frmSupplier.Show(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             FrmProduction frmProduction = new FrmProduction();
-            frmProduction.ShowDialog(this);
+            frmProduction.Show(this);
         }
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
@@ -166,19 +166,19 @@ namespace DigiERP
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             FrmObjective frmObjective = new FrmObjective();
-            frmObjective.ShowDialog(this);
+            frmObjective.Show(this);
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
             FrmHR frmHr = new FrmHR();
-            frmHr.ShowDialog();
+            frmHr.Show();
         }
 
         private void panel3_DoubleClick(object sender, EventArgs e)
         {
             FrmHR frmHr = new FrmHR();
-            frmHr.ShowDialog();
+            frmHr.Show();
         }
 
         private void panel3_MouseLeave(object sender, EventArgs e)
@@ -194,7 +194,7 @@ namespace DigiERP
         private void panel4_Click(object sender, EventArgs e)
         {
             FrmSalesNOrder frmSalesNOrder = new FrmSalesNOrder();
-            frmSalesNOrder.ShowDialog();
+            frmSalesNOrder.Show();
         }
 
         private void panel4_MouseMove(object sender, MouseEventArgs e)
