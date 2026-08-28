@@ -363,8 +363,19 @@ namespace DigiERP.UserControl.Order
             SavedOrClosed?.Invoke();
         }
 
-        // ── 列印：原巨集 OpenReport "工令單內容-H"，尚未建立對應報表 ───────────
-        private void btnPrint_Click(object sender, EventArgs e) => MessageBox.Show("此功能尚未開放");
+        // ── 列印：原巨集 OpenReport "工令單內容-H"，開啟預覽列印視窗(含匯出PDF) ──
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_loadedProjectNo))
+            {
+                MessageBox.Show("請先儲存工令單後再列印!");
+                return;
+            }
+            using (var frm = new DigiERP.Forms.Order.FrmWorkOrderPrint(_loadedProjectNo))
+            {
+                frm.ShowDialog(this);
+            }
+        }
 
         // ── 產品規格單 (原Command262)：開啟 P-規格 對應的 ProductSpecControl ────
         private void btnProductSpec_Click(object sender, EventArgs e)
@@ -460,6 +471,39 @@ namespace DigiERP.UserControl.Order
             tabControl.TabPages.Add(tab);
             tabControl.SelectedTab = tab;
             ctrl.LoadData(_loadedProjectNo);
+        }
+
+        // ── 工令時程表：開啟(或切換至) WorkOrderScheduleControl 分頁，比照
+        //    P-工令單H 巨集開啟 P-工令時程表 之邏輯 ────────────────────────────
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_loadedProjectNo))
+            {
+                MessageBox.Show("請先儲存工令單後再開啟工令時程表!");
+                return;
+            }
+            if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl))
+            {
+                var ctrlStandalone = new WorkOrderScheduleControl { Dock = DockStyle.Fill };
+                ctrlStandalone.LoadData(_loadedProjectNo);
+                return;
+            }
+            TabControl scheduleTabControl = (TabControl)((TabPage)Parent).Parent;
+            string scheduleTabName = "Schedule_" + _loadedProjectNo;
+            foreach (TabPage page in scheduleTabControl.TabPages)
+            {
+                if (page.Name == scheduleTabName)
+                {
+                    scheduleTabControl.SelectedTab = page;
+                    return;
+                }
+            }
+            var scheduleCtrl = new WorkOrderScheduleControl { Dock = DockStyle.Fill };
+            var scheduleTab = new TabPage("工令時程表-" + _loadedProjectNo) { Name = scheduleTabName };
+            scheduleTab.Controls.Add(scheduleCtrl);
+            scheduleTabControl.TabPages.Add(scheduleTab);
+            scheduleTabControl.SelectedTab = scheduleTab;
+            scheduleCtrl.LoadData(_loadedProjectNo);
         }
 
         // ── 總覽/關閉：皆為關閉本分頁，回到工令單總覽 ─────────────────────────

@@ -386,7 +386,19 @@ namespace DigiERP.UserControl.Production.Spec
         }
 
         // ── 列印：原巨集 OpenReport "產品規格書"，尚未建立對應報表 ─────────────
-        private void btnPrint_Click(object sender, EventArgs e) => MessageBox.Show("此功能尚未開放");
+        // ── 列印：原巨集 OpenReport "產品規格書"，開啟預覽列印視窗(含匯出PDF) ────
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_loadedProjectNo))
+            {
+                MessageBox.Show("請先儲存產品規格單後再列印!");
+                return;
+            }
+            using (var frm = new DigiERP.Forms.Production.Spec.FrmProductSpecPrint(_loadedProjectNo))
+            {
+                frm.ShowDialog(this);
+            }
+        }
 
         // ── 總覽 (原巨集開啟 P-規格總覽)：開啟(或切換至)產品規格單總覽分頁 ────────
         private void btnOverview_Click(object sender, EventArgs e)

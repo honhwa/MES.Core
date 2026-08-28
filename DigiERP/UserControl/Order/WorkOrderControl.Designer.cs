@@ -29,6 +29,7 @@ namespace DigiERP.UserControl.Order
             btnProductSpec = new Button();
             btnEngAnalysis = new Button();
             btnMeetingLog = new Button();
+            btnSchedule = new Button();
             btnEdit = new Button();
             btnSave = new Button();
             btnApprove = new Button();
@@ -163,6 +164,7 @@ namespace DigiERP.UserControl.Order
             panelHeader.Controls.Add(btnProductSpec);
             panelHeader.Controls.Add(btnEngAnalysis);
             panelHeader.Controls.Add(btnMeetingLog);
+            panelHeader.Controls.Add(btnSchedule);
             panelHeader.Controls.Add(btnEdit);
             panelHeader.Controls.Add(btnSave);
             panelHeader.Controls.Add(btnApprove);
@@ -235,7 +237,20 @@ namespace DigiERP.UserControl.Order
             btnMeetingLog.Text = "專案會議紀錄";
             btnMeetingLog.UseVisualStyleBackColor = false;
             btnMeetingLog.Click += btnMeetingLog_Click;
-            // 
+            //
+            // btnSchedule
+            //
+            btnSchedule.BackColor = Color.LightSteelBlue;
+            btnSchedule.FlatStyle = FlatStyle.Flat;
+            btnSchedule.Font = new Font("微軟正黑體", 8F, FontStyle.Bold);
+            btnSchedule.Location = new Point(520, 7);
+            btnSchedule.Name = "btnSchedule";
+            btnSchedule.Size = new Size(95, 33);
+            btnSchedule.TabIndex = 5;
+            btnSchedule.Text = "工令時程表";
+            btnSchedule.UseVisualStyleBackColor = false;
+            btnSchedule.Click += btnSchedule_Click;
+            //
             // btnEdit
             // 
             btnEdit.BackColor = Color.SteelBlue;
@@ -1465,6 +1480,7 @@ namespace DigiERP.UserControl.Order
         private Button btnProductSpec;
         private Button btnEngAnalysis;
         private Button btnMeetingLog;
+        private Button btnSchedule;
         private Button btnEdit;
         private Button btnSave;
         private Button btnApprove;

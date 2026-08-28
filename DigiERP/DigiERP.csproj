@@ -100,6 +100,7 @@
     <Folder Include="UserControl\Production\DesignDispatch\" />
     <Folder Include="UserControl\Production\MiscControlReport\" />
     <Folder Include="UserControl\Production\Engineering\" />
+    <Folder Include="UserControl\Production\WorkOrderSchedule\" />
     <Folder Include="UserControl\Production\Spec\" />
     <Folder Include="UserControl\Production\TestValidationReport\" />
   </ItemGroup>

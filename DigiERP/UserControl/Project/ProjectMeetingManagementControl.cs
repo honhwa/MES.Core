@@ -198,8 +198,19 @@ namespace DigiERP.UserControl.Project
             SavedOrClosed?.Invoke();
         }
 
-        // ── 列印：原巨集 OpenReport "專案管理紀錄表"，尚未建立對應報表 ───────────
-        private void btnPrint_Click(object sender, EventArgs e) => MessageBox.Show("此功能尚未開放");
+        // ── 列印：原巨集 OpenReport "專案管理紀錄表"，開啟預覽列印視窗(含匯出PDF) ──
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_recordNo))
+            {
+                MessageBox.Show("請先儲存紀錄後再列印!");
+                return;
+            }
+            using (var frm = new DigiERP.Forms.Project.FrmProjectMeetingPrint(_recordNo))
+            {
+                frm.ShowDialog(this);
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
