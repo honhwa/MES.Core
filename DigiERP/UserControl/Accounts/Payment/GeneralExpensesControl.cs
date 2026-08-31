@@ -110,6 +110,7 @@ namespace DigiERP.UserControl.Accounts.Payment
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             OpenMaintainTab(null, "新增");
         }
 

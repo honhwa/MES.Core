@@ -359,6 +359,7 @@ namespace DigiERP.UserControl.Accounts.Payment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             if (string.IsNullOrEmpty(cboSupplier.Text))
             {
                 MessageBox.Show("請選擇廠商編號!");
@@ -382,6 +383,7 @@ namespace DigiERP.UserControl.Accounts.Payment
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
+            if (!has核准(id)) return;
             if (string.IsNullOrEmpty(txtNo.Text)) return;
             if (MessageBox.Show("確定覆核?", "確認", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             var rep = new GeneralExpensesController().ValidateGeneralExpenses(txtNo.Text, true, AppSession.User?.username);
@@ -400,6 +402,7 @@ namespace DigiERP.UserControl.Accounts.Payment
 
         private void btnCancelVerify_Click(object sender, EventArgs e)
         {
+            if (!has核准(id)) return;
             if (string.IsNullOrEmpty(txtNo.Text)) return;
             if (MessageBox.Show("確定取消覆核?", "確認", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             var rep = new GeneralExpensesController().ValidateGeneralExpenses(txtNo.Text, false, AppSession.User?.username);
@@ -424,11 +427,13 @@ namespace DigiERP.UserControl.Accounts.Payment
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             LoadData("新增", null);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             if (string.IsNullOrEmpty(txtNo.Text) || _mode == "新增")
             {
                 MessageBox.Show("尚未儲存，無需刪除!");

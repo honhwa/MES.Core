@@ -23,11 +23,19 @@ namespace DigiERP.UserControl.Accounting
             LoadQuery();
         }
 
-        // ── 複式條件篩選：畫面上有輸入才代入SQL條件 ──────────────────────────
+        // ── 複式條件篩選：畫面上有輸入才代入SQL條件。比照 Access「F-會計傳票查詢」
+        //    Command74巨集：只填「起」未填「迄」時，迄=起(單日查詢)；原巨集僅
+        //    單向處理(只填迄未填起時，起維持Null，等同 日期>=Null 恆為假、查無
+        //    資料)，判斷為原設計疏漏，本畫面已修正為雙向對稱套用同一規則。
+        //    「狀態」原巨集在未選擇時會設成字面值"Not Null"(比對不到任何真實
+        //    狀態值、形同誤將全部資料濾空)，同屬原設計錯誤，本畫面修正為未選擇
+        //    時不套用狀態限制(顯示全部狀態) ─────────────────────────────────
         private void LoadQuery()
         {
             string dateFrom = dtDateFrom.Checked ? dtDateFrom.Value.ToString("yyyy-MM-dd") : "";
             string dateTo = dtDateTo.Checked ? dtDateTo.Value.ToString("yyyy-MM-dd") : "";
+            if (!string.IsNullOrEmpty(dateFrom) && string.IsNullOrEmpty(dateTo)) dateTo = dateFrom;
+            else if (!string.IsNullOrEmpty(dateTo) && string.IsNullOrEmpty(dateFrom)) dateFrom = dateTo;
             string accountCode = txtAccountCode.Text.Trim();
             string status = cboStatus.SelectedItem?.ToString() ?? "";
 
@@ -66,6 +74,7 @@ namespace DigiERP.UserControl.Accounting
         // ── 傳票編號模糊篩選 ─────────────────────────────────────────────
         private void btnFuzzySearch_Click(object sender, EventArgs e)
         {
+            if (!has查詢(Id.ToString())) return;
             string pattern = txtVoucherNoFuzzy.Text.Trim();
             if (string.IsNullOrEmpty(pattern))
             {

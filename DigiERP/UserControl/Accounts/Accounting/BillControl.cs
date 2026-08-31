@@ -102,6 +102,7 @@ namespace DigiERP.UserControl.Accounts.Accounting
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             using var frm = new FrmBill();
             frm.ShowDialog(this);
             initGrid();
