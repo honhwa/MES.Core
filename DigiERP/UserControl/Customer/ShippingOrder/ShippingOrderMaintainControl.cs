@@ -23,7 +23,7 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
     public partial class ShippingOrderMaintainControl : CommonUserControl
     {
         // 沿用 ShippingOrderControl (出貨單列表) 已註冊的權限 GUID
-        private static string id = "CF770F40-EA82-4FBF-9D2D-EAD798440F3E";
+        private static string id = ShippingOrderControl.id;
 
         public C出貨單 form { get; set; }
         public string custId { get; set; }
@@ -349,6 +349,10 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (!has編修(id))
+            {
+                return;
+            }
             disableControls(false);
         }
 

@@ -58,6 +58,7 @@ namespace DigiERP.UserControl
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(!has編修(id)) { return; }
             var customerMaintainControl = (from c in panel1.Controls.Cast<Control>() where c.GetType() == typeof(CustomerMaintainControl) select c).FirstOrDefault();
             var dataGridView = (from c in panel1.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
             if (customerMaintainControl == null)

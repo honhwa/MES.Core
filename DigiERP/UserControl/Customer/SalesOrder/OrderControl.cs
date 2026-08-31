@@ -23,7 +23,7 @@ namespace DigiERP.UserControl.SalesOrder
     {
         public string custId { get; set; }
         private CustomerController _customerController;
-        private static string id = "A29F4CAB-2932-49A3-89E7-034A60700FAD";
+        public static string id = "A29F4CAB-2932-49A3-89E7-034A60700FAD";
         public OrderControl()
         {
             if (!chkPrivilege(id))
@@ -91,6 +91,7 @@ namespace DigiERP.UserControl.SalesOrder
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
+            if (!has查詢(id)) return;
             CommonRep<C訂單> commonRep = _customerController.GetSalesOrderList();
             if (!string.IsNullOrEmpty(commonRep.ErrorMessage))
             {
@@ -116,6 +117,10 @@ namespace DigiERP.UserControl.SalesOrder
         public C訂單 form;
         public void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!has編修(OrderControl.id))
+            {
+                return;
+            }
             var customerMaintainControl = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(OrderMaintainControl) select c).FirstOrDefault();
             var dataGridView = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
             //if (customerMaintainControl == null)

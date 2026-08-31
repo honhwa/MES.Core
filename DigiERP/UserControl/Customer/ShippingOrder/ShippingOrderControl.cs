@@ -18,7 +18,7 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
 {
     public partial class ShippingOrderControl : CommonUserControl
     {
-        private static string id = "CF770F40-EA82-4FBF-9D2D-EAD798440F3E";
+        public static string id = "CF770F40-EA82-4FBF-9D2D-EAD798440F3E";
         private CustomerController _customerController;
         private void initController()
         {
@@ -144,6 +144,10 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
         public string custId;
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!has編修(id))
+            {
+                return;
+            }
             var customerMaintainControl = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(ShippingOrderMaintainControl) select c).FirstOrDefault();
             var dataGridView = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
             //if (customerMaintainControl == null)

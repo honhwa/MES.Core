@@ -22,11 +22,17 @@ namespace DigiERP.UserControl
     public partial class CustomerMaintainControl : CommonUserControl
     {
         // 沿用 CustomerControl (客戶設定列表) 已註冊的權限 GUID
-        private static string id = "92CFA0F4-839D-4505-B51A-7B72D7B840F1";
+        private string id = CustomerControl.id;
 
         public C客戶設定 form { get; set; }
         public CustomerMaintainControl()
         {
+            if (!chkPrivilege(id))
+            {
+                MessageBox.Show("非授權使用者無法使用此功能!");
+                Dispose();
+                return;
+            }
             InitializeComponent();
             coutrySelect1.inflateDropDownList();
             initMaList();
@@ -240,6 +246,7 @@ namespace DigiERP.UserControl
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (!has編修(this.id)) return;
             C客戶設定 form = GetUserInput();
             CustomerController customerController = new CustomerController();
             CommonRep<C客戶設定> response = null;
@@ -283,6 +290,7 @@ namespace DigiERP.UserControl
 
         private void btnGenCustNumber_Click(object sender, EventArgs e)
         {
+            if (!has高管(this.id)) return;
             CustomerController customerController = new CustomerController();
             if (string.IsNullOrEmpty(coutrySelect1.GetCountryCode()))
             {
@@ -295,6 +303,7 @@ namespace DigiERP.UserControl
 
         private void btnCompanyChange_Click(object sender, EventArgs e)
         {
+            if (!has高管(this.id)) return;
             using (FrmChangeCustName frmChangeCustName = new FrmChangeCustName())
             {
                 frmChangeCustName.SetOriginalName(txtCustomerCompany.Text);
@@ -347,6 +356,7 @@ namespace DigiERP.UserControl
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!has編修(this.id)) return;
             if (MessageBox.Show("確認刪除?", "確認", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
                 CustomerController customerController = new CustomerController();
@@ -370,6 +380,7 @@ namespace DigiERP.UserControl
 
         private void btnRepairHistory_Click(object sender, EventArgs e)
         {
+            if (!has查詢(this.id)) return;
             FrmCustEqpList frmCustEqpList = new FrmCustEqpList();
             frmCustEqpList.SetCustNo(txtCustNumber.Text);
             frmCustEqpList.SetCustAlias(txtCustAlias.Text);
@@ -381,6 +392,7 @@ namespace DigiERP.UserControl
 
         private void btnQuotationHistory_Click_1(object sender, EventArgs e)
         {
+            if (!has查詢(this.id)) return;
             FrmCustQuotList frmCustEqpList = new FrmCustQuotList();
             frmCustEqpList.SetCustNo(txtCustNumber.Text);
             frmCustEqpList.SetCustAlias(txtCustAlias.Text);
@@ -391,6 +403,7 @@ namespace DigiERP.UserControl
 
         private void btnInquiryHistory_Click(object sender, EventArgs e)
         {
+            if (!has查詢(this.id)) return;
             FrmCustRfqtList frmCustEqpList = new FrmCustRfqtList();
             frmCustEqpList.SetCustNo(txtCustNumber.Text);
             frmCustEqpList.SetCustAlias(txtCustAlias.Text);
@@ -409,11 +422,13 @@ namespace DigiERP.UserControl
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!has編修(this.id)) return;
             disableAllControls(false);
         }
 
         private void btnIndustryCodeManage_Click(object sender, EventArgs e)
         {
+            if (!has高管(this.id)) return;
             FrmIndustryManage frmIndustryManage = new FrmIndustryManage();
             frmIndustryManage.ShowDialog();
         }

@@ -2,6 +2,7 @@
 using DigiERP.Forms.Customer;
 using DigiERP.Forms.Customer.SalesOrder;
 using DigiERP.Models;
+using DigiERP.UserControl.SalesOrder;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using MES.WebAPI.Models;
@@ -21,7 +22,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
     public partial class OrderMaintainControl : CommonUserControl
     {
         // 沿用 OrderControl (訂單列表) 已註冊的權限 GUID
-        private static string id = "A29F4CAB-2932-49A3-89E7-034A60700FAD";
+        private static string id = OrderControl.id;
 
         public C訂單 form { get; set; }
         public string custId { get; set; }
@@ -29,6 +30,12 @@ namespace DigiERP.UserControl.Customer.SalesOrder
         private ItemController _itemController;
         public OrderMaintainControl()
         {
+            if (!chkPrivilege(id))
+            {
+                MessageBox.Show("非授權使用者無法使用此功能!");
+                Dispose();
+                return;
+            }
             _isLoaded = false;
             InitializeComponent();
             initController();
@@ -48,6 +55,12 @@ namespace DigiERP.UserControl.Customer.SalesOrder
 
         public OrderMaintainControl(C訂單 form)
         {
+            if (!chkPrivilege(id))
+            {
+                MessageBox.Show("非授權使用者無法使用此功能!");
+                Dispose();
+                return;
+            }
             _isLoaded = false;
             InitializeComponent();
             this.form = form;
@@ -538,6 +551,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             disableAllControls(false);
             cboCustId.Enabled = false;
             txtCompany.Enabled = false;
@@ -626,6 +640,10 @@ namespace DigiERP.UserControl.Customer.SalesOrder
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (!has編修(OrderControl.id))
+            {
+                return;
+            }
             CollectUserInput();
             if (lblMode.Text == "新增")
             {
@@ -804,6 +822,10 @@ namespace DigiERP.UserControl.Customer.SalesOrder
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!has編修(OrderControl.id))
+            {
+                return;
+            }
             if (MessageBox.Show("確認刪除?", "確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 initController();
@@ -934,6 +956,10 @@ namespace DigiERP.UserControl.Customer.SalesOrder
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (!has輸出(id))
+            {
+                return;
+            }
             FrmSalesOrderPrint frmSalesOrderPrint = new FrmSalesOrderPrint(form);
             frmSalesOrderPrint.lblCompany.Text = this.txtCompany.Text;
             frmSalesOrderPrint.lblCustNo.Text = cboCustId.Text; 
