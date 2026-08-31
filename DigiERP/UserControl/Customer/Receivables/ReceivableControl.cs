@@ -1,5 +1,7 @@
 ﻿using DigiERP.Common;
+using DigiERP.Models;
 using DigiERP.UserControl.Customer.EQPCSustService;
+using DigiERP.UserControl.Customer.OtherIncome;
 using DigiERP.UserControl.Customer.Quotation;
 using DigiERP.UserControl.Customer.SalesOrder;
 using MES.Core.Model;
@@ -20,7 +22,7 @@ namespace DigiERP.UserControl.Customer.Receivables
     public partial class ReceivableControl : DigiERP.Common.CommonUserControl
     {
         private ARController _arController;
-        private string id = "6df5ee5c-41d3-4eb3-b093-09662e9951c3";
+        public static string id = "6df5ee5c-41d3-4eb3-b093-09662e9951c3";
         private List<F收款> arList;
         public ReceivableControl()
         {
@@ -164,6 +166,14 @@ namespace DigiERP.UserControl.Customer.Receivables
         F收款 form;
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(ReceivableControl.id))
+                && !AppSession.User.is編修(Guid.Parse(ReceivableControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             var customerMaintainControl = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(QuotationMaintain) select c).FirstOrDefault();
             var dataGridView = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
             //if (customerMaintainControl == null)

@@ -1,4 +1,5 @@
 ﻿using DigiERP.Models;
+using DigiERP.UserControl.Customer.Quotation;
 using MES.Core.Model;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,83 @@ namespace DigiERP.Common
             InitializeComponent();
         }
 
+        protected bool has高管(string id)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(id)))
+                {
+                    MessageBox.Show("您沒有高管權限");
+                    return false;
+                }
+            }
+            return true;
+        }
+        protected bool has編修(string id)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(id))
+                && !AppSession.User.is編修(Guid.Parse(id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                    return false;
+                }
+            }
+            return true;
+        }
+        protected bool has查詢(string id)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(id))
+                && !AppSession.User.is查詢(Guid.Parse(id)))
+                {
+                    MessageBox.Show("您沒有查詢權限");
+                    return false;
+                }
+            }
+            return true;
+        }
+        protected bool has輸出(string id)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(id))
+                && !AppSession.User.is輸出(Guid.Parse(id)))
+                {
+                    MessageBox.Show("您沒有輸出權限");
+                    return false;
+                }
+            }
+            return true;
+        }
+        protected bool has核准(string id)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(id))
+                && !AppSession.User.is核准(Guid.Parse(id)))
+                {
+                    MessageBox.Show("您沒有核准權限");
+                    return false;
+                }
+            }
+            return true;
+        }
+        protected bool has報表(string id)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(id))
+                && !AppSession.User.is報表(Guid.Parse(id)))
+                {
+                    MessageBox.Show("您沒有報表權限");
+                    return false;
+                }
+            }
+            return true;
+        }
         protected bool chkPrivilege(string id)
         {
             if (AppSession.User.name?.ToUpper() != "ADMIN")

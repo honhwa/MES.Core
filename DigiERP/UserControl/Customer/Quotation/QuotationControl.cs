@@ -1,6 +1,7 @@
 ﻿using DigiERP.Common;
 using DigiERP.Forms.Customer.Quotation;
 using DigiERP.Models;
+using DigiERP.UserControl.Customer.Receivables;
 using DigiERP.UserControl.Customer.RFQ;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -20,7 +21,7 @@ namespace DigiERP.UserControl.Customer.Quotation
 {
     public partial class QuotationControl : CommonUserControl
     {
-        private static string id = "007D611C-E8E9-4387-A7FF-5A54C313B25F";
+        public static string id = "007D611C-E8E9-4387-A7FF-5A54C313B25F";
         private float zoom = 1.0f;
         private Size originalSize;
         public QuotationControl()
@@ -185,11 +186,29 @@ namespace DigiERP.UserControl.Customer.Quotation
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(QuotationControl.id))
+                && !AppSession.User.is查詢(Guid.Parse(QuotationControl.id)))
+                {
+                    MessageBox.Show("您沒有查詢權限");
+                    return;
+                }
+            }
             txtQUONO_Leave(sender, e);
         }
 
         public void button1_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(QuotationControl.id))
+                && !AppSession.User.is編修(Guid.Parse(QuotationControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                    return;
+                }
+            }
             var customerMaintainControl = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(QuotationMaintain) select c).FirstOrDefault();
             var dataGridView = (from c in panel2.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
             //if (customerMaintainControl == null)

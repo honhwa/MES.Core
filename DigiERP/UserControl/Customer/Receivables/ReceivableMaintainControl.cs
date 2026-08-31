@@ -309,6 +309,14 @@ namespace DigiERP.UserControl.Customer.Receivables
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(ReceivableControl.id))
+                && !AppSession.User.is編修(Guid.Parse(ReceivableControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             disableAllControls(false);
         }
 
@@ -600,6 +608,62 @@ namespace DigiERP.UserControl.Customer.Receivables
                 form.沖銷人員 = AppSession.User.username;
                 var writeOffRep = _arController.WriteOffAccounts(form);
             }
+        }
+
+        private void btnActivate_Click(object sender, EventArgs e)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(ReceivableControl.id))
+                && !AppSession.User.is核准(Guid.Parse(ReceivableControl.id)))
+                {
+                    MessageBox.Show("您沒有核准權限");
+                    return;
+                }
+            }
+            var rep = _arController.ValidateAR(txt單號.Text, true, AppSession.User?.username);
+            if (!string.IsNullOrEmpty(rep.ErrorMessage))
+            {
+                MessageBox.Show(rep.ErrorMessage);
+                return;
+            }
+            form = rep.result ?? form;
+            MessageBox.Show("覆核成功!");
+            lbl財務覆核.Text = form.核准;
+            lbl財務覆核日.Text = !string.IsNullOrWhiteSpace(form.核准日) ? DateTime.Parse(form.核准日).ToString("yyyy/MM/dd") : "";
+            btnActivate.Visible = false;
+            btnCancelActivate.Visible = true;
+            btnPrint.Visible = true;
+            btn單筆收款.Visible = true;
+        }
+
+        private void btnCancelActivate_Click(object sender, EventArgs e)
+        {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(ReceivableControl.id))
+                && !AppSession.User.is核准(Guid.Parse(ReceivableControl.id)))
+                {
+                    MessageBox.Show("您沒有核准權限");
+                    return;
+                }
+            }
+            if (MessageBox.Show("您確定要取消覆核?", "請選擇", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
+
+            var rep = _arController.ValidateAR(txt單號.Text, false, AppSession.User?.username);
+            if (!string.IsNullOrEmpty(rep.ErrorMessage))
+            {
+                MessageBox.Show(rep.ErrorMessage);
+                return;
+            }
+            form = rep.result ?? form;
+            MessageBox.Show("已取消覆核!");
+            lbl財務覆核.Text = form.核准;
+            lbl財務覆核日.Text = !string.IsNullOrWhiteSpace(form.核准日) ? DateTime.Parse(form.核准日).ToString("yyyy/MM/dd") : "";
+            btnActivate.Visible = true;
+            btnCancelActivate.Visible = false;
+            btnPrint.Visible = false;
+            btn單筆收款.Visible = false;
         }
     }
 }

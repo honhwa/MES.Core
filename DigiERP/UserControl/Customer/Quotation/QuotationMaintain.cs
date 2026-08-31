@@ -494,6 +494,10 @@ namespace DigiERP.UserControl.Customer.Quotation
         /// <param name="e"></param>
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (!has編修(QuotationControl.id))
+            {
+                return;
+            }
             GetData();
             Submit();
         }
@@ -596,6 +600,10 @@ namespace DigiERP.UserControl.Customer.Quotation
         /// <param name="e"></param>
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (!has編修(QuotationControl.id))
+            {
+                return;
+            }
             disableControls(false);
         }
         /// <summary>
@@ -682,6 +690,10 @@ namespace DigiERP.UserControl.Customer.Quotation
 
         private void btnActrivate_Click(object sender, EventArgs e)
         {
+            if (!has核准(QuotationControl.id))
+            {
+                return;
+            }
             toggleValidateForm();
         }
         /// <summary>
@@ -714,6 +726,10 @@ namespace DigiERP.UserControl.Customer.Quotation
 
         private void btnDeactivate_Click(object sender, EventArgs e)
         {
+            if (!has核准(QuotationControl.id))
+            {
+                return;
+            }
             toggleValidateForm();
         }
 
@@ -727,6 +743,15 @@ namespace DigiERP.UserControl.Customer.Quotation
 
         private void btnPrintC_Click(object sender, EventArgs e)
         {
+            if (!has核准(QuotationControl.id))
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(form.核准))
+            {
+                MessageBox.Show("尚未核准無法列印!");
+                return;
+            }
             form.priceCondText = priceCond.GetPriceCondTxt();
             form.deliveryMethodText = shipMethod.GetPriceCondTxt();
             form.paymentTermText = payMethod.GetPriceCondTxt();
@@ -739,6 +764,11 @@ namespace DigiERP.UserControl.Customer.Quotation
 
         private void btnPrintE_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(form.核准))
+            {
+                MessageBox.Show("尚未核准無法列印!");
+                return;
+            }
             form.priceCondText = priceCond.GetPriceCondTxt();
             form.deliveryMethodText = shipMethod.GetPriceCondTxt();
             form.paymentTermText = payMethod.GetPriceCondTxt();

@@ -179,6 +179,7 @@
             btnActivate.TabIndex = 166;
             btnActivate.Text = "覆核";
             btnActivate.UseVisualStyleBackColor = false;
+            btnActivate.Click += btnActivate_Click;
             // 
             // btnCancelActivate
             // 
@@ -190,6 +191,7 @@
             btnCancelActivate.TabIndex = 167;
             btnCancelActivate.Text = "取消覆核";
             btnCancelActivate.UseVisualStyleBackColor = false;
+            btnCancelActivate.Click += btnCancelActivate_Click;
             // 
             // btnPrint
             // 
