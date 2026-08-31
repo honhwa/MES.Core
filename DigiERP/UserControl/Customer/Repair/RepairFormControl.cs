@@ -17,12 +17,19 @@ namespace DigiERP.UserControl.Customer.Repair
 {
     public partial class RepairFormControl : CommonUserControl
     {
+        public static string id = "63DD664F-08F4-409E-BB9F-0A29AB4EEB71";
         FrmCustSelect popup;
         private CustomerController _customerController { get; set; }
         List<維修服務單> repairFormList { get; set; }
 
         public RepairFormControl()
         {
+            if (!chkPrivilege(id))
+            {
+                MessageBox.Show("非授權使用者無法使用此功能!");
+                Dispose();
+                return;
+            }
             InitializeComponent();
             initController();
             initGrid();
@@ -138,6 +145,7 @@ namespace DigiERP.UserControl.Customer.Repair
 
         private void btn新增_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             openMaintainControl(new 維修服務單(), "新增");
         }
 

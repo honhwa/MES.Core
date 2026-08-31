@@ -15,7 +15,7 @@ namespace DigiERP.UserControl.Customer.Repair
     public partial class RepairFormMaintainControl : CommonUserControl
     {
         // 此模組（維修服務單）先前完全沒有註冊權限 GUID，此為新建立，需在權限管理畫面另行設定「編修」權限
-        private static string id = "B3E7A159-6D2C-4F84-9A1E-7C5D3B6F8A92";
+        private static string id = RepairFormControl.id;
 
         public 維修服務單 form { get; set; }
         private CustomerController _customerController;
@@ -118,6 +118,7 @@ namespace DigiERP.UserControl.Customer.Repair
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             disableControls(true);
         }
 
@@ -238,7 +239,7 @@ namespace DigiERP.UserControl.Customer.Repair
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             CollectUserInput();
-
+            if (!has編修(id)) return;
             if (lblMode.Text == "新增")
             {
                 form.建檔 = AppSession.User.username;
@@ -267,6 +268,7 @@ namespace DigiERP.UserControl.Customer.Repair
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!has編修(id)) return;
             if (MessageBox.Show($"確定要刪除維修服務單 {form.單號} 嗎?", "確認刪除",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;
@@ -310,6 +312,7 @@ namespace DigiERP.UserControl.Customer.Repair
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
+            if (!has核准(id)) return;
             if (string.IsNullOrEmpty(form.單號))
             {
                 MessageBox.Show("請先儲存維修服務單!");
@@ -330,6 +333,7 @@ namespace DigiERP.UserControl.Customer.Repair
 
         private void btnCancelApprove_Click(object sender, EventArgs e)
         {
+            if (!has核准(id)) return;
             if (MessageBox.Show("確定要取消核准嗎?", "確認取消核准",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;
