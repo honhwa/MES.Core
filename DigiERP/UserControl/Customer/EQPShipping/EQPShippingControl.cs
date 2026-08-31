@@ -13,7 +13,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 {
     public partial class EQPShippingControl : CommonUserControl
     {
-        private static string id = "751F454E-D6C2-41B0-B3A3-5ED8C1AE82CE";
+        public static string id = "751F454E-D6C2-41B0-B3A3-5ED8C1AE82CE";
         private ProductionController _productionController;
         private List<專案機台交貨單> shippingList;
 

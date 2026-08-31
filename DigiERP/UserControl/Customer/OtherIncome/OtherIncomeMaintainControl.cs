@@ -27,6 +27,12 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         public OtherIncomeMaintainControl()
         {
+            if (!chkPrivilege(id))
+            {
+                MessageBox.Show("非授權使用者無法使用此功能!");
+                Dispose();
+                return;
+            }
             InitializeComponent();
             initControllers();
         }
@@ -106,6 +112,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is編修(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             disableControls(true);
         }
 
@@ -387,6 +401,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is編修(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             CollectUserInput();
             if (lblMode.Text == "新增")
             {
@@ -416,6 +438,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is編修(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             if (MessageBox.Show($"確定要刪除其他收入單 {form.單號} 嗎?", "確認刪除",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;
@@ -432,6 +462,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is核准(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             if (string.IsNullOrEmpty(form.單號)) { MessageBox.Show("請先儲存!"); return; }
             CommonRep<F其他收入單> rep = _arController.ValidateOtherIncome(form.單號, true, AppSession.User.username);
             if (!string.IsNullOrEmpty(rep.ErrorMessage))
@@ -451,6 +489,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btnCancelApprove_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is核准(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             if (MessageBox.Show("確定要取消核准嗎?", "確認取消核准",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                 return;

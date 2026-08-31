@@ -1,5 +1,7 @@
 using DigiERP.Common;
 using DigiERP.Forms.Customer.SalesOrder;
+using DigiERP.Models;
+using DigiERP.UserControl.Customer.EQPShipping;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using MES.WebAPI.Models;
@@ -14,7 +16,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
     public partial class OtherIncomeControl : CommonUserControl
     {
         FrmCustSelect popup;
-        private static string id = "3344F4D3-18C6-49AD-BE21-6068618F4448";
+        public static string id = "3344F4D3-18C6-49AD-BE21-6068618F4448";
         private ARController _arController { get; set; }
         List<F其他收入單> otherIncomeList { get; set; }
 
@@ -96,6 +98,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btn查詢_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is查詢(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有查詢權限");
+                }
+            }
             string custId = cboCustId.Text?.Trim() ?? "";
             if (otherIncomeList == null) return;
 
@@ -114,6 +124,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
 
         private void btn新增_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(OtherIncomeControl.id))
+                && !AppSession.User.is編修(Guid.Parse(OtherIncomeControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             openMaintainControl(new F其他收入單(), "新增");
         }
 

@@ -26,6 +26,12 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 
         public EQPShippingMaintainControl()
         {
+            if (!chkPrivilege(id))
+            {
+                MessageBox.Show("非授權使用者無法使用此功能!");
+                Dispose();
+                return;
+            }
             InitializeComponent();
             initControllers();
         }
@@ -122,6 +128,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is編修(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             disableControls(true);
         }
 
@@ -450,6 +464,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is編修(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             CollectUserInput();
             if (lblMode.Text == "新增")
             {
@@ -475,6 +497,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is編修(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             if (MessageBox.Show($"確定要刪除 {form?.單號} 嗎?", "確認刪除",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
             CommonRep<int> rep = _productionController.DeleteEQPShipping(form.單號);
@@ -485,6 +515,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 
         private void btnApprove_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is核准(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有核准權限");
+                }
+            }
             if (string.IsNullOrEmpty(form?.單號)) { MessageBox.Show("請先儲存!"); return; }
             CommonRep<int> rep = _productionController.ValidateEQPShipping(form.單號, true, AppSession.User.username);
             if (!string.IsNullOrEmpty(rep.ErrorMessage)) { MessageBox.Show(rep.ErrorMessage); return; }
@@ -494,11 +532,20 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             txtApprover.Text = form.核准;
             txtApproveDate.Text = form.核准日;
             btnApprove.Visible = false;
+            btnPrint.Visible = true;
             btnCancelApprove.Visible = true;
         }
 
         private void btnCancelApprove_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is核准(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有核准權限");
+                }
+            }
             if (MessageBox.Show("確定要取消生效嗎?", "確認取消生效",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
             CommonRep<int> rep = _productionController.ValidateEQPShipping(form.單號, false, AppSession.User.username);
@@ -506,11 +553,20 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             MessageBox.Show("取消生效成功!");
             form.核准 = null; form.核准日 = null;
             txtApprover.Text = ""; txtApproveDate.Text = "";
+            btnPrint.Visible = false;
             btnApprove.Visible = true; btnCancelApprove.Visible = false;
         }
 
         private void btnUpdateBox_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is編修(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有編修權限");
+                }
+            }
             CollectUserInput();
             if (string.IsNullOrEmpty(form?.單號)) { MessageBox.Show("請先儲存單號!"); return; }
             form.修改 = AppSession.User.username;
@@ -533,6 +589,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (AppSession.User.name?.ToUpper() != "ADMIN")
+            {
+                if (!AppSession.User.is高管(Guid.Parse(EQPShippingControl.id))
+                && !AppSession.User.is輸出(Guid.Parse(EQPShippingControl.id)))
+                {
+                    MessageBox.Show("您沒有列印輸出權限");
+                }
+            }
             CollectUserInput();
             var frm = new FrmEQPShippingPrint
             {
