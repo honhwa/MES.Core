@@ -240,7 +240,7 @@ namespace MES.WebAPI.MiddleWare
                 {
                     conn.Open();
                     string sql = @"SELECT CONVERT(varchar(10), 日期, 111) AS 日期, 例假日,
-                                          導入卡鐘資料, CONVERT(varchar(16), 導入時間, 120) AS 導入時間
+                                          導入卡鐘資料, CONVERT(varchar(16), 導入時間, 120) AS 導入時間, 核准生效, 核准人, 人事經辦
                                    FROM H日曆 WHERE 日期=@日期";
                     obj = conn.Query<H日曆>(sql, new { 日期 = date }).FirstOrDefault();
                 }
@@ -397,6 +397,33 @@ namespace MES.WebAPI.MiddleWare
             catch (Exception)
             {
 
+                throw;
+            }
+            return list;
+        }
+
+        // ── 請假紀錄(H-日曆休假表 內嵌子表單)：依日期查詢當天全部員工請假紀錄，
+        //    比照原查詢「請假紀錄查詢」(H請假紀錄 LEFT JOIN H員工清冊) ──────────
+        public List<請假紀錄列表> getLeaveRecordList(string date)
+        {
+            List<請假紀錄列表> list = new List<請假紀錄列表>();
+            try
+            {
+                using (var conn = new SqlConnection(IRepository<string>.ConnStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT
+                                        l.日期, l.員工編號, e.姓名, l.事假, l.病假, l.特休假, l.產假,
+                                        l.公假, l.生理假, l.親情假, l.曠職, l.備註,
+                                        (ISNULL(l.事假,0) + ISNULL(l.病假,0)) AS 請假扣款乘數
+                                    FROM H請假紀錄 l
+                                    LEFT JOIN H員工清冊 e ON l.員工編號 = e.工號
+                                    WHERE l.日期=@日期";
+                    list = conn.Query<請假紀錄列表>(sql, new { 日期 = date }).ToList();
+                }
+            }
+            catch (Exception)
+            {
                 throw;
             }
             return list;

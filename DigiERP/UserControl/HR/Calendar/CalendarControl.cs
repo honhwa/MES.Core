@@ -139,6 +139,38 @@ namespace DigiERP.UserControl.HR.Calendar
 
         private static bool ToBool(object value) => value is bool b && b;
 
+        // ── 日期 OnDblClick：開啟(或切換至) CalendarVacationControl，比照原巨集
+        //    OpenForm "H-日曆休假表" + WhereCondition([日期]=目前列的日期) ────────
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != colDate.Index) return;
+            string date = dataGridView1.Rows[e.RowIndex].Cells[colDate.Index].Value?.ToString();
+            if (string.IsNullOrEmpty(date)) return;
+
+            if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl))
+            {
+                var ctrlStandalone = new CalendarVacationControl { Dock = DockStyle.Fill };
+                ctrlStandalone.LoadData(date);
+                return;
+            }
+            TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
+            string tabName = "CalendarVacation_" + date;
+            foreach (TabPage page in tabControl.TabPages)
+            {
+                if (page.Name == tabName)
+                {
+                    tabControl.SelectedTab = page;
+                    return;
+                }
+            }
+            var ctrl = new CalendarVacationControl { Dock = DockStyle.Fill };
+            var tab = new TabPage("日曆休假表-" + date) { Name = tabName };
+            tab.Controls.Add(ctrl);
+            tabControl.TabPages.Add(tab);
+            tabControl.SelectedTab = tab;
+            ctrl.LoadData(date);
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             var parentCtrl = Parent;

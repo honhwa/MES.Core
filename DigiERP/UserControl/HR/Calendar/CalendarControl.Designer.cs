@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.HR.Calendar
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarControl));
             panelHeader = new Panel();
+            pictureBox1 = new PictureBox();
             lblTitle = new Label();
             btnLast = new Button();
             btnModify = new Button();
@@ -34,11 +35,10 @@ namespace DigiERP.UserControl.HR.Calendar
             colHRHandler = new DataGridViewTextBoxColumn();
             colApproved = new DataGridViewCheckBoxColumn();
             colApprover = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
             panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelHeader
@@ -56,6 +56,16 @@ namespace DigiERP.UserControl.HR.Calendar
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1200, 56);
             panelHeader.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(56, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
@@ -150,6 +160,7 @@ namespace DigiERP.UserControl.HR.Calendar
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colDate, colWeekday, colHoliday, colNotice, colHRHandler, colApproved, colApprover });
@@ -163,7 +174,8 @@ namespace DigiERP.UserControl.HR.Calendar
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1200, 600);
             dataGridView1.TabIndex = 0;
-            // 
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            //
             // colDate
             // 
             colDate.HeaderText = "日期";
@@ -175,52 +187,36 @@ namespace DigiERP.UserControl.HR.Calendar
             colWeekday.HeaderText = "週次";
             colWeekday.Name = "colWeekday";
             colWeekday.ReadOnly = true;
-            colWeekday.Width = 50;
             // 
             // colHoliday
             // 
             colHoliday.HeaderText = "例假日";
             colHoliday.Name = "colHoliday";
             colHoliday.ReadOnly = true;
-            colHoliday.Width = 60;
             // 
             // colNotice
             // 
             colNotice.HeaderText = "公告事項";
             colNotice.Name = "colNotice";
             colNotice.ReadOnly = true;
-            colNotice.Width = 350;
             // 
             // colHRHandler
             // 
             colHRHandler.HeaderText = "人事經辦";
             colHRHandler.Name = "colHRHandler";
             colHRHandler.ReadOnly = true;
-            colHRHandler.Width = 90;
             // 
             // colApproved
             // 
             colApproved.HeaderText = "核准生效";
             colApproved.Name = "colApproved";
             colApproved.ReadOnly = true;
-            colApproved.Width = 70;
             // 
             // colApprover
             // 
             colApprover.HeaderText = "核准人";
             colApprover.Name = "colApprover";
             colApprover.ReadOnly = true;
-            colApprover.Width = 90;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(56, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
             // 
             // CalendarControl
             // 
@@ -234,9 +230,9 @@ namespace DigiERP.UserControl.HR.Calendar
             Size = new Size(1200, 656);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

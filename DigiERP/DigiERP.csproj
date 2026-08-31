@@ -87,7 +87,6 @@
     <Folder Include="UserControl\Accounts\Accounting\" />
     <Folder Include="UserControl\Customer\OtherIncome\" />
     <Folder Include="UserControl\HR\ClockInOut\" />
-    <Folder Include="UserControl\HR\Calendar\" />
     <Folder Include="UserControl\HR\EmployeeSalary\" />
     <Folder Include="UserControl\HR\ProjectHour\" />
     <Folder Include="UserControl\HR\Overtime\" />

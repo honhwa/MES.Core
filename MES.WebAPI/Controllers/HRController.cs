@@ -228,6 +228,22 @@ namespace MES.WebAPI.Controllers
             }
             return commonRep;
         }
+        [Route("api/GetLeaveRecordList"), HttpGet]
+        public CommonRep<請假紀錄列表> GetLeaveRecordList(string date)
+        {
+            CommonRep<請假紀錄列表> commonRep = new CommonRep<請假紀錄列表>();
+            HRMiddle hrMiddle = new HRMiddle();
+            try
+            {
+                commonRep.resultList = hrMiddle.getLeaveRecordList(date);
+            }
+            catch (Exception ex)
+            {
+                commonRep.ErrorMessage = ex.Message;
+                commonRep.WorkStatus = WorkStatus.Fail.ToString();
+            }
+            return commonRep;
+        }
         [Route("api/SaveAttendance"), HttpPost]
         public CommonRep<string> SaveAttendance([FromBody] H考勤紀錄 form)
         {

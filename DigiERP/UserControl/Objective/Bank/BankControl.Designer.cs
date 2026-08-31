@@ -130,7 +130,7 @@ namespace DigiERP.UserControl.Objective.Bank
             btnAdd.BackColor = Color.Gainsboro;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnAdd.Location = new Point(1780, 12);
+            btnAdd.Location = new Point(784, 12);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(100, 32);
             btnAdd.TabIndex = 5;
@@ -143,7 +143,7 @@ namespace DigiERP.UserControl.Objective.Bank
             btnExit.BackColor = Color.Gainsboro;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnExit.Location = new Point(1670, 12);
+            btnExit.Location = new Point(896, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(100, 32);
             btnExit.TabIndex = 6;

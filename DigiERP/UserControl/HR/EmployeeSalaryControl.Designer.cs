@@ -243,7 +243,7 @@ namespace DigiERP.UserControl.HR
             btnInvalidate.BackColor = Color.Gainsboro;
             btnInvalidate.FlatStyle = FlatStyle.Flat;
             btnInvalidate.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnInvalidate.Location = new Point(700, 12);
+            btnInvalidate.Location = new Point(600, 12);
             btnInvalidate.Name = "btnInvalidate";
             btnInvalidate.Size = new Size(90, 32);
             btnInvalidate.TabIndex = 6;
@@ -262,7 +262,6 @@ namespace DigiERP.UserControl.HR
             btnPrint.TabIndex = 7;
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
-            btnPrint.Visible = false;
             btnPrint.Click += btnPrint_Click;
             // 
             // btnOverview
@@ -1193,8 +1192,7 @@ namespace DigiERP.UserControl.HR
             lblRecInfo.Size = new Size(77, 16);
             lblRecInfo.TabIndex = 0;
             lblRecInfo.Text = "薪資紀錄 0/0";
-            lblRecInfo.Visible = false;
-            // 
+            //
             // btnRecPrev
             // 
             btnRecPrev.FlatStyle = FlatStyle.Flat;
@@ -1205,7 +1203,6 @@ namespace DigiERP.UserControl.HR
             btnRecPrev.TabIndex = 1;
             btnRecPrev.Text = "◄";
             btnRecPrev.UseVisualStyleBackColor = true;
-            btnRecPrev.Visible = false;
             btnRecPrev.Click += btnRecPrev_Click;
             // 
             // btnRecNext
@@ -1218,7 +1215,6 @@ namespace DigiERP.UserControl.HR
             btnRecNext.TabIndex = 2;
             btnRecNext.Text = "►";
             btnRecNext.UseVisualStyleBackColor = true;
-            btnRecNext.Visible = false;
             btnRecNext.Click += btnRecNext_Click;
             // 
             // btnRecNew
@@ -1231,7 +1227,6 @@ namespace DigiERP.UserControl.HR
             btnRecNew.TabIndex = 3;
             btnRecNew.Text = "新增一筆";
             btnRecNew.UseVisualStyleBackColor = true;
-            btnRecNew.Visible = false;
             btnRecNew.Click += btnRecNew_Click;
             // 
             // pictureBox1
