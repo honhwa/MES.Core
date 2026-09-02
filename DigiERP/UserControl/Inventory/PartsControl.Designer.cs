@@ -73,7 +73,7 @@ namespace DigiERP.UserControl.Inventory
             button1.Text = "新增料品";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            //
+            // 
             // btn新增同級料品支援
             // 
             btn新增同級料品支援.BackColor = Color.FromArgb(0, 192, 0);
@@ -84,6 +84,7 @@ namespace DigiERP.UserControl.Inventory
             btn新增同級料品支援.TabIndex = 5;
             btn新增同級料品支援.Text = "新增同級料品支援";
             btn新增同級料品支援.UseVisualStyleBackColor = false;
+            btn新增同級料品支援.Click += btn新增同級料品支援_Click;
             // 
             // btn加工材料代號新增
             // 

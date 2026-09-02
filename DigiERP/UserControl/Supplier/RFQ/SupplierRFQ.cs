@@ -309,5 +309,10 @@ namespace DigiERP.UserControl.Supplier.RFQ
             row.Cells[colSupplierNo.Index].Value = frmSelect.Selected.廠商編號;
             row.Cells[colSupplierShortName.Index].Value = frmSelect.Selected.廠商簡稱;
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

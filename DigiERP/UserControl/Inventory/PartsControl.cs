@@ -152,5 +152,10 @@ namespace DigiERP.UserControl.Inventory
                 .ToDictionary(x => x.產品編號!, x => x);
             FillGrid(_itemList, summaryMap);
         }
+
+        private void btn新增同級料品支援_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

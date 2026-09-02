@@ -115,6 +115,7 @@ namespace DigiERP.UserControl.Supplier.RFQ
             btnHistory.TabIndex = 1;
             btnHistory.Text = "採購詢價歷程";
             btnHistory.UseVisualStyleBackColor = false;
+            btnHistory.Click += btnHistory_Click;
             // 
             // btnEditMaterialSetting
             // 
@@ -126,9 +127,9 @@ namespace DigiERP.UserControl.Supplier.RFQ
             btnEditMaterialSetting.Text = "編修材料設定";
             btnEditMaterialSetting.UseVisualStyleBackColor = false;
             btnEditMaterialSetting.Click += btnEditMaterialSetting_Click;
-            //
+            // 
             // btnAddPreQueryMaterial
-            //
+            // 
             btnAddPreQueryMaterial.BackColor = Color.FromArgb(198, 216, 255);
             btnAddPreQueryMaterial.Location = new Point(510, 10);
             btnAddPreQueryMaterial.Name = "btnAddPreQueryMaterial";
@@ -137,9 +138,9 @@ namespace DigiERP.UserControl.Supplier.RFQ
             btnAddPreQueryMaterial.Text = "新增預詢材料";
             btnAddPreQueryMaterial.UseVisualStyleBackColor = false;
             btnAddPreQueryMaterial.Click += btnAddPreQueryMaterial_Click;
-            //
+            // 
             // btnAddRFQ
-            //
+            // 
             btnAddRFQ.BackColor = Color.FromArgb(198, 216, 255);
             btnAddRFQ.Location = new Point(640, 10);
             btnAddRFQ.Name = "btnAddRFQ";
@@ -467,11 +468,12 @@ namespace DigiERP.UserControl.Supplier.RFQ
             colInquiryDate.Name = "colInquiryDate";
             // 
             // colUnitPrice
-            //
+            // 
             colUnitPrice.DecimalPlaces = 2;
-            colUnitPrice.Maximum = 99999999m;
             colUnitPrice.FillWeight = 70F;
             colUnitPrice.HeaderText = "單價";
+            colUnitPrice.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
+            colUnitPrice.Minimum = new decimal(new int[] { 0, 0, 0, 0 });
             colUnitPrice.Name = "colUnitPrice";
             // 
             // colCurrency
@@ -488,17 +490,21 @@ namespace DigiERP.UserControl.Supplier.RFQ
             colPurchaseUnit.Name = "colPurchaseUnit";
             // 
             // colMinPurchaseQty
-            //
-            colMinPurchaseQty.Maximum = 999999m;
+            // 
+            colMinPurchaseQty.DecimalPlaces = 0;
             colMinPurchaseQty.FillWeight = 80F;
             colMinPurchaseQty.HeaderText = "最低採購量";
+            colMinPurchaseQty.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            colMinPurchaseQty.Minimum = new decimal(new int[] { 0, 0, 0, 0 });
             colMinPurchaseQty.Name = "colMinPurchaseQty";
-            //
+            // 
             // colPlannedPurchaseQty
-            //
-            colPlannedPurchaseQty.Maximum = 999999m;
+            // 
+            colPlannedPurchaseQty.DecimalPlaces = 0;
             colPlannedPurchaseQty.FillWeight = 80F;
             colPlannedPurchaseQty.HeaderText = "預計採購量";
+            colPlannedPurchaseQty.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
+            colPlannedPurchaseQty.Minimum = new decimal(new int[] { 0, 0, 0, 0 });
             colPlannedPurchaseQty.Name = "colPlannedPurchaseQty";
             // 
             // colInquiryPerson

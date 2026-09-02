@@ -17,9 +17,10 @@ namespace DigiERP.UserControl.Production
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssemblyDispatchReceiveControl));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             lblTitle = new Label();
             btnEdit = new Button();
             btnSave = new Button();
@@ -41,12 +42,11 @@ namespace DigiERP.UserControl.Production
             colBomNo = new DataGridViewTextBoxColumn();
             panel3 = new Panel();
             lblNote = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,16 @@ namespace DigiERP.UserControl.Production
             panel1.Name = "panel1";
             panel1.Size = new Size(1900, 56);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(56, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
@@ -153,10 +163,10 @@ namespace DigiERP.UserControl.Production
             dataGridView1.Size = new Size(1900, 564);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.DataError += dataGridView1_DataError;
-            dataGridView1.CurrentCellDirtyStateChanged += dataGridView1_CurrentCellDirtyStateChanged;
-            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            dataGridView1.CurrentCellDirtyStateChanged += dataGridView1_CurrentCellDirtyStateChanged;
+            dataGridView1.DataError += dataGridView1_DataError;
             // 
             // colProjectNo
             // 
@@ -179,9 +189,9 @@ namespace DigiERP.UserControl.Production
             // 
             // colDrawingFile
             // 
-            dataGridViewCellStyle3.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = Color.Blue;
-            colDrawingFile.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.Blue;
+            colDrawingFile.DefaultCellStyle = dataGridViewCellStyle1;
             colDrawingFile.FillWeight = 180F;
             colDrawingFile.HeaderText = "製圖檔名(或測試作業名稱)";
             colDrawingFile.Name = "colDrawingFile";
@@ -191,7 +201,7 @@ namespace DigiERP.UserControl.Production
             // 
             colIssueDate.HeaderText = "圖檔發行日";
             colIssueDate.Name = "colIssueDate";
-            //
+            // 
             // colAssemblyStaff
             // 
             colAssemblyStaff.HeaderText = "組裝人員";
@@ -217,9 +227,9 @@ namespace DigiERP.UserControl.Production
             // 
             colCloseReport.FillWeight = 150F;
             colCloseReport.HeaderText = "結案回報";
-            colCloseReport.Name = "colCloseReport";
             colCloseReport.Items.AddRange(new object[] { "合規", "特採", "設計變更" });
-            //
+            colCloseReport.Name = "colCloseReport";
+            // 
             // colPurpose
             // 
             colPurpose.HeaderText = "用途";
@@ -251,16 +261,6 @@ namespace DigiERP.UserControl.Production
             lblNote.TabIndex = 0;
             lblNote.Text = "※如欲開啟該項專案模組的零配件領料清單，請點擊該項的『製圖檔名』欄位(藍色粗體字)！";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(56, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // AssemblyDispatchReceiveControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -274,11 +274,11 @@ namespace DigiERP.UserControl.Production
             Size = new Size(1900, 656);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

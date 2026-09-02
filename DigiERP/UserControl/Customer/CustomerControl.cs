@@ -49,11 +49,10 @@ namespace DigiERP.UserControl
         }
         private void initGridView()
         {
-                CustomerController customerController = new CustomerController();
-                CommonRep<C客戶設定> custList = customerController.getCustomerList();
-                inflateCustList(custList);
-                dataGridView1.Width = this.Width;
-            
+            CustomerController customerController = new CustomerController();
+            CommonRep<C客戶設定> custList = customerController.getCustomerList();
+            inflateCustList(custList);
+            dataGridView1.Width = this.Width;
         }
 
         private void button1_Click(object sender, EventArgs e)
