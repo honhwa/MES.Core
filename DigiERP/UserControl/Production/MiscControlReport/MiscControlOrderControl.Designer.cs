@@ -285,6 +285,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtControlNo
             // 
+            txtControlNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtControlNo.Location = new Point(100, 8);
             txtControlNo.Name = "txtControlNo";
             txtControlNo.ReadOnly = true;
@@ -302,6 +303,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtStockInDate
             // 
+            txtStockInDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtStockInDate.Location = new Point(372, 8);
             txtStockInDate.Name = "txtStockInDate";
             txtStockInDate.ReadOnly = true;
@@ -319,6 +321,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtPartNo
             // 
+            txtPartNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtPartNo.Location = new Point(644, 8);
             txtPartNo.Name = "txtPartNo";
             txtPartNo.ReadOnly = true;
@@ -345,6 +348,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtProjectNo
             // 
+            txtProjectNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtProjectNo.Location = new Point(100, 44);
             txtProjectNo.Name = "txtProjectNo";
             txtProjectNo.ReadOnly = true;
@@ -362,6 +366,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtAcceptDate
             // 
+            txtAcceptDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtAcceptDate.Location = new Point(372, 44);
             txtAcceptDate.Name = "txtAcceptDate";
             txtAcceptDate.ReadOnly = true;
@@ -379,6 +384,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtPartName
             // 
+            txtPartName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtPartName.Location = new Point(644, 44);
             txtPartName.Name = "txtPartName";
             txtPartName.ReadOnly = true;
@@ -396,6 +402,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModuleCode
             // 
+            txtModuleCode.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModuleCode.Location = new Point(100, 80);
             txtModuleCode.Name = "txtModuleCode";
             txtModuleCode.ReadOnly = true;
@@ -431,6 +438,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtDesc
             // 
+            txtDesc.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtDesc.Location = new Point(644, 80);
             txtDesc.Name = "txtDesc";
             txtDesc.ReadOnly = true;
@@ -448,6 +456,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModuleName
             // 
+            txtModuleName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModuleName.Location = new Point(100, 116);
             txtModuleName.Name = "txtModuleName";
             txtModuleName.ReadOnly = true;
@@ -483,6 +492,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtQty
             // 
+            txtQty.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtQty.Location = new Point(644, 116);
             txtQty.Name = "txtQty";
             txtQty.ReadOnly = true;
@@ -687,6 +697,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtReasonNote
             // 
+            txtReasonNote.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReasonNote.Location = new Point(100, 4);
             txtReasonNote.Name = "txtReasonNote";
             txtReasonNote.ReadOnly = true;
@@ -737,6 +748,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtApprover
             // 
+            txtApprover.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtApprover.Location = new Point(92, 14);
             txtApprover.Name = "txtApprover";
             txtApprover.ReadOnly = true;
@@ -754,6 +766,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtApproveDate
             // 
+            txtApproveDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtApproveDate.Location = new Point(288, 14);
             txtApproveDate.Name = "txtApproveDate";
             txtApproveDate.ReadOnly = true;
@@ -771,6 +784,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModifier
             // 
+            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifier.Location = new Point(512, 14);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
@@ -788,6 +802,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModifyDate
             // 
+            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifyDate.Location = new Point(708, 14);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
@@ -805,6 +820,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtCreator
             // 
+            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreator.Location = new Point(932, 14);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
@@ -822,6 +838,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtCreateDate
             // 
+            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreateDate.Location = new Point(1128, 14);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;

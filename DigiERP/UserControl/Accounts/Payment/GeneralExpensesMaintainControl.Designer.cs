@@ -85,8 +85,6 @@ namespace DigiERP.UserControl.Accounts.Payment
             txtCreator = new TextBox();
             lblCreateDateCap = new Label();
             txtCreateDate = new TextBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -113,7 +111,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1539, 56);
+            panel1.Size = new Size(1431, 56);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -297,8 +295,6 @@ namespace DigiERP.UserControl.Accounts.Payment
             panel2.Controls.Add(cboCategory);
             panel2.Controls.Add(lblTaxRate);
             panel2.Controls.Add(cboTaxRate);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(lblVoucherNo);
             panel2.Controls.Add(txtVoucherNo);
             panel2.Controls.Add(lblNote);
@@ -307,13 +303,13 @@ namespace DigiERP.UserControl.Accounts.Payment
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 56);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1539, 116);
+            panel2.Size = new Size(1431, 116);
             panel2.TabIndex = 1;
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
-            lblDate.Location = new Point(8, 10);
+            lblDate.Location = new Point(8, 6);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(36, 18);
             lblDate.TabIndex = 0;
@@ -323,15 +319,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             dtDate.Enabled = false;
             dtDate.Format = DateTimePickerFormat.Short;
-            dtDate.Location = new Point(62, 6);
+            dtDate.Location = new Point(78, 2);
             dtDate.Name = "dtDate";
-            dtDate.Size = new Size(142, 25);
+            dtDate.Size = new Size(156, 25);
             dtDate.TabIndex = 1;
             // 
             // lblNo
             // 
             lblNo.AutoSize = true;
-            lblNo.Location = new Point(216, 8);
+            lblNo.Location = new Point(276, 6);
             lblNo.Name = "lblNo";
             lblNo.Size = new Size(36, 18);
             lblNo.TabIndex = 2;
@@ -339,16 +335,17 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtNo
             // 
-            txtNo.Location = new Point(270, 4);
+            txtNo.BackColor = Color.WhiteSmoke;
+            txtNo.Location = new Point(366, 2);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
-            txtNo.Size = new Size(150, 25);
+            txtNo.Size = new Size(166, 25);
             txtNo.TabIndex = 3;
             // 
             // lblSupplier
             // 
             lblSupplier.AutoSize = true;
-            lblSupplier.Location = new Point(436, 6);
+            lblSupplier.Location = new Point(582, 6);
             lblSupplier.Name = "lblSupplier";
             lblSupplier.Size = new Size(64, 18);
             lblSupplier.TabIndex = 4;
@@ -358,44 +355,45 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             cboSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSupplier.FormattingEnabled = true;
-            cboSupplier.Location = new Point(510, 2);
+            cboSupplier.Location = new Point(652, 2);
             cboSupplier.Name = "cboSupplier";
-            cboSupplier.Size = new Size(150, 25);
+            cboSupplier.Size = new Size(144, 25);
             cboSupplier.TabIndex = 5;
             cboSupplier.SelectedIndexChanged += cboSupplier_SelectedIndexChanged;
-            //
+            // 
             // btnSelectSupplier
-            //
+            // 
             btnSelectSupplier.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnSelectSupplier.Location = new Point(662, 2);
+            btnSelectSupplier.Location = new Point(800, 2);
             btnSelectSupplier.Name = "btnSelectSupplier";
             btnSelectSupplier.Size = new Size(30, 25);
             btnSelectSupplier.TabIndex = 30;
             btnSelectSupplier.Text = "🔍";
             btnSelectSupplier.UseVisualStyleBackColor = true;
             btnSelectSupplier.Click += btnSelectSupplier_Click;
-            //
+            // 
             // lblSupplierName
-            //
+            // 
             lblSupplierName.AutoSize = true;
-            lblSupplierName.Location = new Point(706, 6);
+            lblSupplierName.Location = new Point(894, 6);
             lblSupplierName.Name = "lblSupplierName";
             lblSupplierName.Size = new Size(64, 18);
             lblSupplierName.TabIndex = 6;
             lblSupplierName.Text = "廠商名稱";
-            //
+            // 
             // txtSupplierName
-            //
-            txtSupplierName.Location = new Point(780, 2);
+            // 
+            txtSupplierName.BackColor = Color.WhiteSmoke;
+            txtSupplierName.Location = new Point(964, 2);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
-            txtSupplierName.Size = new Size(220, 25);
+            txtSupplierName.Size = new Size(260, 25);
             txtSupplierName.TabIndex = 7;
             // 
             // lblContact
             // 
             lblContact.AutoSize = true;
-            lblContact.Location = new Point(8, 46);
+            lblContact.Location = new Point(8, 44);
             lblContact.Name = "lblContact";
             lblContact.Size = new Size(50, 18);
             lblContact.TabIndex = 8;
@@ -403,15 +401,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtContact
             // 
-            txtContact.Location = new Point(62, 42);
+            txtContact.Location = new Point(78, 40);
             txtContact.Name = "txtContact";
-            txtContact.Size = new Size(142, 25);
+            txtContact.Size = new Size(156, 25);
             txtContact.TabIndex = 9;
             // 
             // lblPaymentTerm
             // 
             lblPaymentTerm.AutoSize = true;
-            lblPaymentTerm.Location = new Point(216, 44);
+            lblPaymentTerm.Location = new Point(276, 44);
             lblPaymentTerm.Name = "lblPaymentTerm";
             lblPaymentTerm.Size = new Size(64, 18);
             lblPaymentTerm.TabIndex = 10;
@@ -421,15 +419,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             cboPaymentTerm.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPaymentTerm.FormattingEnabled = true;
-            cboPaymentTerm.Location = new Point(290, 40);
+            cboPaymentTerm.Location = new Point(366, 40);
             cboPaymentTerm.Name = "cboPaymentTerm";
-            cboPaymentTerm.Size = new Size(130, 25);
+            cboPaymentTerm.Size = new Size(166, 25);
             cboPaymentTerm.TabIndex = 11;
             // 
             // lblCurrency
             // 
             lblCurrency.AutoSize = true;
-            lblCurrency.Location = new Point(437, 43);
+            lblCurrency.Location = new Point(582, 44);
             lblCurrency.Name = "lblCurrency";
             lblCurrency.Size = new Size(36, 18);
             lblCurrency.TabIndex = 12;
@@ -439,7 +437,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             cboCurrency.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCurrency.FormattingEnabled = true;
-            cboCurrency.Location = new Point(486, 40);
+            cboCurrency.Location = new Point(652, 40);
             cboCurrency.Name = "cboCurrency";
             cboCurrency.Size = new Size(62, 25);
             cboCurrency.TabIndex = 13;
@@ -448,7 +446,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblExRate
             // 
             lblExRate.AutoSize = true;
-            lblExRate.Location = new Point(556, 42);
+            lblExRate.Location = new Point(720, 44);
             lblExRate.Name = "lblExRate";
             lblExRate.Size = new Size(36, 18);
             lblExRate.TabIndex = 14;
@@ -456,15 +454,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtExRate
             // 
-            txtExRate.Location = new Point(610, 38);
+            txtExRate.Location = new Point(762, 41);
             txtExRate.Name = "txtExRate";
-            txtExRate.Size = new Size(50, 25);
+            txtExRate.Size = new Size(68, 25);
             txtExRate.TabIndex = 15;
             // 
             // lblPurchaser
             // 
             lblPurchaser.AutoSize = true;
-            lblPurchaser.Location = new Point(672, 42);
+            lblPurchaser.Location = new Point(894, 43);
             lblPurchaser.Name = "lblPurchaser";
             lblPurchaser.Size = new Size(64, 18);
             lblPurchaser.TabIndex = 16;
@@ -474,16 +472,16 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             cboPurchaser.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPurchaser.FormattingEnabled = true;
-            cboPurchaser.Location = new Point(746, 38);
+            cboPurchaser.Location = new Point(964, 39);
             cboPurchaser.Name = "cboPurchaser";
-            cboPurchaser.Size = new Size(100, 25);
+            cboPurchaser.Size = new Size(90, 25);
             cboPurchaser.TabIndex = 17;
             cboPurchaser.SelectedIndexChanged += cboPurchaser_SelectedIndexChanged;
             // 
             // lblPurchaserName
             // 
             lblPurchaserName.AutoSize = true;
-            lblPurchaserName.Location = new Point(884, 46);
+            lblPurchaserName.Location = new Point(1268, 44);
             lblPurchaserName.Name = "lblPurchaserName";
             lblPurchaserName.Size = new Size(0, 18);
             lblPurchaserName.TabIndex = 18;
@@ -491,7 +489,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblVoid
             // 
             lblVoid.AutoSize = true;
-            lblVoid.Location = new Point(968, 44);
+            lblVoid.Location = new Point(1060, 44);
             lblVoid.Name = "lblVoid";
             lblVoid.Size = new Size(36, 18);
             lblVoid.TabIndex = 19;
@@ -499,7 +497,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // chkVoid
             // 
-            chkVoid.Location = new Point(1016, 42);
+            chkVoid.Location = new Point(1104, 40);
             chkVoid.Name = "chkVoid";
             chkVoid.Size = new Size(24, 24);
             chkVoid.TabIndex = 20;
@@ -518,17 +516,17 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             cboCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCategory.FormattingEnabled = true;
-            cboCategory.Location = new Point(82, 78);
+            cboCategory.Location = new Point(78, 78);
             cboCategory.Name = "cboCategory";
-            cboCategory.Size = new Size(120, 25);
+            cboCategory.Size = new Size(156, 25);
             cboCategory.TabIndex = 22;
             // 
             // lblTaxRate
             // 
             lblTaxRate.AutoSize = true;
-            lblTaxRate.Location = new Point(212, 82);
+            lblTaxRate.Location = new Point(276, 82);
             lblTaxRate.Name = "lblTaxRate";
-            lblTaxRate.Size = new Size(64, 18);
+            lblTaxRate.Size = new Size(84, 18);
             lblTaxRate.TabIndex = 23;
             lblTaxRate.Text = "營業稅率(%)";
             // 
@@ -536,15 +534,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             cboTaxRate.DropDownStyle = ComboBoxStyle.DropDownList;
             cboTaxRate.FormattingEnabled = true;
-            cboTaxRate.Location = new Point(286, 78);
+            cboTaxRate.Location = new Point(366, 78);
             cboTaxRate.Name = "cboTaxRate";
-            cboTaxRate.Size = new Size(130, 25);
+            cboTaxRate.Size = new Size(166, 25);
             cboTaxRate.TabIndex = 24;
             // 
             // lblVoucherNo
             // 
             lblVoucherNo.AutoSize = true;
-            lblVoucherNo.Location = new Point(440, 80);
+            lblVoucherNo.Location = new Point(582, 82);
             lblVoucherNo.Name = "lblVoucherNo";
             lblVoucherNo.Size = new Size(36, 18);
             lblVoucherNo.TabIndex = 25;
@@ -552,16 +550,17 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtVoucherNo
             // 
-            txtVoucherNo.Location = new Point(494, 76);
+            txtVoucherNo.BackColor = Color.WhiteSmoke;
+            txtVoucherNo.Location = new Point(652, 78);
             txtVoucherNo.Name = "txtVoucherNo";
             txtVoucherNo.ReadOnly = true;
-            txtVoucherNo.Size = new Size(110, 25);
+            txtVoucherNo.Size = new Size(178, 25);
             txtVoucherNo.TabIndex = 26;
             // 
             // lblNote
             // 
             lblNote.AutoSize = true;
-            lblNote.Location = new Point(672, 84);
+            lblNote.Location = new Point(894, 82);
             lblNote.Name = "lblNote";
             lblNote.Size = new Size(64, 18);
             lblNote.TabIndex = 27;
@@ -569,9 +568,9 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtNote
             // 
-            txtNote.Location = new Point(752, 78);
+            txtNote.Location = new Point(964, 78);
             txtNote.Name = "txtNote";
-            txtNote.Size = new Size(212, 25);
+            txtNote.Size = new Size(260, 25);
             txtNote.TabIndex = 28;
             // 
             // btnVoidAll
@@ -579,9 +578,9 @@ namespace DigiERP.UserControl.Accounts.Payment
             btnVoidAll.BackColor = Color.LightSalmon;
             btnVoidAll.FlatStyle = FlatStyle.Flat;
             btnVoidAll.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnVoidAll.Location = new Point(972, 76);
+            btnVoidAll.Location = new Point(1134, 38);
             btnVoidAll.Name = "btnVoidAll";
-            btnVoidAll.Size = new Size(100, 28);
+            btnVoidAll.Size = new Size(89, 28);
             btnVoidAll.TabIndex = 29;
             btnVoidAll.Text = "全單作廢";
             btnVoidAll.UseVisualStyleBackColor = false;
@@ -593,7 +592,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 172);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1539, 364);
+            panel3.Size = new Size(1431, 364);
             panel3.TabIndex = 2;
             // 
             // dataGridView1
@@ -609,11 +608,11 @@ namespace DigiERP.UserControl.Accounts.Payment
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1539, 364);
+            dataGridView1.Size = new Size(1431, 364);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             dataGridView1.CurrentCellDirtyStateChanged += dataGridView1_CurrentCellDirtyStateChanged;
-            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
             // colItemNo
             // 
@@ -637,15 +636,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             colTwdAmt.HeaderText = "台幣未稅";
             colTwdAmt.Name = "colTwdAmt";
             colTwdAmt.ReadOnly = true;
-            //
+            // 
             // colTax
-            //
+            // 
             colTax.HeaderText = "稅額";
             colTax.Name = "colTax";
             colTax.ReadOnly = true;
-            //
+            // 
             // colAmount
-            //
+            // 
             colAmount.HeaderText = "金額";
             colAmount.Name = "colAmount";
             colAmount.ReadOnly = true;
@@ -674,13 +673,13 @@ namespace DigiERP.UserControl.Accounts.Payment
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(0, 536);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1539, 120);
+            panel4.Size = new Size(1431, 120);
             panel4.TabIndex = 3;
             // 
             // lblReviewerCap
             // 
             lblReviewerCap.AutoSize = true;
-            lblReviewerCap.Location = new Point(10, 70);
+            lblReviewerCap.Location = new Point(8, 72);
             lblReviewerCap.Name = "lblReviewerCap";
             lblReviewerCap.Size = new Size(64, 18);
             lblReviewerCap.TabIndex = 0;
@@ -688,7 +687,8 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtReviewer
             // 
-            txtReviewer.Location = new Point(92, 66);
+            txtReviewer.BackColor = Color.WhiteSmoke;
+            txtReviewer.Location = new Point(78, 68);
             txtReviewer.Name = "txtReviewer";
             txtReviewer.ReadOnly = true;
             txtReviewer.Size = new Size(120, 25);
@@ -697,7 +697,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblReviewDateCap
             // 
             lblReviewDateCap.AutoSize = true;
-            lblReviewDateCap.Location = new Point(302, 70);
+            lblReviewDateCap.Location = new Point(206, 72);
             lblReviewDateCap.Name = "lblReviewDateCap";
             lblReviewDateCap.Size = new Size(50, 18);
             lblReviewDateCap.TabIndex = 2;
@@ -705,7 +705,8 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtReviewDate
             // 
-            txtReviewDate.Location = new Point(372, 66);
+            txtReviewDate.BackColor = Color.WhiteSmoke;
+            txtReviewDate.Location = new Point(276, 68);
             txtReviewDate.Name = "txtReviewDate";
             txtReviewDate.ReadOnly = true;
             txtReviewDate.Size = new Size(120, 25);
@@ -714,7 +715,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblModifierCap
             // 
             lblModifierCap.AutoSize = true;
-            lblModifierCap.Location = new Point(514, 72);
+            lblModifierCap.Location = new Point(404, 72);
             lblModifierCap.Name = "lblModifierCap";
             lblModifierCap.Size = new Size(64, 18);
             lblModifierCap.TabIndex = 4;
@@ -722,7 +723,8 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtModifier
             // 
-            txtModifier.Location = new Point(596, 68);
+            txtModifier.BackColor = Color.WhiteSmoke;
+            txtModifier.Location = new Point(474, 68);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
             txtModifier.Size = new Size(120, 25);
@@ -731,7 +733,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblModifyDateCap
             // 
             lblModifyDateCap.AutoSize = true;
-            lblModifyDateCap.Location = new Point(806, 72);
+            lblModifyDateCap.Location = new Point(602, 72);
             lblModifyDateCap.Name = "lblModifyDateCap";
             lblModifyDateCap.Size = new Size(50, 18);
             lblModifyDateCap.TabIndex = 6;
@@ -739,7 +741,8 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtModifyDate
             // 
-            txtModifyDate.Location = new Point(876, 68);
+            txtModifyDate.BackColor = Color.WhiteSmoke;
+            txtModifyDate.Location = new Point(672, 68);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
             txtModifyDate.Size = new Size(120, 25);
@@ -748,7 +751,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblCreatorCap
             // 
             lblCreatorCap.AutoSize = true;
-            lblCreatorCap.Location = new Point(1010, 72);
+            lblCreatorCap.Location = new Point(800, 72);
             lblCreatorCap.Name = "lblCreatorCap";
             lblCreatorCap.Size = new Size(64, 18);
             lblCreatorCap.TabIndex = 8;
@@ -756,7 +759,8 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtCreator
             // 
-            txtCreator.Location = new Point(1092, 68);
+            txtCreator.BackColor = Color.WhiteSmoke;
+            txtCreator.Location = new Point(870, 68);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
             txtCreator.Size = new Size(120, 25);
@@ -765,7 +769,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblCreateDateCap
             // 
             lblCreateDateCap.AutoSize = true;
-            lblCreateDateCap.Location = new Point(1302, 72);
+            lblCreateDateCap.Location = new Point(998, 72);
             lblCreateDateCap.Name = "lblCreateDateCap";
             lblCreateDateCap.Size = new Size(50, 18);
             lblCreateDateCap.TabIndex = 10;
@@ -773,28 +777,12 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // txtCreateDate
             // 
-            txtCreateDate.Location = new Point(1372, 68);
+            txtCreateDate.BackColor = Color.WhiteSmoke;
+            txtCreateDate.Location = new Point(1068, 68);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;
             txtCreateDate.Size = new Size(120, 25);
             txtCreateDate.TabIndex = 11;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(494, 80);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(162, 25);
-            textBox1.TabIndex = 26;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(440, 84);
-            label1.Name = "label1";
-            label1.Size = new Size(36, 18);
-            label1.TabIndex = 25;
-            label1.Text = "傳票";
             // 
             // GeneralExpensesMaintainControl
             // 
@@ -807,7 +795,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             Font = new Font("微軟正黑體", 10F);
             Margin = new Padding(4);
             Name = "GeneralExpensesMaintainControl";
-            Size = new Size(1539, 656);
+            Size = new Size(1431, 656);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -889,7 +877,5 @@ namespace DigiERP.UserControl.Accounts.Payment
         private TextBox txtCreator;
         private Label lblCreateDateCap;
         private TextBox txtCreateDate;
-        private Label label1;
-        private TextBox textBox1;
     }
 }

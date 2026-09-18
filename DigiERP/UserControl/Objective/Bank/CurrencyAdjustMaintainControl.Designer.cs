@@ -273,6 +273,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtNo
             //
+            txtNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNo.Location = new Point(258, 4);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
@@ -309,6 +310,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtSubjectCode
             //
+            txtSubjectCode.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSubjectCode.Location = new Point(742, 4);
             txtSubjectCode.Name = "txtSubjectCode";
             txtSubjectCode.ReadOnly = true;
@@ -326,6 +328,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtSubjectName
             //
+            txtSubjectName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSubjectName.Location = new Point(922, 4);
             txtSubjectName.Name = "txtSubjectName";
             txtSubjectName.ReadOnly = true;
@@ -473,6 +476,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtCreator
             //
+            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreator.Location = new Point(92, 16);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
@@ -490,6 +494,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtCreateDate
             //
+            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreateDate.Location = new Point(288, 16);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;
@@ -507,6 +512,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtModifier
             //
+            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifier.Location = new Point(512, 16);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
@@ -524,6 +530,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtModifyDate
             //
+            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifyDate.Location = new Point(708, 16);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
@@ -541,6 +548,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtReviewer
             //
+            txtReviewer.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReviewer.Location = new Point(932, 16);
             txtReviewer.Name = "txtReviewer";
             txtReviewer.ReadOnly = true;
@@ -558,6 +566,7 @@ namespace DigiERP.UserControl.Objective.Bank
             //
             // txtReviewDate
             //
+            txtReviewDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReviewDate.Location = new Point(1128, 16);
             txtReviewDate.Name = "txtReviewDate";
             txtReviewDate.ReadOnly = true;

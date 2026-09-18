@@ -653,6 +653,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numGrade
             // 
+            numGrade.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numGrade.Font = new Font("微軟正黑體", 9F);
             numGrade.Location = new Point(92, 8);
             numGrade.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
@@ -675,6 +676,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numRank
             // 
+            numRank.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numRank.Font = new Font("微軟正黑體", 9F);
             numRank.Location = new Point(272, 8);
             numRank.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
@@ -697,6 +699,7 @@ namespace DigiERP.UserControl.HR
             // 
             // txtSalaryDate
             // 
+            txtSalaryDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSalaryDate.Font = new Font("微軟正黑體", 9F);
             txtSalaryDate.Location = new Point(465, 8);
             txtSalaryDate.Name = "txtSalaryDate";
@@ -717,6 +720,7 @@ namespace DigiERP.UserControl.HR
             // 
             // txtResignDate
             // 
+            txtResignDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtResignDate.Font = new Font("微軟正黑體", 9F);
             txtResignDate.Location = new Point(720, 8);
             txtResignDate.Name = "txtResignDate";
@@ -737,6 +741,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numBaseSalary
             // 
+            numBaseSalary.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numBaseSalary.Font = new Font("微軟正黑體", 9F);
             numBaseSalary.Location = new Point(92, 44);
             numBaseSalary.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -758,6 +763,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numInsuranceGrade
             // 
+            numInsuranceGrade.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numInsuranceGrade.Font = new Font("微軟正黑體", 9F);
             numInsuranceGrade.Location = new Point(272, 44);
             numInsuranceGrade.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
@@ -779,6 +785,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numPositionAllowance
             // 
+            numPositionAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numPositionAllowance.Font = new Font("微軟正黑體", 9F);
             numPositionAllowance.Location = new Point(92, 80);
             numPositionAllowance.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -800,6 +807,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numDependents
             // 
+            numDependents.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numDependents.Font = new Font("微軟正黑體", 9F);
             numDependents.Location = new Point(272, 80);
             numDependents.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
@@ -821,6 +829,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numSupervisorAllowance
             // 
+            numSupervisorAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numSupervisorAllowance.Font = new Font("微軟正黑體", 9F);
             numSupervisorAllowance.Location = new Point(92, 116);
             numSupervisorAllowance.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -842,6 +851,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numLaborIns
             // 
+            numLaborIns.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numLaborIns.Font = new Font("微軟正黑體", 9F);
             numLaborIns.Location = new Point(272, 116);
             numLaborIns.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -863,6 +873,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numMealAllowance
             // 
+            numMealAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numMealAllowance.Font = new Font("微軟正黑體", 9F);
             numMealAllowance.Location = new Point(92, 152);
             numMealAllowance.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
@@ -884,6 +895,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numHealthIns
             // 
+            numHealthIns.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numHealthIns.Font = new Font("微軟正黑體", 9F);
             numHealthIns.Location = new Point(272, 152);
             numHealthIns.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -905,6 +917,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numDailyWage
             // 
+            numDailyWage.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numDailyWage.Font = new Font("微軟正黑體", 9F);
             numDailyWage.Location = new Point(92, 188);
             numDailyWage.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
@@ -926,6 +939,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numDependentIns
             // 
+            numDependentIns.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numDependentIns.Font = new Font("微軟正黑體", 9F);
             numDependentIns.Location = new Point(272, 188);
             numDependentIns.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -947,6 +961,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numHourlyWage
             // 
+            numHourlyWage.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numHourlyWage.DecimalPlaces = 2;
             numHourlyWage.Font = new Font("微軟正黑體", 9F);
             numHourlyWage.Location = new Point(92, 224);
@@ -969,6 +984,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numPensionSelf
             // 
+            numPensionSelf.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numPensionSelf.Font = new Font("微軟正黑體", 9F);
             numPensionSelf.Location = new Point(272, 224);
             numPensionSelf.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -990,6 +1006,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numBonus
             // 
+            numBonus.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numBonus.Font = new Font("微軟正黑體", 9F);
             numBonus.Location = new Point(92, 260);
             numBonus.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1011,6 +1028,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numOtherDeduct
             // 
+            numOtherDeduct.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numOtherDeduct.Font = new Font("微軟正黑體", 9F);
             numOtherDeduct.Location = new Point(272, 260);
             numOtherDeduct.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1032,6 +1050,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numOtherAdd
             // 
+            numOtherAdd.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numOtherAdd.Font = new Font("微軟正黑體", 9F);
             numOtherAdd.Location = new Point(92, 296);
             numOtherAdd.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1053,6 +1072,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numPensionCompany
             // 
+            numPensionCompany.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             numPensionCompany.Font = new Font("微軟正黑體", 9F);
             numPensionCompany.Location = new Point(272, 296);
             numPensionCompany.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1084,6 +1104,7 @@ namespace DigiERP.UserControl.HR
             // 
             // txtNote1
             // 
+            txtNote1.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNote1.Font = new Font("微軟正黑體", 9F);
             txtNote1.Location = new Point(578, 64);
             txtNote1.Multiline = true;
@@ -1105,6 +1126,7 @@ namespace DigiERP.UserControl.HR
             // 
             // txtNote2
             // 
+            txtNote2.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNote2.Font = new Font("微軟正黑體", 9F);
             txtNote2.Location = new Point(578, 144);
             txtNote2.Multiline = true;
@@ -1126,6 +1148,7 @@ namespace DigiERP.UserControl.HR
             // 
             // txtNote3
             // 
+            txtNote3.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNote3.Font = new Font("微軟正黑體", 9F);
             txtNote3.Location = new Point(578, 224);
             txtNote3.Multiline = true;

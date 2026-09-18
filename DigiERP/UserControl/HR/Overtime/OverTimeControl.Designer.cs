@@ -319,6 +319,7 @@ namespace DigiERP.UserControl.HR.Overtime
             //
             // txtNo
             //
+            txtNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNo.Font = new Font("微軟正黑體", 9F);
             txtNo.Location = new Point(96, 12);
             txtNo.Name = "txtNo";
@@ -416,6 +417,7 @@ namespace DigiERP.UserControl.HR.Overtime
             //
             // txtApprover
             //
+            txtApprover.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtApprover.Font = new Font("微軟正黑體", 9F);
             txtApprover.Location = new Point(586, 52);
             txtApprover.Name = "txtApprover";

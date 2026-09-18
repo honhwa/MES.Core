@@ -161,6 +161,7 @@ namespace DigiERP.UserControl.Objective.ExRate
             // 
             // txtCurrency
             // 
+            txtCurrency.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCurrency.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             txtCurrency.Location = new Point(140, 16);
             txtCurrency.Name = "txtCurrency";

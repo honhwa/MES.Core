@@ -420,6 +420,7 @@ namespace DigiERP.UserControl.Accounting
             //
             // txtSumDebit
             //
+            txtSumDebit.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumDebit.Location = new Point(82, 4);
             txtSumDebit.Name = "txtSumDebit";
             txtSumDebit.ReadOnly = true;
@@ -428,6 +429,7 @@ namespace DigiERP.UserControl.Accounting
             //
             // txtSumCredit
             //
+            txtSumCredit.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumCredit.Location = new Point(240, 4);
             txtSumCredit.Name = "txtSumCredit";
             txtSumCredit.ReadOnly = true;

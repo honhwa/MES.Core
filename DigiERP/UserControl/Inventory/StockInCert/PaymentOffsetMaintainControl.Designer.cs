@@ -371,6 +371,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtNo
             // 
+            txtNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNo.Location = new Point(278, 6);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
@@ -423,6 +424,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSupplierNo
             // 
+            txtSupplierNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSupplierNo.Location = new Point(82, 42);
             txtSupplierNo.Name = "txtSupplierNo";
             txtSupplierNo.ReadOnly = true;
@@ -440,6 +442,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSupplierName
             // 
+            txtSupplierName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSupplierName.Location = new Point(286, 42);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
@@ -825,6 +828,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumOrigUntaxed
             // 
+            txtSumOrigUntaxed.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumOrigUntaxed.Location = new Point(300, 4);
             txtSumOrigUntaxed.Name = "txtSumOrigUntaxed";
             txtSumOrigUntaxed.ReadOnly = true;
@@ -833,6 +837,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumTwdUntaxed
             // 
+            txtSumTwdUntaxed.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumTwdUntaxed.Location = new Point(404, 4);
             txtSumTwdUntaxed.Name = "txtSumTwdUntaxed";
             txtSumTwdUntaxed.ReadOnly = true;
@@ -841,6 +846,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumTax
             // 
+            txtSumTax.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumTax.Location = new Point(508, 4);
             txtSumTax.Name = "txtSumTax";
             txtSumTax.ReadOnly = true;
@@ -849,6 +855,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumAmount
             // 
+            txtSumAmount.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumAmount.Location = new Point(592, 4);
             txtSumAmount.Name = "txtSumAmount";
             txtSumAmount.ReadOnly = true;
@@ -857,6 +864,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumOrigOffsetAmt
             // 
+            txtSumOrigOffsetAmt.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumOrigOffsetAmt.Location = new Point(696, 4);
             txtSumOrigOffsetAmt.Name = "txtSumOrigOffsetAmt";
             txtSumOrigOffsetAmt.ReadOnly = true;
@@ -865,6 +873,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumTwdOffsetAmt
             // 
+            txtSumTwdOffsetAmt.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumTwdOffsetAmt.Location = new Point(800, 4);
             txtSumTwdOffsetAmt.Name = "txtSumTwdOffsetAmt";
             txtSumTwdOffsetAmt.ReadOnly = true;
@@ -873,6 +882,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumAllowance
             // 
+            txtSumAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumAllowance.Location = new Point(904, 4);
             txtSumAllowance.Name = "txtSumAllowance";
             txtSumAllowance.ReadOnly = true;
@@ -881,6 +891,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSumExDiff
             // 
+            txtSumExDiff.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSumExDiff.Location = new Point(1008, 4);
             txtSumExDiff.Name = "txtSumExDiff";
             txtSumExDiff.ReadOnly = true;
@@ -919,6 +930,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtReviewer
             // 
+            txtReviewer.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReviewer.Location = new Point(92, 14);
             txtReviewer.Name = "txtReviewer";
             txtReviewer.ReadOnly = true;
@@ -936,6 +948,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtReviewDate
             // 
+            txtReviewDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReviewDate.Location = new Point(288, 14);
             txtReviewDate.Name = "txtReviewDate";
             txtReviewDate.ReadOnly = true;
@@ -953,6 +966,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtModifier
             // 
+            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifier.Location = new Point(512, 14);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
@@ -970,6 +984,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtModifyDate
             // 
+            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifyDate.Location = new Point(708, 14);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
@@ -987,6 +1002,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCreator
             // 
+            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreator.Location = new Point(932, 14);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
@@ -1004,6 +1020,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCreateDate
             // 
+            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreateDate.Location = new Point(1128, 14);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;

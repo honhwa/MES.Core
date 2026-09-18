@@ -380,6 +380,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtNo
             // 
+            txtNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtNo.Location = new Point(268, 6);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
@@ -449,6 +450,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSupplierNo
             // 
+            txtSupplierNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSupplierNo.Location = new Point(82, 42);
             txtSupplierNo.Name = "txtSupplierNo";
             txtSupplierNo.ReadOnly = true;
@@ -477,6 +479,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSupplierName
             // 
+            txtSupplierName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtSupplierName.Location = new Point(314, 42);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
@@ -510,6 +513,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtVoucher
             // 
+            txtVoucher.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtVoucher.Location = new Point(82, 78);
             txtVoucher.Name = "txtVoucher";
             txtVoucher.ReadOnly = true;
@@ -786,6 +790,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtReviewer
             // 
+            txtReviewer.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReviewer.Location = new Point(92, 14);
             txtReviewer.Name = "txtReviewer";
             txtReviewer.ReadOnly = true;
@@ -803,6 +808,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtReviewDate
             // 
+            txtReviewDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtReviewDate.Location = new Point(288, 14);
             txtReviewDate.Name = "txtReviewDate";
             txtReviewDate.ReadOnly = true;
@@ -820,6 +826,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtModifier
             // 
+            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifier.Location = new Point(512, 14);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
@@ -837,6 +844,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtModifyDate
             // 
+            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifyDate.Location = new Point(708, 14);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
@@ -854,6 +862,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCreator
             // 
+            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreator.Location = new Point(932, 14);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
@@ -871,6 +880,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCreateDate
             // 
+            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreateDate.Location = new Point(1128, 14);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;

@@ -368,6 +368,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtVoucher
             //
+            txtVoucher.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtVoucher.Font = new Font("微軟正黑體", 9F);
             txtVoucher.ForeColor = Color.Blue;
             txtVoucher.Location = new Point(596, 12);
@@ -389,6 +390,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtCreator
             //
+            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreator.Font = new Font("微軟正黑體", 9F);
             txtCreator.Location = new Point(76, 52);
             txtCreator.Name = "txtCreator";
@@ -408,6 +410,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtCreateDate
             //
+            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCreateDate.Font = new Font("微軟正黑體", 9F);
             txtCreateDate.Location = new Point(266, 52);
             txtCreateDate.Name = "txtCreateDate";
@@ -427,6 +430,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtModifier
             //
+            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifier.Font = new Font("微軟正黑體", 9F);
             txtModifier.Location = new Point(466, 52);
             txtModifier.Name = "txtModifier";
@@ -446,6 +450,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtModifyDate
             //
+            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtModifyDate.Font = new Font("微軟正黑體", 9F);
             txtModifyDate.Location = new Point(646, 52);
             txtModifyDate.Name = "txtModifyDate";
@@ -465,6 +470,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtApprover
             //
+            txtApprover.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtApprover.Font = new Font("微軟正黑體", 9F);
             txtApprover.Location = new Point(846, 52);
             txtApprover.Name = "txtApprover";
@@ -484,6 +490,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             //
             // txtApproveDate
             //
+            txtApproveDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtApproveDate.Font = new Font("微軟正黑體", 9F);
             txtApproveDate.Location = new Point(1026, 52);
             txtApproveDate.Name = "txtApproveDate";

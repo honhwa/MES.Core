@@ -53,9 +53,9 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             lblMachineNo = new Label();
             txtMachineNo = new TextBox();
             lbl貿易條件 = new Label();
-            priceCondControl1 = new Common.PriceCondControl();
+            priceCondControl1 = new DigiERP.UserControl.Common.PriceCondControl();
             lbl付款方式 = new Label();
-            payMethod = new Common.PriceCondControl();
+            payMethod = new DigiERP.UserControl.Common.PriceCondControl();
             lbl備註 = new Label();
             txtRemark = new TextBox();
             panel2 = new Panel();
@@ -97,11 +97,11 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             panel1.Controls.Add(btnBack);
             panel1.Controls.Add(btnSubmit);
-            panel1.Controls.Add(btnDelete);
-            panel1.Controls.Add(btnApprove);
-            panel1.Controls.Add(btnCancelApprove);
-            panel1.Controls.Add(btnModify);
             panel1.Controls.Add(lblMode);
+            panel1.Controls.Add(btnModify);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnCancelApprove);
+            panel1.Controls.Add(btnApprove);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -112,7 +112,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             btnBack.BackColor = Color.DarkGray;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(12, 8);
+            btnBack.Location = new Point(66, 10);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(100, 44);
             btnBack.TabIndex = 0;
@@ -124,7 +124,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             btnSubmit.BackColor = Color.SteelBlue;
             btnSubmit.ForeColor = Color.White;
-            btnSubmit.Location = new Point(120, 8);
+            btnSubmit.Location = new Point(174, 10);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(100, 44);
             btnSubmit.TabIndex = 1;
@@ -136,7 +136,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             btnDelete.BackColor = Color.IndianRed;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(228, 8);
+            btnDelete.Location = new Point(282, 10);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(100, 44);
             btnDelete.TabIndex = 2;
@@ -148,7 +148,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             btnApprove.BackColor = Color.SeaGreen;
             btnApprove.ForeColor = Color.White;
-            btnApprove.Location = new Point(336, 8);
+            btnApprove.Location = new Point(390, 10);
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new Size(100, 44);
             btnApprove.TabIndex = 3;
@@ -160,29 +160,29 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             btnCancelApprove.BackColor = Color.Orange;
             btnCancelApprove.ForeColor = Color.White;
-            btnCancelApprove.Location = new Point(444, 8);
+            btnCancelApprove.Location = new Point(498, 10);
             btnCancelApprove.Name = "btnCancelApprove";
             btnCancelApprove.Size = new Size(120, 44);
             btnCancelApprove.TabIndex = 4;
             btnCancelApprove.Text = "取消核准";
             btnCancelApprove.UseVisualStyleBackColor = false;
             btnCancelApprove.Click += btnCancelApprove_Click;
-            //
+            // 
             // btnModify
-            //
+            // 
             btnModify.BackColor = Color.Gainsboro;
-            btnModify.Location = new Point(576, 8);
+            btnModify.Location = new Point(630, 10);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(100, 44);
             btnModify.TabIndex = 5;
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
-            //
+            // 
             // lblMode
-            //
+            // 
             lblMode.AutoSize = true;
-            lblMode.Location = new Point(700, 20);
+            lblMode.Location = new Point(12, 20);
             lblMode.Name = "lblMode";
             lblMode.Size = new Size(48, 24);
             lblMode.TabIndex = 6;

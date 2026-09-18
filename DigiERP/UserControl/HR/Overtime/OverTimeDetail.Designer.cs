@@ -205,6 +205,7 @@ namespace DigiERP.UserControl.HR.Overtime
             // 
             // txtEmpNo
             // 
+            txtEmpNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtEmpNo.Font = new Font("微軟正黑體", 9F);
             txtEmpNo.Location = new Point(76, 12);
             txtEmpNo.Name = "txtEmpNo";
@@ -224,6 +225,7 @@ namespace DigiERP.UserControl.HR.Overtime
             // 
             // txtName
             // 
+            txtName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtName.Font = new Font("微軟正黑體", 9F);
             txtName.Location = new Point(266, 12);
             txtName.Name = "txtName";
@@ -243,6 +245,7 @@ namespace DigiERP.UserControl.HR.Overtime
             // 
             // txtTitleJob
             // 
+            txtTitleJob.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtTitleJob.Font = new Font("微軟正黑體", 9F);
             txtTitleJob.Location = new Point(446, 12);
             txtTitleJob.Name = "txtTitleJob";
@@ -262,6 +265,7 @@ namespace DigiERP.UserControl.HR.Overtime
             // 
             // txtDept
             // 
+            txtDept.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtDept.Font = new Font("微軟正黑體", 9F);
             txtDept.Location = new Point(636, 12);
             txtDept.Name = "txtDept";
@@ -281,6 +285,7 @@ namespace DigiERP.UserControl.HR.Overtime
             // 
             // txtHrNo
             // 
+            txtHrNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtHrNo.Font = new Font("微軟正黑體", 9F);
             txtHrNo.Location = new Point(96, 52);
             txtHrNo.Name = "txtHrNo";
@@ -300,6 +305,7 @@ namespace DigiERP.UserControl.HR.Overtime
             // 
             // txtCardNo
             // 
+            txtCardNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
             txtCardNo.Font = new Font("微軟正黑體", 9F);
             txtCardNo.Location = new Point(266, 52);
             txtCardNo.Name = "txtCardNo";
