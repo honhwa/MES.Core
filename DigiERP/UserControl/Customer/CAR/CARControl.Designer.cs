@@ -102,6 +102,7 @@
             btn回覆記錄登載.TabIndex = 4;
             btn回覆記錄登載.Text = "回覆記錄登載";
             btn回覆記錄登載.UseVisualStyleBackColor = false;
+            btn回覆記錄登載.Click += btn回覆記錄登載_Click;
             // 
             // cboCustId
             // 

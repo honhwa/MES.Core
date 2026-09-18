@@ -185,7 +185,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1654, 60);
+            panel1.Size = new Size(1531, 60);
             panel1.TabIndex = 0;
             // 
             // btnBack
@@ -202,7 +202,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // btnCancelApprove
             // 
-            btnCancelApprove.BackColor = Color.CornflowerBlue;
+            btnCancelApprove.BackColor = Color.DimGray;
             btnCancelApprove.ForeColor = Color.White;
             btnCancelApprove.Location = new Point(540, 8);
             btnCancelApprove.Name = "btnCancelApprove";
@@ -214,7 +214,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // btnApprove
             // 
-            btnApprove.BackColor = Color.CornflowerBlue;
+            btnApprove.BackColor = Color.DimGray;
             btnApprove.ForeColor = Color.White;
             btnApprove.Location = new Point(430, 8);
             btnApprove.Name = "btnApprove";
@@ -260,9 +260,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             btnUpdateBox.UseVisualStyleBackColor = false;
             btnUpdateBox.Visible = false;
             btnUpdateBox.Click += btnUpdateBox_Click;
-            //
+            // 
             // btnPrint
-            //
+            // 
             btnPrint.BackColor = Color.DarkOrange;
             btnPrint.ForeColor = Color.White;
             btnPrint.Location = new Point(760, 8);
@@ -272,9 +272,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
-            //
+            // 
             // btnModify
-            //
+            // 
             btnModify.BackColor = Color.Gainsboro;
             btnModify.Location = new Point(890, 8);
             btnModify.Name = "btnModify";
@@ -283,7 +283,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
-            //
+            // 
             // lblMode
             // 
             lblMode.AutoSize = true;
@@ -379,7 +379,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panelForm.Dock = DockStyle.Top;
             panelForm.Location = new Point(0, 60);
             panelForm.Name = "panelForm";
-            panelForm.Size = new Size(1654, 432);
+            panelForm.Size = new Size(1531, 432);
             panelForm.TabIndex = 1;
             // 
             // txtPaymentTerm
@@ -388,7 +388,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             txtPaymentTerm.Location = new Point(680, 360);
             txtPaymentTerm.Name = "txtPaymentTerm";
             txtPaymentTerm.ReadOnly = true;
-            txtPaymentTerm.Size = new Size(962, 25);
+            txtPaymentTerm.Size = new Size(837, 25);
             txtPaymentTerm.TabIndex = 0;
             // 
             // txtPaymentCode
@@ -465,14 +465,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtTotal
             // 
             txtTotal.BackColor = Color.LemonChiffon;
-            txtTotal.Location = new Point(804, 309);
+            txtTotal.Location = new Point(920, 313);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(200, 25);
+            txtTotal.Size = new Size(164, 25);
             txtTotal.TabIndex = 9;
             // 
             // lblTotal
             // 
-            lblTotal.Location = new Point(760, 301);
+            lblTotal.Location = new Point(812, 311);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(44, 22);
             lblTotal.TabIndex = 10;
@@ -482,9 +482,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtCaseNo
             // 
             txtCaseNo.BackColor = Color.LemonChiffon;
-            txtCaseNo.Location = new Point(628, 312);
+            txtCaseNo.Location = new Point(640, 312);
             txtCaseNo.Name = "txtCaseNo";
-            txtCaseNo.Size = new Size(120, 25);
+            txtCaseNo.Size = new Size(160, 25);
             txtCaseNo.TabIndex = 11;
             // 
             // lblCaseNo
@@ -528,7 +528,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             txtMark2.Location = new Point(336, 264);
             txtMark2.Name = "txtMark2";
-            txtMark2.Size = new Size(768, 25);
+            txtMark2.Size = new Size(464, 25);
             txtMark2.TabIndex = 16;
             // 
             // cboMark
@@ -551,25 +551,25 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // cboDoc
             // 
             cboDoc.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboDoc.Location = new Point(1248, 228);
+            cboDoc.Location = new Point(1244, 231);
             cboDoc.Name = "cboDoc";
-            cboDoc.Size = new Size(100, 26);
+            cboDoc.Size = new Size(273, 26);
             cboDoc.TabIndex = 19;
             // 
             // lblDoc
             // 
-            lblDoc.Location = new Point(1084, 232);
+            lblDoc.Location = new Point(1096, 235);
             lblDoc.Name = "lblDoc";
-            lblDoc.Size = new Size(160, 22);
+            lblDoc.Size = new Size(146, 22);
             lblDoc.TabIndex = 20;
             lblDoc.Text = "Doc with Consignee:";
             lblDoc.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtVoyage
             // 
-            txtVoyage.Location = new Point(924, 232);
+            txtVoyage.Location = new Point(920, 232);
             txtVoyage.Name = "txtVoyage";
-            txtVoyage.Size = new Size(150, 25);
+            txtVoyage.Size = new Size(164, 25);
             txtVoyage.TabIndex = 21;
             // 
             // lblVoyage
@@ -586,7 +586,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             cboSurrenderBL.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSurrenderBL.Location = new Point(640, 232);
             cboSurrenderBL.Name = "cboSurrenderBL";
-            cboSurrenderBL.Size = new Size(112, 26);
+            cboSurrenderBL.Size = new Size(160, 26);
             cboSurrenderBL.TabIndex = 23;
             // 
             // lblSurrenderBL
@@ -601,14 +601,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // cboCertOfOrigin
             // 
             cboCertOfOrigin.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboCertOfOrigin.Location = new Point(1246, 200);
+            cboCertOfOrigin.Location = new Point(1244, 200);
             cboCertOfOrigin.Name = "cboCertOfOrigin";
-            cboCertOfOrigin.Size = new Size(90, 26);
+            cboCertOfOrigin.Size = new Size(273, 26);
             cboCertOfOrigin.TabIndex = 25;
             // 
             // lblCertOfOrigin
             // 
-            lblCertOfOrigin.Location = new Point(1136, 204);
+            lblCertOfOrigin.Location = new Point(1136, 201);
             lblCertOfOrigin.Name = "lblCertOfOrigin";
             lblCertOfOrigin.Size = new Size(106, 22);
             lblCertOfOrigin.TabIndex = 26;
@@ -619,7 +619,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             txtForwarder.Location = new Point(100, 232);
             txtForwarder.Name = "txtForwarder";
-            txtForwarder.Size = new Size(364, 25);
+            txtForwarder.Size = new Size(412, 25);
             txtForwarder.TabIndex = 27;
             // 
             // lblForwarder
@@ -633,14 +633,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtShipName
             // 
-            txtShipName.Location = new Point(916, 200);
+            txtShipName.Location = new Point(920, 200);
             txtShipName.Name = "txtShipName";
-            txtShipName.Size = new Size(172, 25);
+            txtShipName.Size = new Size(164, 25);
             txtShipName.TabIndex = 29;
             // 
             // lblShipName
             // 
-            lblShipName.Location = new Point(812, 204);
+            lblShipName.Location = new Point(810, 204);
             lblShipName.Name = "lblShipName";
             lblShipName.Size = new Size(100, 22);
             lblShipName.TabIndex = 30;
@@ -650,7 +650,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // cboTypesOfBL
             // 
             cboTypesOfBL.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboTypesOfBL.Location = new Point(636, 200);
+            cboTypesOfBL.Location = new Point(640, 200);
             cboTypesOfBL.Name = "cboTypesOfBL";
             cboTypesOfBL.Size = new Size(160, 26);
             cboTypesOfBL.TabIndex = 31;
@@ -666,14 +666,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtETA
             // 
-            txtETA.Location = new Point(404, 200);
+            txtETA.Location = new Point(360, 200);
             txtETA.Name = "txtETA";
-            txtETA.Size = new Size(120, 25);
+            txtETA.Size = new Size(152, 25);
             txtETA.TabIndex = 33;
             // 
             // lblETA
             // 
-            lblETA.Location = new Point(364, 204);
+            lblETA.Location = new Point(320, 204);
             lblETA.Name = "lblETA";
             lblETA.Size = new Size(36, 22);
             lblETA.TabIndex = 34;
@@ -682,14 +682,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtETD
             // 
-            txtETD.Location = new Point(236, 200);
+            txtETD.Location = new Point(136, 200);
             txtETD.Name = "txtETD";
-            txtETD.Size = new Size(120, 25);
+            txtETD.Size = new Size(104, 25);
             txtETD.TabIndex = 35;
             // 
             // lblETD
             // 
-            lblETD.Location = new Point(196, 204);
+            lblETD.Location = new Point(8, 203);
             lblETD.Name = "lblETD";
             lblETD.Size = new Size(36, 22);
             lblETD.TabIndex = 36;
@@ -698,14 +698,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtCutOff
             // 
-            txtCutOff.Location = new Point(68, 200);
+            txtCutOff.Location = new Point(360, 168);
             txtCutOff.Name = "txtCutOff";
-            txtCutOff.Size = new Size(120, 25);
+            txtCutOff.Size = new Size(152, 25);
             txtCutOff.TabIndex = 37;
             // 
             // lblCutOff
             // 
-            lblCutOff.Location = new Point(8, 204);
+            lblCutOff.Location = new Point(298, 168);
             lblCutOff.Name = "lblCutOff";
             lblCutOff.Size = new Size(56, 22);
             lblCutOff.TabIndex = 38;
@@ -717,30 +717,31 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             cboInsurance.DropDownStyle = ComboBoxStyle.DropDownList;
             cboInsurance.Location = new Point(1244, 168);
             cboInsurance.Name = "cboInsurance";
-            cboInsurance.Size = new Size(398, 26);
+            cboInsurance.Size = new Size(273, 26);
             cboInsurance.TabIndex = 39;
             // 
             // lblInsurance
             // 
-            lblInsurance.Location = new Point(1136, 172);
+            lblInsurance.Location = new Point(1162, 169);
             lblInsurance.Name = "lblInsurance";
-            lblInsurance.Size = new Size(100, 22);
+            lblInsurance.Size = new Size(80, 22);
             lblInsurance.TabIndex = 40;
             lblInsurance.Text = "Insurance";
             lblInsurance.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtContainerPort
             // 
-            txtContainerPort.Location = new Point(360, 168);
+            txtContainerPort.Location = new Point(136, 168);
             txtContainerPort.Name = "txtContainerPort";
-            txtContainerPort.Size = new Size(152, 25);
+            txtContainerPort.Size = new Size(104, 25);
             txtContainerPort.TabIndex = 41;
+            txtContainerPort.TextChanged += txtContainerPort_TextChanged;
             // 
             // lblContainerPort
             // 
-            lblContainerPort.Location = new Point(240, 172);
+            lblContainerPort.Location = new Point(8, 169);
             lblContainerPort.Name = "lblContainerPort";
-            lblContainerPort.Size = new Size(116, 22);
+            lblContainerPort.Size = new Size(120, 22);
             lblContainerPort.TabIndex = 42;
             lblContainerPort.Text = "Container Port";
             lblContainerPort.TextAlign = ContentAlignment.MiddleLeft;
@@ -755,7 +756,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // lblPacking
             // 
-            lblPacking.Location = new Point(808, 172);
+            lblPacking.Location = new Point(812, 172);
             lblPacking.Name = "lblPacking";
             lblPacking.Size = new Size(76, 22);
             lblPacking.TabIndex = 42;
@@ -771,9 +772,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // lblDestPort
             // 
-            lblDestPort.Location = new Point(516, 172);
+            lblDestPort.Location = new Point(518, 169);
             lblDestPort.Name = "lblDestPort";
-            lblDestPort.Size = new Size(120, 22);
+            lblDestPort.Size = new Size(118, 22);
             lblDestPort.TabIndex = 44;
             lblDestPort.Text = "Destination Port";
             lblDestPort.TextAlign = ContentAlignment.MiddleLeft;
@@ -781,30 +782,30 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // cboDeliveryTerm
             // 
             cboDeliveryTerm.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboDeliveryTerm.Location = new Point(120, 168);
+            cboDeliveryTerm.Location = new Point(1244, 139);
             cboDeliveryTerm.Name = "cboDeliveryTerm";
-            cboDeliveryTerm.Size = new Size(108, 26);
+            cboDeliveryTerm.Size = new Size(273, 26);
             cboDeliveryTerm.TabIndex = 45;
             // 
             // lblDeliveryTerm
             // 
-            lblDeliveryTerm.Location = new Point(8, 172);
+            lblDeliveryTerm.Location = new Point(1136, 143);
             lblDeliveryTerm.Name = "lblDeliveryTerm";
-            lblDeliveryTerm.Size = new Size(116, 22);
+            lblDeliveryTerm.Size = new Size(106, 22);
             lblDeliveryTerm.TabIndex = 46;
             lblDeliveryTerm.Text = "Delivery Term";
             lblDeliveryTerm.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtContainerType
             // 
-            txtContainerType.Location = new Point(924, 136);
+            txtContainerType.Location = new Point(920, 136);
             txtContainerType.Name = "txtContainerType";
-            txtContainerType.Size = new Size(686, 25);
+            txtContainerType.Size = new Size(164, 25);
             txtContainerType.TabIndex = 47;
             // 
             // lblContainerType
             // 
-            lblContainerType.Location = new Point(808, 140);
+            lblContainerType.Location = new Point(806, 139);
             lblContainerType.Name = "lblContainerType";
             lblContainerType.Size = new Size(112, 22);
             lblContainerType.TabIndex = 48;
@@ -814,16 +815,16 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // cboContainer
             // 
             cboContainer.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboContainer.Location = new Point(640, 136);
+            cboContainer.Location = new Point(640, 137);
             cboContainer.Name = "cboContainer";
             cboContainer.Size = new Size(160, 26);
             cboContainer.TabIndex = 49;
             // 
             // lblContainer
             // 
-            lblContainer.Location = new Point(520, 140);
+            lblContainer.Location = new Point(560, 138);
             lblContainer.Name = "lblContainer";
-            lblContainer.Size = new Size(124, 22);
+            lblContainer.Size = new Size(74, 22);
             lblContainer.TabIndex = 50;
             lblContainer.Text = "Container";
             lblContainer.TextAlign = ContentAlignment.MiddleLeft;
@@ -837,16 +838,16 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // lblPI
             // 
-            lblPI.Location = new Point(240, 136);
+            lblPI.Location = new Point(268, 137);
             lblPI.Name = "lblPI";
-            lblPI.Size = new Size(96, 22);
+            lblPI.Size = new Size(86, 22);
             lblPI.TabIndex = 52;
             lblPI.Text = "P/I Number";
             lblPI.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtPONumber
             // 
-            txtPONumber.Location = new Point(124, 136);
+            txtPONumber.Location = new Point(136, 136);
             txtPONumber.Name = "txtPONumber";
             txtPONumber.Size = new Size(104, 25);
             txtPONumber.TabIndex = 53;
@@ -862,14 +863,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // cboTel
             // 
-            cboTel.Location = new Point(1016, 104);
+            cboTel.Location = new Point(1244, 104);
             cboTel.Name = "cboTel";
-            cboTel.Size = new Size(626, 26);
+            cboTel.Size = new Size(273, 26);
             cboTel.TabIndex = 55;
             // 
             // lblTel
             // 
-            lblTel.Location = new Point(980, 108);
+            lblTel.Location = new Point(1206, 105);
             lblTel.Name = "lblTel";
             lblTel.Size = new Size(32, 22);
             lblTel.TabIndex = 56;
@@ -878,9 +879,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtDeliveryAdd
             // 
-            txtDeliveryAdd.Location = new Point(98, 104);
+            txtDeliveryAdd.Location = new Point(96, 104);
             txtDeliveryAdd.Name = "txtDeliveryAdd";
-            txtDeliveryAdd.Size = new Size(870, 25);
+            txtDeliveryAdd.Size = new Size(988, 25);
             txtDeliveryAdd.TabIndex = 57;
             // 
             // lblDeliveryAdd
@@ -894,14 +895,14 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // cboAttn
             // 
-            cboAttn.Location = new Point(1024, 72);
+            cboAttn.Location = new Point(1244, 72);
             cboAttn.Name = "cboAttn";
-            cboAttn.Size = new Size(618, 26);
+            cboAttn.Size = new Size(273, 26);
             cboAttn.TabIndex = 59;
             // 
             // lblAttn
             // 
-            lblAttn.Location = new Point(980, 76);
+            lblAttn.Location = new Point(1202, 73);
             lblAttn.Name = "lblAttn";
             lblAttn.Size = new Size(40, 22);
             lblAttn.TabIndex = 60;
@@ -912,7 +913,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             txtPostalAdd.Location = new Point(96, 72);
             txtPostalAdd.Name = "txtPostalAdd";
-            txtPostalAdd.Size = new Size(872, 25);
+            txtPostalAdd.Size = new Size(988, 25);
             txtPostalAdd.TabIndex = 61;
             // 
             // lblPostalAdd
@@ -927,10 +928,10 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtMachine
             // 
             txtMachine.BackColor = Color.WhiteSmoke;
-            txtMachine.Location = new Point(404, 40);
+            txtMachine.Location = new Point(360, 40);
             txtMachine.Name = "txtMachine";
             txtMachine.ReadOnly = true;
-            txtMachine.Size = new Size(1238, 25);
+            txtMachine.Size = new Size(1157, 25);
             txtMachine.TabIndex = 63;
             // 
             // lblMachine
@@ -948,7 +949,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             txtModel.Location = new Point(96, 40);
             txtModel.Name = "txtModel";
             txtModel.ReadOnly = true;
-            txtModel.Size = new Size(174, 25);
+            txtModel.Size = new Size(144, 25);
             txtModel.TabIndex = 65;
             // 
             // lblModel
@@ -962,16 +963,16 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtConsignee
             // 
-            txtConsignee.Location = new Point(928, 8);
+            txtConsignee.Location = new Point(1244, 8);
             txtConsignee.Name = "txtConsignee";
-            txtConsignee.Size = new Size(714, 25);
+            txtConsignee.Size = new Size(273, 25);
             txtConsignee.TabIndex = 67;
             // 
             // lblConsignee
             // 
-            lblConsignee.Location = new Point(828, 8);
+            lblConsignee.Location = new Point(1156, 11);
             lblConsignee.Name = "lblConsignee";
-            lblConsignee.Size = new Size(90, 22);
+            lblConsignee.Size = new Size(82, 22);
             lblConsignee.TabIndex = 68;
             lblConsignee.Text = "Consignee";
             lblConsignee.TextAlign = ContentAlignment.MiddleLeft;
@@ -979,15 +980,15 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtClient
             // 
             txtClient.BackColor = Color.WhiteSmoke;
-            txtClient.Location = new Point(700, 8);
+            txtClient.Location = new Point(920, 9);
             txtClient.Name = "txtClient";
             txtClient.ReadOnly = true;
-            txtClient.Size = new Size(120, 25);
+            txtClient.Size = new Size(164, 25);
             txtClient.TabIndex = 69;
             // 
             // lblClient
             // 
-            lblClient.Location = new Point(632, 12);
+            lblClient.Location = new Point(854, 15);
             lblClient.Name = "lblClient";
             lblClient.Size = new Size(56, 22);
             lblClient.TabIndex = 70;
@@ -996,17 +997,17 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // cboSerialNo
             // 
-            cboSerialNo.Location = new Point(480, 8);
+            cboSerialNo.Location = new Point(642, 8);
             cboSerialNo.Name = "cboSerialNo";
-            cboSerialNo.Size = new Size(142, 26);
+            cboSerialNo.Size = new Size(154, 26);
             cboSerialNo.TabIndex = 71;
             cboSerialNo.SelectedIndexChanged += cboSerialNo_SelectedIndexChanged;
             // 
             // lbl序號
             // 
-            lbl序號.Location = new Point(390, 12);
+            lbl序號.Location = new Point(552, 9);
             lbl序號.Name = "lbl序號";
-            lbl序號.Size = new Size(98, 22);
+            lbl序號.Size = new Size(84, 22);
             lbl序號.TabIndex = 72;
             lbl序號.Text = "Serial No.";
             lbl序號.TextAlign = ContentAlignment.MiddleLeft;
@@ -1014,15 +1015,15 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtFormNo
             // 
             txtFormNo.BackColor = Color.WhiteSmoke;
-            txtFormNo.Location = new Point(250, 8);
+            txtFormNo.Location = new Point(360, 8);
             txtFormNo.Name = "txtFormNo";
             txtFormNo.ReadOnly = true;
-            txtFormNo.Size = new Size(130, 25);
+            txtFormNo.Size = new Size(152, 25);
             txtFormNo.TabIndex = 73;
             // 
             // lbl單號
             // 
-            lbl單號.Location = new Point(190, 12);
+            lbl單號.Location = new Point(300, 10);
             lbl單號.Name = "lbl單號";
             lbl單號.Size = new Size(56, 22);
             lbl單號.TabIndex = 74;
@@ -1032,9 +1033,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // dtDate
             // 
             dtDate.Format = DateTimePickerFormat.Short;
-            dtDate.Location = new Point(62, 8);
+            dtDate.Location = new Point(100, 8);
             dtDate.Name = "dtDate";
-            dtDate.Size = new Size(120, 25);
+            dtDate.Size = new Size(140, 25);
             dtDate.TabIndex = 75;
             // 
             // lbl日期
@@ -1061,13 +1062,13 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panelFooter.Dock = DockStyle.Bottom;
             panelFooter.Location = new Point(0, 900);
             panelFooter.Name = "panelFooter";
-            panelFooter.Size = new Size(1654, 32);
+            panelFooter.Size = new Size(1531, 32);
             panelFooter.TabIndex = 3;
             // 
             // txtCreateDate
             // 
             txtCreateDate.BackColor = Color.WhiteSmoke;
-            txtCreateDate.Location = new Point(716, 4);
+            txtCreateDate.Location = new Point(1379, 5);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;
             txtCreateDate.Size = new Size(100, 25);
@@ -1076,7 +1077,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtCreator
             // 
             txtCreator.BackColor = Color.WhiteSmoke;
-            txtCreator.Location = new Point(592, 4);
+            txtCreator.Location = new Point(1255, 5);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
             txtCreator.Size = new Size(120, 25);
@@ -1084,7 +1085,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // lblCreatorLbl
             // 
-            lblCreatorLbl.Location = new Point(552, 6);
+            lblCreatorLbl.Location = new Point(1215, 7);
             lblCreatorLbl.Name = "lblCreatorLbl";
             lblCreatorLbl.Size = new Size(36, 22);
             lblCreatorLbl.TabIndex = 2;
@@ -1094,7 +1095,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtModifyDate
             // 
             txtModifyDate.BackColor = Color.WhiteSmoke;
-            txtModifyDate.Location = new Point(444, 4);
+            txtModifyDate.Location = new Point(696, 3);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
             txtModifyDate.Size = new Size(100, 25);
@@ -1103,7 +1104,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // txtModifier
             // 
             txtModifier.BackColor = Color.WhiteSmoke;
-            txtModifier.Location = new Point(320, 4);
+            txtModifier.Location = new Point(572, 3);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
             txtModifier.Size = new Size(120, 25);
@@ -1111,7 +1112,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // lblModifierLbl
             // 
-            lblModifierLbl.Location = new Point(280, 6);
+            lblModifierLbl.Location = new Point(532, 5);
             lblModifierLbl.Name = "lblModifierLbl";
             lblModifierLbl.Size = new Size(36, 22);
             lblModifierLbl.TabIndex = 5;
@@ -1151,7 +1152,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panelDetail.Dock = DockStyle.Fill;
             panelDetail.Location = new Point(0, 492);
             panelDetail.Name = "panelDetail";
-            panelDetail.Size = new Size(1654, 408);
+            panelDetail.Size = new Size(1531, 408);
             panelDetail.TabIndex = 2;
             // 
             // splitContainer1
@@ -1172,7 +1173,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             splitContainer1.Panel2.Controls.Add(dgvPayment);
             splitContainer1.Panel2.Controls.Add(panelPaymentTotal);
             splitContainer1.Panel2.Controls.Add(lblPaymentTitle);
-            splitContainer1.Size = new Size(1654, 408);
+            splitContainer1.Size = new Size(1531, 408);
             splitContainer1.SplitterDistance = 240;
             splitContainer1.TabIndex = 0;
             // 
@@ -1186,7 +1187,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             dgvBox.Location = new Point(0, 22);
             dgvBox.Name = "dgvBox";
             dgvBox.RowHeadersVisible = false;
-            dgvBox.Size = new Size(1654, 190);
+            dgvBox.Size = new Size(1531, 190);
             dgvBox.TabIndex = 1;
             dgvBox.CellValueChanged += dgvBox_CellValueChanged;
             dgvBox.DataError += dgvBox_DataError;
@@ -1268,7 +1269,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panelBoxTotal.Dock = DockStyle.Bottom;
             panelBoxTotal.Location = new Point(0, 212);
             panelBoxTotal.Name = "panelBoxTotal";
-            panelBoxTotal.Size = new Size(1654, 28);
+            panelBoxTotal.Size = new Size(1531, 28);
             panelBoxTotal.TabIndex = 3;
             // 
             // txtBoxTotalGW
@@ -1345,7 +1346,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             lblBoxTitle.Font = new Font("Microsoft JhengHei UI", 10F, FontStyle.Bold);
             lblBoxTitle.Location = new Point(0, 0);
             lblBoxTitle.Name = "lblBoxTitle";
-            lblBoxTitle.Size = new Size(1654, 22);
+            lblBoxTitle.Size = new Size(1531, 22);
             lblBoxTitle.TabIndex = 2;
             lblBoxTitle.Text = "專案機台裝箱明細";
             lblBoxTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -1362,7 +1363,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             dgvPayment.Name = "dgvPayment";
             dgvPayment.ReadOnly = true;
             dgvPayment.RowHeadersVisible = false;
-            dgvPayment.Size = new Size(1654, 114);
+            dgvPayment.Size = new Size(1531, 114);
             dgvPayment.TabIndex = 1;
             // 
             // colPayDate
@@ -1438,7 +1439,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panelPaymentTotal.Dock = DockStyle.Bottom;
             panelPaymentTotal.Location = new Point(0, 136);
             panelPaymentTotal.Name = "panelPaymentTotal";
-            panelPaymentTotal.Size = new Size(1654, 28);
+            panelPaymentTotal.Size = new Size(1531, 28);
             panelPaymentTotal.TabIndex = 3;
             // 
             // txtPayTotalReceived
@@ -1496,7 +1497,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             lblPaymentTitle.Font = new Font("Microsoft JhengHei UI", 10F, FontStyle.Bold);
             lblPaymentTitle.Location = new Point(0, 0);
             lblPaymentTitle.Name = "lblPaymentTitle";
-            lblPaymentTitle.Size = new Size(1654, 22);
+            lblPaymentTitle.Size = new Size(1531, 22);
             lblPaymentTitle.TabIndex = 2;
             lblPaymentTitle.Text = "專案應收沖款明細";
             lblPaymentTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -1511,7 +1512,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             Controls.Add(panel1);
             Font = new Font("Microsoft JhengHei UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 136);
             Name = "EQPShippingMaintainControl";
-            Size = new Size(1654, 932);
+            Size = new Size(1531, 932);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelForm.ResumeLayout(false);

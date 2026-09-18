@@ -605,5 +605,10 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             };
             frm.Show();
         }
+
+        private void txtContainerPort_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

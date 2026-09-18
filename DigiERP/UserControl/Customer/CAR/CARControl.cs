@@ -31,7 +31,7 @@ namespace DigiERP.UserControl.Customer.CAR
             int index = 0;
             dataGridView1.Rows.Clear();
             carList = getCARList();
-            foreach(var item in carList)
+            foreach (var item in carList)
             {
                 index = 0;
                 DataGridViewRow row = new DataGridViewRow();
@@ -94,6 +94,11 @@ namespace DigiERP.UserControl.Customer.CAR
                 cboCustId.Text = popup.CustId;
                 //txtCompany.Text = popup.CustName;
             }
+        }
+
+        private void btn回覆記錄登載_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
