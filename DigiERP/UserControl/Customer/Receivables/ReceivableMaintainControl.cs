@@ -667,5 +667,10 @@ namespace DigiERP.UserControl.Customer.Receivables
             btnPrint.Visible = false;
             btn單筆收款.Visible = false;
         }
+
+        private void txt客戶編號_Click(object sender, EventArgs e)
+        {
+            btnCustSearch_Click(sender, e);
+        }
     }
 }

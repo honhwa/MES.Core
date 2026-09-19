@@ -108,6 +108,7 @@ namespace DigiERP.UserControl.Customer.Repair
             lblTitle.Size = new Size(133, 30);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "維修服務單";
+            lblTitle.Visible = false;
             // 
             // lblMode
             // 
@@ -119,15 +120,17 @@ namespace DigiERP.UserControl.Customer.Repair
             lblMode.Size = new Size(46, 23);
             lblMode.TabIndex = 1;
             lblMode.Text = "新增";
+            lblMode.Visible = false;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.CornflowerBlue;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(16, 62);
+            btnSave.Location = new Point(560, 62);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(110, 38);
             btnSave.TabIndex = 2;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSubmit_Click;
@@ -136,7 +139,7 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             btnDelete.BackColor = Color.IndianRed;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(138, 62);
+            btnDelete.Location = new Point(682, 62);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(110, 38);
             btnDelete.TabIndex = 3;
@@ -148,10 +151,11 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             btnTransferParts.BackColor = Color.DarkOrange;
             btnTransferParts.ForeColor = Color.White;
-            btnTransferParts.Location = new Point(260, 62);
+            btnTransferParts.Location = new Point(804, 62);
             btnTransferParts.Name = "btnTransferParts";
             btnTransferParts.Size = new Size(140, 38);
             btnTransferParts.TabIndex = 4;
+            btnTransferParts.Tag = "btn-modify";
             btnTransferParts.Text = "轉零件申請單";
             btnTransferParts.UseVisualStyleBackColor = false;
             btnTransferParts.Click += btnTransferParts_Click;
@@ -160,10 +164,11 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             btnApprove.BackColor = Color.SeaGreen;
             btnApprove.ForeColor = Color.White;
-            btnApprove.Location = new Point(412, 62);
+            btnApprove.Location = new Point(956, 62);
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new Size(110, 38);
             btnApprove.TabIndex = 5;
+            btnApprove.Tag = "btn-modify";
             btnApprove.Text = "生效";
             btnApprove.UseVisualStyleBackColor = false;
             btnApprove.Click += btnApprove_Click;
@@ -172,35 +177,37 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             btnCancelApprove.BackColor = Color.DarkGoldenrod;
             btnCancelApprove.ForeColor = Color.White;
-            btnCancelApprove.Location = new Point(534, 62);
+            btnCancelApprove.Location = new Point(1078, 62);
             btnCancelApprove.Name = "btnCancelApprove";
             btnCancelApprove.Size = new Size(110, 38);
             btnCancelApprove.TabIndex = 6;
+            btnCancelApprove.Tag = "btn-modify";
             btnCancelApprove.Text = "取消生效";
             btnCancelApprove.UseVisualStyleBackColor = false;
             btnCancelApprove.Visible = false;
             btnCancelApprove.Click += btnCancelApprove_Click;
-            //
+            // 
             // btnModify
-            //
+            // 
             btnModify.BackColor = Color.Gainsboro;
-            btnModify.Location = new Point(656, 62);
+            btnModify.Location = new Point(1200, 62);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(110, 38);
             btnModify.TabIndex = 7;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
-            //
+            // 
             // btnBack
             // 
-            btnBack.BackColor = Color.Gray;
+            btnBack.BackColor = Color.Red;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(778, 62);
+            btnBack.Location = new Point(1316, 62);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(110, 38);
+            btnBack.Size = new Size(91, 38);
             btnBack.TabIndex = 8;
-            btnBack.Text = "關閉";
+            btnBack.Text = "X";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
@@ -591,6 +598,7 @@ namespace DigiERP.UserControl.Customer.Repair
             btnOpenPartsOrder.Name = "btnOpenPartsOrder";
             btnOpenPartsOrder.Size = new Size(160, 34);
             btnOpenPartsOrder.TabIndex = 37;
+            btnOpenPartsOrder.Tag = "btn-modify";
             btnOpenPartsOrder.Text = "開立零件申請單";
             btnOpenPartsOrder.UseVisualStyleBackColor = false;
             btnOpenPartsOrder.Click += btnTransferParts_Click;

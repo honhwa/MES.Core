@@ -33,7 +33,7 @@ namespace DigiERP.Common
         public static readonly Color ButtonCancelApproveColor = Color.Orange;
         public static readonly Color ButtonNeutralColor = Color.Gainsboro;
         public static readonly Color ButtonExitColor = Color.DimGray;
-        public static readonly Color ButtonForeColor = Color.White;
+        public static readonly Color ButtonForeColor = Color.Black;
 
         // 表單標準字體。
         public static readonly Font FormFont = new Font("Microsoft JhengHei UI", 10F);
@@ -52,11 +52,12 @@ namespace DigiERP.Common
             new(StringComparer.OrdinalIgnoreCase)
             {
                 ["title"] = c => { c.Font = TitleFont; c.ForeColor = TitleColor; },
-                ["btn-add"] = c => ApplyButtonColor(c, ButtonSaveColor),
-                ["btn-save"] = c => ApplyButtonColor(c, ButtonSaveColor),
+                ["btn-add"] = c => ApplyButtonColor(c, ButtonNeutralColor),
+                ["btn-save"] = c => ApplyButtonColor(c, ButtonNeutralColor),
+                ["btn-modify"] = c => ApplyButtonColor(c, ButtonNeutralColor),
                 ["btn-delete"] = c => ApplyButtonColor(c, ButtonDeleteColor),
-                ["btn-approve"] = c => ApplyButtonColor(c, ButtonApproveColor),
-                ["btn-cancel-approve"] = c => ApplyButtonColor(c, ButtonCancelApproveColor),
+                ["btn-approve"] = c => ApplyButtonColor(c, ButtonNeutralColor),
+                ["btn-cancel-approve"] = c => ApplyButtonColor(c, ButtonNeutralColor),
                 ["btn-exit"] = c => ApplyButtonColor(c, ButtonExitColor),
                 ["btn-neutral"] = c => ApplyButtonColor(c, ButtonNeutralColor),
                 ["readonly"] = c => c.BackColor = ReadOnlyBackColor,

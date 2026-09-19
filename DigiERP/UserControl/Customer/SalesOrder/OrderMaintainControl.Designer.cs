@@ -120,6 +120,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             txtAmount = new CommonTextBox();
             label26 = new Label();
             lblMode = new Label();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetail).BeginInit();
             SuspendLayout();
@@ -129,7 +130,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             chkClosed.Location = new Point(824, 88);
             chkClosed.Name = "chkClosed";
             chkClosed.Size = new Size(28, 24);
-            chkClosed.TabIndex = 240;
+            chkClosed.TabIndex = 229;
             chkClosed.CheckedChanged += commonCheckBox_CheckedChanged;
             // 
             // label1
@@ -153,6 +154,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(75, 23);
             btnModify.TabIndex = 226;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -161,7 +163,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label2.Location = new Point(8, 48);
+            label2.Location = new Point(3, 50);
             label2.Name = "label2";
             label2.Size = new Size(48, 24);
             label2.TabIndex = 225;
@@ -184,7 +186,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             txtOrderNo.Location = new Point(302, 44);
             txtOrderNo.Name = "txtOrderNo";
             txtOrderNo.Size = new Size(144, 32);
-            txtOrderNo.TabIndex = 228;
+            txtOrderNo.TabIndex = 225;
             // 
             // label3
             // 
@@ -216,7 +218,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             cboCustId.Location = new Point(544, 43);
             cboCustId.Name = "cboCustId";
             cboCustId.Size = new Size(121, 32);
-            cboCustId.TabIndex = 231;
+            cboCustId.TabIndex = 226;
             cboCustId.Enter += cboCustId_Enter;
             cboCustId.Leave += cboCustId_Leave;
             cboCustId.MouseClick += cboCustId_MouseClick;
@@ -303,7 +305,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label6.Location = new Point(8, 92);
+            label6.Location = new Point(3, 90);
             label6.Name = "label6";
             label6.Size = new Size(86, 24);
             label6.TabIndex = 236;
@@ -313,10 +315,10 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             dtETD.Enabled = false;
             dtETD.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            dtETD.Location = new Point(96, 88);
+            dtETD.Location = new Point(100, 88);
             dtETD.Name = "dtETD";
-            dtETD.Size = new Size(184, 32);
-            dtETD.TabIndex = 235;
+            dtETD.Size = new Size(180, 32);
+            dtETD.TabIndex = 227;
             dtETD.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // txtCompany
@@ -325,7 +327,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             txtCompany.Location = new Point(376, 86);
             txtCompany.Name = "txtCompany";
             txtCompany.Size = new Size(388, 32);
-            txtCompany.TabIndex = 238;
+            txtCompany.TabIndex = 228;
             // 
             // label5
             // 
@@ -354,17 +356,17 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             cboSales.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSales.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboSales.FormattingEnabled = true;
-            cboSales.Location = new Point(96, 131);
+            cboSales.Location = new Point(100, 131);
             cboSales.Name = "cboSales";
-            cboSales.Size = new Size(68, 32);
-            cboSales.TabIndex = 242;
+            cboSales.Size = new Size(64, 32);
+            cboSales.TabIndex = 230;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label8.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label8.Location = new Point(8, 136);
+            label8.Location = new Point(3, 136);
             label8.Name = "label8";
             label8.Size = new Size(86, 24);
             label8.TabIndex = 241;
@@ -378,7 +380,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             cboCurrency.Location = new Point(216, 132);
             cboCurrency.Name = "cboCurrency";
             cboCurrency.Size = new Size(64, 32);
-            cboCurrency.TabIndex = 244;
+            cboCurrency.TabIndex = 231;
             // 
             // label9
             // 
@@ -397,7 +399,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             txtAddress.Location = new Point(376, 130);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(462, 32);
-            txtAddress.TabIndex = 246;
+            txtAddress.TabIndex = 232;
             // 
             // label10
             // 
@@ -419,14 +421,14 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             cboTaxType.Location = new Point(100, 175);
             cboTaxType.Name = "cboTaxType";
             cboTaxType.Size = new Size(64, 32);
-            cboTaxType.TabIndex = 248;
+            cboTaxType.TabIndex = 233;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label11.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label11.Location = new Point(5, 180);
+            label11.Location = new Point(3, 180);
             label11.Name = "label11";
             label11.Size = new Size(86, 24);
             label11.TabIndex = 247;
@@ -440,11 +442,12 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             cboTaxRate.Items.AddRange(new object[] { "", "0%", "5%" });
             cboTaxRate.Location = new Point(216, 176);
             cboTaxRate.Name = "cboTaxRate";
-            cboTaxRate.Size = new Size(62, 32);
-            cboTaxRate.TabIndex = 249;
+            cboTaxRate.Size = new Size(64, 32);
+            cboTaxRate.TabIndex = 234;
             // 
             // priceCondControl1
             // 
+            priceCondControl1.BorderStyle = BorderStyle.FixedSingle;
             priceCondControl1.Location = new Point(92, 216);
             priceCondControl1.Name = "priceCondControl1";
             priceCondControl1.Size = new Size(333, 82);
@@ -454,11 +457,12 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // label12
             // 
             label12.AutoSize = true;
+            label12.BorderStyle = BorderStyle.FixedSingle;
             label12.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label12.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label12.Location = new Point(3, 220);
+            label12.Location = new Point(5, 216);
             label12.Name = "label12";
-            label12.Size = new Size(86, 24);
+            label12.Size = new Size(88, 26);
             label12.TabIndex = 251;
             label12.Text = "價格條件";
             // 
@@ -479,22 +483,24 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             txtDestPort.Location = new Point(376, 175);
             txtDestPort.Name = "txtDestPort";
             txtDestPort.Size = new Size(289, 32);
-            txtDestPort.TabIndex = 253;
+            txtDestPort.TabIndex = 235;
             // 
             // label15
             // 
             label15.AutoSize = true;
+            label15.BorderStyle = BorderStyle.FixedSingle;
             label15.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label15.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label15.Location = new Point(417, 220);
+            label15.Location = new Point(431, 216);
             label15.Name = "label15";
-            label15.Size = new Size(86, 24);
+            label15.Size = new Size(88, 26);
             label15.TabIndex = 255;
             label15.Text = "交貨方式";
             // 
             // shipMethod
             // 
-            shipMethod.Location = new Point(509, 216);
+            shipMethod.BorderStyle = BorderStyle.FixedSingle;
+            shipMethod.Location = new Point(518, 216);
             shipMethod.Name = "shipMethod";
             shipMethod.Size = new Size(352, 82);
             shipMethod.TabIndex = 254;
@@ -507,7 +513,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             txtOrderSum.Location = new Point(753, 172);
             txtOrderSum.Name = "txtOrderSum";
             txtOrderSum.Size = new Size(85, 32);
-            txtOrderSum.TabIndex = 257;
+            txtOrderSum.TabIndex = 236;
             // 
             // label16
             // 
@@ -523,36 +529,40 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // label17
             // 
             label17.AutoSize = true;
+            label17.BorderStyle = BorderStyle.FixedSingle;
             label17.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label17.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label17.Location = new Point(3, 308);
+            label17.Location = new Point(5, 308);
             label17.Name = "label17";
-            label17.Size = new Size(86, 24);
+            label17.Size = new Size(88, 26);
             label17.TabIndex = 259;
             label17.Text = "交期要求";
             // 
             // ETDRequest
             // 
+            ETDRequest.BorderStyle = BorderStyle.FixedSingle;
             ETDRequest.Location = new Point(92, 308);
             ETDRequest.Name = "ETDRequest";
-            ETDRequest.Size = new Size(352, 82);
+            ETDRequest.Size = new Size(333, 82);
             ETDRequest.TabIndex = 258;
             ETDRequest.txType = null;
             // 
             // label18
             // 
             label18.AutoSize = true;
+            label18.BorderStyle = BorderStyle.FixedSingle;
             label18.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label18.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label18.Location = new Point(417, 308);
+            label18.Location = new Point(431, 304);
             label18.Name = "label18";
-            label18.Size = new Size(86, 24);
+            label18.Size = new Size(88, 26);
             label18.TabIndex = 261;
             label18.Text = "付款方式";
             // 
             // payMethod
             // 
-            payMethod.Location = new Point(509, 304);
+            payMethod.BorderStyle = BorderStyle.FixedSingle;
+            payMethod.Location = new Point(518, 304);
             payMethod.Name = "payMethod";
             payMethod.Size = new Size(352, 82);
             payMethod.TabIndex = 260;
@@ -580,7 +590,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // txtCountry
             // 
             txtCountry.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtCountry.Location = new Point(516, 400);
+            txtCountry.Location = new Point(519, 400);
             txtCountry.Name = "txtCountry";
             txtCountry.Size = new Size(144, 32);
             txtCountry.TabIndex = 266;
@@ -590,7 +600,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             label20.AutoSize = true;
             label20.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label20.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label20.Location = new Point(417, 403);
+            label20.Location = new Point(431, 403);
             label20.Name = "label20";
             label20.Size = new Size(86, 24);
             label20.TabIndex = 265;
@@ -622,9 +632,9 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             dgvDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDetail.Columns.AddRange(new DataGridViewColumn[] { 識別碼, 品項編號, 品名, 銷售單位, 數量, 訂單單價, 總金額, 報價單價, 折數, 註記, 專案序號, 機台類型, 傭金率, 報價單號 });
-            dgvDetail.Location = new Point(16, 482);
+            dgvDetail.Location = new Point(8, 482);
             dgvDetail.Name = "dgvDetail";
-            dgvDetail.Size = new Size(1396, 226);
+            dgvDetail.Size = new Size(1404, 226);
             dgvDetail.TabIndex = 269;
             dgvDetail.CellEndEdit += dgvDetail_CellEndEdit;
             // 
@@ -713,7 +723,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             // btnAddLine
             // 
-            btnAddLine.Location = new Point(16, 444);
+            btnAddLine.Location = new Point(8, 444);
             btnAddLine.Name = "btnAddLine";
             btnAddLine.Size = new Size(75, 32);
             btnAddLine.TabIndex = 270;
@@ -725,7 +735,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             txtApprover.Enabled = false;
             txtApprover.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtApprover.Location = new Point(68, 752);
+            txtApprover.Location = new Point(60, 752);
             txtApprover.Name = "txtApprover";
             txtApprover.Size = new Size(120, 32);
             txtApprover.TabIndex = 272;
@@ -735,7 +745,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             label22.AutoSize = true;
             label22.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label22.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label22.Location = new Point(16, 756);
+            label22.Location = new Point(8, 756);
             label22.Name = "label22";
             label22.Size = new Size(48, 24);
             label22.TabIndex = 271;
@@ -745,7 +755,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             txtApproveDate.Enabled = false;
             txtApproveDate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtApproveDate.Location = new Point(196, 752);
+            txtApproveDate.Location = new Point(188, 752);
             txtApproveDate.Name = "txtApproveDate";
             txtApproveDate.Size = new Size(120, 32);
             txtApproveDate.TabIndex = 274;
@@ -830,7 +840,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             // btnAddAR
             // 
-            btnAddAR.Location = new Point(1340, 356);
+            btnAddAR.Location = new Point(1320, 356);
             btnAddAR.Name = "btnAddAR";
             btnAddAR.Size = new Size(75, 32);
             btnAddAR.TabIndex = 283;
@@ -842,11 +852,11 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             btnSubmit.BackColor = Color.ForestGreen;
             btnSubmit.ForeColor = SystemColors.ButtonHighlight;
-            btnSubmit.Location = new Point(1340, 8);
+            btnSubmit.Location = new Point(1257, 7);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(75, 24);
             btnSubmit.TabIndex = 284;
-            btnSubmit.Tag = "btn-save";
+            btnSubmit.Tag = "btn-modify";
             btnSubmit.Text = "送出";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
@@ -855,10 +865,11 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             btnPrint.BackColor = Color.Gray;
             btnPrint.ForeColor = SystemColors.ButtonHighlight;
-            btnPrint.Location = new Point(1239, 9);
+            btnPrint.Location = new Point(1176, 8);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(75, 24);
             btnPrint.TabIndex = 285;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -867,10 +878,11 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             btnCancelActivate.BackColor = Color.Gray;
             btnCancelActivate.ForeColor = SystemColors.ButtonHighlight;
-            btnCancelActivate.Location = new Point(1133, 9);
+            btnCancelActivate.Location = new Point(1070, 8);
             btnCancelActivate.Name = "btnCancelActivate";
             btnCancelActivate.Size = new Size(75, 24);
             btnCancelActivate.TabIndex = 286;
+            btnCancelActivate.Tag = "btn-modify";
             btnCancelActivate.Text = "取消生效";
             btnCancelActivate.UseVisualStyleBackColor = false;
             btnCancelActivate.Click += btnCancelActivate_Click;
@@ -879,10 +891,11 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             btnActivate.BackColor = Color.Gray;
             btnActivate.ForeColor = SystemColors.ButtonHighlight;
-            btnActivate.Location = new Point(1036, 9);
+            btnActivate.Location = new Point(973, 8);
             btnActivate.Name = "btnActivate";
             btnActivate.Size = new Size(75, 24);
             btnActivate.TabIndex = 287;
+            btnActivate.Tag = "btn-modify";
             btnActivate.Text = "生效";
             btnActivate.UseVisualStyleBackColor = false;
             btnActivate.Click += btnActivate_Click;
@@ -908,6 +921,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             btnTransShipping.Name = "btnTransShipping";
             btnTransShipping.Size = new Size(75, 24);
             btnTransShipping.TabIndex = 289;
+            btnTransShipping.Tag = "btn-modify";
             btnTransShipping.Text = "轉開出貨單";
             btnTransShipping.UseVisualStyleBackColor = false;
             btnTransShipping.Click += btnTransShipping_Click;
@@ -920,6 +934,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             btnTransWorkOrder.Name = "btnTransWorkOrder";
             btnTransWorkOrder.Size = new Size(75, 24);
             btnTransWorkOrder.TabIndex = 290;
+            btnTransWorkOrder.Tag = "btn-modify";
             btnTransWorkOrder.Text = "轉製令工件";
             btnTransWorkOrder.UseVisualStyleBackColor = false;
             // 
@@ -931,6 +946,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             btnQuotationDistribution.Name = "btnQuotationDistribution";
             btnQuotationDistribution.Size = new Size(75, 24);
             btnQuotationDistribution.TabIndex = 291;
+            btnQuotationDistribution.Tag = "btn-modify";
             btnQuotationDistribution.Text = "報價單分配";
             btnQuotationDistribution.UseVisualStyleBackColor = false;
             btnQuotationDistribution.Click += btnQuotationDistribution_Click;
@@ -968,10 +984,23 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             lblMode.Text = "lblMode";
             lblMode.Visible = false;
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Red;
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(1354, 7);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 24);
+            btnClose.TabIndex = 294;
+            btnClose.Text = "X";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // OrderMaintainControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnClose);
             Controls.Add(txtAmount);
             Controls.Add(label26);
             Controls.Add(btnQuotationDistribution);
@@ -1139,5 +1168,6 @@ namespace DigiERP.UserControl.Customer.SalesOrder
         private DataGridViewTextBoxColumn 傭金率;
         private DataGridViewTextBoxColumn 報價單號;
         private Label lblMode;
+        private Button btnClose;
     }
 }

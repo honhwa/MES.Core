@@ -6,6 +6,7 @@ using DigiERP.UserControl.SalesOrder;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using MES.WebAPI.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using System;
 using System.Collections.Generic;
@@ -169,9 +170,17 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             _isLoaded = false;
             //throw new NotImplementedException();
             initController();
+            if (priceCondControl1 == null)
+                priceCondControl1 = new Common.PriceCondControl();
             priceCondControl1.txType = "T";
+            if (ETDRequest == null)
+                ETDRequest = new Common.PriceCondControl();
             ETDRequest.txType = "R";
+            if (shipMethod == null)
+                shipMethod = new Common.PriceCondControl();
             shipMethod.txType = "D";
+            if (payMethod == null)
+                payMethod = new Common.PriceCondControl();
             payMethod.txType = "P,Y";
 
             if (lblMode.Text == "新增")
@@ -855,6 +864,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             MessageBox.Show("生效成功!");
             btnActivate.Visible = false;
             btnCancelActivate.Visible = true;
+            btnPrint.Visible = true;
         }
 
         private void btnCancelActivate_Click(object sender, EventArgs e)
@@ -870,6 +880,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             MessageBox.Show("取消生效成功!");
             btnActivate.Visible = true;
             btnCancelActivate.Visible = false;
+            btnPrint.Visible = false;
         }
         List<int> quotationDistRemoveIndexLst = new List<int>();
         private void btnQuotationDistribution_Click(object sender, EventArgs e)
@@ -964,7 +975,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             }
             FrmSalesOrderPrint frmSalesOrderPrint = new FrmSalesOrderPrint(form);
             frmSalesOrderPrint.lblCompany.Text = this.txtCompany.Text;
-            frmSalesOrderPrint.lblCustNo.Text = cboCustId.Text; 
+            frmSalesOrderPrint.lblCustNo.Text = cboCustId.Text;
             frmSalesOrderPrint.lblSalesOrderNo.Text = txtOrderNo.Text;
             frmSalesOrderPrint.ShowDialog(this);
         }
@@ -993,6 +1004,16 @@ namespace DigiERP.UserControl.Customer.SalesOrder
                 dataGridView1.CurrentCell =
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 //MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            var dataGridView = (from c in Parent.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
+            if (dataGridView != null)
+            {
+                dataGridView.Visible = true;
             }
         }
     }

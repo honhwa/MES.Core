@@ -68,7 +68,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1355, 74);
+            panel1.Size = new Size(1355, 60);
             panel1.TabIndex = 0;
             // 
             // btnAdd
@@ -76,7 +76,7 @@
             btnAdd.BackColor = Color.Gray;
             btnAdd.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnAdd.ForeColor = SystemColors.Control;
-            btnAdd.Location = new Point(504, 8);
+            btnAdd.Location = new Point(1221, 12);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(128, 44);
             btnAdd.TabIndex = 4;
@@ -89,7 +89,7 @@
             btnClosed.BackColor = Color.DarkSeaGreen;
             btnClosed.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnClosed.ForeColor = SystemColors.Control;
-            btnClosed.Location = new Point(370, 8);
+            btnClosed.Location = new Point(1087, 12);
             btnClosed.Name = "btnClosed";
             btnClosed.Size = new Size(128, 44);
             btnClosed.TabIndex = 3;
@@ -102,7 +102,7 @@
             btnUnClosed.BackColor = Color.DodgerBlue;
             btnUnClosed.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnUnClosed.ForeColor = SystemColors.Control;
-            btnUnClosed.Location = new Point(236, 8);
+            btnUnClosed.Location = new Point(953, 12);
             btnUnClosed.Name = "btnUnClosed";
             btnUnClosed.Size = new Size(128, 44);
             btnUnClosed.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(62, 17);
+            label1.Location = new Point(73, 14);
             label1.Name = "label1";
             label1.Size = new Size(138, 26);
             label1.TabIndex = 1;
@@ -135,9 +135,9 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 74);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1355, 561);
+            panel2.Size = new Size(1355, 575);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -151,7 +151,7 @@
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1355, 561);
+            dataGridView1.Size = new Size(1355, 575);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;

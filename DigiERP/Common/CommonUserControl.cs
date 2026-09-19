@@ -103,6 +103,12 @@ namespace DigiERP.Common
         }
         protected bool chkPrivilege(string id)
         {
+            // 設計器沒有登入流程，AppSession.User 一定是 null，
+            // 直接放行才不會讓建構子在跑到 InitializeComponent()/樣式套用之前就丟例外。
+            if (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)
+            {
+                return true;
+            }
             if (AppSession.User.name?.ToUpper() != "ADMIN")
             {
                 int count = 0;
