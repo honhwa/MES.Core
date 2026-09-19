@@ -617,9 +617,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             // txtForwarder
             // 
-            txtForwarder.Location = new Point(100, 232);
+            txtForwarder.Location = new Point(136, 232);
             txtForwarder.Name = "txtForwarder";
-            txtForwarder.Size = new Size(412, 25);
+            txtForwarder.Size = new Size(376, 25);
             txtForwarder.TabIndex = 27;
             // 
             // lblForwarder

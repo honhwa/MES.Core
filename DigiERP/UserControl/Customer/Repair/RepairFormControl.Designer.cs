@@ -1,4 +1,4 @@
-namespace DigiERP.UserControl.Customer.Repair
+﻿namespace DigiERP.UserControl.Customer.Repair
 {
     partial class RepairFormControl
     {
@@ -156,7 +156,7 @@ namespace DigiERP.UserControl.Customer.Repair
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 8);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 100);
+            pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;

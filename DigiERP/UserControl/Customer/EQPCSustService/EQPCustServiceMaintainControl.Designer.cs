@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             lblMode = new Label();
             label1 = new Label();
             cboCustId = new DigiERP.Common.CommonComboBox();
@@ -200,7 +200,7 @@
             txtDescription.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             txtDescription.Location = new Point(845, 48);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(667, 32);
+            txtDescription.Size = new Size(659, 32);
             txtDescription.TabIndex = 246;
             // 
             // label6
@@ -268,7 +268,7 @@
             cboCustContact.FormattingEnabled = true;
             cboCustContact.Location = new Point(1390, 88);
             cboCustContact.Name = "cboCustContact";
-            cboCustContact.Size = new Size(121, 32);
+            cboCustContact.Size = new Size(114, 32);
             cboCustContact.TabIndex = 251;
             // 
             // btnClose
@@ -326,7 +326,7 @@
             txtEQPName.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             txtEQPName.Location = new Point(845, 136);
             txtEQPName.Name = "txtEQPName";
-            txtEQPName.Size = new Size(663, 32);
+            txtEQPName.Size = new Size(659, 32);
             txtEQPName.TabIndex = 259;
             // 
             // label12
@@ -395,7 +395,7 @@
             cbo機種分類.FormattingEnabled = true;
             cbo機種分類.Location = new Point(572, 184);
             cbo機種分類.Name = "cbo機種分類";
-            cbo機種分類.Size = new Size(161, 32);
+            cbo機種分類.Size = new Size(118, 32);
             cbo機種分類.TabIndex = 264;
             // 
             // label16
@@ -412,9 +412,9 @@
             cbo問題歸類.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo問題歸類.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cbo問題歸類.FormattingEnabled = true;
-            cbo問題歸類.Location = new Point(848, 184);
+            cbo問題歸類.Location = new Point(845, 184);
             cbo問題歸類.Name = "cbo問題歸類";
-            cbo問題歸類.Size = new Size(292, 32);
+            cbo問題歸類.Size = new Size(295, 32);
             cbo問題歸類.TabIndex = 266;
             // 
             // label17
@@ -454,8 +454,8 @@
             // date
             // 
             date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            date.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            date.DefaultCellStyle = dataGridViewCellStyle1;
             date.HeaderText = "日期";
             date.Name = "date";
             date.ReadOnly = true;
@@ -463,8 +463,8 @@
             // customerFeedback
             // 
             customerFeedback.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            customerFeedback.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            customerFeedback.DefaultCellStyle = dataGridViewCellStyle2;
             customerFeedback.HeaderText = "客戶反映";
             customerFeedback.Name = "customerFeedback";
             customerFeedback.ReadOnly = true;
@@ -473,8 +473,8 @@
             // questionFeedback
             // 
             questionFeedback.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            questionFeedback.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            questionFeedback.DefaultCellStyle = dataGridViewCellStyle3;
             questionFeedback.HeaderText = "問題回覆";
             questionFeedback.Name = "questionFeedback";
             questionFeedback.ReadOnly = true;
@@ -482,8 +482,8 @@
             // reason
             // 
             reason.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            reason.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            reason.DefaultCellStyle = dataGridViewCellStyle4;
             reason.HeaderText = "原因分析";
             reason.Name = "reason";
             reason.ReadOnly = true;
@@ -491,8 +491,8 @@
             // technical
             // 
             technical.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            technical.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            technical.DefaultCellStyle = dataGridViewCellStyle5;
             technical.HeaderText = "技術判定人員";
             technical.Name = "technical";
             technical.ReadOnly = true;
@@ -500,8 +500,8 @@
             // businessRecord
             // 
             businessRecord.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            businessRecord.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            businessRecord.DefaultCellStyle = dataGridViewCellStyle6;
             businessRecord.HeaderText = "業務記錄";
             businessRecord.Name = "businessRecord";
             businessRecord.ReadOnly = true;
@@ -509,8 +509,8 @@
             // repairNo
             // 
             repairNo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
-            repairNo.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            repairNo.DefaultCellStyle = dataGridViewCellStyle7;
             repairNo.HeaderText = "維修單號";
             repairNo.Name = "repairNo";
             repairNo.ReadOnly = true;
@@ -518,8 +518,8 @@
             // quotation
             // 
             quotation.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
-            quotation.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            quotation.DefaultCellStyle = dataGridViewCellStyle8;
             quotation.HeaderText = "報價單號";
             quotation.Name = "quotation";
             quotation.ReadOnly = true;

@@ -1,4 +1,4 @@
-namespace DigiERP.UserControl.Supplier.SupplierManage
+﻿namespace DigiERP.UserControl.Supplier.SupplierManage
 {
     partial class SupplierControl
     {
@@ -68,7 +68,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(76, 56);
+            pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;

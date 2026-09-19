@@ -1,4 +1,4 @@
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace DigiERP.UserControl.Production.Spec
@@ -59,7 +59,7 @@ namespace DigiERP.UserControl.Production.Spec
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(4, 6);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(36, 36);
+            pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;

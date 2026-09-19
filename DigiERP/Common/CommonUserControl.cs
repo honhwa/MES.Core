@@ -20,6 +20,15 @@ namespace DigiERP.Common
             InitializeComponent();
         }
 
+        // 用 OnCreateControl 而不是 OnLoad：Designer 畫布不會觸發 Load 事件，
+        // 但為了畫出控制項一定會建立 handle，OnCreateControl 兩邊都會執行，
+        // 這樣 Designer 看到的和實際執行時才會一致。
+        protected override void OnCreateControl()
+        {
+            base.OnCreateControl();
+            UIStyle.ApplyControlStyle(this);
+        }
+
         protected bool has高管(string id)
         {
             if (AppSession.User.name?.ToUpper() != "ADMIN")

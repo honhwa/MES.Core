@@ -1,4 +1,4 @@
-namespace DigiERP.UserControl.Customer.OtherIncome
+﻿namespace DigiERP.UserControl.Customer.OtherIncome
 {
     partial class OtherIncomeControl
     {
@@ -124,7 +124,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             pictureBox1.Image = Properties.Resources.able;
             pictureBox1.Location = new Point(12, 8);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 100);
+            pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;

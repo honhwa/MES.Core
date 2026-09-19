@@ -1,4 +1,4 @@
-namespace DigiERP.UserControl.Supplier.SupplierEvaluate
+﻿namespace DigiERP.UserControl.Supplier.SupplierEvaluate
 {
     partial class SupplierEvaluateControl
     {
@@ -218,7 +218,7 @@ namespace DigiERP.UserControl.Supplier.SupplierEvaluate
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(4, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(68, 52);
+            pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
