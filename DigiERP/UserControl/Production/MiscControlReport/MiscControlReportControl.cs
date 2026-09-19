@@ -24,6 +24,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             LoadData();
         }
 

@@ -225,10 +225,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(104, 28);
+            label1.Location = new Point(73, 14);
             label1.Name = "label1";
             label1.Size = new Size(191, 37);
             label1.TabIndex = 1;
+            label1.Tag = "title";
             label1.Text = "機台服務歷程";
             // 
             // pictureBox1

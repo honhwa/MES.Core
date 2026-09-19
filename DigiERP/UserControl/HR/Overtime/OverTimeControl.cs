@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.HR.Overtime;
 using DigiERP.Models;
 using MES.Core.Model;
@@ -48,6 +48,7 @@ namespace DigiERP.UserControl.HR.Overtime
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             InitCostUnitCombo();
             InitApplicantCombo();
             InitEmployeeCombo();

@@ -17,6 +17,7 @@ namespace DigiERP.UserControl.Production
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             dtpStartDate.Value = DateTime.Today;
             RecalculateWeeks();
         }

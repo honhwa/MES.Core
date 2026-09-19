@@ -31,6 +31,7 @@ namespace DigiERP.UserControl.Production
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
 
             var staffRep = new ProjectProgressController().GetDesignStaffList();
             colDesigner.DataSource = staffRep.resultList ?? new List<成本單位人員配置>();

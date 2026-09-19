@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.HR.Overtime;
 using DigiERP.Models;
 using DigiERP.UserControl.Accounting;
@@ -50,6 +50,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             InitEmployeeCombo();
             InitEmpNameMap();
             LoadList();

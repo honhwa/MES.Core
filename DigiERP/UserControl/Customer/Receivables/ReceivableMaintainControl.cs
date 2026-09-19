@@ -244,11 +244,13 @@ namespace DigiERP.UserControl.Customer.Receivables
         public ReceivableMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         public ReceivableMaintainControl(F收款 form)
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             this.form = form;
         }
 

@@ -33,6 +33,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             cboCategory.Items.AddRange(Categories);
             cboCertType.Items.AddRange(CertTypes);
         }

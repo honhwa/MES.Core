@@ -34,6 +34,7 @@ namespace DigiERP.UserControl
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             coutrySelect1.inflateDropDownList();
             initMaList();
             initForm();

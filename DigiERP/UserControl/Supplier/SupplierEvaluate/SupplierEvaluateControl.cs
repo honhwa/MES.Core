@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.UserControl.Supplier.SupplierManage;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -21,6 +21,7 @@ namespace DigiERP.UserControl.Supplier.SupplierEvaluate
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

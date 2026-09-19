@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System;
@@ -28,6 +28,7 @@ namespace DigiERP.UserControl.HR.ProjectHour
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             LoadData();
         }
 

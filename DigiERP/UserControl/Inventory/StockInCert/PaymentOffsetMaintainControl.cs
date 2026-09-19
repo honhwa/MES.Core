@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using DigiERP.UserControl.Inventory.StockIn;
 using MES.Core.Model;
@@ -30,6 +30,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         // ── 進入點：由「進項憑證登載」單筆結案後，或列表頁呼叫，mode="新增" 或 "修改" ──

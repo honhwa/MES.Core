@@ -27,6 +27,7 @@ namespace DigiERP.UserControl.Accounts.Payment
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initGrid();
         }
 

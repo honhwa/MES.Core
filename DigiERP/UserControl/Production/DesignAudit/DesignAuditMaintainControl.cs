@@ -29,6 +29,7 @@ namespace DigiERP.UserControl.Production
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             BuildHeaderFields();
             LoadStaticLists();
             disableAllControls(true);

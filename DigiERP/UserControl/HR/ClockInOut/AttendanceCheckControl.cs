@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.HR.ClockInOut;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -30,6 +30,7 @@ namespace DigiERP.UserControl.HR.ClockInOut
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         // ── 進入點：empNo 為 null 時取員工清冊第一位(比照原 Access 無指定條件開啟) ──

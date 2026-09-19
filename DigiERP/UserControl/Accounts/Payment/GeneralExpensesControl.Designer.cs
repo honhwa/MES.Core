@@ -62,7 +62,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -72,12 +72,13 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
+            lblTitle.Font = new Font("微軟正黑體", 21F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(80, 18);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(208, 24);
+            lblTitle.Size = new Size(307, 36);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "總務支出單總覽-未結案";
             // 
             // btnOpen
@@ -117,6 +118,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(80, 32);
             btnAdd.TabIndex = 3;
+            btnAdd.Tag = "btn-add";
             btnAdd.Text = "新增";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
@@ -163,7 +165,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             dataGridView1.Size = new Size(1467, 600);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            //
+            // 
             // colNo
             // 
             colNo.FillWeight = 90F;

@@ -27,6 +27,7 @@ namespace DigiERP.UserControl.Objective.ARWriteOff
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }
@@ -39,6 +40,7 @@ namespace DigiERP.UserControl.Objective.ARWriteOff
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

@@ -29,6 +29,7 @@ namespace DigiERP.UserControl.Customer.RFQ
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initCountrySelect();
         }
         private void initCountrySelect()

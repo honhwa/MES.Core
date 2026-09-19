@@ -25,6 +25,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initGrid();
         }
 

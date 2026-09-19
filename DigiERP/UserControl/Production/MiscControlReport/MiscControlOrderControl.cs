@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Production;
 using DigiERP.Models;
 using DigiERP.UserControl.Production;
@@ -45,6 +45,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initAcceptStaffCombo();
             initWarehouseStaffCombo();
             initAcceptResultCombo();

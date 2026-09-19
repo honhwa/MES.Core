@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.HR;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -25,6 +25,7 @@ namespace DigiERP.UserControl.HR
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             LoadData();
         }
 

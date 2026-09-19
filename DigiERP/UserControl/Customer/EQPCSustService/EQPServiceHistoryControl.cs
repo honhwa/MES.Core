@@ -30,6 +30,7 @@ namespace DigiERP.UserControl.Customer.EQPCSustService
         public EQPServiceHistoryControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             lbl客戶名稱.Text = string.Empty;
             lbl客戶簡稱.Text = string.Empty;

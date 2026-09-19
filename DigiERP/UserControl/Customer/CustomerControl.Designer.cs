@@ -34,7 +34,10 @@ namespace DigiERP.UserControl
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerControl));
+            panel1 = new Panel();
             dataGridView1 = new DataGridView();
             COMPANY = new DataGridViewTextBoxColumn();
             chk = new DataGridViewCheckBoxColumn();
@@ -49,8 +52,7 @@ namespace DigiERP.UserControl
             MEMO = new DataGridViewTextBoxColumn();
             CREDATE = new DataGridViewTextBoxColumn();
             識別 = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
-            label1 = new Label();
+            lblTitle = new Label();
             pictureBox1 = new PictureBox();
             button1 = new Button();
             panel2 = new Panel();
@@ -60,34 +62,59 @@ namespace DigiERP.UserControl
             label3 = new Label();
             txtCustQueryFIeld = new TextBox();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(dataGridView1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 60);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1376, 712);
+            panel1.TabIndex = 5;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { COMPANY, chk, CONTACTPERSON, 正航編號, COUNTRY, INDUSTRY, 中名稱分類, 英文, MACHINEISSUE, MA, MEMO, CREDATE, 識別 });
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 64);
-            dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Microsoft JhengHei UI", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.Font = new Font("Microsoft JhengHei UI", 9F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { COMPANY, chk, CONTACTPERSON, 正航編號, COUNTRY, INDUSTRY, 中名稱分類, 英文, MACHINEISSUE, MA, MEMO, CREDATE, 識別 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft JhengHei UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Microsoft JhengHei UI", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.DefaultCellStyle.Font = new Font("新細明體", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            dataGridView1.Size = new Size(1376, 708);
+            dataGridView1.Size = new Size(1376, 712);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellDoubleClick += dataGridView1_CellClick;
@@ -184,24 +211,16 @@ namespace DigiERP.UserControl
             識別.Name = "識別";
             識別.Visible = false;
             // 
-            // panel1
+            // lblTitle
             // 
-            panel1.Controls.Add(dataGridView1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1376, 772);
-            panel1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(103, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 24);
-            label1.TabIndex = 5;
-            label1.Text = "客戶維護";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            lblTitle.Location = new Point(103, 20);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(86, 24);
+            lblTitle.TabIndex = 5;
+            lblTitle.Tag = "title";
+            lblTitle.Text = "客戶維護";
             // 
             // pictureBox1
             // 
@@ -216,7 +235,7 @@ namespace DigiERP.UserControl
             // button1
             // 
             button1.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            button1.Location = new Point(267, 10);
+            button1.Location = new Point(268, 17);
             button1.Name = "button1";
             button1.Size = new Size(125, 49);
             button1.TabIndex = 7;
@@ -235,21 +254,21 @@ namespace DigiERP.UserControl
             panel2.Controls.Add(label2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblTitle);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1376, 61);
+            panel2.Size = new Size(1376, 60);
             panel2.TabIndex = 6;
             // 
             // button2
             // 
             button2.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            button2.Location = new Point(1101, 13);
+            button2.Location = new Point(1101, 17);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(131, 32);
+            button2.Size = new Size(145, 32);
             button2.TabIndex = 13;
             button2.Text = "匯出勾選資料";
             button2.UseVisualStyleBackColor = true;
@@ -258,7 +277,7 @@ namespace DigiERP.UserControl
             // btnCancelCheck
             // 
             btnCancelCheck.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnCancelCheck.Location = new Point(989, 13);
+            btnCancelCheck.Location = new Point(997, 17);
             btnCancelCheck.Margin = new Padding(2);
             btnCancelCheck.Name = "btnCancelCheck";
             btnCancelCheck.Size = new Size(100, 32);
@@ -270,7 +289,7 @@ namespace DigiERP.UserControl
             // cboCountry
             // 
             cboCountry.FormattingEnabled = true;
-            cboCountry.Location = new Point(816, 16);
+            cboCountry.Location = new Point(815, 21);
             cboCountry.Name = "cboCountry";
             cboCountry.Size = new Size(151, 23);
             cboCountry.TabIndex = 11;
@@ -281,7 +300,7 @@ namespace DigiERP.UserControl
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label3.Location = new Point(696, 16);
+            label3.Location = new Point(696, 21);
             label3.Name = "label3";
             label3.Size = new Size(86, 24);
             label3.TabIndex = 10;
@@ -289,7 +308,7 @@ namespace DigiERP.UserControl
             // 
             // txtCustQueryFIeld
             // 
-            txtCustQueryFIeld.Location = new Point(528, 17);
+            txtCustQueryFIeld.Location = new Point(528, 21);
             txtCustQueryFIeld.Name = "txtCustQueryFIeld";
             txtCustQueryFIeld.Size = new Size(144, 23);
             txtCustQueryFIeld.TabIndex = 9;
@@ -299,7 +318,7 @@ namespace DigiERP.UserControl
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label2.Location = new Point(408, 16);
+            label2.Location = new Point(408, 21);
             label2.Name = "label2";
             label2.Size = new Size(86, 24);
             label2.TabIndex = 8;
@@ -310,13 +329,13 @@ namespace DigiERP.UserControl
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
-            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             Margin = new Padding(2);
             Name = "CustomerControl";
             Size = new Size(1376, 772);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -324,10 +343,9 @@ namespace DigiERP.UserControl
         }
 
         #endregion
-        private DataGridView dataGridView1;
         private Panel panel1;
         private CustomerMaintainControl customerMaintainControl;
-        private Label label1;
+        private Label lblTitle;
         private PictureBox pictureBox1;
         private Button button1;
         private Panel panel2;
@@ -336,6 +354,9 @@ namespace DigiERP.UserControl
         private Label label2;
         private ComboBox cboCountry;
         private Label label3;
+        private Button btnCancelCheck;
+        private Button button2;
+        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn COMPANY;
         private DataGridViewCheckBoxColumn chk;
         private DataGridViewTextBoxColumn CONTACTPERSON;
@@ -349,7 +370,5 @@ namespace DigiERP.UserControl
         private DataGridViewTextBoxColumn MEMO;
         private DataGridViewTextBoxColumn CREDATE;
         private DataGridViewTextBoxColumn 識別;
-        private Button btnCancelCheck;
-        private Button button2;
     }
 }

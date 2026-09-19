@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.HR.ClockInOut;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -31,6 +31,7 @@ namespace DigiERP.UserControl.HR.ClockInOut
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             LoadData(null);
         }
 

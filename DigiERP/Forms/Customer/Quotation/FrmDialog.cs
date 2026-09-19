@@ -24,6 +24,7 @@ namespace DigiERP.Forms.Customer.Quotation
         public FrmDialog()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
         public void initData()
         {

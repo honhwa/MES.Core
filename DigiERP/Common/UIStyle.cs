@@ -27,6 +27,7 @@ namespace DigiERP.Common
 
         // 按鈕語意顏色，供新表單排版參考。
         public static readonly Color ButtonSaveColor = Color.SteelBlue;
+        public static readonly Color ButtonAddColor = Color.BlueViolet;
         public static readonly Color ButtonDeleteColor = Color.IndianRed;
         public static readonly Color ButtonApproveColor = Color.SeaGreen;
         public static readonly Color ButtonCancelApproveColor = Color.Orange;
@@ -36,7 +37,8 @@ namespace DigiERP.Common
 
         // 表單標準字體。
         public static readonly Font FormFont = new Font("Microsoft JhengHei UI", 10F);
-        public static readonly Font TitleFont = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
+        public static readonly Font TitleFont = new Font("微軟正黑體", 18F, FontStyle.Bold);
+        public static readonly Color TitleColor = Color.Firebrick;
 
         // 按鈕尺寸規則：高度固定，寬度依文字長度自動計算（類似 CSS 的 height 固定 + width: auto + padding）。
         // MinWidth 避免極短文字（如「OK」）的按鈕過窄；Padding 是文字左右各留的間距。
@@ -49,7 +51,8 @@ namespace DigiERP.Common
         public static readonly Dictionary<string, Action<Control>> StyleClasses =
             new(StringComparer.OrdinalIgnoreCase)
             {
-                ["title"] = c => c.Font = TitleFont,
+                ["title"] = c => { c.Font = TitleFont; c.ForeColor = TitleColor; },
+                ["btn-add"] = c => ApplyButtonColor(c, ButtonSaveColor),
                 ["btn-save"] = c => ApplyButtonColor(c, ButtonSaveColor),
                 ["btn-delete"] = c => ApplyButtonColor(c, ButtonDeleteColor),
                 ["btn-approve"] = c => ApplyButtonColor(c, ButtonApproveColor),
@@ -81,10 +84,13 @@ namespace DigiERP.Common
         {
             foreach (Control child in root.Controls)
             {
-                // 預設值：一般文字用 FormFont，名稱含 Title 的沿用既有慣例套標題字型。
-                child.Font = child.Name.IndexOf("Title", StringComparison.OrdinalIgnoreCase) >= 0
-                    ? TitleFont
-                    : FormFont;
+                // 預設值：一般文字用 FormFont，名稱含 Title 的沿用既有慣例套標題字型與標題色。
+                bool isTitle = child.Name.IndexOf("Title", StringComparison.OrdinalIgnoreCase) >= 0;
+                child.Font = isTitle ? TitleFont : FormFont;
+                if (isTitle)
+                {
+                    child.ForeColor = TitleColor;
+                }
 
                 Button? button = child as Button;
                 if (button != null)
@@ -104,8 +110,18 @@ namespace DigiERP.Common
                         if (StyleClasses.TryGetValue(className, out var applyClass))
                         {
                             applyClass(child);
+                            if (string.Equals(className, "title", StringComparison.OrdinalIgnoreCase))
+                            {
+                                isTitle = true;
+                            }
                         }
                     }
+                }
+
+                // 標題文字固定貼齊圖示右邊 10px（跟圖示垂直置中），取代個別畫面各自擺放的座標。
+                if (isTitle)
+                {
+                    PositionTitleNextToIcon(root, child);
                 }
 
                 // 滑鼠移入變淡：底色可能來自上面的 class，所以放在套用 class 之後，依最終底色計算。
@@ -118,6 +134,23 @@ namespace DigiERP.Common
                 if (child.HasChildren)
                 {
                     ApplyControlStyle(child);
+                }
+            }
+        }
+
+        // 標題與圖示的水平間距。
+        public const int TitleIconGap = 10;
+
+        // 在同一層找出圖示（PictureBox），把標題貼到它右邊 TitleIconGap px，並跟圖示垂直置中對齊。
+        // 找不到圖示（該畫面沒有 icon）時維持原本座標，不做任何事。
+        private static void PositionTitleNextToIcon(Control parent, Control title)
+        {
+            foreach (Control sibling in parent.Controls)
+            {
+                if (sibling is PictureBox icon)
+                {
+                    title.Location = new Point(icon.Right + TitleIconGap, icon.Top + (icon.Height - title.Height) / 2);
+                    return;
                 }
             }
         }

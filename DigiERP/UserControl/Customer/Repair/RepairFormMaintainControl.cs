@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Customer.SalesOrder;
 using DigiERP.Models;
 using MES.Core.Model;
@@ -25,6 +25,7 @@ namespace DigiERP.UserControl.Customer.Repair
         public RepairFormMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
         }
 

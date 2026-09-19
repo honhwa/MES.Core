@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System;
@@ -24,6 +24,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         // ── 日期區間篩選：預設不帶出資料，按下此按鈕才查詢 ──────────────────

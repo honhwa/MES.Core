@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.UserControl.Customer.Quotation;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -25,6 +25,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

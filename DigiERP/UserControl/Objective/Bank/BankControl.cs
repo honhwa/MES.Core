@@ -20,6 +20,7 @@ namespace DigiERP.UserControl.Objective.Bank
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             LoadData();
         }
 

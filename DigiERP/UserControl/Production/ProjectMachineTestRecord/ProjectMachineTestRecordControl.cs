@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System.Collections.Generic;
@@ -26,6 +26,7 @@ namespace DigiERP.UserControl.Production
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             BuildContextFields();
             initAssemblyStaffCombo();
         }

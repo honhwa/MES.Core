@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Accounting;
 using DigiERP.Models;
 using DigiERP.UserControl.Inventory.StockIn;
@@ -32,6 +32,7 @@ namespace DigiERP.UserControl.Objective.ARWriteOff
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             btnAdd.Visible = chkEditPrivilege(id);
         }
 

@@ -75,13 +75,13 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1564, 96);
+            panel1.Size = new Size(1564, 60);
             panel1.TabIndex = 0;
             // 
             // button2
             // 
             button2.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            button2.Location = new Point(630, 53);
+            button2.Location = new Point(1271, 14);
             button2.Name = "button2";
             button2.Size = new Size(104, 40);
             button2.TabIndex = 9;
@@ -92,7 +92,7 @@
             // button1
             // 
             button1.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            button1.Location = new Point(742, 53);
+            button1.Location = new Point(1381, 14);
             button1.Name = "button1";
             button1.Size = new Size(104, 40);
             button1.TabIndex = 8;
@@ -122,7 +122,7 @@
             // txtCompany
             // 
             txtCompany.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtCompany.Location = new Point(296, 55);
+            txtCompany.Location = new Point(937, 14);
             txtCompany.Name = "txtCompany";
             txtCompany.Size = new Size(328, 32);
             txtCompany.TabIndex = 5;
@@ -132,7 +132,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label3.Location = new Point(208, 60);
+            label3.Location = new Point(849, 19);
             label3.Name = "label3";
             label3.Size = new Size(86, 24);
             label3.TabIndex = 4;
@@ -141,7 +141,7 @@
             // txtQUONO
             // 
             txtQUONO.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtQUONO.Location = new Point(296, 19);
+            txtQUONO.Location = new Point(296, 14);
             txtQUONO.Name = "txtQUONO";
             txtQUONO.Size = new Size(102, 32);
             txtQUONO.TabIndex = 3;
@@ -151,7 +151,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label2.Location = new Point(208, 24);
+            label2.Location = new Point(208, 19);
             label2.Name = "label2";
             label2.Size = new Size(86, 24);
             label2.TabIndex = 2;
@@ -161,10 +161,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(96, 24);
+            label1.Location = new Point(73, 14);
             label1.Name = "label1";
             label1.Size = new Size(96, 26);
             label1.TabIndex = 1;
+            label1.Tag = "title";
             label1.Text = "報價總覽";
             // 
             // pictureBox1
@@ -182,9 +183,9 @@
             panel2.AutoScroll = true;
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 96);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1564, 694);
+            panel2.Size = new Size(1564, 730);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -197,7 +198,7 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1564, 694);
+            dataGridView1.Size = new Size(1564, 730);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick_1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;

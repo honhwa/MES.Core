@@ -32,6 +32,7 @@ namespace DigiERP.UserControl.Customer.Receivables
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             //initContros();
             //initController();
             //initGrid();

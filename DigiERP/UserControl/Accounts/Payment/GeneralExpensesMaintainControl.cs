@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using DigiERP.UserControl.Supplier.SupplierManage;
 using MES.Core.Model;
@@ -33,6 +33,7 @@ namespace DigiERP.UserControl.Accounts.Payment
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             cboPaymentTerm.Items.AddRange(PaymentTerms);
             cboCategory.Items.AddRange(Categories);
             cboTaxRate.Items.AddRange(TaxRates);

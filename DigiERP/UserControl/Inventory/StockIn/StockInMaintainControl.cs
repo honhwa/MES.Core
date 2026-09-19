@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Inventory;
 using DigiERP.Models;
 using DigiERP.UserControl.Supplier.SupplierManage;
@@ -21,12 +21,14 @@ namespace DigiERP.UserControl.Inventory.StockIn
         public StockInMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initCombos();
         }
 
         public StockInMaintainControl(B進貨驗收單 form)
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             this.form = form;
             initCombos();
         }

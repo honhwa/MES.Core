@@ -32,6 +32,7 @@ namespace DigiERP.UserControl.SalesOrder
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             if (_customerController == null)
             {
                 _customerController = new CustomerController();

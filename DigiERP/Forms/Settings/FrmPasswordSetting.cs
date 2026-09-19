@@ -23,6 +23,7 @@ namespace DigiERP.Forms.Settings
         public FrmPasswordSetting()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

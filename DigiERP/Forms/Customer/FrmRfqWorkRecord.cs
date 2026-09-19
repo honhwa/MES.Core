@@ -24,6 +24,7 @@ namespace DigiERP.Forms.Customer
         public FrmRfqWorkRecord()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initControls();
         }
 

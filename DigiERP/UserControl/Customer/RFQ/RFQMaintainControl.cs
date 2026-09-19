@@ -27,6 +27,7 @@ namespace DigiERP.UserControl.Customer.RFQ
         public RFQMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             ControlUtil.initAgentList(cboAgentList);
             ControlUtil.initIndustryCodeList(industryCodeSelect1);
             ControlUtil.initStatusSelect(rfqStatusSelect1);

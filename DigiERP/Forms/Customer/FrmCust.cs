@@ -28,6 +28,7 @@ namespace DigiERP
         {
             isloaded = false;
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initMenu();
             treeView.SelectedNode = null;
             ToggleDrawer(null, null);
@@ -160,7 +161,8 @@ namespace DigiERP
                 ctrl.Dock = DockStyle.Fill;
                 tab.Controls.Add(ctrl);
             }
-            tab.AutoScroll = true;
+            // 內容一律是 Dock=Fill，永遠剛好填滿 tab，不會超出範圍，
+            // 開著 AutoScroll 只會造成內容（含標題列）被莫名往上推移的顯示異常，拿掉。
             try
             {
                 tabControl.TabPages.Add(tab);

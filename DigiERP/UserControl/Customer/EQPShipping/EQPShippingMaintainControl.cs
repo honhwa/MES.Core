@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Customer.EQPShipping;
 using DigiERP.Models;
 using MES.Core.Model;
@@ -33,6 +33,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initControllers();
         }
 

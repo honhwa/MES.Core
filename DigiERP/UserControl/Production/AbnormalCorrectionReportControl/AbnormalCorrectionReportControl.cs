@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Production;
 using DigiERP.Models;
 using MES.Core.Model;
@@ -35,6 +35,7 @@ namespace DigiERP.UserControl.Production
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             BuildContextFields();
             BuildTextAreaFields();
             BuildSideFields();

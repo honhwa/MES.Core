@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Order;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -41,6 +41,7 @@ namespace DigiERP.UserControl.Order
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             LoadData();
         }
 

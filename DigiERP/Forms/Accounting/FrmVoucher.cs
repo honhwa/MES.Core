@@ -35,6 +35,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             _sourceDoc = sourceDoc;
             InitNewVoucher();
         }

@@ -31,6 +31,7 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
         public ShippingOrderMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
         }
 
@@ -44,6 +45,7 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
         public ShippingOrderMaintainControl(C出貨單 form)
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             this.form = form;
         }
 

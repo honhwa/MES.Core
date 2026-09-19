@@ -32,6 +32,7 @@ namespace DigiERP.UserControl.Customer.Quotation
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initGridView(null);
             originalSize = panel2.Size;
             panel2.MouseWheel += Panel2_MouseWheel;

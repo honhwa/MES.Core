@@ -28,6 +28,7 @@ namespace DigiERP.UserControl.Customer.EQPCSustService
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

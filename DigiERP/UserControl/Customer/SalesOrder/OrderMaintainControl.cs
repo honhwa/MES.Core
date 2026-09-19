@@ -38,6 +38,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             }
             _isLoaded = false;
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initForm();
             initControls(form);
@@ -63,6 +64,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             }
             _isLoaded = false;
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             this.form = form;
             initForm();
             initControls(form);
@@ -447,7 +449,7 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             ETDRequest.Enabled = Enabled;
             payMethod.Enabled = Enabled;
             bankCodeSelect1.Enabled = Enabled;
-            btnCheck.Enabled = Enabled;
+            //btnCheck.Enabled = Enabled;
             txtCountry.Enabled = Enabled;
             txtComment.Enabled = Enabled;
             btnAddLine.Enabled = Enabled;

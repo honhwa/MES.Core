@@ -17,16 +17,16 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btn新增 = new Button();
             btn查詢 = new Button();
@@ -64,14 +64,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1654, 112);
+            panel1.Size = new Size(1654, 60);
             panel1.TabIndex = 0;
             // 
             // btn新增
             // 
             btn新增.BackColor = Color.CornflowerBlue;
             btn新增.ForeColor = SystemColors.ButtonFace;
-            btn新增.Location = new Point(1000, 32);
+            btn新增.Location = new Point(1521, 8);
             btn新增.Name = "btn新增";
             btn新增.Size = new Size(120, 52);
             btn新增.TabIndex = 6;
@@ -83,7 +83,7 @@
             // 
             btn查詢.BackColor = Color.SteelBlue;
             btn查詢.ForeColor = SystemColors.ButtonFace;
-            btn查詢.Location = new Point(860, 32);
+            btn查詢.Location = new Point(1395, 8);
             btn查詢.Name = "btn查詢";
             btn查詢.Size = new Size(120, 52);
             btn查詢.TabIndex = 5;
@@ -94,7 +94,7 @@
             // cboCustId
             // 
             cboCustId.FormattingEnabled = true;
-            cboCustId.Location = new Point(648, 40);
+            cboCustId.Location = new Point(1178, 13);
             cboCustId.Name = "cboCustId";
             cboCustId.Size = new Size(200, 32);
             cboCustId.TabIndex = 3;
@@ -103,7 +103,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(552, 44);
+            label2.Location = new Point(1086, 16);
             label2.Name = "label2";
             label2.Size = new Size(86, 24);
             label2.TabIndex = 2;
@@ -113,16 +113,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(144, 36);
+            label1.Location = new Point(73, 14);
             label1.Name = "label1";
             label1.Size = new Size(249, 37);
             label1.TabIndex = 1;
+            label1.Tag = "title";
             label1.Text = "其他收入列表總覽";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.able;
-            pictureBox1.Location = new Point(12, 8);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -133,9 +134,9 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 112);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1654, 796);
+            panel2.Size = new Size(1654, 848);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -151,87 +152,87 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1654, 796);
+            dataGridView1.Size = new Size(1654, 848);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;
             // 
             // colOrderNo
             // 
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            colOrderNo.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            colOrderNo.DefaultCellStyle = dataGridViewCellStyle1;
             colOrderNo.HeaderText = "單號";
             colOrderNo.Name = "colOrderNo";
             colOrderNo.ReadOnly = true;
             // 
             // colDate
             // 
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            colDate.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            colDate.DefaultCellStyle = dataGridViewCellStyle2;
             colDate.HeaderText = "日期";
             colDate.Name = "colDate";
             colDate.ReadOnly = true;
             // 
             // colCustId
             // 
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            colCustId.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            colCustId.DefaultCellStyle = dataGridViewCellStyle3;
             colCustId.HeaderText = "客戶編號";
             colCustId.Name = "colCustId";
             colCustId.ReadOnly = true;
             // 
             // colSales
             // 
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            colSales.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            colSales.DefaultCellStyle = dataGridViewCellStyle4;
             colSales.HeaderText = "業務員";
             colSales.Name = "colSales";
             colSales.ReadOnly = true;
             // 
             // colCurrency
             // 
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
-            colCurrency.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            colCurrency.DefaultCellStyle = dataGridViewCellStyle5;
             colCurrency.HeaderText = "幣別";
             colCurrency.Name = "colCurrency";
             colCurrency.ReadOnly = true;
             // 
             // colTaxType
             // 
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
-            colTaxType.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            colTaxType.DefaultCellStyle = dataGridViewCellStyle6;
             colTaxType.HeaderText = "稅別";
             colTaxType.Name = "colTaxType";
             colTaxType.ReadOnly = true;
             // 
             // colTotal
             // 
-            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
-            colTotal.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            colTotal.DefaultCellStyle = dataGridViewCellStyle7;
             colTotal.HeaderText = "總額";
             colTotal.Name = "colTotal";
             colTotal.ReadOnly = true;
             // 
             // colPayment
             // 
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
-            colPayment.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            colPayment.DefaultCellStyle = dataGridViewCellStyle8;
             colPayment.HeaderText = "付款方式";
             colPayment.Name = "colPayment";
             colPayment.ReadOnly = true;
             // 
             // colClosed
             // 
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
-            colClosed.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            colClosed.DefaultCellStyle = dataGridViewCellStyle9;
             colClosed.HeaderText = "結案";
             colClosed.Name = "colClosed";
             colClosed.ReadOnly = true;
             // 
             // colApprover
             // 
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
-            colApprover.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            colApprover.DefaultCellStyle = dataGridViewCellStyle10;
             colApprover.HeaderText = "核准";
             colApprover.Name = "colApprover";
             colApprover.ReadOnly = true;

@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System;
@@ -36,6 +36,7 @@ namespace DigiERP.UserControl.Production.Accessories
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initComboList();
             SetEditable(false);
         }

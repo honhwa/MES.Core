@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Inventory;
 using DigiERP.Forms.Supplier;
 using DigiERP.Models;
@@ -26,12 +26,14 @@ namespace DigiERP.UserControl.Supplier.Procurement
         public ProcurementMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initCombos();
         }
 
         public ProcurementMaintainControl(B採購單 form)
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             this.form = form;
             initCombos();
         }

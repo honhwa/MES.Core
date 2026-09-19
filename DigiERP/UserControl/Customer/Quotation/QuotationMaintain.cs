@@ -29,6 +29,7 @@ namespace DigiERP.UserControl.Customer.Quotation
         {
             this.form = form;
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initForm();
             init();
         }
@@ -47,6 +48,7 @@ namespace DigiERP.UserControl.Customer.Quotation
         public QuotationMaintain()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initForm();
             init();
         }

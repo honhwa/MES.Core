@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -54,6 +54,7 @@ namespace DigiERP.UserControl.Production.TestValidationReport
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initPICStaffList();
             BuildHeaderFields();
             BuildSpecGrid();

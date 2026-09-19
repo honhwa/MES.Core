@@ -31,12 +31,14 @@ namespace DigiERP.UserControl
                 Dispose();
             }
             InitializeComponent();
-            initGridView();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initCountrySelect();
-            panel1.AutoScroll = true;
-            panel1.Dock = DockStyle.Fill;
             panel2.AutoScroll = true;
             //panel3.AutoScroll = true;
+            // 資料要等控制項真的顯示、版面配置跑完後才載入，
+            // 不然 dataGridView1 的 ColumnHeadersHeightSizeMode=AutoSize 在建構子階段算高度會出錯，
+            // 導致標題列跟第一列被擠壓裁切（PartsControl 用 VisibleChanged 避開同一個問題）。
+            Load += (s, e) => initGridView();
         }
 
         private void initCountrySelect()

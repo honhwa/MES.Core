@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -33,6 +33,7 @@ namespace DigiERP.UserControl.HR.Overtime
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             dtStartDate.Value = DateTime.Today.AddDays(-31);
             dtEndDate.Value = DateTime.Today;
             LoadData(null);

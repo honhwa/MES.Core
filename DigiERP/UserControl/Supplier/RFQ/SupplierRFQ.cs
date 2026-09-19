@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Inventory;
 using DigiERP.Forms.Supplier;
 using DigiERP.UserControl.Supplier.SupplierManage;
@@ -23,6 +23,7 @@ namespace DigiERP.UserControl.Supplier.RFQ
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initInquiryPersonCombo();
             AddBlankRow();
         }

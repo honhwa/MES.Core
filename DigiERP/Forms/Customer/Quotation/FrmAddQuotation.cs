@@ -18,6 +18,7 @@ namespace DigiERP.Forms.Customer.Quotation
         public FrmAddQuotation()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             txtProductId.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtProductId.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtProductId.AutoCompleteCustomSource = GetProductIdList();

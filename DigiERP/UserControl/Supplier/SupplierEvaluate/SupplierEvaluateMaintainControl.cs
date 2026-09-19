@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -22,6 +22,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
         public SupplierEvaluateMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             _controller = new SupplierController();
             initStaffCombo();
         }

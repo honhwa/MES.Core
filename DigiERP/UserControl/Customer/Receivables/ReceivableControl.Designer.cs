@@ -68,7 +68,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1355, 100);
+            panel1.Size = new Size(1355, 74);
             panel1.TabIndex = 0;
             // 
             // btnAdd
@@ -76,9 +76,9 @@
             btnAdd.BackColor = Color.Gray;
             btnAdd.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnAdd.ForeColor = SystemColors.Control;
-            btnAdd.Location = new Point(796, 32);
+            btnAdd.Location = new Point(504, 8);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(128, 36);
+            btnAdd.Size = new Size(128, 44);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "新增";
             btnAdd.UseVisualStyleBackColor = false;
@@ -89,9 +89,9 @@
             btnClosed.BackColor = Color.DarkSeaGreen;
             btnClosed.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnClosed.ForeColor = SystemColors.Control;
-            btnClosed.Location = new Point(448, 32);
+            btnClosed.Location = new Point(370, 8);
             btnClosed.Name = "btnClosed";
-            btnClosed.Size = new Size(128, 36);
+            btnClosed.Size = new Size(128, 44);
             btnClosed.TabIndex = 3;
             btnClosed.Text = "已結案";
             btnClosed.UseVisualStyleBackColor = false;
@@ -102,9 +102,9 @@
             btnUnClosed.BackColor = Color.DodgerBlue;
             btnUnClosed.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnUnClosed.ForeColor = SystemColors.Control;
-            btnUnClosed.Location = new Point(292, 32);
+            btnUnClosed.Location = new Point(236, 8);
             btnUnClosed.Name = "btnUnClosed";
-            btnUnClosed.Size = new Size(128, 36);
+            btnUnClosed.Size = new Size(128, 44);
             btnUnClosed.TabIndex = 2;
             btnUnClosed.Text = "未結案";
             btnUnClosed.UseVisualStyleBackColor = false;
@@ -114,10 +114,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(116, 36);
+            label1.Location = new Point(62, 17);
             label1.Name = "label1";
             label1.Size = new Size(138, 26);
             label1.TabIndex = 1;
+            label1.Tag = "title";
             label1.Text = "應收立帳總覽";
             // 
             // pictureBox1
@@ -134,9 +135,9 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 100);
+            panel2.Location = new Point(0, 74);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1355, 535);
+            panel2.Size = new Size(1355, 561);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -150,7 +151,7 @@
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1355, 535);
+            dataGridView1.Size = new Size(1355, 561);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;

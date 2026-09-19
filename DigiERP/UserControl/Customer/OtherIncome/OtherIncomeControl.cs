@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Customer.SalesOrder;
 using DigiERP.Models;
 using DigiERP.UserControl.Customer.EQPShipping;
@@ -28,6 +28,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

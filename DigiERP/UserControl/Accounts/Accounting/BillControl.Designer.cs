@@ -55,13 +55,13 @@ namespace DigiERP.UserControl.Accounts.Accounting
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1467, 64);
+            panel1.Size = new Size(1467, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -73,10 +73,11 @@ namespace DigiERP.UserControl.Accounts.Accounting
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(80, 18);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(86, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "票據異動";
             // 
             // btnAdd
@@ -88,6 +89,7 @@ namespace DigiERP.UserControl.Accounts.Accounting
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(80, 32);
             btnAdd.TabIndex = 1;
+            btnAdd.Tag = "btn-add";
             btnAdd.Text = "新增";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
@@ -109,9 +111,9 @@ namespace DigiERP.UserControl.Accounts.Accounting
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 64);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1467, 600);
+            panel2.Size = new Size(1467, 604);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -130,7 +132,7 @@ namespace DigiERP.UserControl.Accounts.Accounting
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1467, 600);
+            dataGridView1.Size = new Size(1467, 604);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 

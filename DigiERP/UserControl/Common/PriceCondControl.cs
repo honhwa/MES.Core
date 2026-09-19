@@ -19,12 +19,14 @@ namespace DigiERP.UserControl.Common
         public PriceCondControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initPriceCondList();
             TabStop = true;
         }
         public PriceCondControl(string txType)
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             this.txType = txType;
             initPriceCondList();
             TabStop = true;

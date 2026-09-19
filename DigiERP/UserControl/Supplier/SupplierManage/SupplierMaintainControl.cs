@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using MES.WebAPI.Models;
@@ -17,6 +17,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
         public SupplierMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             _controller = new SupplierController();
             initGradeCombo();
         }

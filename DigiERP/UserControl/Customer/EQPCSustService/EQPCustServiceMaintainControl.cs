@@ -33,6 +33,7 @@ namespace DigiERP.UserControl.Customer.EQPCSustService
         public EQPCustServiceMaintainControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         private void initController()

@@ -20,6 +20,7 @@ namespace DigiERP.Forms.Customer.SalesOrder
         public FrmAddSalesLine()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             txtProductId.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtProductId.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtProductId.AutoCompleteCustomSource = GetProductIdList();

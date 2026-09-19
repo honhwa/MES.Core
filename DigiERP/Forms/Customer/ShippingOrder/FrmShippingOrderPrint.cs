@@ -22,6 +22,7 @@ namespace DigiERP.Forms.Customer.ShippingOrder
         public FrmShippingOrderPrint()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
         public void initData()
         {

@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System;
@@ -30,6 +30,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         // ── 進入點：由「薪資月結」的「月工資成本導入」按鈕呼叫，帶入目前

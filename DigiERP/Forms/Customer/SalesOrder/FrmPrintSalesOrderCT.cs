@@ -26,6 +26,7 @@ namespace DigiERP.Forms.Customer.SalesOrder
         public FrmPrintSalesOrderCT()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initControls();
             initData();

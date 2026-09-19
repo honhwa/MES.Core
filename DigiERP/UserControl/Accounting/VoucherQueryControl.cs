@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.UserControl.Inventory.StockIn;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -16,6 +16,7 @@ namespace DigiERP.UserControl.Accounting
         public VoucherQueryControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             cboStatus.Items.Add("");
             cboStatus.Items.Add("登錄");
             cboStatus.Items.Add("過帳");

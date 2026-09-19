@@ -57,15 +57,16 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1451, 100);
+            panel1.Size = new Size(1451, 60);
             panel1.TabIndex = 0;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(1072, 28);
+            btnAdd.Location = new Point(1288, 5);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(160, 52);
             btnAdd.TabIndex = 2;
+            btnAdd.Tag = "btn-add";
             btnAdd.Text = "ADD";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
@@ -74,10 +75,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(124, 28);
+            label1.Location = new Point(73, 14);
             label1.Name = "label1";
             label1.Size = new Size(133, 37);
             label1.TabIndex = 1;
+            label1.Tag = "title";
             label1.Text = "機台客服";
             // 
             // pictureBox1
@@ -94,9 +96,9 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 100);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1451, 655);
+            panel2.Size = new Size(1451, 695);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -110,7 +112,7 @@
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1451, 655);
+            dataGridView1.Size = new Size(1451, 695);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 

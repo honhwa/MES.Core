@@ -22,6 +22,7 @@ namespace DigiERP.Forms.Customer.SalesOrder
         public FrmCustSelect()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initGridView();
             if (_customerController == null)
                 _customerController = new CustomerController();

@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Production;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -26,6 +26,7 @@ namespace DigiERP.UserControl.Production.ProgramControl
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initElecControlProcessCombo();
             initProgramControlStaffCombo();
             LoadData();

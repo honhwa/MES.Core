@@ -22,6 +22,7 @@ namespace DigiERP.UserControl.Customer.CAR
         public CARControl()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initGrid();
         }
         List<客戶訴願處理單> carList { get; set; }

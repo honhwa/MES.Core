@@ -35,6 +35,7 @@ namespace DigiERP.UserControl.Production
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
 
             var staffRep = new CustomerController().get組測維修人員List();
             _staffList = staffRep.resultList ?? new List<成本單位人員配置>();

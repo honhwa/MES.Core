@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Forms.Inventory;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -20,6 +20,7 @@ namespace DigiERP.UserControl.Inventory
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

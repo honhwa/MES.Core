@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System;
@@ -27,6 +27,7 @@ namespace DigiERP.UserControl.Inventory.ProjectProcurement
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             colPartType.Items.AddRange(PartTypes);
             colAcceptance.Items.AddRange(AcceptanceResults);
             initGrid();

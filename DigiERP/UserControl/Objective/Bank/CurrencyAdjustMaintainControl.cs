@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
@@ -31,6 +31,7 @@ namespace DigiERP.UserControl.Objective.Bank
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
         }
 
         // ── 進入點：由列表頁呼叫，mode="新增" 或 "修改" ─────────────────────

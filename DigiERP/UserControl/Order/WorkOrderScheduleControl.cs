@@ -1,4 +1,4 @@
-using DigiERP.Common;
+﻿using DigiERP.Common;
 using DigiERP.Models;
 using DigiERP.UserControl.Production;
 using MES.Core.Model;
@@ -45,6 +45,7 @@ namespace DigiERP.UserControl.Order
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initCombos();
             SetEditable(false);
         }

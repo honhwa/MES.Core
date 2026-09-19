@@ -35,6 +35,7 @@ namespace DigiERP.UserControl.Customer.ShippingOrder
                 Dispose();
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
         }
 

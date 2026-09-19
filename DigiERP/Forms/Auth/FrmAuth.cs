@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.Auth
         public FrmAuth()
         {
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initController();
             initGrid();
         }

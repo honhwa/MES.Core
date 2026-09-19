@@ -23,6 +23,7 @@ namespace DigiERP.UserControl.Objective.SalesTracking
                 return;
             }
             InitializeComponent();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             SetDefaultDateRange();
             LoadData();
         }
