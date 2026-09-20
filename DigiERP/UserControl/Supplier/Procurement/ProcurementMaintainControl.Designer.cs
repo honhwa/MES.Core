@@ -130,6 +130,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1450, 44);
             panelToolbar.TabIndex = 0;
+            panelToolbar.Tag = "btn-modify";
             // 
             // lblTitle
             // 
@@ -146,10 +147,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnAllocate.BackColor = Color.SteelBlue;
             btnAllocate.FlatStyle = FlatStyle.Flat;
             btnAllocate.ForeColor = Color.White;
-            btnAllocate.Location = new Point(160, 8);
+            btnAllocate.Location = new Point(285, 7);
             btnAllocate.Name = "btnAllocate";
             btnAllocate.Size = new Size(95, 28);
             btnAllocate.TabIndex = 1;
+            btnAllocate.Tag = "btn-modify";
             btnAllocate.Text = "請購分配";
             btnAllocate.UseVisualStyleBackColor = false;
             btnAllocate.Click += btnAllocate_Click;
@@ -159,10 +161,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnItemClose.BackColor = Color.DarkOrange;
             btnItemClose.FlatStyle = FlatStyle.Flat;
             btnItemClose.ForeColor = Color.White;
-            btnItemClose.Location = new Point(258, 8);
+            btnItemClose.Location = new Point(383, 7);
             btnItemClose.Name = "btnItemClose";
             btnItemClose.Size = new Size(95, 28);
             btnItemClose.TabIndex = 2;
+            btnItemClose.Tag = "btn-modify";
             btnItemClose.Text = "分項結案";
             btnItemClose.UseVisualStyleBackColor = false;
             btnItemClose.Visible = false;
@@ -173,10 +176,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnDeleteRecord.BackColor = Color.Firebrick;
             btnDeleteRecord.FlatStyle = FlatStyle.Flat;
             btnDeleteRecord.ForeColor = Color.White;
-            btnDeleteRecord.Location = new Point(356, 8);
+            btnDeleteRecord.Location = new Point(481, 7);
             btnDeleteRecord.Name = "btnDeleteRecord";
             btnDeleteRecord.Size = new Size(95, 28);
             btnDeleteRecord.TabIndex = 3;
+            btnDeleteRecord.Tag = "btn-modify";
             btnDeleteRecord.Text = "刪除紀錄";
             btnDeleteRecord.UseVisualStyleBackColor = false;
             btnDeleteRecord.Visible = false;
@@ -187,10 +191,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnLog.BackColor = Color.DarkSlateBlue;
             btnLog.FlatStyle = FlatStyle.Flat;
             btnLog.ForeColor = Color.White;
-            btnLog.Location = new Point(454, 8);
+            btnLog.Location = new Point(579, 7);
             btnLog.Name = "btnLog";
             btnLog.Size = new Size(95, 28);
             btnLog.TabIndex = 4;
+            btnLog.Tag = "btn-modify";
             btnLog.Text = "填入日誌";
             btnLog.UseVisualStyleBackColor = false;
             btnLog.Visible = false;
@@ -200,10 +205,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnCopy.BackColor = Color.Gainsboro;
             btnCopy.FlatStyle = FlatStyle.Flat;
-            btnCopy.Location = new Point(552, 8);
+            btnCopy.Location = new Point(677, 7);
             btnCopy.Name = "btnCopy";
             btnCopy.Size = new Size(80, 28);
             btnCopy.TabIndex = 5;
+            btnCopy.Tag = "btn-modify";
             btnCopy.Text = "複製";
             btnCopy.UseVisualStyleBackColor = false;
             btnCopy.Visible = false;
@@ -213,10 +219,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnAddNew.BackColor = Color.Gainsboro;
             btnAddNew.FlatStyle = FlatStyle.Flat;
-            btnAddNew.Location = new Point(635, 8);
+            btnAddNew.Location = new Point(760, 7);
             btnAddNew.Name = "btnAddNew";
             btnAddNew.Size = new Size(80, 28);
             btnAddNew.TabIndex = 6;
+            btnAddNew.Tag = "btn-modify";
             btnAddNew.Text = "新增";
             btnAddNew.UseVisualStyleBackColor = false;
             btnAddNew.Click += btnAddNew_Click;
@@ -225,10 +232,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnModify.BackColor = Color.Gainsboro;
             btnModify.FlatStyle = FlatStyle.Flat;
-            btnModify.Location = new Point(718, 8);
+            btnModify.Location = new Point(843, 7);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(80, 28);
             btnModify.TabIndex = 7;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -237,10 +245,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnSave.BackColor = Color.Gainsboro;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Location = new Point(801, 8);
+            btnSave.Location = new Point(926, 7);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(80, 28);
             btnSave.TabIndex = 8;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -249,10 +258,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnActivate.BackColor = Color.Gainsboro;
             btnActivate.FlatStyle = FlatStyle.Flat;
-            btnActivate.Location = new Point(884, 8);
+            btnActivate.Location = new Point(1009, 7);
             btnActivate.Name = "btnActivate";
             btnActivate.Size = new Size(80, 28);
             btnActivate.TabIndex = 9;
+            btnActivate.Tag = "btn-modify";
             btnActivate.Text = "生效";
             btnActivate.UseVisualStyleBackColor = false;
             btnActivate.Click += btnActivate_Click;
@@ -261,10 +271,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnCancelActivate.BackColor = Color.Gainsboro;
             btnCancelActivate.FlatStyle = FlatStyle.Flat;
-            btnCancelActivate.Location = new Point(967, 8);
+            btnCancelActivate.Location = new Point(1092, 7);
             btnCancelActivate.Name = "btnCancelActivate";
             btnCancelActivate.Size = new Size(83, 28);
             btnCancelActivate.TabIndex = 10;
+            btnCancelActivate.Tag = "btn-modify";
             btnCancelActivate.Text = "取消生效";
             btnCancelActivate.UseVisualStyleBackColor = false;
             btnCancelActivate.Click += btnCancelActivate_Click;
@@ -273,10 +284,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnPrint.BackColor = Color.Gainsboro;
             btnPrint.FlatStyle = FlatStyle.Flat;
-            btnPrint.Location = new Point(1054, 8);
+            btnPrint.Location = new Point(1179, 7);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(80, 28);
             btnPrint.TabIndex = 11;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Visible = false;
@@ -286,10 +298,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnOverview.BackColor = Color.Gainsboro;
             btnOverview.FlatStyle = FlatStyle.Flat;
-            btnOverview.Location = new Point(1137, 8);
+            btnOverview.Location = new Point(1262, 7);
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(80, 28);
             btnOverview.TabIndex = 12;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Visible = false;
@@ -299,7 +312,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnClose.BackColor = Color.Gainsboro;
             btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(1220, 8);
+            btnClose.Location = new Point(1345, 7);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(80, 28);
             btnClose.TabIndex = 13;
@@ -384,7 +397,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblNo
             // 
             lblNo.AutoSize = true;
-            lblNo.Location = new Point(260, 12);
+            lblNo.Location = new Point(285, 12);
             lblNo.Name = "lblNo";
             lblNo.Size = new Size(31, 16);
             lblNo.TabIndex = 2;
@@ -392,7 +405,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtNo
             // 
-            txtNo.Location = new Point(315, 8);
+            txtNo.Location = new Point(340, 8);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
             txtNo.Size = new Size(157, 23);
@@ -401,7 +414,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblSupplierNo
             // 
             lblSupplierNo.AutoSize = true;
-            lblSupplierNo.Location = new Point(491, 12);
+            lblSupplierNo.Location = new Point(516, 12);
             lblSupplierNo.Name = "lblSupplierNo";
             lblSupplierNo.Size = new Size(55, 16);
             lblSupplierNo.TabIndex = 4;
@@ -409,7 +422,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // cboSupplierNo
             // 
-            cboSupplierNo.Location = new Point(566, 8);
+            cboSupplierNo.Location = new Point(576, 8);
             cboSupplierNo.Name = "cboSupplierNo";
             cboSupplierNo.Size = new Size(146, 24);
             cboSupplierNo.TabIndex = 5;
@@ -418,7 +431,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // btnSelectSupplier
             // 
-            btnSelectSupplier.Location = new Point(570, 8);
+            btnSelectSupplier.Location = new Point(730, 9);
             btnSelectSupplier.Name = "btnSelectSupplier";
             btnSelectSupplier.Size = new Size(28, 23);
             btnSelectSupplier.TabIndex = 6;
@@ -428,7 +441,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblSupplierName
             // 
             lblSupplierName.AutoSize = true;
-            lblSupplierName.Location = new Point(763, 12);
+            lblSupplierName.Location = new Point(788, 12);
             lblSupplierName.Name = "lblSupplierName";
             lblSupplierName.Size = new Size(55, 16);
             lblSupplierName.TabIndex = 7;
@@ -436,7 +449,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtSupplierName
             // 
-            txtSupplierName.Location = new Point(838, 8);
+            txtSupplierName.Location = new Point(863, 8);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
             txtSupplierName.Size = new Size(260, 23);
@@ -470,7 +483,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblTaxRate
             // 
             lblTaxRate.AutoSize = true;
-            lblTaxRate.Location = new Point(260, 46);
+            lblTaxRate.Location = new Point(285, 46);
             lblTaxRate.Name = "lblTaxRate";
             lblTaxRate.Size = new Size(55, 16);
             lblTaxRate.TabIndex = 12;
@@ -479,7 +492,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // cboTaxRate
             // 
             cboTaxRate.Items.AddRange(new object[] { "", "0%", "5%" });
-            cboTaxRate.Location = new Point(335, 42);
+            cboTaxRate.Location = new Point(360, 42);
             cboTaxRate.Name = "cboTaxRate";
             cboTaxRate.Size = new Size(80, 24);
             cboTaxRate.TabIndex = 13;
@@ -489,7 +502,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblCurrency
             // 
             lblCurrency.AutoSize = true;
-            lblCurrency.Location = new Point(490, 46);
+            lblCurrency.Location = new Point(515, 46);
             lblCurrency.Name = "lblCurrency";
             lblCurrency.Size = new Size(31, 16);
             lblCurrency.TabIndex = 14;
@@ -497,7 +510,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // cboCurrency
             // 
-            cboCurrency.Location = new Point(551, 42);
+            cboCurrency.Location = new Point(576, 42);
             cboCurrency.Name = "cboCurrency";
             cboCurrency.Size = new Size(80, 24);
             cboCurrency.TabIndex = 15;
@@ -507,7 +520,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblExRate
             // 
             lblExRate.AutoSize = true;
-            lblExRate.Location = new Point(635, 46);
+            lblExRate.Location = new Point(660, 46);
             lblExRate.Name = "lblExRate";
             lblExRate.Size = new Size(31, 16);
             lblExRate.TabIndex = 16;
@@ -515,7 +528,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtExRate
             // 
-            txtExRate.Location = new Point(676, 42);
+            txtExRate.Location = new Point(701, 42);
             txtExRate.Name = "txtExRate";
             txtExRate.ReadOnly = true;
             txtExRate.Size = new Size(80, 23);
@@ -524,7 +537,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblDeliveryAddr
             // 
             lblDeliveryAddr.AutoSize = true;
-            lblDeliveryAddr.Location = new Point(764, 44);
+            lblDeliveryAddr.Location = new Point(789, 44);
             lblDeliveryAddr.Name = "lblDeliveryAddr";
             lblDeliveryAddr.Size = new Size(55, 16);
             lblDeliveryAddr.TabIndex = 18;
@@ -532,7 +545,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // cboDeliveryAddr
             // 
-            cboDeliveryAddr.Location = new Point(839, 40);
+            cboDeliveryAddr.Location = new Point(864, 40);
             cboDeliveryAddr.Name = "cboDeliveryAddr";
             cboDeliveryAddr.Size = new Size(220, 24);
             cboDeliveryAddr.TabIndex = 19;
@@ -557,7 +570,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblPayTerm
             // 
             lblPayTerm.AutoSize = true;
-            lblPayTerm.Location = new Point(260, 80);
+            lblPayTerm.Location = new Point(285, 80);
             lblPayTerm.Name = "lblPayTerm";
             lblPayTerm.Size = new Size(55, 16);
             lblPayTerm.TabIndex = 22;
@@ -566,7 +579,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // cboPayTerm
             // 
             cboPayTerm.Items.AddRange(new object[] { "", "貨到T/T", "即期票", "月結當月票", "月結30天", "月結60天", "月結90天" });
-            cboPayTerm.Location = new Point(335, 76);
+            cboPayTerm.Location = new Point(360, 76);
             cboPayTerm.Name = "cboPayTerm";
             cboPayTerm.Size = new Size(140, 24);
             cboPayTerm.TabIndex = 23;
@@ -574,7 +587,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblShipMethod
             // 
             lblShipMethod.AutoSize = true;
-            lblShipMethod.Location = new Point(490, 80);
+            lblShipMethod.Location = new Point(515, 80);
             lblShipMethod.Name = "lblShipMethod";
             lblShipMethod.Size = new Size(55, 16);
             lblShipMethod.TabIndex = 24;
@@ -582,7 +595,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtShipMethod
             // 
-            txtShipMethod.Location = new Point(552, 76);
+            txtShipMethod.Location = new Point(577, 76);
             txtShipMethod.Name = "txtShipMethod";
             txtShipMethod.Size = new Size(204, 23);
             txtShipMethod.TabIndex = 25;
@@ -590,7 +603,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblPurchaser
             // 
             lblPurchaser.AutoSize = true;
-            lblPurchaser.Location = new Point(768, 76);
+            lblPurchaser.Location = new Point(793, 76);
             lblPurchaser.Name = "lblPurchaser";
             lblPurchaser.Size = new Size(55, 16);
             lblPurchaser.TabIndex = 26;
@@ -598,7 +611,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // cboPurchaser
             // 
-            cboPurchaser.Location = new Point(838, 72);
+            cboPurchaser.Location = new Point(863, 72);
             cboPurchaser.Name = "cboPurchaser";
             cboPurchaser.Size = new Size(110, 24);
             cboPurchaser.TabIndex = 27;
@@ -616,7 +629,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // chkClosed
             // 
             chkClosed.AutoSize = true;
-            chkClosed.Location = new Point(956, 76);
+            chkClosed.Location = new Point(981, 76);
             chkClosed.Name = "chkClosed";
             chkClosed.Size = new Size(50, 20);
             chkClosed.TabIndex = 29;
@@ -626,7 +639,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             btnVoidAll.BackColor = Color.MistyRose;
             btnVoidAll.FlatStyle = FlatStyle.Flat;
-            btnVoidAll.Location = new Point(1026, 74);
+            btnVoidAll.Location = new Point(1051, 74);
             btnVoidAll.Name = "btnVoidAll";
             btnVoidAll.Size = new Size(90, 23);
             btnVoidAll.TabIndex = 30;

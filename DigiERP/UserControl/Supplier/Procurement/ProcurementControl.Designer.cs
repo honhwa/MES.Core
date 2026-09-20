@@ -74,7 +74,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1467, 64);
+            panel1.Size = new Size(1625, 64);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -92,7 +92,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnExit.BackColor = Color.Gainsboro;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnExit.Location = new Point(1363, 14);
+            btnExit.Location = new Point(1495, 11);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(80, 32);
             btnExit.TabIndex = 12;
@@ -106,7 +106,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnAdd.BackColor = Color.Gainsboro;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnAdd.Location = new Point(1273, 14);
+            btnAdd.Location = new Point(1405, 11);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(80, 32);
             btnAdd.TabIndex = 11;
@@ -118,7 +118,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             lblItemName.AutoSize = true;
             lblItemName.Font = new Font("微軟正黑體", 10F);
-            lblItemName.Location = new Point(1033, 20);
+            lblItemName.Location = new Point(1164, 19);
             lblItemName.Name = "lblItemName";
             lblItemName.Size = new Size(64, 18);
             lblItemName.TabIndex = 9;
@@ -127,7 +127,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // txtItemName
             // 
             txtItemName.Font = new Font("微軟正黑體", 10F);
-            txtItemName.Location = new Point(1103, 16);
+            txtItemName.Location = new Point(1234, 15);
             txtItemName.Name = "txtItemName";
             txtItemName.Size = new Size(150, 25);
             txtItemName.TabIndex = 10;
@@ -137,7 +137,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             lblProject.AutoSize = true;
             lblProject.Font = new Font("微軟正黑體", 10F);
-            lblProject.Location = new Point(848, 20);
+            lblProject.Location = new Point(978, 17);
             lblProject.Name = "lblProject";
             lblProject.Size = new Size(64, 18);
             lblProject.TabIndex = 7;
@@ -146,7 +146,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // txtProject
             // 
             txtProject.Font = new Font("微軟正黑體", 10F);
-            txtProject.Location = new Point(918, 16);
+            txtProject.Location = new Point(1048, 13);
             txtProject.Name = "txtProject";
             txtProject.Size = new Size(110, 25);
             txtProject.TabIndex = 8;
@@ -156,7 +156,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             lblSupplier.AutoSize = true;
             lblSupplier.Font = new Font("微軟正黑體", 10F);
-            lblSupplier.Location = new Point(664, 20);
+            lblSupplier.Location = new Point(793, 19);
             lblSupplier.Name = "lblSupplier";
             lblSupplier.Size = new Size(64, 18);
             lblSupplier.TabIndex = 5;
@@ -165,7 +165,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // txtSupplier
             // 
             txtSupplier.Font = new Font("微軟正黑體", 10F);
-            txtSupplier.Location = new Point(733, 16);
+            txtSupplier.Location = new Point(862, 15);
             txtSupplier.Name = "txtSupplier";
             txtSupplier.Size = new Size(110, 25);
             txtSupplier.TabIndex = 6;
@@ -175,7 +175,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             lblNo.AutoSize = true;
             lblNo.Font = new Font("微軟正黑體", 10F);
-            lblNo.Location = new Point(474, 20);
+            lblNo.Location = new Point(603, 18);
             lblNo.Name = "lblNo";
             lblNo.Size = new Size(64, 18);
             lblNo.TabIndex = 3;
@@ -184,7 +184,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // txtNo
             // 
             txtNo.Font = new Font("微軟正黑體", 10F);
-            txtNo.Location = new Point(548, 16);
+            txtNo.Location = new Point(677, 14);
             txtNo.Name = "txtNo";
             txtNo.Size = new Size(110, 25);
             txtNo.TabIndex = 4;
@@ -196,10 +196,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnClosed.FlatStyle = FlatStyle.Flat;
             btnClosed.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnClosed.ForeColor = Color.White;
-            btnClosed.Location = new Point(367, 14);
+            btnClosed.Location = new Point(484, 12);
             btnClosed.Name = "btnClosed";
             btnClosed.Size = new Size(100, 32);
             btnClosed.TabIndex = 2;
+            btnClosed.Tag = "btn-modify";
             btnClosed.Text = "查詢已結案";
             btnClosed.UseVisualStyleBackColor = false;
             btnClosed.Click += btnClosed_Click;
@@ -210,10 +211,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnWithoutDetail.FlatStyle = FlatStyle.Flat;
             btnWithoutDetail.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnWithoutDetail.ForeColor = Color.White;
-            btnWithoutDetail.Location = new Point(263, 14);
+            btnWithoutDetail.Location = new Point(359, 13);
             btnWithoutDetail.Name = "btnWithoutDetail";
             btnWithoutDetail.Size = new Size(101, 32);
             btnWithoutDetail.TabIndex = 1;
+            btnWithoutDetail.Tag = "btn-modify";
             btnWithoutDetail.Text = "未輸入明細";
             btnWithoutDetail.UseVisualStyleBackColor = false;
             btnWithoutDetail.Click += btnWithoutDetail_Click;
@@ -223,10 +225,11 @@ namespace DigiERP.UserControl.Supplier.Procurement
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(75, 18);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(170, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "採購單總覽-未結案";
             // 
             // panel2
@@ -235,7 +238,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1467, 600);
+            panel2.Size = new Size(1625, 600);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -254,7 +257,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1467, 600);
+            dataGridView1.Size = new Size(1625, 600);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;
@@ -359,7 +362,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             Font = new Font("微軟正黑體", 10F);
             Margin = new Padding(4);
             Name = "ProcurementControl";
-            Size = new Size(1467, 664);
+            Size = new Size(1625, 664);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
