@@ -16,6 +16,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierEvaluateControl));
             panel1 = new Panel();
+            btnAdd = new Button();
+            pictureBox1 = new PictureBox();
             btnSearch = new Button();
             txtSearchSupplierNo = new TextBox();
             lblSearchSupplierNo = new Label();
@@ -33,12 +35,10 @@
             colReviewDate = new DataGridViewTextBoxColumn();
             colApproved = new DataGridViewTextBoxColumn();
             colApproveDate = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
-            btnAdd = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -55,9 +55,34 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1497, 112);
+            panel1.Size = new Size(1497, 60);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.MediumSeaGreen;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(1404, 12);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(80, 40);
+            btnAdd.TabIndex = 7;
+            btnAdd.Tag = "btn-modify";
+            btnAdd.Text = "新增";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(8, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // btnSearch
             // 
@@ -65,10 +90,11 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(568, 64);
+            btnSearch.Location = new Point(1292, 12);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(100, 40);
             btnSearch.TabIndex = 4;
+            btnSearch.Tag = "btn-modify";
             btnSearch.Text = "查詢";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
@@ -76,7 +102,7 @@
             // txtSearchSupplierNo
             // 
             txtSearchSupplierNo.Font = new Font("微軟正黑體", 10F);
-            txtSearchSupplierNo.Location = new Point(332, 72);
+            txtSearchSupplierNo.Location = new Point(617, 21);
             txtSearchSupplierNo.Name = "txtSearchSupplierNo";
             txtSearchSupplierNo.Size = new Size(220, 25);
             txtSearchSupplierNo.TabIndex = 3;
@@ -86,7 +112,7 @@
             // 
             lblSearchSupplierNo.AutoSize = true;
             lblSearchSupplierNo.Font = new Font("微軟正黑體", 10F);
-            lblSearchSupplierNo.Location = new Point(262, 76);
+            lblSearchSupplierNo.Location = new Point(547, 25);
             lblSearchSupplierNo.Name = "lblSearchSupplierNo";
             lblSearchSupplierNo.Size = new Size(64, 18);
             lblSearchSupplierNo.TabIndex = 2;
@@ -95,7 +121,7 @@
             // txtSearchNo
             // 
             txtSearchNo.Font = new Font("微軟正黑體", 10F);
-            txtSearchNo.Location = new Point(86, 72);
+            txtSearchNo.Location = new Point(371, 21);
             txtSearchNo.Name = "txtSearchNo";
             txtSearchNo.Size = new Size(160, 25);
             txtSearchNo.TabIndex = 1;
@@ -105,7 +131,7 @@
             // 
             lblSearchNo.AutoSize = true;
             lblSearchNo.Font = new Font("微軟正黑體", 10F);
-            lblSearchNo.Location = new Point(16, 76);
+            lblSearchNo.Location = new Point(301, 25);
             lblSearchNo.Name = "lblSearchNo";
             lblSearchNo.Size = new Size(64, 18);
             lblSearchNo.TabIndex = 0;
@@ -114,19 +140,20 @@
             // lblTitle
             // 
             lblTitle.Font = new Font("微軟正黑體", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(88, 20);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(200, 32);
             lblTitle.TabIndex = 5;
+            lblTitle.Tag = "title";
             lblTitle.Text = "廠商評鑑一覽表";
             // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 112);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1497, 564);
+            panel2.Size = new Size(1497, 616);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -145,7 +172,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 28;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1497, 564);
+            dataGridView1.Size = new Size(1497, 616);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;
@@ -213,30 +240,6 @@
             colApproveDate.Name = "colApproveDate";
             colApproveDate.ReadOnly = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.MediumSeaGreen;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(680, 64);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(80, 40);
-            btnAdd.TabIndex = 7;
-            btnAdd.Text = "新增";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
-            //
             // SupplierEvaluateControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -249,9 +252,9 @@
             Size = new Size(1497, 676);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

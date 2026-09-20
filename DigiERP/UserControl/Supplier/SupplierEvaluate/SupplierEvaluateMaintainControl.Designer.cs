@@ -152,10 +152,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(96, 8);
+            btnDelete.Location = new Point(582, 8);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(100, 44);
             btnDelete.TabIndex = 1;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除紀錄";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -166,10 +167,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(204, 8);
+            btnAdd.Location = new Point(690, 8);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(90, 44);
             btnAdd.TabIndex = 2;
+            btnAdd.Tag = "btn-modify";
             btnAdd.Text = "新增";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Visible = false;
@@ -181,10 +183,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnModify.FlatStyle = FlatStyle.Flat;
             btnModify.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnModify.ForeColor = Color.White;
-            btnModify.Location = new Point(302, 8);
+            btnModify.Location = new Point(788, 8);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(90, 44);
             btnModify.TabIndex = 3;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -195,10 +198,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(400, 8);
+            btnSave.Location = new Point(886, 8);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 44);
             btnSave.TabIndex = 4;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -209,10 +213,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnApprove.FlatStyle = FlatStyle.Flat;
             btnApprove.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnApprove.ForeColor = Color.White;
-            btnApprove.Location = new Point(498, 8);
+            btnApprove.Location = new Point(984, 8);
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new Size(90, 44);
             btnApprove.TabIndex = 5;
+            btnApprove.Tag = "btn-modify";
             btnApprove.Text = "生效";
             btnApprove.UseVisualStyleBackColor = false;
             btnApprove.Click += btnApprove_Click;
@@ -223,10 +228,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnCancelApprove.FlatStyle = FlatStyle.Flat;
             btnCancelApprove.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnCancelApprove.ForeColor = Color.White;
-            btnCancelApprove.Location = new Point(596, 8);
+            btnCancelApprove.Location = new Point(1082, 8);
             btnCancelApprove.Name = "btnCancelApprove";
             btnCancelApprove.Size = new Size(100, 44);
             btnCancelApprove.TabIndex = 6;
+            btnCancelApprove.Tag = "btn-modify";
             btnCancelApprove.Text = "取消生效";
             btnCancelApprove.UseVisualStyleBackColor = false;
             btnCancelApprove.Click += btnCancelApprove_Click;
@@ -237,10 +243,11 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnPrint.FlatStyle = FlatStyle.Flat;
             btnPrint.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnPrint.ForeColor = Color.White;
-            btnPrint.Location = new Point(704, 8);
+            btnPrint.Location = new Point(1190, 8);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(90, 44);
             btnPrint.TabIndex = 7;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -251,17 +258,18 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnOverview.FlatStyle = FlatStyle.Flat;
             btnOverview.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnOverview.ForeColor = Color.White;
-            btnOverview.Location = new Point(802, 8);
+            btnOverview.Location = new Point(1288, 8);
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(90, 44);
             btnOverview.TabIndex = 8;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Click += btnOverview_Click;
             // 
             // btnBack
             // 
-            btnBack.BackColor = Color.DimGray;
+            btnBack.BackColor = Color.Red;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnBack.ForeColor = Color.White;
@@ -269,7 +277,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(100, 44);
             btnBack.TabIndex = 9;
-            btnBack.Text = "關閉";
+            btnBack.Text = "EXIT";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
@@ -322,16 +330,16 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             dtpDate.CustomFormat = "yyyy/MM/dd";
             dtpDate.Font = new Font("微軟正黑體", 10F);
             dtpDate.Format = DateTimePickerFormat.Custom;
-            dtpDate.Location = new Point(50, 8);
+            dtpDate.Location = new Point(72, 8);
             dtpDate.Name = "dtpDate";
-            dtpDate.Size = new Size(150, 25);
+            dtpDate.Size = new Size(140, 25);
             dtpDate.TabIndex = 1;
             // 
             // lblFormNo
             // 
             lblFormNo.AutoSize = true;
             lblFormNo.Font = new Font("微軟正黑體", 10F);
-            lblFormNo.Location = new Point(210, 12);
+            lblFormNo.Location = new Point(230, 12);
             lblFormNo.Name = "lblFormNo";
             lblFormNo.Size = new Size(36, 18);
             lblFormNo.TabIndex = 2;
@@ -341,17 +349,17 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             txtFormNo.BackColor = Color.WhiteSmoke;
             txtFormNo.Font = new Font("微軟正黑體", 10F);
-            txtFormNo.Location = new Point(252, 8);
+            txtFormNo.Location = new Point(294, 8);
             txtFormNo.Name = "txtFormNo";
             txtFormNo.ReadOnly = true;
-            txtFormNo.Size = new Size(140, 25);
+            txtFormNo.Size = new Size(118, 25);
             txtFormNo.TabIndex = 3;
             // 
             // lblSupplierNo
             // 
             lblSupplierNo.AutoSize = true;
             lblSupplierNo.Font = new Font("微軟正黑體", 10F);
-            lblSupplierNo.Location = new Point(402, 12);
+            lblSupplierNo.Location = new Point(428, 11);
             lblSupplierNo.Name = "lblSupplierNo";
             lblSupplierNo.Size = new Size(64, 18);
             lblSupplierNo.TabIndex = 4;
@@ -361,17 +369,17 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             txtSupplierNo.BackColor = Color.WhiteSmoke;
             txtSupplierNo.Font = new Font("微軟正黑體", 10F);
-            txtSupplierNo.Location = new Point(466, 8);
+            txtSupplierNo.Location = new Point(498, 7);
             txtSupplierNo.Name = "txtSupplierNo";
             txtSupplierNo.ReadOnly = true;
-            txtSupplierNo.Size = new Size(140, 25);
+            txtSupplierNo.Size = new Size(98, 25);
             txtSupplierNo.TabIndex = 5;
             // 
             // btnPickSupplier
             // 
             btnPickSupplier.FlatStyle = FlatStyle.Flat;
             btnPickSupplier.Font = new Font("Segoe MDL2 Assets", 10F);
-            btnPickSupplier.Location = new Point(606, 8);
+            btnPickSupplier.Location = new Point(596, 7);
             btnPickSupplier.Name = "btnPickSupplier";
             btnPickSupplier.Size = new Size(28, 25);
             btnPickSupplier.TabIndex = 6;
@@ -382,7 +390,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             lblShortName.AutoSize = true;
             lblShortName.Font = new Font("微軟正黑體", 10F);
-            lblShortName.Location = new Point(644, 12);
+            lblShortName.Location = new Point(634, 11);
             lblShortName.Name = "lblShortName";
             lblShortName.Size = new Size(64, 18);
             lblShortName.TabIndex = 7;
@@ -392,7 +400,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             txtShortName.BackColor = Color.WhiteSmoke;
             txtShortName.Font = new Font("微軟正黑體", 10F);
-            txtShortName.Location = new Point(708, 8);
+            txtShortName.Location = new Point(698, 7);
             txtShortName.Name = "txtShortName";
             txtShortName.ReadOnly = true;
             txtShortName.Size = new Size(140, 25);
@@ -402,7 +410,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             lblEvaluator.AutoSize = true;
             lblEvaluator.Font = new Font("微軟正黑體", 10F);
-            lblEvaluator.Location = new Point(858, 12);
+            lblEvaluator.Location = new Point(848, 11);
             lblEvaluator.Name = "lblEvaluator";
             lblEvaluator.Size = new Size(64, 18);
             lblEvaluator.TabIndex = 9;
@@ -412,9 +420,9 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             cboEvaluator.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEvaluator.Font = new Font("微軟正黑體", 10F);
-            cboEvaluator.Location = new Point(922, 8);
+            cboEvaluator.Location = new Point(912, 7);
             cboEvaluator.Name = "cboEvaluator";
-            cboEvaluator.Size = new Size(220, 25);
+            cboEvaluator.Size = new Size(128, 25);
             cboEvaluator.TabIndex = 10;
             // 
             // lblTaxNo
@@ -441,7 +449,7 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             lblIndustry.AutoSize = true;
             lblIndustry.Font = new Font("微軟正黑體", 10F);
-            lblIndustry.Location = new Point(222, 52);
+            lblIndustry.Location = new Point(230, 52);
             lblIndustry.Name = "lblIndustry";
             lblIndustry.Size = new Size(64, 18);
             lblIndustry.TabIndex = 13;
@@ -451,17 +459,17 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             txtIndustry.BackColor = Color.WhiteSmoke;
             txtIndustry.Font = new Font("微軟正黑體", 10F);
-            txtIndustry.Location = new Point(286, 48);
+            txtIndustry.Location = new Point(294, 48);
             txtIndustry.Name = "txtIndustry";
             txtIndustry.ReadOnly = true;
-            txtIndustry.Size = new Size(110, 25);
+            txtIndustry.Size = new Size(118, 25);
             txtIndustry.TabIndex = 14;
             // 
             // lblSupplierName
             // 
             lblSupplierName.AutoSize = true;
             lblSupplierName.Font = new Font("微軟正黑體", 10F);
-            lblSupplierName.Location = new Point(406, 52);
+            lblSupplierName.Location = new Point(428, 51);
             lblSupplierName.Name = "lblSupplierName";
             lblSupplierName.Size = new Size(64, 18);
             lblSupplierName.TabIndex = 15;
@@ -471,17 +479,17 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             txtSupplierName.BackColor = Color.WhiteSmoke;
             txtSupplierName.Font = new Font("微軟正黑體", 10F);
-            txtSupplierName.Location = new Point(470, 48);
+            txtSupplierName.Location = new Point(498, 47);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
-            txtSupplierName.Size = new Size(376, 25);
+            txtSupplierName.Size = new Size(340, 25);
             txtSupplierName.TabIndex = 16;
             // 
             // lblReviewer
             // 
             lblReviewer.AutoSize = true;
             lblReviewer.Font = new Font("微軟正黑體", 10F);
-            lblReviewer.Location = new Point(858, 52);
+            lblReviewer.Location = new Point(848, 51);
             lblReviewer.Name = "lblReviewer";
             lblReviewer.Size = new Size(64, 18);
             lblReviewer.TabIndex = 17;
@@ -491,9 +499,9 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             cboReviewer.DropDownStyle = ComboBoxStyle.DropDownList;
             cboReviewer.Font = new Font("微軟正黑體", 10F);
-            cboReviewer.Location = new Point(922, 48);
+            cboReviewer.Location = new Point(912, 47);
             cboReviewer.Name = "cboReviewer";
-            cboReviewer.Size = new Size(220, 25);
+            cboReviewer.Size = new Size(128, 25);
             cboReviewer.TabIndex = 18;
             // 
             // lblFactoryAddr
@@ -513,14 +521,14 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             txtFactoryAddr.Location = new Point(72, 88);
             txtFactoryAddr.Name = "txtFactoryAddr";
             txtFactoryAddr.ReadOnly = true;
-            txtFactoryAddr.Size = new Size(376, 25);
+            txtFactoryAddr.Size = new Size(340, 25);
             txtFactoryAddr.TabIndex = 20;
             // 
             // lblCompanyAddr
             // 
             lblCompanyAddr.AutoSize = true;
             lblCompanyAddr.Font = new Font("微軟正黑體", 10F);
-            lblCompanyAddr.Location = new Point(458, 92);
+            lblCompanyAddr.Location = new Point(428, 91);
             lblCompanyAddr.Name = "lblCompanyAddr";
             lblCompanyAddr.Size = new Size(64, 18);
             lblCompanyAddr.TabIndex = 21;
@@ -530,17 +538,17 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             // 
             txtCompanyAddr.BackColor = Color.WhiteSmoke;
             txtCompanyAddr.Font = new Font("微軟正黑體", 10F);
-            txtCompanyAddr.Location = new Point(522, 88);
+            txtCompanyAddr.Location = new Point(498, 87);
             txtCompanyAddr.Name = "txtCompanyAddr";
             txtCompanyAddr.ReadOnly = true;
-            txtCompanyAddr.Size = new Size(324, 25);
+            txtCompanyAddr.Size = new Size(340, 25);
             txtCompanyAddr.TabIndex = 22;
             // 
             // lblReviewDate
             // 
             lblReviewDate.AutoSize = true;
             lblReviewDate.Font = new Font("微軟正黑體", 10F);
-            lblReviewDate.Location = new Point(858, 92);
+            lblReviewDate.Location = new Point(848, 91);
             lblReviewDate.Name = "lblReviewDate";
             lblReviewDate.Size = new Size(64, 18);
             lblReviewDate.TabIndex = 23;
@@ -551,9 +559,9 @@ namespace DigiERP.UserControl.Supplier.SupplierManage
             dtpReviewDate.CustomFormat = "yyyy/MM/dd";
             dtpReviewDate.Font = new Font("微軟正黑體", 10F);
             dtpReviewDate.Format = DateTimePickerFormat.Custom;
-            dtpReviewDate.Location = new Point(922, 88);
+            dtpReviewDate.Location = new Point(912, 87);
             dtpReviewDate.Name = "dtpReviewDate";
-            dtpReviewDate.Size = new Size(220, 25);
+            dtpReviewDate.Size = new Size(128, 25);
             dtpReviewDate.TabIndex = 24;
             // 
             // panelScoreHeader
