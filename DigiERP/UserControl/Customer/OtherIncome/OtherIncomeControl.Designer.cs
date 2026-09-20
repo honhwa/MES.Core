@@ -75,6 +75,7 @@
             btn新增.Name = "btn新增";
             btn新增.Size = new Size(120, 52);
             btn新增.TabIndex = 6;
+            btn新增.Tag = "btn-modify";
             btn新增.Text = "新增";
             btn新增.UseVisualStyleBackColor = false;
             btn新增.Click += btn新增_Click;
@@ -87,6 +88,7 @@
             btn查詢.Name = "btn查詢";
             btn查詢.Size = new Size(120, 52);
             btn查詢.TabIndex = 5;
+            btn查詢.Tag = "btn-modify";
             btn查詢.Text = "查詢";
             btn查詢.UseVisualStyleBackColor = false;
             btn查詢.Click += btn查詢_Click;

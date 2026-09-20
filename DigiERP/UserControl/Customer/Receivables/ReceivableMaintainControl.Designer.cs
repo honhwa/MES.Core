@@ -768,11 +768,11 @@
             // 
             btnClose.BackColor = Color.Red;
             btnClose.ForeColor = SystemColors.ButtonHighlight;
-            btnClose.Location = new Point(1346, 8);
+            btnClose.Location = new Point(1359, 8);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(32, 24);
+            btnClose.Size = new Size(53, 24);
             btnClose.TabIndex = 169;
-            btnClose.Text = "X";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 

@@ -207,7 +207,7 @@ namespace DigiERP.UserControl.Customer.Repair
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(91, 38);
             btnBack.TabIndex = 8;
-            btnBack.Text = "X";
+            btnBack.Text = "EXIT";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
@@ -321,13 +321,13 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             txtEqpModel.Location = new Point(610, 12);
             txtEqpModel.Name = "txtEqpModel";
-            txtEqpModel.Size = new Size(258, 31);
+            txtEqpModel.Size = new Size(358, 31);
             txtEqpModel.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(900, 16);
+            label4.Location = new Point(1024, 15);
             label4.Name = "label4";
             label4.Size = new Size(86, 24);
             label4.TabIndex = 6;
@@ -336,19 +336,19 @@ namespace DigiERP.UserControl.Customer.Repair
             // cboInspectorCode
             // 
             cboInspectorCode.FormattingEnabled = true;
-            cboInspectorCode.Location = new Point(996, 12);
+            cboInspectorCode.Location = new Point(1178, 11);
             cboInspectorCode.Name = "cboInspectorCode";
-            cboInspectorCode.Size = new Size(160, 31);
+            cboInspectorCode.Size = new Size(102, 31);
             cboInspectorCode.TabIndex = 7;
             cboInspectorCode.SelectedIndexChanged += cboInspectorCode_SelectedIndexChanged;
             // 
             // txtInspectorName
             // 
             txtInspectorName.BackColor = Color.LightYellow;
-            txtInspectorName.Location = new Point(1166, 12);
+            txtInspectorName.Location = new Point(1286, 11);
             txtInspectorName.Name = "txtInspectorName";
             txtInspectorName.ReadOnly = true;
-            txtInspectorName.Size = new Size(260, 31);
+            txtInspectorName.Size = new Size(140, 31);
             txtInspectorName.TabIndex = 8;
             // 
             // label5
@@ -391,13 +391,13 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             txtProjectSerial.Location = new Point(350, 50);
             txtProjectSerial.Name = "txtProjectSerial";
-            txtProjectSerial.Size = new Size(120, 31);
+            txtProjectSerial.Size = new Size(150, 31);
             txtProjectSerial.TabIndex = 13;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(484, 56);
+            label7.Location = new Point(514, 56);
             label7.Name = "label7";
             label7.Size = new Size(86, 24);
             label7.TabIndex = 14;
@@ -405,7 +405,7 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             // txtEqpType
             // 
-            txtEqpType.Location = new Point(580, 50);
+            txtEqpType.Location = new Point(610, 50);
             txtEqpType.Name = "txtEqpType";
             txtEqpType.Size = new Size(100, 31);
             txtEqpType.TabIndex = 15;
@@ -413,7 +413,7 @@ namespace DigiERP.UserControl.Customer.Repair
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(694, 56);
+            label8.Location = new Point(716, 56);
             label8.Name = "label8";
             label8.Size = new Size(86, 24);
             label8.TabIndex = 16;
@@ -421,15 +421,15 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             // txtEqpName
             // 
-            txtEqpName.Location = new Point(790, 50);
+            txtEqpName.Location = new Point(804, 50);
             txtEqpName.Name = "txtEqpName";
-            txtEqpName.Size = new Size(178, 31);
+            txtEqpName.Size = new Size(164, 31);
             txtEqpName.TabIndex = 17;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(1064, 52);
+            label9.Location = new Point(1024, 52);
             label9.Name = "label9";
             label9.Size = new Size(86, 24);
             label9.TabIndex = 18;
@@ -439,9 +439,9 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             cboServiceType.FormattingEnabled = true;
             cboServiceType.Items.AddRange(new object[] { "", "外派維修", "後送內修", "線上指導", "視訊教學" });
-            cboServiceType.Location = new Point(1164, 50);
+            cboServiceType.Location = new Point(1178, 50);
             cboServiceType.Name = "cboServiceType";
-            cboServiceType.Size = new Size(262, 31);
+            cboServiceType.Size = new Size(248, 31);
             cboServiceType.TabIndex = 19;
             // 
             // label10
@@ -625,7 +625,7 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             labelR1.Font = new Font("Microsoft JhengHei UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 136);
             labelR1.ForeColor = Color.DarkRed;
-            labelR1.Location = new Point(8, 358);
+            labelR1.Location = new Point(3, 358);
             labelR1.Name = "labelR1";
             labelR1.Size = new Size(75, 120);
             labelR1.TabIndex = 40;
@@ -692,7 +692,7 @@ namespace DigiERP.UserControl.Customer.Repair
             // 
             labelR5.Font = new Font("Microsoft JhengHei UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 136);
             labelR5.ForeColor = Color.DarkRed;
-            labelR5.Location = new Point(8, 606);
+            labelR5.Location = new Point(3, 606);
             labelR5.Name = "labelR5";
             labelR5.Size = new Size(75, 110);
             labelR5.TabIndex = 51;

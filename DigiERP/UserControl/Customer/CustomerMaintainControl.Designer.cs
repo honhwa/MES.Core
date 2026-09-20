@@ -37,7 +37,7 @@ namespace DigiERP.UserControl
             txtMachineIssue = new CommonTextBox();
             label19 = new Label();
             btnIndustryCodeManage = new Button();
-            industryCodeSelect1 = new Common.IndustryCodeSelect();
+            industryCodeSelect1 = new DigiERP.UserControl.Common.IndustryCodeSelect();
             txtColumn1 = new CommonTextBox();
             label18 = new Label();
             cboIndustrry = new CommonComboBox();
@@ -64,7 +64,7 @@ namespace DigiERP.UserControl
             txtContactPersion = new CommonTextBox();
             label7 = new Label();
             label6 = new Label();
-            coutrySelect1 = new Common.CoutrySelect();
+            coutrySelect1 = new DigiERP.UserControl.Common.CoutrySelect();
             label5 = new Label();
             btnGenCustNumber = new Button();
             txtCustNumber = new CommonTextBox();
@@ -75,7 +75,7 @@ namespace DigiERP.UserControl
             txtCustomerCompany = new CommonTextBox();
             label2 = new Label();
             label21 = new Label();
-            bankCodeSelect1 = new Common.BankCodeSelect();
+            bankCodeSelect1 = new DigiERP.UserControl.Common.BankCodeSelect();
             btnInactivate = new Button();
             btnActivate = new Button();
             label22 = new Label();
@@ -142,7 +142,7 @@ namespace DigiERP.UserControl
             button1.BackColor = Color.Red;
             button1.Font = new Font("Microsoft JhengHei UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 136);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(1070, 83);
+            button1.Location = new Point(1261, 83);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(66, 33);
@@ -155,7 +155,7 @@ namespace DigiERP.UserControl
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label20.Location = new Point(11, 522);
+            label20.Location = new Point(9, 566);
             label20.Margin = new Padding(2, 0, 2, 0);
             label20.Name = "label20";
             label20.Size = new Size(86, 24);
@@ -165,7 +165,7 @@ namespace DigiERP.UserControl
             // txtMachineIssue
             // 
             txtMachineIssue.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtMachineIssue.Location = new Point(106, 518);
+            txtMachineIssue.Location = new Point(105, 562);
             txtMachineIssue.Margin = new Padding(2);
             txtMachineIssue.Name = "txtMachineIssue";
             txtMachineIssue.Size = new Size(462, 31);
@@ -175,7 +175,7 @@ namespace DigiERP.UserControl
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label19.Location = new Point(11, 486);
+            label19.Location = new Point(9, 530);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
             label19.Size = new Size(86, 24);
@@ -187,18 +187,19 @@ namespace DigiERP.UserControl
             btnIndustryCodeManage.BackColor = Color.Brown;
             btnIndustryCodeManage.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnIndustryCodeManage.ForeColor = SystemColors.ButtonFace;
-            btnIndustryCodeManage.Location = new Point(453, 479);
+            btnIndustryCodeManage.Location = new Point(452, 523);
             btnIndustryCodeManage.Margin = new Padding(2);
             btnIndustryCodeManage.Name = "btnIndustryCodeManage";
             btnIndustryCodeManage.Size = new Size(104, 35);
             btnIndustryCodeManage.TabIndex = 119;
+            btnIndustryCodeManage.Tag = "btn-modify";
             btnIndustryCodeManage.Text = "業別管理";
             btnIndustryCodeManage.UseVisualStyleBackColor = false;
             btnIndustryCodeManage.Click += btnIndustryCodeManage_Click;
             // 
             // industryCodeSelect1
             // 
-            industryCodeSelect1.Location = new Point(97, 477);
+            industryCodeSelect1.Location = new Point(96, 521);
             industryCodeSelect1.Margin = new Padding(1);
             industryCodeSelect1.Name = "industryCodeSelect1";
             industryCodeSelect1.Size = new Size(359, 37);
@@ -208,7 +209,7 @@ namespace DigiERP.UserControl
             // txtColumn1
             // 
             txtColumn1.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtColumn1.Location = new Point(387, 443);
+            txtColumn1.Location = new Point(386, 487);
             txtColumn1.Margin = new Padding(2);
             txtColumn1.Name = "txtColumn1";
             txtColumn1.Size = new Size(181, 31);
@@ -218,7 +219,7 @@ namespace DigiERP.UserControl
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label18.Location = new Point(297, 444);
+            label18.Location = new Point(295, 488);
             label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
             label18.Size = new Size(86, 24);
@@ -231,7 +232,7 @@ namespace DigiERP.UserControl
             cboIndustrry.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboIndustrry.FormattingEnabled = true;
             cboIndustrry.Items.AddRange(new object[] { "Manufacturer", "Trader", "Agent" });
-            cboIndustrry.Location = new Point(106, 441);
+            cboIndustrry.Location = new Point(105, 485);
             cboIndustrry.Margin = new Padding(2);
             cboIndustrry.Name = "cboIndustrry";
             cboIndustrry.Size = new Size(181, 32);
@@ -241,7 +242,7 @@ namespace DigiERP.UserControl
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label17.Location = new Point(11, 450);
+            label17.Location = new Point(9, 494);
             label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
             label17.Size = new Size(86, 24);
@@ -254,7 +255,7 @@ namespace DigiERP.UserControl
             cboSource.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboSource.FormattingEnabled = true;
             cboSource.Items.AddRange(new object[] { "", "社群軟體", "非代理/朋友", "搜尋引擎", "公司官網詢問函", "代理轉介", "展覽認識", "自主開發" });
-            cboSource.Location = new Point(387, 195);
+            cboSource.Location = new Point(106, 236);
             cboSource.Margin = new Padding(2);
             cboSource.Name = "cboSource";
             cboSource.Size = new Size(181, 32);
@@ -266,7 +267,7 @@ namespace DigiERP.UserControl
             cboMa.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboMa.FormattingEnabled = true;
             cboMa.Items.AddRange(new object[] { "", "Manufacturer", "Trader", "Agent" });
-            cboMa.Location = new Point(387, 406);
+            cboMa.Location = new Point(386, 450);
             cboMa.Margin = new Padding(2);
             cboMa.Name = "cboMa";
             cboMa.Size = new Size(181, 32);
@@ -276,7 +277,7 @@ namespace DigiERP.UserControl
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label15.Location = new Point(295, 409);
+            label15.Location = new Point(296, 453);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
             label15.Size = new Size(86, 24);
@@ -286,7 +287,7 @@ namespace DigiERP.UserControl
             // txtEmail
             // 
             txtEmail.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtEmail.Location = new Point(106, 406);
+            txtEmail.Location = new Point(105, 450);
             txtEmail.Margin = new Padding(2);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(181, 31);
@@ -296,7 +297,7 @@ namespace DigiERP.UserControl
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label16.Location = new Point(49, 414);
+            label16.Location = new Point(10, 458);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
             label16.Size = new Size(48, 24);
@@ -306,7 +307,7 @@ namespace DigiERP.UserControl
             // txtFax
             // 
             txtFax.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtFax.Location = new Point(387, 371);
+            txtFax.Location = new Point(386, 415);
             txtFax.Margin = new Padding(2);
             txtFax.Name = "txtFax";
             txtFax.Size = new Size(181, 31);
@@ -316,7 +317,7 @@ namespace DigiERP.UserControl
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label13.Location = new Point(333, 374);
+            label13.Location = new Point(296, 418);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new Size(48, 24);
@@ -326,7 +327,7 @@ namespace DigiERP.UserControl
             // txtWebsite
             // 
             txtWebsite.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtWebsite.Location = new Point(106, 371);
+            txtWebsite.Location = new Point(105, 415);
             txtWebsite.Margin = new Padding(2);
             txtWebsite.Name = "txtWebsite";
             txtWebsite.Size = new Size(181, 31);
@@ -336,7 +337,7 @@ namespace DigiERP.UserControl
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label14.Location = new Point(49, 378);
+            label14.Location = new Point(10, 422);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(48, 24);
@@ -346,7 +347,7 @@ namespace DigiERP.UserControl
             // txtZipcode
             // 
             txtZipcode.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtZipcode.Location = new Point(387, 335);
+            txtZipcode.Location = new Point(386, 379);
             txtZipcode.Margin = new Padding(2);
             txtZipcode.Name = "txtZipcode";
             txtZipcode.Size = new Size(181, 31);
@@ -356,7 +357,7 @@ namespace DigiERP.UserControl
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label11.Location = new Point(333, 338);
+            label11.Location = new Point(296, 382);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(48, 24);
@@ -366,7 +367,7 @@ namespace DigiERP.UserControl
             // txtTel
             // 
             txtTel.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtTel.Location = new Point(106, 336);
+            txtTel.Location = new Point(105, 380);
             txtTel.Margin = new Padding(2);
             txtTel.Name = "txtTel";
             txtTel.Size = new Size(181, 31);
@@ -376,7 +377,7 @@ namespace DigiERP.UserControl
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label12.Location = new Point(49, 342);
+            label12.Location = new Point(10, 386);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
             label12.Size = new Size(48, 24);
@@ -386,7 +387,7 @@ namespace DigiERP.UserControl
             // txtDAddress
             // 
             txtDAddress.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtDAddress.Location = new Point(106, 301);
+            txtDAddress.Location = new Point(105, 345);
             txtDAddress.Margin = new Padding(2);
             txtDAddress.Name = "txtDAddress";
             txtDAddress.Size = new Size(462, 31);
@@ -396,7 +397,7 @@ namespace DigiERP.UserControl
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label10.Location = new Point(11, 306);
+            label10.Location = new Point(9, 350);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(86, 24);
@@ -406,7 +407,7 @@ namespace DigiERP.UserControl
             // txtAddress
             // 
             txtAddress.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtAddress.Location = new Point(106, 266);
+            txtAddress.Location = new Point(105, 310);
             txtAddress.Margin = new Padding(2);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(462, 31);
@@ -416,7 +417,7 @@ namespace DigiERP.UserControl
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label9.Location = new Point(11, 270);
+            label9.Location = new Point(9, 314);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(86, 24);
@@ -426,7 +427,7 @@ namespace DigiERP.UserControl
             // txtPosition
             // 
             txtPosition.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtPosition.Location = new Point(387, 232);
+            txtPosition.Location = new Point(386, 276);
             txtPosition.Margin = new Padding(2);
             txtPosition.Name = "txtPosition";
             txtPosition.Size = new Size(181, 31);
@@ -436,7 +437,7 @@ namespace DigiERP.UserControl
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label8.Location = new Point(333, 235);
+            label8.Location = new Point(296, 279);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(48, 24);
@@ -446,7 +447,7 @@ namespace DigiERP.UserControl
             // txtContactPersion
             // 
             txtContactPersion.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtContactPersion.Location = new Point(106, 231);
+            txtContactPersion.Location = new Point(105, 275);
             txtContactPersion.Margin = new Padding(2);
             txtContactPersion.Name = "txtContactPersion";
             txtContactPersion.Size = new Size(181, 31);
@@ -456,7 +457,7 @@ namespace DigiERP.UserControl
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label7.Location = new Point(30, 234);
+            label7.Location = new Point(10, 278);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(67, 24);
@@ -467,7 +468,7 @@ namespace DigiERP.UserControl
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label6.Location = new Point(296, 198);
+            label6.Location = new Point(11, 239);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new Size(86, 24);
@@ -479,14 +480,14 @@ namespace DigiERP.UserControl
             coutrySelect1.Location = new Point(101, 190);
             coutrySelect1.Margin = new Padding(2, 2, 2, 2);
             coutrySelect1.Name = "coutrySelect1";
-            coutrySelect1.Size = new Size(198, 37);
+            coutrySelect1.Size = new Size(455, 37);
             coutrySelect1.TabIndex = 4;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label5.Location = new Point(49, 198);
+            label5.Location = new Point(11, 198);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(48, 24);
@@ -498,11 +499,12 @@ namespace DigiERP.UserControl
             btnGenCustNumber.BackColor = Color.IndianRed;
             btnGenCustNumber.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnGenCustNumber.ForeColor = SystemColors.Control;
-            btnGenCustNumber.Location = new Point(495, 155);
+            btnGenCustNumber.Location = new Point(499, 155);
             btnGenCustNumber.Margin = new Padding(2);
             btnGenCustNumber.Name = "btnGenCustNumber";
             btnGenCustNumber.Size = new Size(71, 31);
             btnGenCustNumber.TabIndex = 89;
+            btnGenCustNumber.Tag = "btn-modify";
             btnGenCustNumber.Text = "取號";
             btnGenCustNumber.UseVisualStyleBackColor = false;
             btnGenCustNumber.Click += btnGenCustNumber_Click;
@@ -521,7 +523,7 @@ namespace DigiERP.UserControl
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label4.Location = new Point(297, 162);
+            label4.Location = new Point(296, 162);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(86, 24);
@@ -538,6 +540,7 @@ namespace DigiERP.UserControl
             btnCompanyChange.Name = "btnCompanyChange";
             btnCompanyChange.Size = new Size(87, 31);
             btnCompanyChange.TabIndex = 86;
+            btnCompanyChange.Tag = "btn-modify";
             btnCompanyChange.Text = "全稱更名";
             btnCompanyChange.UseVisualStyleBackColor = false;
             btnCompanyChange.Click += btnCompanyChange_Click;
@@ -555,7 +558,7 @@ namespace DigiERP.UserControl
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label3.Location = new Point(11, 162);
+            label3.Location = new Point(10, 162);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(86, 24);
@@ -577,7 +580,7 @@ namespace DigiERP.UserControl
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label2.Location = new Point(11, 126);
+            label2.Location = new Point(10, 126);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(86, 24);
@@ -588,7 +591,7 @@ namespace DigiERP.UserControl
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label21.Location = new Point(11, 558);
+            label21.Location = new Point(9, 602);
             label21.Margin = new Padding(2, 0, 2, 0);
             label21.Name = "label21";
             label21.Size = new Size(86, 24);
@@ -597,7 +600,7 @@ namespace DigiERP.UserControl
             // 
             // bankCodeSelect1
             // 
-            bankCodeSelect1.Location = new Point(97, 553);
+            bankCodeSelect1.Location = new Point(96, 597);
             bankCodeSelect1.Margin = new Padding(2);
             bankCodeSelect1.Name = "bankCodeSelect1";
             bankCodeSelect1.Size = new Size(136, 44);
@@ -608,10 +611,11 @@ namespace DigiERP.UserControl
             btnInactivate.BackColor = Color.Tomato;
             btnInactivate.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnInactivate.ForeColor = SystemColors.InactiveBorder;
-            btnInactivate.Location = new Point(341, 558);
+            btnInactivate.Location = new Point(340, 602);
             btnInactivate.Name = "btnInactivate";
             btnInactivate.Size = new Size(88, 32);
             btnInactivate.TabIndex = 125;
+            btnInactivate.Tag = "btn-modify";
             btnInactivate.Text = "停用";
             btnInactivate.UseVisualStyleBackColor = false;
             btnInactivate.Click += btnInactivate_Click;
@@ -621,10 +625,11 @@ namespace DigiERP.UserControl
             btnActivate.BackColor = Color.DodgerBlue;
             btnActivate.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnActivate.ForeColor = SystemColors.InactiveBorder;
-            btnActivate.Location = new Point(453, 558);
+            btnActivate.Location = new Point(452, 602);
             btnActivate.Name = "btnActivate";
             btnActivate.Size = new Size(104, 32);
             btnActivate.TabIndex = 126;
+            btnActivate.Tag = "btn-modify";
             btnActivate.Text = "取消停用";
             btnActivate.UseVisualStyleBackColor = false;
             btnActivate.Click += btnActivate_Click;
@@ -633,7 +638,7 @@ namespace DigiERP.UserControl
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label22.Location = new Point(11, 604);
+            label22.Location = new Point(9, 648);
             label22.Margin = new Padding(2, 0, 2, 0);
             label22.Name = "label22";
             label22.Size = new Size(86, 24);
@@ -644,7 +649,7 @@ namespace DigiERP.UserControl
             // 
             dtEnableDate.Enabled = false;
             dtEnableDate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            dtEnableDate.Location = new Point(106, 601);
+            dtEnableDate.Location = new Point(105, 645);
             dtEnableDate.Name = "dtEnableDate";
             dtEnableDate.Size = new Size(181, 32);
             dtEnableDate.TabIndex = 128;
@@ -654,7 +659,7 @@ namespace DigiERP.UserControl
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label23.Location = new Point(296, 604);
+            label23.Location = new Point(295, 648);
             label23.Margin = new Padding(2, 0, 2, 0);
             label23.Name = "label23";
             label23.Size = new Size(86, 24);
@@ -665,7 +670,7 @@ namespace DigiERP.UserControl
             // 
             dtDisableDate.Enabled = false;
             dtDisableDate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            dtDisableDate.Location = new Point(387, 601);
+            dtDisableDate.Location = new Point(386, 645);
             dtDisableDate.Name = "dtDisableDate";
             dtDisableDate.Size = new Size(181, 32);
             dtDisableDate.TabIndex = 130;
@@ -675,7 +680,7 @@ namespace DigiERP.UserControl
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label24.Location = new Point(48, 643);
+            label24.Location = new Point(10, 687);
             label24.Margin = new Padding(2, 0, 2, 0);
             label24.Name = "label24";
             label24.Size = new Size(48, 24);
@@ -685,17 +690,17 @@ namespace DigiERP.UserControl
             // txtMemo
             // 
             txtMemo.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtMemo.Location = new Point(106, 640);
+            txtMemo.Location = new Point(105, 684);
             txtMemo.Multiline = true;
             txtMemo.Name = "txtMemo";
-            txtMemo.Size = new Size(462, 56);
+            txtMemo.Size = new Size(462, 66);
             txtMemo.TabIndex = 21;
             // 
             // label25
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label25.Location = new Point(483, 723);
+            label25.Location = new Point(482, 775);
             label25.Margin = new Padding(2, 0, 2, 0);
             label25.Name = "label25";
             label25.Size = new Size(48, 24);
@@ -706,7 +711,7 @@ namespace DigiERP.UserControl
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label26.Location = new Point(32, 723);
+            label26.Location = new Point(31, 775);
             label26.Margin = new Padding(2, 0, 2, 0);
             label26.Name = "label26";
             label26.Size = new Size(48, 24);
@@ -717,7 +722,7 @@ namespace DigiERP.UserControl
             // 
             lblModifyUser.AutoSize = true;
             lblModifyUser.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblModifyUser.Location = new Point(104, 723);
+            lblModifyUser.Location = new Point(103, 775);
             lblModifyUser.Margin = new Padding(2, 0, 2, 0);
             lblModifyUser.Name = "lblModifyUser";
             lblModifyUser.Size = new Size(136, 24);
@@ -728,7 +733,7 @@ namespace DigiERP.UserControl
             // 
             lblModifyDate.AutoSize = true;
             lblModifyDate.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblModifyDate.Location = new Point(248, 723);
+            lblModifyDate.Location = new Point(247, 775);
             lblModifyDate.Margin = new Padding(2, 0, 2, 0);
             lblModifyDate.Name = "lblModifyDate";
             lblModifyDate.Size = new Size(121, 24);
@@ -739,7 +744,7 @@ namespace DigiERP.UserControl
             // 
             lblCreator.AutoSize = true;
             lblCreator.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblCreator.Location = new Point(542, 723);
+            lblCreator.Location = new Point(541, 775);
             lblCreator.Margin = new Padding(2, 0, 2, 0);
             lblCreator.Name = "lblCreator";
             lblCreator.Size = new Size(132, 24);
@@ -751,7 +756,7 @@ namespace DigiERP.UserControl
             // 
             lblCreateDate.AutoSize = true;
             lblCreateDate.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblCreateDate.Location = new Point(678, 723);
+            lblCreateDate.Location = new Point(677, 775);
             lblCreateDate.Margin = new Padding(2, 0, 2, 0);
             lblCreateDate.Name = "lblCreateDate";
             lblCreateDate.Size = new Size(133, 24);
@@ -803,7 +808,7 @@ namespace DigiERP.UserControl
             dgvCustIntView.Location = new Point(591, 382);
             dgvCustIntView.Name = "dgvCustIntView";
             dgvCustIntView.RowHeadersWidth = 51;
-            dgvCustIntView.Size = new Size(738, 336);
+            dgvCustIntView.Size = new Size(738, 368);
             dgvCustIntView.TabIndex = 142;
             // 
             // 洽談日期
@@ -846,11 +851,12 @@ namespace DigiERP.UserControl
             btnSubmit.BackColor = SystemColors.Info;
             btnSubmit.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnSubmit.ForeColor = SystemColors.ActiveCaptionText;
-            btnSubmit.Location = new Point(966, 80);
+            btnSubmit.Location = new Point(1150, 83);
             btnSubmit.Margin = new Padding(2);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(90, 33);
             btnSubmit.TabIndex = 143;
+            btnSubmit.Tag = "btn-save";
             btnSubmit.Text = "送出";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
@@ -871,11 +877,12 @@ namespace DigiERP.UserControl
             btnDelete.BackColor = Color.MediumVioletRed;
             btnDelete.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnDelete.ForeColor = SystemColors.ButtonHighlight;
-            btnDelete.Location = new Point(737, 80);
+            btnDelete.Location = new Point(1053, 83);
             btnDelete.Margin = new Padding(2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(90, 33);
             btnDelete.TabIndex = 145;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除紀錄";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -885,11 +892,12 @@ namespace DigiERP.UserControl
             btnShippingRecord.BackColor = Color.FromArgb(0, 192, 0);
             btnShippingRecord.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnShippingRecord.ForeColor = SystemColors.ButtonHighlight;
-            btnShippingRecord.Location = new Point(648, 80);
+            btnShippingRecord.Location = new Point(964, 83);
             btnShippingRecord.Margin = new Padding(2);
             btnShippingRecord.Name = "btnShippingRecord";
             btnShippingRecord.Size = new Size(90, 33);
             btnShippingRecord.TabIndex = 146;
+            btnShippingRecord.Tag = "btn-modify";
             btnShippingRecord.Text = "交貨紀錄";
             btnShippingRecord.UseVisualStyleBackColor = false;
             btnShippingRecord.Click += btnShippingRecord_Click;
@@ -899,11 +907,12 @@ namespace DigiERP.UserControl
             btnRepairHistory.BackColor = Color.FromArgb(0, 0, 192);
             btnRepairHistory.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnRepairHistory.ForeColor = SystemColors.ButtonHighlight;
-            btnRepairHistory.Location = new Point(559, 80);
+            btnRepairHistory.Location = new Point(875, 83);
             btnRepairHistory.Margin = new Padding(2);
             btnRepairHistory.Name = "btnRepairHistory";
             btnRepairHistory.Size = new Size(90, 33);
             btnRepairHistory.TabIndex = 147;
+            btnRepairHistory.Tag = "btn-modify";
             btnRepairHistory.Text = "查修履歷";
             btnRepairHistory.UseVisualStyleBackColor = false;
             btnRepairHistory.Click += btnRepairHistory_Click;
@@ -913,11 +922,12 @@ namespace DigiERP.UserControl
             btnQuotationHistory.BackColor = Color.FromArgb(192, 64, 0);
             btnQuotationHistory.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnQuotationHistory.ForeColor = SystemColors.ButtonHighlight;
-            btnQuotationHistory.Location = new Point(470, 80);
+            btnQuotationHistory.Location = new Point(786, 83);
             btnQuotationHistory.Margin = new Padding(2);
             btnQuotationHistory.Name = "btnQuotationHistory";
             btnQuotationHistory.Size = new Size(90, 33);
             btnQuotationHistory.TabIndex = 148;
+            btnQuotationHistory.Tag = "btn-modify";
             btnQuotationHistory.Text = "報價歷程";
             btnQuotationHistory.UseVisualStyleBackColor = false;
             btnQuotationHistory.Click += btnQuotationHistory_Click_1;
@@ -927,11 +937,12 @@ namespace DigiERP.UserControl
             btnInquiryHistory.BackColor = Color.DarkOrange;
             btnInquiryHistory.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnInquiryHistory.ForeColor = SystemColors.ButtonHighlight;
-            btnInquiryHistory.Location = new Point(381, 80);
+            btnInquiryHistory.Location = new Point(697, 83);
             btnInquiryHistory.Margin = new Padding(2);
             btnInquiryHistory.Name = "btnInquiryHistory";
             btnInquiryHistory.Size = new Size(90, 33);
             btnInquiryHistory.TabIndex = 149;
+            btnInquiryHistory.Tag = "btn-modify";
             btnInquiryHistory.Text = "詢問履歷";
             btnInquiryHistory.UseVisualStyleBackColor = false;
             btnInquiryHistory.Click += btnInquiryHistory_Click;
@@ -941,11 +952,12 @@ namespace DigiERP.UserControl
             btnRecordWrite.BackColor = Color.SteelBlue;
             btnRecordWrite.Font = new Font("Microsoft JhengHei UI", 10.8F);
             btnRecordWrite.ForeColor = SystemColors.ButtonHighlight;
-            btnRecordWrite.Location = new Point(292, 80);
+            btnRecordWrite.Location = new Point(608, 83);
             btnRecordWrite.Margin = new Padding(2);
             btnRecordWrite.Name = "btnRecordWrite";
             btnRecordWrite.Size = new Size(90, 33);
             btnRecordWrite.TabIndex = 150;
+            btnRecordWrite.Tag = "btn-modify";
             btnRecordWrite.Text = "撰寫時錄";
             btnRecordWrite.UseVisualStyleBackColor = false;
             btnRecordWrite.Click += btnRecordWrite_Click;
@@ -955,11 +967,12 @@ namespace DigiERP.UserControl
             button2.BackColor = Color.Teal;
             button2.Font = new Font("Microsoft JhengHei UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 136);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(872, 80);
+            button2.Location = new Point(514, 83);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(90, 33);
             button2.TabIndex = 151;
+            button2.Tag = "btn-modify";
             button2.Text = "修改";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -1041,7 +1054,7 @@ namespace DigiERP.UserControl
             Controls.Add(label1);
             Margin = new Padding(2);
             Name = "CustomerMaintainControl";
-            Size = new Size(1329, 759);
+            Size = new Size(1329, 809);
             ((System.ComponentModel.ISupportInitialize)dgvContactList).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCustIntView).EndInit();
             ResumeLayout(false);

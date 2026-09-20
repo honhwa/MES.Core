@@ -115,6 +115,10 @@ namespace DigiERP.UserControl.Customer.Repair
             txtRecommendation.Enabled = enable;
             txtCustomerReaction.Enabled = enable;
             btnSave.Enabled = enable;
+            btnDelete.Enabled = enable;
+            btnTransferParts.Enabled = enable;
+            btnApprove.Enabled = enable;
+            btnCancelApprove.Enabled = enable;
         }
 
         private void btnModify_Click(object sender, EventArgs e)

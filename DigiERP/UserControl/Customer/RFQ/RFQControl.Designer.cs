@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnAdd = new Button();
             btnOverOneYear = new Button();
             cboIndustry = new ComboBox();
             label4 = new Label();
@@ -51,7 +52,6 @@
             成交機率 = new DataGridViewTextBoxColumn();
             預計再訪日 = new DataGridViewTextBoxColumn();
             業務人員 = new DataGridViewTextBoxColumn();
-            btnAdd = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -75,13 +75,24 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1535, 69);
+            panel1.Size = new Size(1535, 60);
             panel1.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            btnAdd.Location = new Point(1368, 15);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(88, 32);
+            btnAdd.TabIndex = 18;
+            btnAdd.Text = "新增";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnOverOneYear
             // 
             btnOverOneYear.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnOverOneYear.Location = new Point(1192, 16);
+            btnOverOneYear.Location = new Point(1192, 15);
             btnOverOneYear.Name = "btnOverOneYear";
             btnOverOneYear.Size = new Size(168, 32);
             btnOverOneYear.TabIndex = 17;
@@ -92,7 +103,7 @@
             // cboIndustry
             // 
             cboIndustry.FormattingEnabled = true;
-            cboIndustry.Location = new Point(896, 16);
+            cboIndustry.Location = new Point(896, 18);
             cboIndustry.Name = "cboIndustry";
             cboIndustry.Size = new Size(88, 23);
             cboIndustry.TabIndex = 16;
@@ -105,7 +116,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label4.Location = new Point(808, 16);
+            label4.Location = new Point(808, 18);
             label4.Name = "label4";
             label4.Size = new Size(86, 24);
             label4.TabIndex = 15;
@@ -114,7 +125,7 @@
             // btnClear
             // 
             btnClear.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnClear.Location = new Point(1008, 16);
+            btnClear.Location = new Point(1008, 15);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(168, 32);
             btnClear.TabIndex = 14;
@@ -135,7 +146,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label3.Location = new Point(496, 19);
+            label3.Location = new Point(524, 19);
             label3.Name = "label3";
             label3.Size = new Size(86, 24);
             label3.TabIndex = 12;
@@ -143,7 +154,7 @@
             // 
             // txtCustomerQuery
             // 
-            txtCustomerQuery.Location = new Point(386, 24);
+            txtCustomerQuery.Location = new Point(393, 20);
             txtCustomerQuery.Margin = new Padding(2);
             txtCustomerQuery.Name = "txtCustomerQuery";
             txtCustomerQuery.Size = new Size(98, 23);
@@ -154,7 +165,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft JhengHei UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label2.Location = new Point(299, 23);
+            label2.Location = new Point(306, 19);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(86, 24);
@@ -165,17 +176,18 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(68, 19);
+            label1.Location = new Point(73, 14);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(229, 30);
             label1.TabIndex = 1;
+            label1.Tag = "title";
             label1.Text = "詢問函聯絡追蹤管理";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Require;
-            pictureBox1.Location = new Point(12, 13);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
@@ -187,10 +199,10 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 69);
+            panel2.Location = new Point(0, 60);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1535, 411);
+            panel2.Size = new Size(1535, 420);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -205,7 +217,7 @@
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1535, 411);
+            dataGridView1.Size = new Size(1535, 420);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -278,17 +290,6 @@
             業務人員.MinimumWidth = 6;
             業務人員.Name = "業務人員";
             業務人員.ReadOnly = true;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnAdd.Location = new Point(1368, 16);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(88, 32);
-            btnAdd.TabIndex = 18;
-            btnAdd.Text = "新增";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
             // 
             // RFQControl
             // 

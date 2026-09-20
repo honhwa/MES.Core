@@ -988,11 +988,11 @@ namespace DigiERP.UserControl.Customer.SalesOrder
             // 
             btnClose.BackColor = Color.Red;
             btnClose.ForeColor = SystemColors.ButtonHighlight;
-            btnClose.Location = new Point(1354, 7);
+            btnClose.Location = new Point(1338, 7);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(32, 24);
+            btnClose.Size = new Size(57, 24);
             btnClose.TabIndex = 294;
-            btnClose.Text = "X";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 

@@ -17,13 +17,14 @@ namespace DigiERP.UserControl.Customer.OtherIncome
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OtherIncomeMaintainControl));
             panel1 = new Panel();
+            btnClose = new Button();
             btnBack = new Button();
             btnSubmit = new Button();
-            btnDelete = new Button();
-            btnApprove = new Button();
-            btnCancelApprove = new Button();
-            btnModify = new Button();
             lblMode = new Label();
+            btnModify = new Button();
+            btnDelete = new Button();
+            btnCancelApprove = new Button();
+            btnApprove = new Button();
             panelForm = new Panel();
             lbl日期 = new Label();
             dtDate = new DateTimePicker();
@@ -86,6 +87,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             txtCreate = new TextBox();
             lbl建檔日 = new Label();
             txtCreateDate = new TextBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             panelForm.SuspendLayout();
             panel2.SuspendLayout();
@@ -95,6 +97,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(btnBack);
             panel1.Controls.Add(btnSubmit);
             panel1.Controls.Add(lblMode);
@@ -108,76 +111,44 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             panel1.Size = new Size(1654, 60);
             panel1.TabIndex = 0;
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Red;
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(1549, 10);
+            btnClose.Margin = new Padding(2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(83, 44);
+            btnClose.TabIndex = 160;
+            btnClose.Text = "EXIT";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // btnBack
             // 
             btnBack.BackColor = Color.DarkGray;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(66, 10);
+            btnBack.Location = new Point(906, 10);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(100, 44);
             btnBack.TabIndex = 0;
             btnBack.Text = "返回";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Visible = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnSubmit
             // 
             btnSubmit.BackColor = Color.SteelBlue;
             btnSubmit.ForeColor = Color.White;
-            btnSubmit.Location = new Point(174, 10);
+            btnSubmit.Location = new Point(1120, 10);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(100, 44);
             btnSubmit.TabIndex = 1;
+            btnSubmit.Tag = "btn-modify";
             btnSubmit.Text = "儲存";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.IndianRed;
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(282, 10);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(100, 44);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "刪除";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // btnApprove
-            // 
-            btnApprove.BackColor = Color.SeaGreen;
-            btnApprove.ForeColor = Color.White;
-            btnApprove.Location = new Point(390, 10);
-            btnApprove.Name = "btnApprove";
-            btnApprove.Size = new Size(100, 44);
-            btnApprove.TabIndex = 3;
-            btnApprove.Text = "核准";
-            btnApprove.UseVisualStyleBackColor = false;
-            btnApprove.Click += btnApprove_Click;
-            // 
-            // btnCancelApprove
-            // 
-            btnCancelApprove.BackColor = Color.Orange;
-            btnCancelApprove.ForeColor = Color.White;
-            btnCancelApprove.Location = new Point(498, 10);
-            btnCancelApprove.Name = "btnCancelApprove";
-            btnCancelApprove.Size = new Size(120, 44);
-            btnCancelApprove.TabIndex = 4;
-            btnCancelApprove.Text = "取消核准";
-            btnCancelApprove.UseVisualStyleBackColor = false;
-            btnCancelApprove.Click += btnCancelApprove_Click;
-            // 
-            // btnModify
-            // 
-            btnModify.BackColor = Color.Gainsboro;
-            btnModify.Location = new Point(630, 10);
-            btnModify.Name = "btnModify";
-            btnModify.Size = new Size(100, 44);
-            btnModify.TabIndex = 5;
-            btnModify.Text = "修改";
-            btnModify.UseVisualStyleBackColor = false;
-            btnModify.Click += btnModify_Click;
             // 
             // lblMode
             // 
@@ -189,9 +160,60 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             lblMode.Text = "新增";
             lblMode.Visible = false;
             // 
+            // btnModify
+            // 
+            btnModify.BackColor = Color.Gainsboro;
+            btnModify.Location = new Point(1012, 10);
+            btnModify.Name = "btnModify";
+            btnModify.Size = new Size(100, 44);
+            btnModify.TabIndex = 5;
+            btnModify.Text = "修改";
+            btnModify.UseVisualStyleBackColor = false;
+            btnModify.Click += btnModify_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.IndianRed;
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(1228, 10);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(100, 44);
+            btnDelete.TabIndex = 2;
+            btnDelete.Tag = "btn-modify";
+            btnDelete.Text = "刪除";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnCancelApprove
+            // 
+            btnCancelApprove.BackColor = Color.Orange;
+            btnCancelApprove.ForeColor = Color.White;
+            btnCancelApprove.Location = new Point(1444, 10);
+            btnCancelApprove.Name = "btnCancelApprove";
+            btnCancelApprove.Size = new Size(120, 44);
+            btnCancelApprove.TabIndex = 4;
+            btnCancelApprove.Tag = "btn-modify";
+            btnCancelApprove.Text = "取消核准";
+            btnCancelApprove.UseVisualStyleBackColor = false;
+            btnCancelApprove.Click += btnCancelApprove_Click;
+            // 
+            // btnApprove
+            // 
+            btnApprove.BackColor = Color.SeaGreen;
+            btnApprove.ForeColor = Color.White;
+            btnApprove.Location = new Point(1336, 10);
+            btnApprove.Name = "btnApprove";
+            btnApprove.Size = new Size(100, 44);
+            btnApprove.TabIndex = 3;
+            btnApprove.Tag = "btn-modify";
+            btnApprove.Text = "核准";
+            btnApprove.UseVisualStyleBackColor = false;
+            btnApprove.Click += btnApprove_Click;
+            // 
             // panelForm
             // 
             panelForm.AutoScroll = true;
+            panelForm.Controls.Add(label1);
             panelForm.Controls.Add(lbl日期);
             panelForm.Controls.Add(dtDate);
             panelForm.Controls.Add(lbl單號);
@@ -234,7 +256,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl日期
             // 
             lbl日期.AutoSize = true;
-            lbl日期.Location = new Point(6, 16);
+            lbl日期.Location = new Point(12, 16);
             lbl日期.Name = "lbl日期";
             lbl日期.Size = new Size(48, 24);
             lbl日期.TabIndex = 0;
@@ -244,7 +266,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             dtDate.CustomFormat = "yyyy/MM/dd";
             dtDate.Format = DateTimePickerFormat.Custom;
-            dtDate.Location = new Point(55, 10);
+            dtDate.Location = new Point(98, 10);
             dtDate.Name = "dtDate";
             dtDate.Size = new Size(170, 32);
             dtDate.TabIndex = 1;
@@ -252,7 +274,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl單號
             // 
             lbl單號.AutoSize = true;
-            lbl單號.Location = new Point(231, 16);
+            lbl單號.Location = new Point(380, 18);
             lbl單號.Name = "lbl單號";
             lbl單號.Size = new Size(48, 24);
             lbl單號.TabIndex = 2;
@@ -261,16 +283,16 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // txtFormNo
             // 
             txtFormNo.BackColor = Color.LightGray;
-            txtFormNo.Location = new Point(280, 10);
+            txtFormNo.Location = new Point(429, 12);
             txtFormNo.Name = "txtFormNo";
             txtFormNo.ReadOnly = true;
-            txtFormNo.Size = new Size(170, 32);
+            txtFormNo.Size = new Size(252, 32);
             txtFormNo.TabIndex = 3;
             // 
             // lbl客戶編號
             // 
             lbl客戶編號.AutoSize = true;
-            lbl客戶編號.Location = new Point(459, 16);
+            lbl客戶編號.Location = new Point(700, 16);
             lbl客戶編號.Name = "lbl客戶編號";
             lbl客戶編號.Size = new Size(86, 24);
             lbl客戶編號.TabIndex = 4;
@@ -279,7 +301,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // cboCustId
             // 
             cboCustId.FormattingEnabled = true;
-            cboCustId.Location = new Point(550, 10);
+            cboCustId.Location = new Point(791, 12);
             cboCustId.Name = "cboCustId";
             cboCustId.Size = new Size(180, 32);
             cboCustId.TabIndex = 5;
@@ -288,7 +310,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl客戶簡稱
             // 
             lbl客戶簡稱.AutoSize = true;
-            lbl客戶簡稱.Location = new Point(739, 16);
+            lbl客戶簡稱.Location = new Point(985, 16);
             lbl客戶簡稱.Name = "lbl客戶簡稱";
             lbl客戶簡稱.Size = new Size(86, 24);
             lbl客戶簡稱.TabIndex = 6;
@@ -297,10 +319,10 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // txtCustAlias
             // 
             txtCustAlias.BackColor = Color.LightGray;
-            txtCustAlias.Location = new Point(828, 10);
+            txtCustAlias.Location = new Point(1074, 10);
             txtCustAlias.Name = "txtCustAlias";
             txtCustAlias.ReadOnly = true;
-            txtCustAlias.Size = new Size(150, 32);
+            txtCustAlias.Size = new Size(168, 32);
             txtCustAlias.TabIndex = 7;
             // 
             // lbl傳票
@@ -314,9 +336,9 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             // txtVoucher
             // 
-            txtVoucher.Location = new Point(1036, 10);
+            txtVoucher.Location = new Point(1332, 10);
             txtVoucher.Name = "txtVoucher";
-            txtVoucher.Size = new Size(200, 32);
+            txtVoucher.Size = new Size(300, 32);
             txtVoucher.TabIndex = 9;
             // 
             // lbl業務人員
@@ -383,7 +405,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl稅別
             // 
             lbl稅別.AutoSize = true;
-            lbl稅別.Location = new Point(685, 63);
+            lbl稅別.Location = new Point(700, 63);
             lbl稅別.Name = "lbl稅別";
             lbl稅別.Size = new Size(48, 24);
             lbl稅別.TabIndex = 17;
@@ -392,7 +414,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // cboTaxType
             // 
             cboTaxType.FormattingEnabled = true;
-            cboTaxType.Location = new Point(736, 57);
+            cboTaxType.Location = new Point(791, 57);
             cboTaxType.Name = "cboTaxType";
             cboTaxType.Size = new Size(130, 32);
             cboTaxType.TabIndex = 18;
@@ -400,7 +422,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl稅率
             // 
             lbl稅率.AutoSize = true;
-            lbl稅率.Location = new Point(869, 63);
+            lbl稅率.Location = new Point(985, 63);
             lbl稅率.Name = "lbl稅率";
             lbl稅率.Size = new Size(48, 24);
             lbl稅率.TabIndex = 19;
@@ -409,7 +431,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // cboTaxRate
             // 
             cboTaxRate.FormattingEnabled = true;
-            cboTaxRate.Location = new Point(918, 57);
+            cboTaxRate.Location = new Point(1074, 57);
             cboTaxRate.Name = "cboTaxRate";
             cboTaxRate.Size = new Size(100, 32);
             cboTaxRate.TabIndex = 20;
@@ -417,7 +439,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl客戶全名
             // 
             lbl客戶全名.AutoSize = true;
-            lbl客戶全名.Location = new Point(1026, 63);
+            lbl客戶全名.Location = new Point(1242, 63);
             lbl客戶全名.Name = "lbl客戶全名";
             lbl客戶全名.Size = new Size(86, 24);
             lbl客戶全名.TabIndex = 21;
@@ -426,7 +448,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // txtCompany
             // 
             txtCompany.BackColor = Color.LightGray;
-            txtCompany.Location = new Point(1116, 57);
+            txtCompany.Location = new Point(1332, 57);
             txtCompany.Name = "txtCompany";
             txtCompany.ReadOnly = true;
             txtCompany.Size = new Size(300, 32);
@@ -447,13 +469,13 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             txtCredibility.Location = new Point(98, 104);
             txtCredibility.Name = "txtCredibility";
             txtCredibility.ReadOnly = true;
-            txtCredibility.Size = new Size(200, 32);
+            txtCredibility.Size = new Size(276, 32);
             txtCredibility.TabIndex = 24;
             // 
             // lblMachineNo
             // 
             lblMachineNo.AutoSize = true;
-            lblMachineNo.Location = new Point(312, 110);
+            lblMachineNo.Location = new Point(380, 110);
             lblMachineNo.Name = "lblMachineNo";
             lblMachineNo.Size = new Size(48, 24);
             lblMachineNo.TabIndex = 25;
@@ -461,23 +483,25 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // 
             // txtMachineNo
             // 
-            txtMachineNo.Location = new Point(356, 104);
+            txtMachineNo.Location = new Point(430, 104);
             txtMachineNo.Name = "txtMachineNo";
-            txtMachineNo.Size = new Size(180, 32);
+            txtMachineNo.Size = new Size(252, 32);
             txtMachineNo.TabIndex = 26;
             // 
             // lbl貿易條件
             // 
             lbl貿易條件.AutoSize = true;
-            lbl貿易條件.Location = new Point(4, 160);
+            lbl貿易條件.BorderStyle = BorderStyle.FixedSingle;
+            lbl貿易條件.Location = new Point(12, 156);
             lbl貿易條件.Name = "lbl貿易條件";
-            lbl貿易條件.Size = new Size(86, 24);
+            lbl貿易條件.Size = new Size(88, 26);
             lbl貿易條件.TabIndex = 27;
             lbl貿易條件.Text = "貿易條件";
             // 
             // priceCondControl1
             // 
-            priceCondControl1.Location = new Point(96, 156);
+            priceCondControl1.BorderStyle = BorderStyle.FixedSingle;
+            priceCondControl1.Location = new Point(100, 156);
             priceCondControl1.Name = "priceCondControl1";
             priceCondControl1.Size = new Size(690, 128);
             priceCondControl1.TabIndex = 28;
@@ -486,17 +510,19 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             // lbl付款方式
             // 
             lbl付款方式.AutoSize = true;
-            lbl付款方式.Location = new Point(830, 168);
+            lbl付款方式.BorderStyle = BorderStyle.FixedSingle;
+            lbl付款方式.Location = new Point(822, 156);
             lbl付款方式.Name = "lbl付款方式";
-            lbl付款方式.Size = new Size(86, 24);
+            lbl付款方式.Size = new Size(88, 26);
             lbl付款方式.TabIndex = 29;
             lbl付款方式.Text = "付款方式";
             // 
             // payMethod
             // 
-            payMethod.Location = new Point(916, 156);
+            payMethod.BorderStyle = BorderStyle.FixedSingle;
+            payMethod.Location = new Point(910, 156);
             payMethod.Name = "payMethod";
-            payMethod.Size = new Size(450, 128);
+            payMethod.Size = new Size(520, 128);
             payMethod.TabIndex = 30;
             payMethod.txType = "P,Y";
             // 
@@ -514,7 +540,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             txtRemark.Location = new Point(94, 306);
             txtRemark.Multiline = true;
             txtRemark.Name = "txtRemark";
-            txtRemark.Size = new Size(800, 52);
+            txtRemark.Size = new Size(1538, 80);
             txtRemark.TabIndex = 32;
             // 
             // panel2
@@ -767,6 +793,15 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             txtCreateDate.Size = new Size(106, 32);
             txtCreateDate.TabIndex = 17;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(1248, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(48, 24);
+            label1.TabIndex = 33;
+            label1.Text = "傳票";
+            // 
             // OtherIncomeMaintainControl
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -864,5 +899,7 @@ namespace DigiERP.UserControl.Customer.OtherIncome
         private TextBox txtCreate;
         private Label lbl建檔日;
         private TextBox txtCreateDate;
+        private Button btnClose;
+        private Label label1;
     }
 }

@@ -109,6 +109,9 @@ namespace DigiERP.UserControl.Customer.OtherIncome
             txtRemark.Enabled = enable;
             dataGridView1.Enabled = enable;
             btnSubmit.Enabled = enable;
+            btnDelete.Enabled = enable;
+            btnApprove.Enabled = enable;
+            btnCancelApprove.Enabled = enable;
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -526,6 +529,16 @@ namespace DigiERP.UserControl.Customer.OtherIncome
                 var grid = parentPanel.Controls.OfType<DataGridView>().FirstOrDefault();
                 if (grid != null) grid.Visible = true;
                 parentPanel.Controls.Remove(this);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            var dataGridView = (from c in Parent.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
+            if (dataGridView != null)
+            {
+                dataGridView.Visible = true;
             }
         }
     }

@@ -124,6 +124,9 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             dgvBox.Enabled = enable;
             dgvPayment.Enabled = enable;
             btnSave.Enabled = enable;
+            btnDelete.Enabled = enable;
+            btnCancelApprove.Enabled = enable;
+            btnPrint.Enabled = enable;
             btnUpdateBox.Enabled = enable;
         }
 
@@ -610,6 +613,16 @@ namespace DigiERP.UserControl.Customer.EQPShipping
         private void txtContainerPort_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            var dataGridView = (from c in Parent.Controls.Cast<Control>() where c.GetType() == typeof(DataGridView) select c).FirstOrDefault();
+            if (dataGridView != null)
+            {
+                dataGridView.Visible = true;
+            }
         }
     }
 }

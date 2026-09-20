@@ -31,6 +31,7 @@ namespace DigiERP.UserControl.Customer.Quotation
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuotationMaintain));
             priceCond = new PriceCondControl();
             lblMode = new Label();
             label1 = new Label();
@@ -52,7 +53,7 @@ namespace DigiERP.UserControl.Customer.Quotation
             label9 = new Label();
             txtCompany = new DigiERP.Common.CommonTextBox();
             label10 = new Label();
-            currencySelect1 = new Common.Customer.CurrencySelect();
+            currencySelect1 = new DigiERP.UserControl.Common.Customer.CurrencySelect();
             label11 = new Label();
             label12 = new Label();
             exRate = new DigiERP.Common.CommonNumericUpDown();
@@ -152,12 +153,12 @@ namespace DigiERP.UserControl.Customer.Quotation
             // 
             button1.BackColor = Color.Red;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(1304, 8);
+            button1.Location = new Point(1283, 8);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(20, 22);
+            button1.Size = new Size(41, 22);
             button1.TabIndex = 158;
-            button1.Text = "X";
+            button1.Text = "EXIT";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -328,6 +329,7 @@ namespace DigiERP.UserControl.Customer.Quotation
             // 
             // currencySelect1
             // 
+            currencySelect1.currencyList = null;
             currencySelect1.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             currencySelect1.FormattingEnabled = true;
             currencySelect1.Location = new Point(400, 116);
@@ -799,6 +801,7 @@ namespace DigiERP.UserControl.Customer.Quotation
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(75, 23);
             btnSubmit.TabIndex = 222;
+            btnSubmit.Tag = "btn-modify";
             btnSubmit.Text = "送出";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
@@ -807,10 +810,11 @@ namespace DigiERP.UserControl.Customer.Quotation
             // 
             btnModify.BackColor = Color.FromArgb(192, 0, 0);
             btnModify.ForeColor = SystemColors.ButtonHighlight;
-            btnModify.Location = new Point(136, 8);
+            btnModify.Location = new Point(424, 7);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(75, 23);
             btnModify.TabIndex = 223;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -823,6 +827,7 @@ namespace DigiERP.UserControl.Customer.Quotation
             btnTransferToCustOrder.Name = "btnTransferToCustOrder";
             btnTransferToCustOrder.Size = new Size(75, 23);
             btnTransferToCustOrder.TabIndex = 224;
+            btnTransferToCustOrder.Tag = "btn-modify";
             btnTransferToCustOrder.Text = "轉開訂單";
             btnTransferToCustOrder.UseVisualStyleBackColor = false;
             btnTransferToCustOrder.Click += btnTransferToCustOrder_Click;
@@ -835,6 +840,7 @@ namespace DigiERP.UserControl.Customer.Quotation
             btnQueryTransferedOrder.Name = "btnQueryTransferedOrder";
             btnQueryTransferedOrder.Size = new Size(104, 23);
             btnQueryTransferedOrder.TabIndex = 225;
+            btnQueryTransferedOrder.Tag = "btn-modify";
             btnQueryTransferedOrder.Text = "查詢已轉訂單";
             btnQueryTransferedOrder.UseVisualStyleBackColor = false;
             btnQueryTransferedOrder.Click += btnQueryTransferedOrder_Click;
@@ -847,6 +853,7 @@ namespace DigiERP.UserControl.Customer.Quotation
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(88, 23);
             btnDelete.TabIndex = 226;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除記錄";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;

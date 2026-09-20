@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairFormControl));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btn新增 = new Button();
             btn查詢 = new Button();
@@ -92,10 +92,11 @@
             // 
             btn新增.BackColor = Color.CornflowerBlue;
             btn新增.ForeColor = SystemColors.ButtonFace;
-            btn新增.Location = new Point(1531, 4);
+            btn新增.Location = new Point(1531, 13);
             btn新增.Name = "btn新增";
             btn新增.Size = new Size(120, 52);
             btn新增.TabIndex = 6;
+            btn新增.Tag = "btn-modify";
             btn新增.Text = "新增";
             btn新增.UseVisualStyleBackColor = false;
             btn新增.Click += btn新增_Click;
@@ -104,10 +105,11 @@
             // 
             btn查詢.BackColor = Color.SteelBlue;
             btn查詢.ForeColor = SystemColors.ButtonFace;
-            btn查詢.Location = new Point(1279, 5);
+            btn查詢.Location = new Point(1279, 14);
             btn查詢.Name = "btn查詢";
             btn查詢.Size = new Size(120, 52);
             btn查詢.TabIndex = 5;
+            btn查詢.Tag = "btn-modify";
             btn查詢.Text = "查詢";
             btn查詢.UseVisualStyleBackColor = false;
             btn查詢.Click += btn查詢_Click;
@@ -115,10 +117,11 @@
             // btn重新整理
             // 
             btn重新整理.BackColor = Color.SkyBlue;
-            btn重新整理.Location = new Point(1405, 4);
+            btn重新整理.Location = new Point(1405, 13);
             btn重新整理.Name = "btn重新整理";
             btn重新整理.Size = new Size(120, 52);
             btn重新整理.TabIndex = 4;
+            btn重新整理.Tag = "btn-modify";
             btn重新整理.Text = "重新整理";
             btn重新整理.UseVisualStyleBackColor = false;
             btn重新整理.Click += btn重新整理_Click;
@@ -191,112 +194,112 @@
             // 
             // colOrderNo
             // 
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            colOrderNo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            colOrderNo.DefaultCellStyle = dataGridViewCellStyle15;
             colOrderNo.HeaderText = "單號";
             colOrderNo.Name = "colOrderNo";
             colOrderNo.ReadOnly = true;
             // 
             // colDate
             // 
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            colDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            colDate.DefaultCellStyle = dataGridViewCellStyle16;
             colDate.HeaderText = "申請日期";
             colDate.Name = "colDate";
             colDate.ReadOnly = true;
             // 
             // colCustId
             // 
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            colCustId.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            colCustId.DefaultCellStyle = dataGridViewCellStyle17;
             colCustId.HeaderText = "客戶簡稱";
             colCustId.Name = "colCustId";
             colCustId.ReadOnly = true;
             // 
             // colProjectSerial
             // 
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            colProjectSerial.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            colProjectSerial.DefaultCellStyle = dataGridViewCellStyle18;
             colProjectSerial.HeaderText = "專案序號";
             colProjectSerial.Name = "colProjectSerial";
             colProjectSerial.ReadOnly = true;
             // 
             // colEqpModel
             // 
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            colEqpModel.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            colEqpModel.DefaultCellStyle = dataGridViewCellStyle19;
             colEqpModel.HeaderText = "機台型號";
             colEqpModel.Name = "colEqpModel";
             colEqpModel.ReadOnly = true;
             // 
             // colEqpName
             // 
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            colEqpName.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
+            colEqpName.DefaultCellStyle = dataGridViewCellStyle20;
             colEqpName.HeaderText = "機台名稱";
             colEqpName.Name = "colEqpName";
             colEqpName.ReadOnly = true;
             // 
             // colServiceType
             // 
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            colServiceType.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
+            colServiceType.DefaultCellStyle = dataGridViewCellStyle21;
             colServiceType.HeaderText = "服務型態";
             colServiceType.Name = "colServiceType";
             colServiceType.ReadOnly = true;
             // 
             // colRepairLocation
             // 
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            colRepairLocation.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
+            colRepairLocation.DefaultCellStyle = dataGridViewCellStyle22;
             colRepairLocation.HeaderText = "維修地點";
             colRepairLocation.Name = "colRepairLocation";
             colRepairLocation.ReadOnly = true;
             // 
             // colDesiredDate
             // 
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            colDesiredDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
+            colDesiredDate.DefaultCellStyle = dataGridViewCellStyle23;
             colDesiredDate.HeaderText = "希望服務日期";
             colDesiredDate.Name = "colDesiredDate";
             colDesiredDate.ReadOnly = true;
             // 
             // colActualDate
             // 
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            colActualDate.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.True;
+            colActualDate.DefaultCellStyle = dataGridViewCellStyle24;
             colActualDate.HeaderText = "實際服務日期";
             colActualDate.Name = "colActualDate";
             colActualDate.ReadOnly = true;
             // 
             // colCloseDate
             // 
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            colCloseDate.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.True;
+            colCloseDate.DefaultCellStyle = dataGridViewCellStyle25;
             colCloseDate.HeaderText = "維修結案日期";
             colCloseDate.Name = "colCloseDate";
             colCloseDate.ReadOnly = true;
             // 
             // colInspector
             // 
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            colInspector.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.True;
+            colInspector.DefaultCellStyle = dataGridViewCellStyle26;
             colInspector.HeaderText = "維修人員";
             colInspector.Name = "colInspector";
             colInspector.ReadOnly = true;
             // 
             // colTransferParts
             // 
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            colTransferParts.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle27.WrapMode = DataGridViewTriState.True;
+            colTransferParts.DefaultCellStyle = dataGridViewCellStyle27;
             colTransferParts.HeaderText = "轉零件申請";
             colTransferParts.Name = "colTransferParts";
             colTransferParts.ReadOnly = true;
             // 
             // colApprover
             // 
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            colApprover.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle28.WrapMode = DataGridViewTriState.True;
+            colApprover.DefaultCellStyle = dataGridViewCellStyle28;
             colApprover.HeaderText = "核准";
             colApprover.Name = "colApprover";
             colApprover.ReadOnly = true;

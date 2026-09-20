@@ -38,7 +38,7 @@ namespace DigiERP.UserControl
             coutrySelect1.inflateDropDownList();
             initMaList();
             initForm();
-            btnSubmit.Text = lblMode.Text;
+            //btnSubmit.Text = lblMode.Text;
         }
 
 
@@ -48,7 +48,7 @@ namespace DigiERP.UserControl
             if (form == null)
                 return;
             // 填充form資料到control
-            btnSubmit.Text = lblMode.Text;
+            //btnSubmit.Text = lblMode.Text;
             txtIdentity.Text = form.識別 == null ? "0" : form.識別.ToString();
             txtCustomerCompany.Text = form.COMPANY;
             txtCustAlias.Text = form.欄位2;
@@ -145,8 +145,17 @@ namespace DigiERP.UserControl
             industryCodeSelect1.Enabled = !isDisable;
             txtMachineIssue.Enabled = !isDisable;
             bankCodeSelect1.Enabled = !isDisable;
+            //btnCompanyChange.Enabled = !isDisable;
+            btnDelete.Enabled = !isDisable;
+            //btnGenCustNumber.Enabled = !isDisable;
             btnActivate.Enabled = !isDisable;
             btnInactivate.Enabled = !isDisable;
+            //btnRecordWrite.Enabled = !isDisable;
+            //btnInquiryHistory.Enabled = !isDisable;
+            btnGenCustNumber.Enabled = !isDisable;
+            //btnRepairHistory.Enabled = !isDisable;
+            //btnShippingRecord.Enabled = !isDisable;
+            //btnQuotationHistory.Enabled = !isDisable;
         }
 
         private C客戶設定 GetUserInput()

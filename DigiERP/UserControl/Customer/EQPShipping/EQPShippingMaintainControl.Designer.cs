@@ -16,6 +16,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnClose = new Button();
             btnBack = new Button();
             btnCancelApprove = new Button();
             btnApprove = new Button();
@@ -173,6 +174,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 224, 192);
+            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(btnBack);
             panel1.Controls.Add(btnCancelApprove);
             panel1.Controls.Add(btnApprove);
@@ -188,26 +190,42 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             panel1.Size = new Size(1531, 60);
             panel1.TabIndex = 0;
             // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Red;
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(1440, 8);
+            btnClose.Margin = new Padding(2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(77, 44);
+            btnClose.TabIndex = 159;
+            btnClose.Text = "EXIT";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // btnBack
             // 
             btnBack.BackColor = Color.DimGray;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(650, 8);
+            btnBack.Location = new Point(1205, 10);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(100, 44);
             btnBack.TabIndex = 6;
+            btnBack.Tag = "btn-modify";
             btnBack.Text = "關閉";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Visible = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnCancelApprove
             // 
             btnCancelApprove.BackColor = Color.DimGray;
             btnCancelApprove.ForeColor = Color.White;
-            btnCancelApprove.Location = new Point(540, 8);
+            btnCancelApprove.Location = new Point(1205, 10);
             btnCancelApprove.Name = "btnCancelApprove";
             btnCancelApprove.Size = new Size(100, 44);
             btnCancelApprove.TabIndex = 5;
+            btnCancelApprove.Tag = "btn-modify";
             btnCancelApprove.Text = "取消生效";
             btnCancelApprove.UseVisualStyleBackColor = false;
             btnCancelApprove.Click += btnCancelApprove_Click;
@@ -216,10 +234,11 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             btnApprove.BackColor = Color.DimGray;
             btnApprove.ForeColor = Color.White;
-            btnApprove.Location = new Point(430, 8);
+            btnApprove.Location = new Point(1095, 10);
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new Size(100, 44);
             btnApprove.TabIndex = 4;
+            btnApprove.Tag = "btn-modify";
             btnApprove.Text = "生效";
             btnApprove.UseVisualStyleBackColor = false;
             btnApprove.Click += btnApprove_Click;
@@ -228,10 +247,11 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             btnDelete.BackColor = Color.IndianRed;
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(320, 8);
+            btnDelete.Location = new Point(985, 10);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(100, 44);
             btnDelete.TabIndex = 3;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -240,10 +260,11 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             btnSave.BackColor = Color.CornflowerBlue;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(210, 8);
+            btnSave.Location = new Point(875, 10);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(100, 44);
             btnSave.TabIndex = 2;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -252,10 +273,11 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             btnUpdateBox.BackColor = Color.MediumSeaGreen;
             btnUpdateBox.ForeColor = Color.White;
-            btnUpdateBox.Location = new Point(80, 8);
+            btnUpdateBox.Location = new Point(745, 10);
             btnUpdateBox.Name = "btnUpdateBox";
             btnUpdateBox.Size = new Size(120, 44);
             btnUpdateBox.TabIndex = 1;
+            btnUpdateBox.Tag = "btn-modify";
             btnUpdateBox.Text = "更新裝箱明細";
             btnUpdateBox.UseVisualStyleBackColor = false;
             btnUpdateBox.Visible = false;
@@ -265,10 +287,11 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // 
             btnPrint.BackColor = Color.DarkOrange;
             btnPrint.ForeColor = Color.White;
-            btnPrint.Location = new Point(760, 8);
+            btnPrint.Location = new Point(1315, 10);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(120, 44);
             btnPrint.TabIndex = 7;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -276,7 +299,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
             // btnModify
             // 
             btnModify.BackColor = Color.Gainsboro;
-            btnModify.Location = new Point(890, 8);
+            btnModify.Location = new Point(765, 10);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(100, 44);
             btnModify.TabIndex = 8;
@@ -1685,5 +1708,7 @@ namespace DigiERP.UserControl.Customer.EQPShipping
         private System.Windows.Forms.TextBox txtPayTotalWriteOff;
         private System.Windows.Forms.Label lblPayReceivedLbl;
         private System.Windows.Forms.TextBox txtPayTotalReceived;
+        private Button button1;
+        private Button btnClose;
     }
 }
