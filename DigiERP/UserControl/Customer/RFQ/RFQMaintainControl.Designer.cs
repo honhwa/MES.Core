@@ -105,11 +105,12 @@ namespace DigiERP.UserControl.Customer.RFQ
             // 
             btnModify.BackColor = Color.Teal;
             btnModify.ForeColor = SystemColors.ButtonHighlight;
-            btnModify.Location = new Point(160, 17);
+            btnModify.Location = new Point(709, 24);
             btnModify.Margin = new Padding(2);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(64, 22);
             btnModify.TabIndex = 153;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -191,10 +192,11 @@ namespace DigiERP.UserControl.Customer.RFQ
             // 
             btnSubmit.BackColor = Color.RosyBrown;
             btnSubmit.ForeColor = SystemColors.ButtonHighlight;
-            btnSubmit.Location = new Point(1112, 27);
+            btnSubmit.Location = new Point(1112, 24);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(75, 23);
             btnSubmit.TabIndex = 160;
+            btnSubmit.Tag = "btn-modify";
             btnSubmit.Text = "送出";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
@@ -512,11 +514,12 @@ namespace DigiERP.UserControl.Customer.RFQ
             // 
             btnDelete.BackColor = Color.FromArgb(255, 128, 128);
             btnDelete.ForeColor = SystemColors.ButtonHighlight;
-            btnDelete.Location = new Point(1041, 27);
+            btnDelete.Location = new Point(1031, 25);
             btnDelete.Margin = new Padding(2);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(64, 22);
             btnDelete.TabIndex = 196;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -676,11 +679,12 @@ namespace DigiERP.UserControl.Customer.RFQ
             // 
             btnWorkRecord.BackColor = Color.DarkCyan;
             btnWorkRecord.ForeColor = SystemColors.ButtonHighlight;
-            btnWorkRecord.Location = new Point(808, 27);
+            btnWorkRecord.Location = new Point(790, 25);
             btnWorkRecord.Margin = new Padding(2);
             btnWorkRecord.Name = "btnWorkRecord";
             btnWorkRecord.Size = new Size(128, 22);
             btnWorkRecord.TabIndex = 203;
+            btnWorkRecord.Tag = "btn-modify";
             btnWorkRecord.Text = "撰寫詢問追蹤函紀錄";
             btnWorkRecord.UseVisualStyleBackColor = false;
             btnWorkRecord.Click += btnWorkRecord_Click;
@@ -689,10 +693,11 @@ namespace DigiERP.UserControl.Customer.RFQ
             // 
             btnQuotation.BackColor = Color.IndianRed;
             btnQuotation.ForeColor = SystemColors.ButtonHighlight;
-            btnQuotation.Location = new Point(953, 26);
+            btnQuotation.Location = new Point(936, 25);
             btnQuotation.Name = "btnQuotation";
             btnQuotation.Size = new Size(75, 23);
             btnQuotation.TabIndex = 204;
+            btnQuotation.Tag = "btn-modify";
             btnQuotation.Text = "新增報價單";
             btnQuotation.UseVisualStyleBackColor = false;
             btnQuotation.Click += btnQuotation_Click;

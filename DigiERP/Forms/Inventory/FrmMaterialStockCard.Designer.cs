@@ -66,9 +66,9 @@ namespace DigiERP.Forms.Inventory
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelFooter.SuspendLayout();
             SuspendLayout();
-            //
+            // 
             // panelToolbar
-            //
+            // 
             panelToolbar.BackColor = Color.FromArgb(255, 222, 173);
             panelToolbar.Controls.Add(lblTitle);
             panelToolbar.Controls.Add(btnEditPart);
@@ -80,18 +80,18 @@ namespace DigiERP.Forms.Inventory
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1040, 56);
             panelToolbar.TabIndex = 0;
-            //
+            // 
             // lblTitle
-            //
+            // 
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
             lblTitle.Location = new Point(16, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(140, 28);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "材料庫存卡";
-            //
+            // 
             // btnEditPart
-            //
+            // 
             btnEditPart.BackColor = Color.SteelBlue;
             btnEditPart.FlatStyle = FlatStyle.Flat;
             btnEditPart.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -100,12 +100,13 @@ namespace DigiERP.Forms.Inventory
             btnEditPart.Name = "btnEditPart";
             btnEditPart.Size = new Size(110, 36);
             btnEditPart.TabIndex = 1;
+            btnEditPart.Tag = "btn-modify";
             btnEditPart.Text = "編修料品";
             btnEditPart.UseVisualStyleBackColor = false;
             btnEditPart.Click += btnEditPart_Click;
-            //
+            // 
             // btnEditTransaction
-            //
+            // 
             btnEditTransaction.BackColor = Color.SteelBlue;
             btnEditTransaction.FlatStyle = FlatStyle.Flat;
             btnEditTransaction.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -114,12 +115,13 @@ namespace DigiERP.Forms.Inventory
             btnEditTransaction.Name = "btnEditTransaction";
             btnEditTransaction.Size = new Size(110, 36);
             btnEditTransaction.TabIndex = 2;
+            btnEditTransaction.Tag = "btn-modify";
             btnEditTransaction.Text = "異動編修";
             btnEditTransaction.UseVisualStyleBackColor = false;
             btnEditTransaction.Click += btnEditTransaction_Click;
-            //
+            // 
             // btnSaveRecord
-            //
+            // 
             btnSaveRecord.BackColor = Color.SteelBlue;
             btnSaveRecord.FlatStyle = FlatStyle.Flat;
             btnSaveRecord.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -128,12 +130,13 @@ namespace DigiERP.Forms.Inventory
             btnSaveRecord.Name = "btnSaveRecord";
             btnSaveRecord.Size = new Size(110, 36);
             btnSaveRecord.TabIndex = 3;
+            btnSaveRecord.Tag = "btn-modify";
             btnSaveRecord.Text = "儲存紀錄";
             btnSaveRecord.UseVisualStyleBackColor = false;
             btnSaveRecord.Click += btnSaveRecord_Click;
-            //
+            // 
             // btnExit
-            //
+            // 
             btnExit.BackColor = Color.FromArgb(150, 150, 180);
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -142,12 +145,13 @@ namespace DigiERP.Forms.Inventory
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(90, 36);
             btnExit.TabIndex = 4;
+            btnExit.Tag = "btn-modify";
             btnExit.Text = "EXIT";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
-            //
+            // 
             // panelHeader
-            //
+            // 
             panelHeader.BackColor = Color.FromArgb(255, 248, 240);
             panelHeader.Controls.Add(lblCode);
             panelHeader.Controls.Add(txtCode);
@@ -176,19 +180,19 @@ namespace DigiERP.Forms.Inventory
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1040, 80);
             panelHeader.TabIndex = 1;
-            //
+            // 
             // lblCode
-            //
+            // 
             lblCode.AutoSize = true;
             lblCode.Font = new Font("微軟正黑體", 10F);
             lblCode.Location = new Point(8, 12);
             lblCode.Name = "lblCode";
-            lblCode.Size = new Size(60, 18);
+            lblCode.Size = new Size(64, 18);
             lblCode.TabIndex = 0;
             lblCode.Text = "材料編號";
-            //
+            // 
             // txtCode
-            //
+            // 
             txtCode.BackColor = Color.WhiteSmoke;
             txtCode.Font = new Font("微軟正黑體", 10F);
             txtCode.Location = new Point(70, 8);
@@ -196,99 +200,99 @@ namespace DigiERP.Forms.Inventory
             txtCode.ReadOnly = true;
             txtCode.Size = new Size(150, 25);
             txtCode.TabIndex = 1;
-            //
+            // 
             // lblType
-            //
+            // 
             lblType.AutoSize = true;
             lblType.Font = new Font("微軟正黑體", 10F);
             lblType.Location = new Point(230, 12);
             lblType.Name = "lblType";
-            lblType.Size = new Size(60, 18);
+            lblType.Size = new Size(64, 18);
             lblType.TabIndex = 2;
             lblType.Text = "市購品別";
-            //
+            // 
             // txtType
-            //
+            // 
             txtType.BackColor = Color.WhiteSmoke;
             txtType.Font = new Font("微軟正黑體", 10F);
             txtType.Location = new Point(294, 8);
             txtType.Name = "txtType";
             txtType.ReadOnly = true;
-            txtType.Size = new Size(110, 25);
+            txtType.Size = new Size(116, 25);
             txtType.TabIndex = 3;
-            //
+            // 
             // lblCategory
-            //
+            // 
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("微軟正黑體", 10F);
-            lblCategory.Location = new Point(414, 12);
+            lblCategory.Location = new Point(420, 12);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(50, 18);
             lblCategory.TabIndex = 4;
             lblCategory.Text = "大分類";
-            //
+            // 
             // txtCategory
-            //
+            // 
             txtCategory.BackColor = Color.WhiteSmoke;
             txtCategory.Font = new Font("微軟正黑體", 10F);
-            txtCategory.Location = new Point(466, 8);
+            txtCategory.Location = new Point(484, 8);
             txtCategory.Name = "txtCategory";
             txtCategory.ReadOnly = true;
-            txtCategory.Size = new Size(60, 25);
+            txtCategory.Size = new Size(70, 25);
             txtCategory.TabIndex = 5;
-            //
+            // 
             // lblSubCategory
-            //
+            // 
             lblSubCategory.AutoSize = true;
             lblSubCategory.Font = new Font("微軟正黑體", 10F);
-            lblSubCategory.Location = new Point(536, 12);
+            lblSubCategory.Location = new Point(564, 11);
             lblSubCategory.Name = "lblSubCategory";
             lblSubCategory.Size = new Size(50, 18);
             lblSubCategory.TabIndex = 6;
             lblSubCategory.Text = "小分類";
-            //
+            // 
             // txtSubCategory
-            //
+            // 
             txtSubCategory.BackColor = Color.WhiteSmoke;
             txtSubCategory.Font = new Font("微軟正黑體", 10F);
-            txtSubCategory.Location = new Point(588, 8);
+            txtSubCategory.Location = new Point(628, 8);
             txtSubCategory.Name = "txtSubCategory";
             txtSubCategory.ReadOnly = true;
-            txtSubCategory.Size = new Size(60, 25);
+            txtSubCategory.Size = new Size(70, 25);
             txtSubCategory.TabIndex = 7;
-            //
+            // 
             // lblProductCode
-            //
+            // 
             lblProductCode.AutoSize = true;
             lblProductCode.Font = new Font("微軟正黑體", 10F);
-            lblProductCode.Location = new Point(658, 12);
+            lblProductCode.Location = new Point(708, 11);
             lblProductCode.Name = "lblProductCode";
-            lblProductCode.Size = new Size(60, 18);
+            lblProductCode.Size = new Size(64, 18);
             lblProductCode.TabIndex = 8;
             lblProductCode.Text = "產品代號";
-            //
+            // 
             // txtProductCode
-            //
+            // 
             txtProductCode.BackColor = Color.WhiteSmoke;
             txtProductCode.Font = new Font("微軟正黑體", 10F);
-            txtProductCode.Location = new Point(720, 8);
+            txtProductCode.Location = new Point(778, 8);
             txtProductCode.Name = "txtProductCode";
             txtProductCode.ReadOnly = true;
-            txtProductCode.Size = new Size(270, 25);
+            txtProductCode.Size = new Size(250, 25);
             txtProductCode.TabIndex = 9;
-            //
+            // 
             // lblSpec
-            //
+            // 
             lblSpec.AutoSize = true;
             lblSpec.Font = new Font("微軟正黑體", 10F);
             lblSpec.Location = new Point(8, 48);
             lblSpec.Name = "lblSpec";
-            lblSpec.Size = new Size(60, 18);
+            lblSpec.Size = new Size(64, 18);
             lblSpec.TabIndex = 10;
             lblSpec.Text = "品名規格";
-            //
+            // 
             // txtSpec
-            //
+            // 
             txtSpec.BackColor = Color.WhiteSmoke;
             txtSpec.Font = new Font("微軟正黑體", 10F);
             txtSpec.Location = new Point(70, 44);
@@ -296,19 +300,19 @@ namespace DigiERP.Forms.Inventory
             txtSpec.ReadOnly = true;
             txtSpec.Size = new Size(340, 25);
             txtSpec.TabIndex = 11;
-            //
+            // 
             // lblLength
-            //
+            // 
             lblLength.AutoSize = true;
             lblLength.Font = new Font("微軟正黑體", 10F);
             lblLength.Location = new Point(420, 48);
             lblLength.Name = "lblLength";
-            lblLength.Size = new Size(60, 18);
+            lblLength.Size = new Size(64, 18);
             lblLength.TabIndex = 12;
             lblLength.Text = "外尺寸長";
-            //
+            // 
             // txtLength
-            //
+            // 
             txtLength.BackColor = Color.WhiteSmoke;
             txtLength.Font = new Font("微軟正黑體", 10F);
             txtLength.Location = new Point(484, 44);
@@ -316,19 +320,19 @@ namespace DigiERP.Forms.Inventory
             txtLength.ReadOnly = true;
             txtLength.Size = new Size(70, 25);
             txtLength.TabIndex = 13;
-            //
+            // 
             // lblWidth
-            //
+            // 
             lblWidth.AutoSize = true;
             lblWidth.Font = new Font("微軟正黑體", 10F);
             lblWidth.Location = new Point(564, 48);
             lblWidth.Name = "lblWidth";
-            lblWidth.Size = new Size(60, 18);
+            lblWidth.Size = new Size(64, 18);
             lblWidth.TabIndex = 14;
             lblWidth.Text = "外尺寸寬";
-            //
+            // 
             // txtWidth
-            //
+            // 
             txtWidth.BackColor = Color.WhiteSmoke;
             txtWidth.Font = new Font("微軟正黑體", 10F);
             txtWidth.Location = new Point(628, 44);
@@ -336,19 +340,19 @@ namespace DigiERP.Forms.Inventory
             txtWidth.ReadOnly = true;
             txtWidth.Size = new Size(70, 25);
             txtWidth.TabIndex = 15;
-            //
+            // 
             // lblThickness
-            //
+            // 
             lblThickness.AutoSize = true;
             lblThickness.Font = new Font("微軟正黑體", 10F);
             lblThickness.Location = new Point(708, 48);
             lblThickness.Name = "lblThickness";
-            lblThickness.Size = new Size(40, 18);
+            lblThickness.Size = new Size(36, 18);
             lblThickness.TabIndex = 16;
             lblThickness.Text = "厚度";
-            //
+            // 
             // txtThickness
-            //
+            // 
             txtThickness.BackColor = Color.WhiteSmoke;
             txtThickness.Font = new Font("微軟正黑體", 10F);
             txtThickness.Location = new Point(752, 44);
@@ -356,19 +360,19 @@ namespace DigiERP.Forms.Inventory
             txtThickness.ReadOnly = true;
             txtThickness.Size = new Size(60, 25);
             txtThickness.TabIndex = 17;
-            //
+            // 
             // lblOuterDia
-            //
+            // 
             lblOuterDia.AutoSize = true;
             lblOuterDia.Font = new Font("微軟正黑體", 10F);
             lblOuterDia.Location = new Point(822, 48);
             lblOuterDia.Name = "lblOuterDia";
-            lblOuterDia.Size = new Size(40, 18);
+            lblOuterDia.Size = new Size(36, 18);
             lblOuterDia.TabIndex = 18;
             lblOuterDia.Text = "外徑";
-            //
+            // 
             // txtOuterDia
-            //
+            // 
             txtOuterDia.BackColor = Color.WhiteSmoke;
             txtOuterDia.Font = new Font("微軟正黑體", 10F);
             txtOuterDia.Location = new Point(866, 44);
@@ -376,114 +380,109 @@ namespace DigiERP.Forms.Inventory
             txtOuterDia.ReadOnly = true;
             txtOuterDia.Size = new Size(60, 25);
             txtOuterDia.TabIndex = 19;
-            //
+            // 
             // lblInnerDia
-            //
+            // 
             lblInnerDia.AutoSize = true;
             lblInnerDia.Font = new Font("微軟正黑體", 10F);
             lblInnerDia.Location = new Point(936, 48);
             lblInnerDia.Name = "lblInnerDia";
-            lblInnerDia.Size = new Size(40, 18);
+            lblInnerDia.Size = new Size(36, 18);
             lblInnerDia.TabIndex = 20;
             lblInnerDia.Text = "內徑";
-            //
+            // 
             // txtInnerDia
-            //
+            // 
             txtInnerDia.BackColor = Color.WhiteSmoke;
             txtInnerDia.Font = new Font("微軟正黑體", 10F);
             txtInnerDia.Location = new Point(978, 44);
             txtInnerDia.Name = "txtInnerDia";
             txtInnerDia.ReadOnly = true;
-            txtInnerDia.Size = new Size(54, 25);
+            txtInnerDia.Size = new Size(52, 25);
             txtInnerDia.TabIndex = 21;
-            //
+            // 
             // panelGrid
-            //
+            // 
             panelGrid.Controls.Add(dataGridView1);
             panelGrid.Dock = DockStyle.Fill;
             panelGrid.Location = new Point(0, 136);
             panelGrid.Name = "panelGrid";
             panelGrid.Size = new Size(1040, 424);
             panelGrid.TabIndex = 2;
-            //
+            // 
             // dataGridView1
-            //
+            // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] {
-                colDate, colSummary, colSource, colUnit, colStockIn, colStockOut, colLocation, colOperator, colRemark
-            });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colDate, colSummary, colSource, colUnit, colStockIn, colStockOut, colLocation, colOperator, colRemark });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Font = new Font("微軟正黑體", 10F);
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = false;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1040, 424);
             dataGridView1.TabIndex = 0;
-            //
+            // 
             // colDate
-            //
+            // 
             colDate.FillWeight = 70F;
             colDate.HeaderText = "異動日期";
             colDate.Name = "colDate";
-            //
+            // 
             // colSummary
-            //
+            // 
             colSummary.FillWeight = 60F;
             colSummary.HeaderText = "摘要";
-            colSummary.Name = "colSummary";
             colSummary.Items.AddRange(new object[] { "進料", "退料", "領料", "報廢", "盤盈", "盤損", "盤存週期" });
-            //
+            colSummary.Name = "colSummary";
+            // 
             // colSource
-            //
-            colSource.FillWeight = 100F;
+            // 
             colSource.HeaderText = "來源用途";
             colSource.Name = "colSource";
-            //
+            // 
             // colUnit
-            //
+            // 
             colUnit.FillWeight = 50F;
             colUnit.HeaderText = "單位";
             colUnit.Name = "colUnit";
-            //
+            // 
             // colStockIn
-            //
+            // 
             colStockIn.FillWeight = 60F;
             colStockIn.HeaderText = "入庫";
             colStockIn.Name = "colStockIn";
-            //
+            // 
             // colStockOut
-            //
+            // 
             colStockOut.FillWeight = 60F;
             colStockOut.HeaderText = "出庫";
             colStockOut.Name = "colStockOut";
-            //
+            // 
             // colLocation
-            //
+            // 
             colLocation.FillWeight = 60F;
             colLocation.HeaderText = "儲位";
             colLocation.Name = "colLocation";
-            //
+            // 
             // colOperator
-            //
+            // 
             colOperator.FillWeight = 70F;
             colOperator.HeaderText = "異動人員";
             colOperator.Name = "colOperator";
-            //
+            // 
             // colRemark
-            //
-            colRemark.FillWeight = 100F;
+            // 
             colRemark.HeaderText = "備註";
             colRemark.Name = "colRemark";
-            //
+            // 
             // panelFooter
-            //
+            // 
             panelFooter.BackColor = Color.FromArgb(255, 248, 220);
             panelFooter.Controls.Add(lblTotal);
             panelFooter.Controls.Add(txtStockInTotal);
@@ -495,19 +494,19 @@ namespace DigiERP.Forms.Inventory
             panelFooter.Name = "panelFooter";
             panelFooter.Size = new Size(1040, 40);
             panelFooter.TabIndex = 3;
-            //
+            // 
             // lblTotal
-            //
+            // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             lblTotal.Location = new Point(360, 12);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(44, 18);
+            lblTotal.Size = new Size(40, 18);
             lblTotal.TabIndex = 0;
             lblTotal.Text = "合計:";
-            //
+            // 
             // txtStockInTotal
-            //
+            // 
             txtStockInTotal.BackColor = Color.WhiteSmoke;
             txtStockInTotal.Font = new Font("微軟正黑體", 10F);
             txtStockInTotal.Location = new Point(410, 8);
@@ -516,9 +515,9 @@ namespace DigiERP.Forms.Inventory
             txtStockInTotal.Size = new Size(100, 25);
             txtStockInTotal.TabIndex = 1;
             txtStockInTotal.TextAlign = HorizontalAlignment.Right;
-            //
+            // 
             // txtStockOutTotal
-            //
+            // 
             txtStockOutTotal.BackColor = Color.WhiteSmoke;
             txtStockOutTotal.Font = new Font("微軟正黑體", 10F);
             txtStockOutTotal.Location = new Point(520, 8);
@@ -527,19 +526,19 @@ namespace DigiERP.Forms.Inventory
             txtStockOutTotal.Size = new Size(100, 25);
             txtStockOutTotal.TabIndex = 2;
             txtStockOutTotal.TextAlign = HorizontalAlignment.Right;
-            //
+            // 
             // lblBalance
-            //
+            // 
             lblBalance.AutoSize = true;
             lblBalance.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             lblBalance.Location = new Point(640, 12);
             lblBalance.Name = "lblBalance";
-            lblBalance.Size = new Size(44, 18);
+            lblBalance.Size = new Size(40, 18);
             lblBalance.TabIndex = 3;
             lblBalance.Text = "結餘:";
-            //
+            // 
             // txtBalance
-            //
+            // 
             txtBalance.BackColor = Color.PaleGreen;
             txtBalance.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             txtBalance.Location = new Point(690, 8);
@@ -548,9 +547,9 @@ namespace DigiERP.Forms.Inventory
             txtBalance.Size = new Size(100, 25);
             txtBalance.TabIndex = 4;
             txtBalance.TextAlign = HorizontalAlignment.Right;
-            //
+            // 
             // FrmMaterialStockCard
-            //
+            // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1040, 600);
@@ -559,13 +558,11 @@ namespace DigiERP.Forms.Inventory
             Controls.Add(panelHeader);
             Controls.Add(panelToolbar);
             Font = new Font("微軟正黑體", 10F);
-            FormBorderStyle = FormBorderStyle.Sizable;
             MinimumSize = new Size(900, 500);
             Name = "FrmMaterialStockCard";
             StartPosition = FormStartPosition.CenterParent;
             Text = "材料庫存卡";
             panelToolbar.ResumeLayout(false);
-            panelToolbar.PerformLayout();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelGrid.ResumeLayout(false);

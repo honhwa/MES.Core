@@ -275,11 +275,11 @@
             // 
             btnClose.BackColor = Color.Red;
             btnClose.ForeColor = SystemColors.ButtonHighlight;
-            btnClose.Location = new Point(1480, 8);
+            btnClose.Location = new Point(1425, 8);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(28, 32);
+            btnClose.Size = new Size(83, 32);
             btnClose.TabIndex = 253;
-            btnClose.Text = "X";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -528,10 +528,11 @@
             // 
             btn修改.BackColor = Color.DarkKhaki;
             btn修改.ForeColor = SystemColors.ButtonHighlight;
-            btn修改.Location = new Point(160, 4);
+            btn修改.Location = new Point(677, 10);
             btn修改.Name = "btn修改";
             btn修改.Size = new Size(112, 32);
             btn修改.TabIndex = 271;
+            btn修改.Tag = "btn-modify";
             btn修改.Text = "修改";
             btn修改.UseVisualStyleBackColor = false;
             btn修改.Click += btn修改_Click;
@@ -539,10 +540,11 @@
             // btn送出
             // 
             btn送出.BackColor = Color.Gold;
-            btn送出.Location = new Point(1368, 8);
+            btn送出.Location = new Point(1297, 8);
             btn送出.Name = "btn送出";
             btn送出.Size = new Size(92, 36);
             btn送出.TabIndex = 272;
+            btn送出.Tag = "btn-modify";
             btn送出.Text = "送出";
             btn送出.UseVisualStyleBackColor = false;
             btn送出.Click += btn送出_Click;
@@ -551,10 +553,11 @@
             // 
             btn新增機台服務紀錄.BackColor = SystemColors.ActiveCaption;
             btn新增機台服務紀錄.ForeColor = SystemColors.ButtonHighlight;
-            btn新增機台服務紀錄.Location = new Point(292, 4);
+            btn新增機台服務紀錄.Location = new Point(809, 10);
             btn新增機台服務紀錄.Name = "btn新增機台服務紀錄";
             btn新增機台服務紀錄.Size = new Size(212, 32);
             btn新增機台服務紀錄.TabIndex = 273;
+            btn新增機台服務紀錄.Tag = "btn-modify";
             btn新增機台服務紀錄.Text = "新增機台服務紀錄";
             btn新增機台服務紀錄.UseVisualStyleBackColor = false;
             btn新增機台服務紀錄.Click += btn新增機台服務紀錄_Click;
@@ -563,10 +566,11 @@
             // 
             button1.BackColor = Color.ForestGreen;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(520, 4);
+            button1.Location = new Point(1037, 10);
             button1.Name = "button1";
             button1.Size = new Size(212, 32);
             button1.TabIndex = 274;
+            button1.Tag = "btn-modify";
             button1.Text = "查詢機台服務歷程";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;

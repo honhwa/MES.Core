@@ -73,13 +73,13 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1484, 112);
+            panel1.Size = new Size(1484, 60);
             panel1.TabIndex = 0;
             // 
             // btnAdd
             // 
             btnAdd.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnAdd.Location = new Point(700, 56);
+            btnAdd.Location = new Point(1377, 5);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(104, 40);
             btnAdd.TabIndex = 9;
@@ -90,7 +90,7 @@
             // btnQuery
             // 
             btnQuery.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnQuery.Location = new Point(580, 56);
+            btnQuery.Location = new Point(1267, 5);
             btnQuery.Name = "btnQuery";
             btnQuery.Size = new Size(104, 40);
             btnQuery.TabIndex = 8;
@@ -100,7 +100,7 @@
             // txtQueryCustomer
             // 
             txtQueryCustomer.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtQueryCustomer.Location = new Point(368, 60);
+            txtQueryCustomer.Location = new Point(680, 10);
             txtQueryCustomer.Name = "txtQueryCustomer";
             txtQueryCustomer.Size = new Size(192, 32);
             txtQueryCustomer.TabIndex = 7;
@@ -108,7 +108,7 @@
             // txtQueryShipOrder
             // 
             txtQueryShipOrder.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtQueryShipOrder.Location = new Point(368, 8);
+            txtQueryShipOrder.Location = new Point(366, 10);
             txtQueryShipOrder.Name = "txtQueryShipOrder";
             txtQueryShipOrder.Size = new Size(192, 32);
             txtQueryShipOrder.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label3.Location = new Point(268, 64);
+            label3.Location = new Point(580, 14);
             label3.Name = "label3";
             label3.Size = new Size(96, 26);
             label3.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label2.Location = new Point(268, 12);
+            label2.Location = new Point(266, 14);
             label2.Name = "label2";
             label2.Size = new Size(96, 26);
             label2.TabIndex = 4;
@@ -137,10 +137,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft JhengHei UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label1.Location = new Point(132, 44);
+            label1.Location = new Point(73, 14);
             label1.Name = "label1";
             label1.Size = new Size(117, 26);
             label1.TabIndex = 3;
+            label1.Tag = "title";
             label1.Text = "出貨單總覽";
             // 
             // pictureBox1
@@ -157,9 +158,9 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 112);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1484, 741);
+            panel2.Size = new Size(1484, 793);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -172,7 +173,7 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1484, 741);
+            dataGridView1.Size = new Size(1484, 793);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;

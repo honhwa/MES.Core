@@ -15,9 +15,25 @@ namespace DigiERP.Forms.Inventory
             InitializeComponent();
             _productNo = productNo;
             _controller = new ItemController();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
+            dataGridView1.DataError += dataGridView1_DataError;
             initOperatorCombo();
             initHeader();
             initGrid();
+        }
+
+        // ── 既有紀錄的下拉值若不在目前的選項清單中(如已離職人員、舊摘要用語)，
+        //    先補進清單，避免 DataGridViewComboBoxCell 因值無效而丟例外 ─────
+        private static void EnsureComboItem(DataGridViewComboBoxColumn column, string? value)
+        {
+            if (string.IsNullOrEmpty(value)) return;
+            if (column.Items.Cast<object>().Any(x => string.Equals(x?.ToString(), value, StringComparison.Ordinal))) return;
+            column.Items.Add(value);
+        }
+
+        private void dataGridView1_DataError(object? sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
         }
 
         // ── 異動人員下拉：H員工清冊，狀況不為離職 ─────────────────────────
@@ -80,6 +96,9 @@ namespace DigiERP.Forms.Inventory
             dataGridView1.Rows.Clear();
             foreach (var c in list)
             {
+                EnsureComboItem(colSummary, c.摘要);
+                EnsureComboItem(colOperator, c.異動人員);
+
                 var row = new DataGridViewRow();
                 row.CreateCells(dataGridView1);
                 int i = 0;

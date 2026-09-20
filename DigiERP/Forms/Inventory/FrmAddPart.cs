@@ -17,6 +17,7 @@ namespace DigiERP.Forms.Inventory
         {
             InitializeComponent();
             _controller = new ItemController();
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             initTypeCombo();
             initSourceAttrCombo();
             initPartCodeList();

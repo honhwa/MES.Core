@@ -100,13 +100,15 @@ namespace DigiERP.UserControl.Customer.EQPCSustService
         {
             dataGridView1.Rows.Clear();
             int index = 0;
-            var formRep = _customerController.GetEqpCustServiceList("", form.單號);
+            var formRep = _customerController.GetEqpCustServiceList(cboCustId.Text, form.單號);
             if (!string.IsNullOrEmpty(formRep.ErrorMessage))
             {
                 MessageBox.Show(formRep.ErrorMessage);
                 return;
             }
             form = formRep.resultList.FirstOrDefault() ?? new C機台客服();
+            if (form.detailList == null)
+                form.detailList = new List<C機台客服明細>();
             foreach (var item in form.detailList)
             {
                 index = 0;
@@ -523,6 +525,16 @@ namespace DigiERP.UserControl.Customer.EQPCSustService
 
         private void btn新增機台服務紀錄_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(cboCustId.Text))
+            {
+                MessageBox.Show("請先選取客戶!");
+                return;
+            }
+            //if (lblMode.Text == "新增")
+            //{
+            //    MessageBox.Show("請先新增機!");
+            //    return;
+            //}
             var custRep = _customerController.getCustomerList(cboCustId.Text);
             if (!string.IsNullOrEmpty(custRep.ErrorMessage))
             {
@@ -551,6 +563,11 @@ namespace DigiERP.UserControl.Customer.EQPCSustService
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(cboCustId.Text))
+            {
+                MessageBox.Show("請先選取客戶!");
+                return;
+            }
             TabPage tabPage = new TabPage();
             tabPage.Name = "機台服務歷程";
             tabPage.Text = tabPage.Name;

@@ -120,10 +120,11 @@ namespace DigiERP.Forms.Inventory
             btnDisableManage.Name = "btnDisableManage";
             btnDisableManage.Size = new Size(90, 32);
             btnDisableManage.TabIndex = 1;
+            btnDisableManage.Tag = "btn-modify";
             btnDisableManage.Text = "停用管理";
             btnDisableManage.UseVisualStyleBackColor = false;
             btnDisableManage.Click += btnDisableManage_Click;
-            //
+            // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.IndianRed;
@@ -134,6 +135,7 @@ namespace DigiERP.Forms.Inventory
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(90, 32);
             btnDelete.TabIndex = 2;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除紀錄";
             btnDelete.UseVisualStyleBackColor = false;
             // 
@@ -147,12 +149,13 @@ namespace DigiERP.Forms.Inventory
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(70, 32);
             btnAdd.TabIndex = 3;
+            btnAdd.Tag = "btn-modify";
             btnAdd.Text = "新增";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
-            //
+            // 
             // btnModify
-            //
+            // 
             btnModify.BackColor = Color.FromArgb(150, 150, 180);
             btnModify.FlatStyle = FlatStyle.Flat;
             btnModify.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -161,6 +164,7 @@ namespace DigiERP.Forms.Inventory
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(70, 32);
             btnModify.TabIndex = 4;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -175,10 +179,11 @@ namespace DigiERP.Forms.Inventory
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(70, 32);
             btnSave.TabIndex = 5;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
-            //
+            // 
             // btnApprove
             // 
             btnApprove.BackColor = Color.FromArgb(150, 150, 180);
@@ -189,12 +194,13 @@ namespace DigiERP.Forms.Inventory
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new Size(70, 32);
             btnApprove.TabIndex = 6;
+            btnApprove.Tag = "btn-modify";
             btnApprove.Text = "生效";
             btnApprove.UseVisualStyleBackColor = false;
             btnApprove.Click += btnApprove_Click;
-            //
+            // 
             // btnCancelApprove
-            //
+            // 
             btnCancelApprove.BackColor = Color.FromArgb(150, 150, 180);
             btnCancelApprove.FlatStyle = FlatStyle.Flat;
             btnCancelApprove.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -203,6 +209,7 @@ namespace DigiERP.Forms.Inventory
             btnCancelApprove.Name = "btnCancelApprove";
             btnCancelApprove.Size = new Size(85, 32);
             btnCancelApprove.TabIndex = 7;
+            btnCancelApprove.Tag = "btn-modify";
             btnCancelApprove.Text = "取消生效";
             btnCancelApprove.UseVisualStyleBackColor = false;
             btnCancelApprove.Click += btnCancelApprove_Click;
@@ -302,7 +309,7 @@ namespace DigiERP.Forms.Inventory
             chkDisabled.TabIndex = 4;
             chkDisabled.Text = "停用";
             chkDisabled.CheckedChanged += chkDisabled_CheckedChanged;
-            //
+            // 
             // lblType
             // 
             lblType.AutoSize = true;
@@ -356,7 +363,7 @@ namespace DigiERP.Forms.Inventory
             txtCategory.Location = new Point(82, 80);
             txtCategory.Name = "txtCategory";
             txtCategory.ReadOnly = true;
-            txtCategory.Size = new Size(132, 25);
+            txtCategory.Size = new Size(126, 25);
             txtCategory.TabIndex = 10;
             // 
             // btnPickCategory
@@ -585,10 +592,11 @@ namespace DigiERP.Forms.Inventory
             btnPreQueryTempCode.Name = "btnPreQueryTempCode";
             btnPreQueryTempCode.Size = new Size(160, 32);
             btnPreQueryTempCode.TabIndex = 34;
+            btnPreQueryTempCode.Tag = "btn-modify";
             btnPreQueryTempCode.Text = "採購預查新增臨時品號";
             btnPreQueryTempCode.UseVisualStyleBackColor = false;
             btnPreQueryTempCode.Click += btnPreQueryTempCode_Click;
-            //
+            // 
             // btnAbandon
             // 
             btnAbandon.BackColor = Color.FromArgb(224, 224, 224);
@@ -598,6 +606,7 @@ namespace DigiERP.Forms.Inventory
             btnAbandon.Name = "btnAbandon";
             btnAbandon.Size = new Size(72, 32);
             btnAbandon.TabIndex = 35;
+            btnAbandon.Tag = "btn-modify";
             btnAbandon.Text = "放棄";
             btnAbandon.UseVisualStyleBackColor = false;
             // 

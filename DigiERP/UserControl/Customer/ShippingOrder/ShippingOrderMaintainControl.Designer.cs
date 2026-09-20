@@ -138,12 +138,12 @@
             // 
             btnClose.BackColor = Color.Red;
             btnClose.ForeColor = SystemColors.ButtonHighlight;
-            btnClose.Location = new Point(1128, 8);
+            btnClose.Location = new Point(1269, 3);
             btnClose.Margin = new Padding(2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(20, 22);
+            btnClose.Size = new Size(46, 22);
             btnClose.TabIndex = 162;
-            btnClose.Text = "X";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -151,10 +151,11 @@
             // 
             btnModify.BackColor = Color.FromArgb(192, 0, 0);
             btnModify.ForeColor = SystemColors.ButtonHighlight;
-            btnModify.Location = new Point(148, 8);
+            btnModify.Location = new Point(765, 3);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(75, 23);
             btnModify.TabIndex = 227;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -173,9 +174,9 @@
             // 
             dtORDERDATE.Enabled = false;
             dtORDERDATE.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            dtORDERDATE.Location = new Point(56, 36);
+            dtORDERDATE.Location = new Point(124, 36);
             dtORDERDATE.Name = "dtORDERDATE";
-            dtORDERDATE.Size = new Size(184, 32);
+            dtORDERDATE.Size = new Size(190, 32);
             dtORDERDATE.TabIndex = 228;
             dtORDERDATE.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -183,9 +184,9 @@
             // 
             txtOrderNo.Enabled = false;
             txtOrderNo.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtOrderNo.Location = new Point(302, 38);
+            txtOrderNo.Location = new Point(412, 37);
             txtOrderNo.Name = "txtOrderNo";
-            txtOrderNo.Size = new Size(144, 32);
+            txtOrderNo.Size = new Size(162, 32);
             txtOrderNo.TabIndex = 231;
             // 
             // label3
@@ -193,7 +194,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label3.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label3.Location = new Point(248, 40);
+            label3.Location = new Point(316, 40);
             label3.Name = "label3";
             label3.Size = new Size(48, 24);
             label3.TabIndex = 230;
@@ -205,9 +206,9 @@
             cboCustId.Enabled = false;
             cboCustId.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboCustId.FormattingEnabled = true;
-            cboCustId.Location = new Point(544, 39);
+            cboCustId.Location = new Point(672, 35);
             cboCustId.Name = "cboCustId";
-            cboCustId.Size = new Size(121, 32);
+            cboCustId.Size = new Size(117, 32);
             cboCustId.TabIndex = 233;
             // 
             // label13
@@ -215,7 +216,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label13.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label13.Location = new Point(456, 44);
+            label13.Location = new Point(580, 40);
             label13.Name = "label13";
             label13.Size = new Size(86, 24);
             label13.TabIndex = 232;
@@ -225,7 +226,7 @@
             // 
             btnSearch.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             btnSearch.Image = Properties.Resources.search_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24;
-            btnSearch.Location = new Point(672, 40);
+            btnSearch.Location = new Point(796, 36);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(40, 32);
             btnSearch.TabIndex = 234;
@@ -237,7 +238,7 @@
             lblCustAlias.AutoSize = true;
             lblCustAlias.Font = new Font("Microsoft JhengHei UI", 14.25F);
             lblCustAlias.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            lblCustAlias.Location = new Point(812, 44);
+            lblCustAlias.Location = new Point(1011, 40);
             lblCustAlias.Name = "lblCustAlias";
             lblCustAlias.Size = new Size(95, 24);
             lblCustAlias.TabIndex = 236;
@@ -249,7 +250,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label4.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label4.Location = new Point(724, 44);
+            label4.Location = new Point(912, 42);
             label4.Name = "label4";
             label4.Size = new Size(86, 24);
             label4.TabIndex = 235;
@@ -260,7 +261,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label6.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label6.Location = new Point(924, 43);
+            label6.Location = new Point(1112, 41);
             label6.Name = "label6";
             label6.Size = new Size(86, 24);
             label6.TabIndex = 237;
@@ -270,7 +271,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label7.Location = new Point(12, 84);
+            label7.Location = new Point(8, 83);
             label7.Name = "label7";
             label7.Size = new Size(105, 24);
             label7.TabIndex = 240;
@@ -282,16 +283,16 @@
             dtShippingDate.Font = new Font("Microsoft JhengHei UI", 14.25F);
             dtShippingDate.Location = new Point(124, 80);
             dtShippingDate.Name = "dtShippingDate";
-            dtShippingDate.Size = new Size(184, 32);
+            dtShippingDate.Size = new Size(190, 32);
             dtShippingDate.TabIndex = 239;
             dtShippingDate.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // txtCommission
             // 
             txtCommission.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtCommission.Location = new Point(1016, 40);
+            txtCommission.Location = new Point(1204, 36);
             txtCommission.Name = "txtCommission";
-            txtCommission.Size = new Size(132, 32);
+            txtCommission.Size = new Size(140, 32);
             txtCommission.TabIndex = 241;
             // 
             // label5
@@ -309,9 +310,9 @@
             cboTaxType.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboTaxType.FormattingEnabled = true;
             cboTaxType.Items.AddRange(new object[] { "", "零稅率", "應稅", "免稅" });
-            cboTaxType.Location = new Point(404, 80);
+            cboTaxType.Location = new Point(412, 80);
             cboTaxType.Name = "cboTaxType";
-            cboTaxType.Size = new Size(92, 32);
+            cboTaxType.Size = new Size(84, 32);
             cboTaxType.TabIndex = 243;
             // 
             // cboTaxRate
@@ -329,7 +330,7 @@
             txtCustName.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             txtCustName.Location = new Point(672, 81);
             txtCustName.Name = "txtCustName";
-            txtCustName.Size = new Size(476, 32);
+            txtCustName.Size = new Size(672, 32);
             txtCustName.TabIndex = 246;
             // 
             // label8
@@ -348,9 +349,9 @@
             cboCurrency.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboCurrency.FormattingEnabled = true;
             cboCurrency.Items.AddRange(new object[] { "", "零稅率", "應稅", "免稅" });
-            cboCurrency.Location = new Point(68, 120);
+            cboCurrency.Location = new Point(124, 130);
             cboCurrency.Name = "cboCurrency";
-            cboCurrency.Size = new Size(92, 32);
+            cboCurrency.Size = new Size(70, 32);
             cboCurrency.TabIndex = 248;
             cboCurrency.SelectedIndexChanged += cboCurrency_SelectedIndexChanged;
             // 
@@ -358,7 +359,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label9.Location = new Point(16, 124);
+            label9.Location = new Point(8, 138);
             label9.Name = "label9";
             label9.Size = new Size(48, 24);
             label9.TabIndex = 247;
@@ -367,9 +368,9 @@
             // txtExRate
             // 
             txtExRate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtExRate.Location = new Point(220, 120);
+            txtExRate.Location = new Point(254, 130);
             txtExRate.Name = "txtExRate";
-            txtExRate.Size = new Size(80, 32);
+            txtExRate.Size = new Size(60, 32);
             txtExRate.TabIndex = 250;
             // 
             // label10
@@ -377,7 +378,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label10.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label10.Location = new Point(168, 124);
+            label10.Location = new Point(200, 133);
             label10.Name = "label10";
             label10.Size = new Size(48, 24);
             label10.TabIndex = 249;
@@ -386,9 +387,9 @@
             // txtAmountSum
             // 
             txtAmountSum.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtAmountSum.Location = new Point(400, 120);
+            txtAmountSum.Location = new Point(412, 129);
             txtAmountSum.Name = "txtAmountSum";
-            txtAmountSum.Size = new Size(108, 32);
+            txtAmountSum.Size = new Size(160, 32);
             txtAmountSum.TabIndex = 252;
             // 
             // label11
@@ -396,7 +397,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label11.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label11.Location = new Point(308, 124);
+            label11.Location = new Point(316, 133);
             label11.Name = "label11";
             label11.Size = new Size(86, 24);
             label11.TabIndex = 251;
@@ -405,9 +406,9 @@
             // txtAddress
             // 
             txtAddress.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtAddress.Location = new Point(608, 121);
+            txtAddress.Location = new Point(672, 129);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(540, 32);
+            txtAddress.Size = new Size(670, 32);
             txtAddress.TabIndex = 254;
             // 
             // label12
@@ -415,7 +416,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label12.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label12.Location = new Point(516, 124);
+            label12.Location = new Point(580, 133);
             label12.Name = "label12";
             label12.Size = new Size(86, 24);
             label12.TabIndex = 253;
@@ -424,7 +425,7 @@
             // txtBankCode
             // 
             txtBankCode.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtBankCode.Location = new Point(108, 160);
+            txtBankCode.Location = new Point(124, 178);
             txtBankCode.Name = "txtBankCode";
             txtBankCode.Size = new Size(108, 32);
             txtBankCode.TabIndex = 256;
@@ -434,7 +435,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label14.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label14.Location = new Point(16, 164);
+            label14.Location = new Point(8, 184);
             label14.Name = "label14";
             label14.Size = new Size(86, 24);
             label14.TabIndex = 255;
@@ -443,7 +444,7 @@
             // btnCheck
             // 
             btnCheck.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btnCheck.Location = new Point(224, 160);
+            btnCheck.Location = new Point(238, 178);
             btnCheck.Name = "btnCheck";
             btnCheck.Size = new Size(76, 36);
             btnCheck.TabIndex = 257;
@@ -454,9 +455,9 @@
             // txtCountry
             // 
             txtCountry.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtCountry.Location = new Point(400, 160);
+            txtCountry.Location = new Point(412, 178);
             txtCountry.Name = "txtCountry";
-            txtCountry.Size = new Size(136, 32);
+            txtCountry.Size = new Size(160, 32);
             txtCountry.TabIndex = 259;
             // 
             // label15
@@ -464,7 +465,7 @@
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label15.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label15.Location = new Point(308, 164);
+            label15.Location = new Point(316, 184);
             label15.Name = "label15";
             label15.Size = new Size(86, 24);
             label15.TabIndex = 258;
@@ -473,9 +474,9 @@
             // txtDestination
             // 
             txtDestination.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtDestination.Location = new Point(624, 160);
+            txtDestination.Location = new Point(672, 174);
             txtDestination.Name = "txtDestination";
-            txtDestination.Size = new Size(136, 32);
+            txtDestination.Size = new Size(120, 32);
             txtDestination.TabIndex = 261;
             // 
             // label16
@@ -483,7 +484,7 @@
             label16.AutoSize = true;
             label16.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label16.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label16.Location = new Point(548, 164);
+            label16.Location = new Point(580, 178);
             label16.Name = "label16";
             label16.Size = new Size(67, 24);
             label16.TabIndex = 260;
@@ -494,9 +495,9 @@
             cboShipMethod.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboShipMethod.FormattingEnabled = true;
             cboShipMethod.Items.AddRange(new object[] { "", "海運", "空運", "貨運指派", "客戶自取" });
-            cboShipMethod.Location = new Point(856, 200);
+            cboShipMethod.Location = new Point(897, 218);
             cboShipMethod.Name = "cboShipMethod";
-            cboShipMethod.Size = new Size(84, 32);
+            cboShipMethod.Size = new Size(112, 32);
             cboShipMethod.TabIndex = 263;
             cboShipMethod.SelectedIndexChanged += cboShipMethod_SelectedIndexChanged;
             // 
@@ -504,7 +505,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label17.Location = new Point(768, 204);
+            label17.Location = new Point(809, 222);
             label17.Name = "label17";
             label17.Size = new Size(86, 24);
             label17.TabIndex = 262;
@@ -515,9 +516,9 @@
             cboTradeCond.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboTradeCond.FormattingEnabled = true;
             cboTradeCond.Items.AddRange(new object[] { "", "海運", "空運", "貨運指派", "客戶自取" });
-            cboTradeCond.Location = new Point(852, 160);
+            cboTradeCond.Location = new Point(897, 174);
             cboTradeCond.Name = "cboTradeCond";
-            cboTradeCond.Size = new Size(84, 32);
+            cboTradeCond.Size = new Size(112, 32);
             cboTradeCond.TabIndex = 265;
             cboTradeCond.SelectedIndexChanged += cboTradeCond_SelectedIndexChanged;
             // 
@@ -525,7 +526,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label18.Location = new Point(764, 164);
+            label18.Location = new Point(809, 178);
             label18.Name = "label18";
             label18.Size = new Size(86, 24);
             label18.TabIndex = 264;
@@ -536,9 +537,9 @@
             cboSales.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboSales.FormattingEnabled = true;
             cboSales.Items.AddRange(new object[] { "", "海運", "空運", "貨運指派", "客戶自取" });
-            cboSales.Location = new Point(856, 280);
+            cboSales.Location = new Point(897, 298);
             cboSales.Name = "cboSales";
-            cboSales.Size = new Size(84, 32);
+            cboSales.Size = new Size(112, 32);
             cboSales.TabIndex = 267;
             cboSales.SelectedIndexChanged += cboSales_SelectedIndexChanged;
             // 
@@ -546,7 +547,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label19.Location = new Point(768, 284);
+            label19.Location = new Point(809, 302);
             label19.Name = "label19";
             label19.Size = new Size(86, 24);
             label19.TabIndex = 266;
@@ -556,7 +557,7 @@
             // 
             lblSalesName.AutoSize = true;
             lblSalesName.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblSalesName.Location = new Point(946, 284);
+            lblSalesName.Location = new Point(1020, 302);
             lblSalesName.Name = "lblSalesName";
             lblSalesName.Size = new Size(132, 24);
             lblSalesName.TabIndex = 268;
@@ -565,10 +566,10 @@
             // txtRemark
             // 
             txtRemark.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txtRemark.Location = new Point(110, 204);
+            txtRemark.Location = new Point(124, 222);
             txtRemark.Multiline = true;
             txtRemark.Name = "txtRemark";
-            txtRemark.Size = new Size(650, 116);
+            txtRemark.Size = new Size(665, 116);
             txtRemark.TabIndex = 270;
             // 
             // label20
@@ -576,7 +577,7 @@
             label20.AutoSize = true;
             label20.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label20.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
-            label20.Location = new Point(12, 200);
+            label20.Location = new Point(8, 225);
             label20.Name = "label20";
             label20.Size = new Size(86, 24);
             label20.TabIndex = 269;
@@ -587,7 +588,7 @@
             cboPaymentTerm.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
             cboPaymentTerm.FormattingEnabled = true;
             cboPaymentTerm.Items.AddRange(new object[] { "", "海運", "空運", "貨運指派", "客戶自取" });
-            cboPaymentTerm.Location = new Point(856, 240);
+            cboPaymentTerm.Location = new Point(897, 258);
             cboPaymentTerm.Name = "cboPaymentTerm";
             cboPaymentTerm.Size = new Size(112, 32);
             cboPaymentTerm.TabIndex = 272;
@@ -597,7 +598,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Microsoft JhengHei UI", 14.25F);
-            label21.Location = new Point(768, 244);
+            label21.Location = new Point(809, 262);
             label21.Name = "label21";
             label21.Size = new Size(86, 24);
             label21.TabIndex = 271;
@@ -607,7 +608,7 @@
             // 
             lblPaymentTerm.AutoSize = true;
             lblPaymentTerm.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblPaymentTerm.Location = new Point(976, 244);
+            lblPaymentTerm.Location = new Point(1020, 262);
             lblPaymentTerm.Name = "lblPaymentTerm";
             lblPaymentTerm.Size = new Size(158, 24);
             lblPaymentTerm.TabIndex = 273;
@@ -620,9 +621,9 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, ProductNo, ProductName, SalesUnit, Qty, UnitPrice, UnTaxedAmount, Remark, ProjectNo, WareHouse, SalesOrderNo });
-            dataGridView1.Location = new Point(20, 328);
+            dataGridView1.Location = new Point(124, 344);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1128, 284);
+            dataGridView1.Size = new Size(1220, 260);
             dataGridView1.TabIndex = 274;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;
             // 
@@ -694,7 +695,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label22.Location = new Point(932, 620);
+            label22.Location = new Point(1134, 624);
             label22.Name = "label22";
             label22.Size = new Size(86, 24);
             label22.TabIndex = 275;
@@ -704,7 +705,7 @@
             // 
             lblTotalSum.AutoSize = true;
             lblTotalSum.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblTotalSum.Location = new Point(1020, 620);
+            lblTotalSum.Location = new Point(1226, 624);
             lblTotalSum.Name = "lblTotalSum";
             lblTotalSum.Size = new Size(118, 24);
             lblTotalSum.TabIndex = 276;
@@ -714,7 +715,7 @@
             // 
             lblAuditor.AutoSize = true;
             lblAuditor.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblAuditor.Location = new Point(112, 648);
+            lblAuditor.Location = new Point(212, 661);
             lblAuditor.Name = "lblAuditor";
             lblAuditor.Size = new Size(100, 24);
             lblAuditor.TabIndex = 278;
@@ -724,7 +725,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label24.Location = new Point(24, 648);
+            label24.Location = new Point(124, 661);
             label24.Name = "label24";
             label24.Size = new Size(86, 24);
             label24.TabIndex = 277;
@@ -734,7 +735,7 @@
             // 
             lblAuditDate.AutoSize = true;
             lblAuditDate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblAuditDate.Location = new Point(216, 648);
+            lblAuditDate.Location = new Point(316, 661);
             lblAuditDate.Name = "lblAuditDate";
             lblAuditDate.Size = new Size(123, 24);
             lblAuditDate.TabIndex = 279;
@@ -744,7 +745,7 @@
             // 
             lblCreateDate.AutoSize = true;
             lblCreateDate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblCreateDate.Location = new Point(612, 648);
+            lblCreateDate.Location = new Point(712, 661);
             lblCreateDate.Name = "lblCreateDate";
             lblCreateDate.Size = new Size(133, 24);
             lblCreateDate.TabIndex = 282;
@@ -754,7 +755,7 @@
             // 
             lblCreator.AutoSize = true;
             lblCreator.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblCreator.Location = new Point(508, 648);
+            lblCreator.Location = new Point(608, 661);
             lblCreator.Name = "lblCreator";
             lblCreator.Size = new Size(99, 24);
             lblCreator.TabIndex = 281;
@@ -764,7 +765,7 @@
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label26.Location = new Point(420, 648);
+            label26.Location = new Point(520, 661);
             label26.Name = "label26";
             label26.Size = new Size(86, 24);
             label26.TabIndex = 280;
@@ -774,7 +775,7 @@
             // 
             lblModifyDate.AutoSize = true;
             lblModifyDate.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblModifyDate.Location = new Point(1020, 648);
+            lblModifyDate.Location = new Point(1120, 661);
             lblModifyDate.Name = "lblModifyDate";
             lblModifyDate.Size = new Size(137, 24);
             lblModifyDate.TabIndex = 285;
@@ -784,7 +785,7 @@
             // 
             lblModifier.AutoSize = true;
             lblModifier.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblModifier.Location = new Point(908, 648);
+            lblModifier.Location = new Point(1008, 661);
             lblModifier.Name = "lblModifier";
             lblModifier.Size = new Size(108, 24);
             lblModifier.TabIndex = 284;
@@ -794,7 +795,7 @@
             // 
             label27.AutoSize = true;
             label27.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            label27.Location = new Point(820, 648);
+            label27.Location = new Point(920, 661);
             label27.Name = "label27";
             label27.Size = new Size(86, 24);
             label27.TabIndex = 283;
@@ -804,10 +805,11 @@
             // 
             btnSODistribute.BackColor = Color.RoyalBlue;
             btnSODistribute.ForeColor = SystemColors.ButtonHighlight;
-            btnSODistribute.Location = new Point(232, 8);
+            btnSODistribute.Location = new Point(849, 3);
             btnSODistribute.Name = "btnSODistribute";
             btnSODistribute.Size = new Size(75, 23);
             btnSODistribute.TabIndex = 286;
+            btnSODistribute.Tag = "btn-modify";
             btnSODistribute.Text = "訂單分配";
             btnSODistribute.UseVisualStyleBackColor = false;
             btnSODistribute.Click += btnSODistribute_Click;
@@ -816,10 +818,11 @@
             // 
             btnSubmit.BackColor = Color.FromArgb(0, 192, 0);
             btnSubmit.ForeColor = SystemColors.ButtonHighlight;
-            btnSubmit.Location = new Point(1048, 8);
+            btnSubmit.Location = new Point(1189, 3);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(75, 23);
             btnSubmit.TabIndex = 287;
+            btnSubmit.Tag = "btn-modify";
             btnSubmit.Text = "送出";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
@@ -828,10 +831,11 @@
             // 
             btnVerify.BackColor = Color.Gray;
             btnVerify.ForeColor = SystemColors.ButtonHighlight;
-            btnVerify.Location = new Point(792, 8);
+            btnVerify.Location = new Point(933, 3);
             btnVerify.Name = "btnVerify";
             btnVerify.Size = new Size(75, 23);
             btnVerify.TabIndex = 288;
+            btnVerify.Tag = "btn-modify";
             btnVerify.Text = "覆核";
             btnVerify.UseVisualStyleBackColor = false;
             btnVerify.Click += btnVerify_Click;
@@ -840,10 +844,11 @@
             // 
             btnCancelVerify.BackColor = Color.Gray;
             btnCancelVerify.ForeColor = SystemColors.ButtonHighlight;
-            btnCancelVerify.Location = new Point(872, 8);
+            btnCancelVerify.Location = new Point(1013, 3);
             btnCancelVerify.Name = "btnCancelVerify";
             btnCancelVerify.Size = new Size(75, 23);
             btnCancelVerify.TabIndex = 289;
+            btnCancelVerify.Tag = "btn-modify";
             btnCancelVerify.Text = "取消覆核";
             btnCancelVerify.UseVisualStyleBackColor = false;
             btnCancelVerify.Click += btnCancelVerify_Click;
@@ -852,10 +857,11 @@
             // 
             btnPrint.BackColor = Color.Gray;
             btnPrint.ForeColor = SystemColors.ButtonHighlight;
-            btnPrint.Location = new Point(952, 8);
+            btnPrint.Location = new Point(1093, 3);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(75, 23);
             btnPrint.TabIndex = 290;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -864,7 +870,7 @@
             // 
             lblTradeCond.AutoSize = true;
             lblTradeCond.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblTradeCond.Location = new Point(944, 164);
+            lblTradeCond.Location = new Point(1020, 178);
             lblTradeCond.Name = "lblTradeCond";
             lblTradeCond.Size = new Size(132, 24);
             lblTradeCond.TabIndex = 291;
@@ -874,7 +880,7 @@
             // 
             lblShippingMethod.AutoSize = true;
             lblShippingMethod.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lblShippingMethod.Location = new Point(948, 204);
+            lblShippingMethod.Location = new Point(1020, 222);
             lblShippingMethod.Name = "lblShippingMethod";
             lblShippingMethod.Size = new Size(185, 24);
             lblShippingMethod.TabIndex = 292;
@@ -953,7 +959,7 @@
             Controls.Add(lblMode);
             Controls.Add(label1);
             Name = "ShippingOrderMaintainControl";
-            Size = new Size(1180, 685);
+            Size = new Size(1424, 685);
             Load += ShippingOrderMaintainControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

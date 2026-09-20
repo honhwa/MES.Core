@@ -191,6 +191,10 @@ namespace DigiERP.UserControl.Customer.RFQ
             txtMachine.Enabled = !isDisable;
             rfqStatusSelect1.SetEnabled(!isDisable);
             txtComment.Enabled = !isDisable;
+            btnDelete.Enabled = !isDisable;
+            btnQuotation.Enabled = !isDisable;
+            btnSubmit.Enabled = !isDisable;
+            btnWorkRecord.Enabled = !isDisable;
         }
 
         private void RFQMaintainControl_Load(object sender, EventArgs e)
@@ -236,7 +240,7 @@ namespace DigiERP.UserControl.Customer.RFQ
         private void btnModify_Click(object sender, EventArgs e)
         {
             disableControls(false);
-            btnSubmit.Text = "確認修改";
+            //btnSubmit.Text = "確認修改";
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

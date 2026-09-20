@@ -60,16 +60,17 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1497, 76);
+            panel1.Size = new Size(1497, 60);
             panel1.TabIndex = 0;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(224, 224, 224);
-            button1.Location = new Point(884, 16);
+            button1.Location = new Point(1353, 10);
             button1.Name = "button1";
             button1.Size = new Size(132, 36);
             button1.TabIndex = 6;
+            button1.Tag = "btn-modify";
             button1.Text = "新增料品";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -78,10 +79,11 @@
             // 
             btn新增同級料品支援.BackColor = Color.FromArgb(0, 192, 0);
             btn新增同級料品支援.ForeColor = SystemColors.ButtonHighlight;
-            btn新增同級料品支援.Location = new Point(711, 16);
+            btn新增同級料品支援.Location = new Point(1180, 10);
             btn新增同級料品支援.Name = "btn新增同級料品支援";
             btn新增同級料品支援.Size = new Size(161, 36);
             btn新增同級料品支援.TabIndex = 5;
+            btn新增同級料品支援.Tag = "btn-modify";
             btn新增同級料品支援.Text = "新增同級料品支援";
             btn新增同級料品支援.UseVisualStyleBackColor = false;
             btn新增同級料品支援.Click += btn新增同級料品支援_Click;
@@ -89,10 +91,11 @@
             // btn加工材料代號新增
             // 
             btn加工材料代號新增.BackColor = Color.FromArgb(192, 255, 255);
-            btn加工材料代號新增.Location = new Point(548, 16);
+            btn加工材料代號新增.Location = new Point(1017, 10);
             btn加工材料代號新增.Name = "btn加工材料代號新增";
             btn加工材料代號新增.Size = new Size(148, 36);
             btn加工材料代號新增.TabIndex = 4;
+            btn加工材料代號新增.Tag = "btn-modify";
             btn加工材料代號新增.Text = "加工材料代號新增";
             btn加工材料代號新增.UseVisualStyleBackColor = false;
             btn加工材料代號新增.Click += btn加工材料代號新增_Click;
@@ -100,10 +103,11 @@
             // btn未核准品項清單
             // 
             btn未核准品項清單.BackColor = Color.FromArgb(192, 255, 192);
-            btn未核准品項清單.Location = new Point(404, 16);
+            btn未核准品項清單.Location = new Point(873, 10);
             btn未核准品項清單.Name = "btn未核准品項清單";
             btn未核准品項清單.Size = new Size(132, 36);
             btn未核准品項清單.TabIndex = 3;
+            btn未核准品項清單.Tag = "btn-modify";
             btn未核准品項清單.Text = "未核准品項清單";
             btn未核准品項清單.UseVisualStyleBackColor = false;
             btn未核准品項清單.Click += btn未核准品項清單_Click;
@@ -111,10 +115,11 @@
             // btnQueryByPartDesc
             // 
             btnQueryByPartDesc.BackColor = Color.FromArgb(255, 192, 192);
-            btnQueryByPartDesc.Location = new Point(296, 16);
+            btnQueryByPartDesc.Location = new Point(765, 10);
             btnQueryByPartDesc.Name = "btnQueryByPartDesc";
             btnQueryByPartDesc.Size = new Size(92, 36);
             btnQueryByPartDesc.TabIndex = 2;
+            btnQueryByPartDesc.Tag = "btn-modify";
             btnQueryByPartDesc.Text = "品名搜尋";
             btnQueryByPartDesc.UseVisualStyleBackColor = false;
             btnQueryByPartDesc.Click += btnQueryByPartDesc_Click;
@@ -132,19 +137,20 @@
             // lblTitle
             // 
             lblTitle.Font = new Font("微軟正黑體", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(92, 20);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(196, 32);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "材料庫存查詢";
             // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 76);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1497, 600);
+            panel2.Size = new Size(1497, 616);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -163,7 +169,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 28;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1497, 600);
+            dataGridView1.Size = new Size(1497, 616);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;
