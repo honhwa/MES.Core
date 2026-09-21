@@ -67,6 +67,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(227, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "進項憑證沖銷總覽-未結案";
             // 
             // btnOpen
@@ -75,10 +76,11 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnOpen.FlatStyle = FlatStyle.Flat;
             btnOpen.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnOpen.ForeColor = Color.White;
-            btnOpen.Location = new Point(310, 14);
+            btnOpen.Location = new Point(1025, 14);
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(100, 32);
             btnOpen.TabIndex = 1;
+            btnOpen.Tag = "btn-modify";
             btnOpen.Text = "未結案";
             btnOpen.UseVisualStyleBackColor = false;
             btnOpen.Click += btnOpen_Click;
@@ -89,10 +91,11 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnClosed.FlatStyle = FlatStyle.Flat;
             btnClosed.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnClosed.ForeColor = Color.White;
-            btnClosed.Location = new Point(420, 14);
+            btnClosed.Location = new Point(1135, 14);
             btnClosed.Name = "btnClosed";
             btnClosed.Size = new Size(100, 32);
             btnClosed.TabIndex = 2;
+            btnClosed.Tag = "btn-modify";
             btnClosed.Text = "已結案";
             btnClosed.UseVisualStyleBackColor = false;
             btnClosed.Click += btnClosed_Click;

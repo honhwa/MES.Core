@@ -100,10 +100,11 @@ namespace DigiERP.UserControl.Inventory.ProjectProcurement
             btnMultiFilter.FlatStyle = FlatStyle.Flat;
             btnMultiFilter.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnMultiFilter.ForeColor = Color.White;
-            btnMultiFilter.Location = new Point(340, 12);
+            btnMultiFilter.Location = new Point(668, 12);
             btnMultiFilter.Name = "btnMultiFilter";
             btnMultiFilter.Size = new Size(110, 32);
             btnMultiFilter.TabIndex = 1;
+            btnMultiFilter.Tag = "btn-modify";
             btnMultiFilter.Text = "複式篩選器";
             btnMultiFilter.UseVisualStyleBackColor = false;
             btnMultiFilter.Click += btnMultiFilter_Click;
@@ -113,7 +114,7 @@ namespace DigiERP.UserControl.Inventory.ProjectProcurement
             btnClearFilter.BackColor = Color.Gainsboro;
             btnClearFilter.FlatStyle = FlatStyle.Flat;
             btnClearFilter.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnClearFilter.Location = new Point(460, 12);
+            btnClearFilter.Location = new Point(788, 12);
             btnClearFilter.Name = "btnClearFilter";
             btnClearFilter.Size = new Size(100, 32);
             btnClearFilter.TabIndex = 2;
@@ -171,6 +172,7 @@ namespace DigiERP.UserControl.Inventory.ProjectProcurement
             btnExit.TabIndex = 6;
             btnExit.Text = "關閉";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Visible = false;
             btnExit.Click += btnExit_Click;
             // 
             // panel3

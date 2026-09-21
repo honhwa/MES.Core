@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockInControl));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             btnExit = new Button();
             btnSave = new Button();
             btnAdd = new Button();
@@ -49,11 +50,10 @@ namespace DigiERP.UserControl.Inventory.StockIn
             colSpecialQty = new DataGridViewTextBoxColumn();
             colReturnQty = new DataGridViewTextBoxColumn();
             colInvoiceNo = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -77,8 +77,18 @@ namespace DigiERP.UserControl.Inventory.StockIn
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1720, 56);
+            panel1.Size = new Size(1720, 60);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(8, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
             // 
             // btnExit
             // 
@@ -125,7 +135,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // 
             lblItemName.AutoSize = true;
             lblItemName.Font = new Font("微軟正黑體", 10F);
-            lblItemName.Location = new Point(972, 18);
+            lblItemName.Location = new Point(1197, 18);
             lblItemName.Name = "lblItemName";
             lblItemName.Size = new Size(64, 18);
             lblItemName.TabIndex = 9;
@@ -134,7 +144,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // txtItemName
             // 
             txtItemName.Font = new Font("微軟正黑體", 10F);
-            txtItemName.Location = new Point(1037, 14);
+            txtItemName.Location = new Point(1262, 14);
             txtItemName.Name = "txtItemName";
             txtItemName.Size = new Size(150, 25);
             txtItemName.TabIndex = 10;
@@ -144,7 +154,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // 
             lblProject.AutoSize = true;
             lblProject.Font = new Font("微軟正黑體", 10F);
-            lblProject.Location = new Point(772, 18);
+            lblProject.Location = new Point(997, 18);
             lblProject.Name = "lblProject";
             lblProject.Size = new Size(64, 18);
             lblProject.TabIndex = 7;
@@ -153,7 +163,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // txtProject
             // 
             txtProject.Font = new Font("微軟正黑體", 10F);
-            txtProject.Location = new Point(837, 14);
+            txtProject.Location = new Point(1062, 14);
             txtProject.Name = "txtProject";
             txtProject.Size = new Size(120, 25);
             txtProject.TabIndex = 8;
@@ -163,7 +173,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // 
             lblSupplier.AutoSize = true;
             lblSupplier.Font = new Font("微軟正黑體", 10F);
-            lblSupplier.Location = new Point(572, 18);
+            lblSupplier.Location = new Point(797, 18);
             lblSupplier.Name = "lblSupplier";
             lblSupplier.Size = new Size(64, 18);
             lblSupplier.TabIndex = 5;
@@ -172,7 +182,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // txtSupplier
             // 
             txtSupplier.Font = new Font("微軟正黑體", 10F);
-            txtSupplier.Location = new Point(637, 14);
+            txtSupplier.Location = new Point(862, 14);
             txtSupplier.Name = "txtSupplier";
             txtSupplier.Size = new Size(120, 25);
             txtSupplier.TabIndex = 6;
@@ -184,10 +194,11 @@ namespace DigiERP.UserControl.Inventory.StockIn
             btnDateFilter.FlatStyle = FlatStyle.Flat;
             btnDateFilter.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnDateFilter.ForeColor = Color.White;
-            btnDateFilter.Location = new Point(448, 10);
+            btnDateFilter.Location = new Point(673, 10);
             btnDateFilter.Name = "btnDateFilter";
             btnDateFilter.Size = new Size(110, 32);
             btnDateFilter.TabIndex = 4;
+            btnDateFilter.Tag = "btn-modify";
             btnDateFilter.Text = "日期區間篩選";
             btnDateFilter.UseVisualStyleBackColor = false;
             btnDateFilter.Click += btnDateFilter_Click;
@@ -196,7 +207,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // 
             lblTilde.AutoSize = true;
             lblTilde.Font = new Font("微軟正黑體", 10F);
-            lblTilde.Location = new Point(300, 18);
+            lblTilde.Location = new Point(525, 18);
             lblTilde.Name = "lblTilde";
             lblTilde.Size = new Size(18, 18);
             lblTilde.TabIndex = 2;
@@ -205,7 +216,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // dtTo
             // 
             dtTo.Format = DateTimePickerFormat.Short;
-            dtTo.Location = new Point(320, 14);
+            dtTo.Location = new Point(545, 14);
             dtTo.Name = "dtTo";
             dtTo.Size = new Size(115, 25);
             dtTo.TabIndex = 3;
@@ -213,7 +224,7 @@ namespace DigiERP.UserControl.Inventory.StockIn
             // dtFrom
             // 
             dtFrom.Format = DateTimePickerFormat.Short;
-            dtFrom.Location = new Point(180, 14);
+            dtFrom.Location = new Point(405, 14);
             dtFrom.Name = "dtFrom";
             dtFrom.Size = new Size(115, 25);
             dtFrom.TabIndex = 1;
@@ -223,19 +234,20 @@ namespace DigiERP.UserControl.Inventory.StockIn
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(68, 16);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(105, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "進貨單總覽";
             // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 56);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1720, 600);
+            panel2.Size = new Size(1720, 596);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -254,10 +266,10 @@ namespace DigiERP.UserControl.Inventory.StockIn
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1720, 600);
+            dataGridView1.Size = new Size(1720, 596);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
-            //
+            // 
             // colNo
             // 
             colNo.FillWeight = 90F;
@@ -355,16 +367,6 @@ namespace DigiERP.UserControl.Inventory.StockIn
             colInvoiceNo.Name = "colInvoiceNo";
             colInvoiceNo.ReadOnly = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 14;
-            pictureBox1.TabStop = false;
-            // 
             // StockInControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -377,9 +379,9 @@ namespace DigiERP.UserControl.Inventory.StockIn
             Size = new Size(1720, 656);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

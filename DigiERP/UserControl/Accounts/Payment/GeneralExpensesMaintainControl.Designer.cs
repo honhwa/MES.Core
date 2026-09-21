@@ -255,14 +255,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.Gainsboro;
+            btnClose.BackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
+            btnClose.ForeColor = SystemColors.ControlLightLight;
             btnClose.Location = new Point(1276, 12);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(98, 32);
             btnClose.TabIndex = 10;
-            btnClose.Text = "關閉";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -387,7 +388,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             txtSupplierName.Location = new Point(970, 2);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
-            txtSupplierName.Size = new Size(260, 25);
+            txtSupplierName.Size = new Size(325, 25);
             txtSupplierName.TabIndex = 7;
             // 
             // lblContact
@@ -481,7 +482,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblPurchaserName
             // 
             lblPurchaserName.AutoSize = true;
-            lblPurchaserName.Location = new Point(1268, 44);
+            lblPurchaserName.Location = new Point(1068, 44);
             lblPurchaserName.Name = "lblPurchaserName";
             lblPurchaserName.Size = new Size(0, 18);
             lblPurchaserName.TabIndex = 18;
@@ -489,7 +490,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // lblVoid
             // 
             lblVoid.AutoSize = true;
-            lblVoid.Location = new Point(1066, 44);
+            lblVoid.Location = new Point(1130, 44);
             lblVoid.Name = "lblVoid";
             lblVoid.Size = new Size(36, 18);
             lblVoid.TabIndex = 19;
@@ -497,7 +498,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             // chkVoid
             // 
-            chkVoid.Location = new Point(1110, 40);
+            chkVoid.Location = new Point(1174, 40);
             chkVoid.Name = "chkVoid";
             chkVoid.Size = new Size(24, 24);
             chkVoid.TabIndex = 20;
@@ -570,7 +571,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             txtNote.Location = new Point(970, 78);
             txtNote.Name = "txtNote";
-            txtNote.Size = new Size(260, 25);
+            txtNote.Size = new Size(325, 25);
             txtNote.TabIndex = 28;
             // 
             // btnVoidAll
@@ -578,7 +579,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             btnVoidAll.BackColor = Color.LightSalmon;
             btnVoidAll.FlatStyle = FlatStyle.Flat;
             btnVoidAll.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnVoidAll.Location = new Point(1140, 38);
+            btnVoidAll.Location = new Point(1204, 38);
             btnVoidAll.Name = "btnVoidAll";
             btnVoidAll.Size = new Size(89, 28);
             btnVoidAll.TabIndex = 29;

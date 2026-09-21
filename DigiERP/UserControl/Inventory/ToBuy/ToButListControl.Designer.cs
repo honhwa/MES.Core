@@ -50,9 +50,9 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            //
+            // 
             // panel1
-            //
+            // 
             panel1.BackColor = Color.Cornsilk;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblTitle);
@@ -64,32 +64,33 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
-            //
+            // 
             // pictureBox1
-            //
+            // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            //
+            // 
             // lblTitle
-            //
+            // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(60, 16);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(100, 24);
+            lblTitle.Size = new Size(86, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "請購底稿";
-            //
+            // 
             // btnOpen
-            //
+            // 
             btnOpen.BackColor = Color.SteelBlue;
             btnOpen.FlatStyle = FlatStyle.Flat;
             btnOpen.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
@@ -98,12 +99,13 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(100, 32);
             btnOpen.TabIndex = 1;
+            btnOpen.Tag = "btn-modify";
             btnOpen.Text = "未結案";
             btnOpen.UseVisualStyleBackColor = false;
             btnOpen.Click += btnOpen_Click;
-            //
+            // 
             // btnClosed
-            //
+            // 
             btnClosed.BackColor = Color.SeaGreen;
             btnClosed.FlatStyle = FlatStyle.Flat;
             btnClosed.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
@@ -112,12 +114,13 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             btnClosed.Name = "btnClosed";
             btnClosed.Size = new Size(100, 32);
             btnClosed.TabIndex = 2;
+            btnClosed.Tag = "btn-modify";
             btnClosed.Text = "已結案";
             btnClosed.UseVisualStyleBackColor = false;
             btnClosed.Click += btnClosed_Click;
-            //
+            // 
             // btnModify
-            //
+            // 
             btnModify.BackColor = Color.Gainsboro;
             btnModify.FlatStyle = FlatStyle.Flat;
             btnModify.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
@@ -128,9 +131,9 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
-            //
+            // 
             // btnSave
-            //
+            // 
             btnSave.BackColor = Color.Gainsboro;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
@@ -141,9 +144,9 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
-            //
+            // 
             // btnExit
-            //
+            // 
             btnExit.BackColor = Color.Gainsboro;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
@@ -155,18 +158,18 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Visible = false;
             btnExit.Click += btnExit_Click;
-            //
+            // 
             // panel2
-            //
+            // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 56);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1900, 600);
+            panel2.Size = new Size(1900, 596);
             panel2.TabIndex = 1;
-            //
+            // 
             // dataGridView1
-            //
+            // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -181,107 +184,119 @@ namespace DigiERP.UserControl.Inventory.ToBuy
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1900, 600);
+            dataGridView1.Size = new Size(1900, 596);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             dataGridView1.CurrentCellDirtyStateChanged += dataGridView1_CurrentCellDirtyStateChanged;
             dataGridView1.DataError += dataGridView1_DataError;
-            //
+            // 
             // colDate
-            //
+            // 
             colDate.HeaderText = "請購日期";
             colDate.Name = "colDate";
-            //
+            colDate.ReadOnly = true;
+            // 
             // colDept
-            //
+            // 
             colDept.HeaderText = "請購部門";
             colDept.Name = "colDept";
-            //
+            colDept.ReadOnly = true;
+            // 
             // colRequester
-            //
+            // 
             colRequester.HeaderText = "請購人員";
             colRequester.Name = "colRequester";
-            //
+            colRequester.ReadOnly = true;
+            // 
             // colCategory
-            //
+            // 
             colCategory.HeaderText = "請購類別";
             colCategory.Name = "colCategory";
-            //
+            colCategory.ReadOnly = true;
+            // 
             // colItemNo
-            //
+            // 
             colItemNo.HeaderText = "品項編號";
             colItemNo.Name = "colItemNo";
-            //
+            colItemNo.ReadOnly = true;
+            // 
             // colItemName
-            //
+            // 
             colItemName.FillWeight = 180F;
             colItemName.HeaderText = "品名";
             colItemName.Name = "colItemName";
             colItemName.ReadOnly = true;
-            //
+            // 
             // colUnit
-            //
+            // 
             colUnit.HeaderText = "單位";
             colUnit.Name = "colUnit";
             colUnit.ReadOnly = true;
-            //
+            // 
             // colQty
-            //
+            // 
             colQty.HeaderText = "需求數量";
             colQty.Name = "colQty";
-            //
+            colQty.ReadOnly = true;
+            // 
             // colUrgent
-            //
+            // 
             colUrgent.HeaderText = "緊急";
             colUrgent.Name = "colUrgent";
-            //
+            colUrgent.ReadOnly = true;
+            // 
             // colNeedDate
-            //
+            // 
             colNeedDate.HeaderText = "需求日期";
             colNeedDate.Name = "colNeedDate";
-            //
+            colNeedDate.ReadOnly = true;
+            // 
             // colPurpose
-            //
+            // 
             colPurpose.HeaderText = "用途";
             colPurpose.Name = "colPurpose";
-            //
+            colPurpose.ReadOnly = true;
+            // 
             // colSupplierNo
-            //
+            // 
             colSupplierNo.HeaderText = "指定廠商";
             colSupplierNo.Name = "colSupplierNo";
-            //
+            colSupplierNo.ReadOnly = true;
+            // 
             // colSupplierName
-            //
+            // 
             colSupplierName.FillWeight = 130F;
             colSupplierName.HeaderText = "廠商簡稱";
             colSupplierName.Name = "colSupplierName";
             colSupplierName.ReadOnly = true;
-            //
+            // 
             // colRemark
-            //
+            // 
             colRemark.FillWeight = 150F;
             colRemark.HeaderText = "註記";
             colRemark.Name = "colRemark";
-            //
+            colRemark.ReadOnly = true;
+            // 
             // colPoNo
-            //
+            // 
             colPoNo.HeaderText = "採購單號";
             colPoNo.Name = "colPoNo";
             colPoNo.ReadOnly = true;
-            //
+            // 
             // colClosed
-            //
+            // 
             colClosed.HeaderText = "結案";
             colClosed.Name = "colClosed";
-            //
+            colClosed.ReadOnly = true;
+            // 
             // colSerial
-            //
+            // 
             colSerial.HeaderText = "序號";
             colSerial.Name = "colSerial";
             colSerial.ReadOnly = true;
-            //
+            // 
             // ToButListControl
-            //
+            // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel2);

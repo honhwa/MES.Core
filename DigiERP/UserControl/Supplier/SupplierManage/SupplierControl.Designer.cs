@@ -60,7 +60,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1497, 112);
+            panel1.Size = new Size(1497, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -77,7 +77,7 @@
             // 
             chkHideDisabled.AutoSize = true;
             chkHideDisabled.Font = new Font("微軟正黑體", 10F);
-            chkHideDisabled.Location = new Point(792, 84);
+            chkHideDisabled.Location = new Point(1021, 24);
             chkHideDisabled.Name = "chkHideDisabled";
             chkHideDisabled.Size = new Size(83, 22);
             chkHideDisabled.TabIndex = 7;
@@ -90,10 +90,11 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(568, 64);
+            btnSearch.Location = new Point(799, 12);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(100, 40);
             btnSearch.TabIndex = 6;
+            btnSearch.Tag = "btn-modify";
             btnSearch.Text = "查詢";
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
@@ -101,7 +102,7 @@
             // txtSearchName
             // 
             txtSearchName.Font = new Font("微軟正黑體", 10F);
-            txtSearchName.Location = new Point(332, 72);
+            txtSearchName.Location = new Point(547, 21);
             txtSearchName.Name = "txtSearchName";
             txtSearchName.Size = new Size(220, 25);
             txtSearchName.TabIndex = 5;
@@ -111,7 +112,7 @@
             // 
             lblSearchName.AutoSize = true;
             lblSearchName.Font = new Font("微軟正黑體", 10F);
-            lblSearchName.Location = new Point(262, 76);
+            lblSearchName.Location = new Point(477, 25);
             lblSearchName.Name = "lblSearchName";
             lblSearchName.Size = new Size(64, 18);
             lblSearchName.TabIndex = 4;
@@ -120,7 +121,7 @@
             // txtSearchNo
             // 
             txtSearchNo.Font = new Font("微軟正黑體", 10F);
-            txtSearchNo.Location = new Point(86, 72);
+            txtSearchNo.Location = new Point(301, 21);
             txtSearchNo.Name = "txtSearchNo";
             txtSearchNo.Size = new Size(160, 25);
             txtSearchNo.TabIndex = 3;
@@ -130,7 +131,7 @@
             // 
             lblSearchNo.AutoSize = true;
             lblSearchNo.Font = new Font("微軟正黑體", 10F);
-            lblSearchNo.Location = new Point(16, 76);
+            lblSearchNo.Location = new Point(231, 25);
             lblSearchNo.Name = "lblSearchNo";
             lblSearchNo.Size = new Size(64, 18);
             lblSearchNo.TabIndex = 2;
@@ -142,10 +143,11 @@
             btn新增.FlatStyle = FlatStyle.Flat;
             btn新增.Font = new Font("微軟正黑體", 12F, FontStyle.Bold);
             btn新增.ForeColor = Color.White;
-            btn新增.Location = new Point(680, 64);
+            btn新增.Location = new Point(911, 12);
             btn新增.Name = "btn新增";
             btn新增.Size = new Size(104, 40);
             btn新增.TabIndex = 1;
+            btn新增.Tag = "btn-modify";
             btn新增.Text = "新增";
             btn新增.UseVisualStyleBackColor = false;
             btn新增.Click += btn新增_Click;
@@ -153,19 +155,20 @@
             // lblTitle
             // 
             lblTitle.Font = new Font("微軟正黑體", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(88, 20);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(152, 32);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "廠商一覽表";
             // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 112);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1497, 564);
+            panel2.Size = new Size(1497, 616);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -184,7 +187,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 28;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1497, 564);
+            dataGridView1.Size = new Size(1497, 616);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;

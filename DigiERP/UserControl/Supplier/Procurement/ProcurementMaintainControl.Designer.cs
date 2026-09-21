@@ -180,7 +180,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             btnDeleteRecord.Name = "btnDeleteRecord";
             btnDeleteRecord.Size = new Size(95, 28);
             btnDeleteRecord.TabIndex = 3;
-            btnDeleteRecord.Tag = "btn-modify";
+            btnDeleteRecord.Tag = "btn-delete";
             btnDeleteRecord.Text = "刪除紀錄";
             btnDeleteRecord.UseVisualStyleBackColor = false;
             btnDeleteRecord.Visible = false;
@@ -310,13 +310,14 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.Gainsboro;
+            btnClose.BackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
             btnClose.Location = new Point(1345, 7);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(80, 28);
             btnClose.TabIndex = 13;
-            btnClose.Text = "關閉";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -408,7 +409,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             txtNo.Location = new Point(340, 8);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
-            txtNo.Size = new Size(157, 23);
+            txtNo.Size = new Size(160, 23);
             txtNo.TabIndex = 3;
             // 
             // lblSupplierNo
@@ -452,7 +453,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             txtSupplierName.Location = new Point(863, 8);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
-            txtSupplierName.Size = new Size(260, 23);
+            txtSupplierName.Size = new Size(278, 23);
             txtSupplierName.TabIndex = 8;
             // 
             // lblContact
@@ -494,7 +495,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             cboTaxRate.Items.AddRange(new object[] { "", "0%", "5%" });
             cboTaxRate.Location = new Point(360, 42);
             cboTaxRate.Name = "cboTaxRate";
-            cboTaxRate.Size = new Size(80, 24);
+            cboTaxRate.Size = new Size(140, 24);
             cboTaxRate.TabIndex = 13;
             cboTaxRate.SelectedIndexChanged += cboTaxRate_SelectedIndexChanged;
             cboTaxRate.Leave += cboTaxRate_Leave;
@@ -547,7 +548,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             cboDeliveryAddr.Location = new Point(864, 40);
             cboDeliveryAddr.Name = "cboDeliveryAddr";
-            cboDeliveryAddr.Size = new Size(220, 24);
+            cboDeliveryAddr.Size = new Size(277, 24);
             cboDeliveryAddr.TabIndex = 19;
             // 
             // lblPurchaseCategory
@@ -603,7 +604,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblPurchaser
             // 
             lblPurchaser.AutoSize = true;
-            lblPurchaser.Location = new Point(793, 76);
+            lblPurchaser.Location = new Point(789, 77);
             lblPurchaser.Name = "lblPurchaser";
             lblPurchaser.Size = new Size(55, 16);
             lblPurchaser.TabIndex = 26;
@@ -611,7 +612,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // cboPurchaser
             // 
-            cboPurchaser.Location = new Point(863, 72);
+            cboPurchaser.Location = new Point(860, 72);
             cboPurchaser.Name = "cboPurchaser";
             cboPurchaser.Size = new Size(110, 24);
             cboPurchaser.TabIndex = 27;
@@ -660,13 +661,13 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             txtNote.Location = new Point(78, 113);
             txtNote.Name = "txtNote";
-            txtNote.Size = new Size(391, 23);
+            txtNote.Size = new Size(422, 23);
             txtNote.TabIndex = 32;
             // 
             // lblTradeTerm
             // 
             lblTradeTerm.AutoSize = true;
-            lblTradeTerm.Location = new Point(492, 116);
+            lblTradeTerm.Location = new Point(516, 114);
             lblTradeTerm.Name = "lblTradeTerm";
             lblTradeTerm.Size = new Size(55, 16);
             lblTradeTerm.TabIndex = 33;
@@ -674,15 +675,15 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtTradeTerm
             // 
-            txtTradeTerm.Location = new Point(553, 112);
+            txtTradeTerm.Location = new Point(577, 110);
             txtTradeTerm.Name = "txtTradeTerm";
-            txtTradeTerm.Size = new Size(140, 23);
+            txtTradeTerm.Size = new Size(205, 23);
             txtTradeTerm.TabIndex = 34;
             // 
             // lblDeliveryDate
             // 
             lblDeliveryDate.AutoSize = true;
-            lblDeliveryDate.Location = new Point(768, 112);
+            lblDeliveryDate.Location = new Point(788, 113);
             lblDeliveryDate.Name = "lblDeliveryDate";
             lblDeliveryDate.Size = new Size(55, 16);
             lblDeliveryDate.TabIndex = 35;
@@ -691,7 +692,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // dtDeliveryDate
             // 
             dtDeliveryDate.Format = DateTimePickerFormat.Short;
-            dtDeliveryDate.Location = new Point(840, 108);
+            dtDeliveryDate.Location = new Point(860, 109);
             dtDeliveryDate.Name = "dtDeliveryDate";
             dtDeliveryDate.Size = new Size(110, 23);
             dtDeliveryDate.TabIndex = 36;
@@ -896,7 +897,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblModifierCaption
             // 
             lblModifierCaption.AutoSize = true;
-            lblModifierCaption.Location = new Point(285, 46);
+            lblModifierCaption.Location = new Point(515, 46);
             lblModifierCaption.Name = "lblModifierCaption";
             lblModifierCaption.Size = new Size(55, 16);
             lblModifierCaption.TabIndex = 9;
@@ -904,7 +905,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtModifier
             // 
-            txtModifier.Location = new Point(360, 42);
+            txtModifier.Location = new Point(590, 42);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
             txtModifier.Size = new Size(90, 23);
@@ -912,7 +913,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtModifyDate
             // 
-            txtModifyDate.Location = new Point(455, 42);
+            txtModifyDate.Location = new Point(685, 42);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
             txtModifyDate.Size = new Size(90, 23);
@@ -921,7 +922,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // lblApproverCaption
             // 
             lblApproverCaption.AutoSize = true;
-            lblApproverCaption.Location = new Point(560, 46);
+            lblApproverCaption.Location = new Point(1086, 46);
             lblApproverCaption.Name = "lblApproverCaption";
             lblApproverCaption.Size = new Size(55, 16);
             lblApproverCaption.TabIndex = 12;
@@ -929,7 +930,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtApprover
             // 
-            txtApprover.Location = new Point(635, 42);
+            txtApprover.Location = new Point(1161, 42);
             txtApprover.Name = "txtApprover";
             txtApprover.ReadOnly = true;
             txtApprover.Size = new Size(90, 23);
@@ -937,7 +938,7 @@ namespace DigiERP.UserControl.Supplier.Procurement
             // 
             // txtApproveDate
             // 
-            txtApproveDate.Location = new Point(730, 42);
+            txtApproveDate.Location = new Point(1256, 42);
             txtApproveDate.Name = "txtApproveDate";
             txtApproveDate.ReadOnly = true;
             txtApproveDate.Size = new Size(90, 23);

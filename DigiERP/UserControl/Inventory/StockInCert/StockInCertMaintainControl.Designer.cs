@@ -157,6 +157,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnCashier.Name = "btnCashier";
             btnCashier.Size = new Size(98, 32);
             btnCashier.TabIndex = 1;
+            btnCashier.Tag = "btn-modify";
             btnCashier.Text = "出納付款";
             btnCashier.UseVisualStyleBackColor = false;
             btnCashier.Click += btnCashier_Click;
@@ -170,6 +171,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnVoucherEntry.Name = "btnVoucherEntry";
             btnVoucherEntry.Size = new Size(98, 32);
             btnVoucherEntry.TabIndex = 2;
+            btnVoucherEntry.Tag = "btn-modify";
             btnVoucherEntry.Text = "會計傳票";
             btnVoucherEntry.UseVisualStyleBackColor = false;
             btnVoucherEntry.Click += btnVoucherEntry_Click;
@@ -184,6 +186,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnImportDetail.Name = "btnImportDetail";
             btnImportDetail.Size = new Size(110, 32);
             btnImportDetail.TabIndex = 3;
+            btnImportDetail.Tag = "btn-modify";
             btnImportDetail.Text = "付款明細導入";
             btnImportDetail.UseVisualStyleBackColor = false;
             btnImportDetail.Click += btnImportDetail_Click;
@@ -198,6 +201,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(98, 32);
             btnDelete.TabIndex = 4;
+            btnDelete.Tag = "btn-delete";
             btnDelete.Text = "刪除紀錄";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -372,7 +376,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblNo
             // 
             lblNo.AutoSize = true;
-            lblNo.Location = new Point(214, 10);
+            lblNo.Location = new Point(288, 10);
             lblNo.Name = "lblNo";
             lblNo.Size = new Size(36, 18);
             lblNo.TabIndex = 2;
@@ -380,17 +384,17 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtNo
             // 
-            txtNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtNo.Location = new Point(268, 6);
+            txtNo.BackColor = Color.WhiteSmoke;
+            txtNo.Location = new Point(362, 6);
             txtNo.Name = "txtNo";
             txtNo.ReadOnly = true;
-            txtNo.Size = new Size(200, 25);
+            txtNo.Size = new Size(180, 25);
             txtNo.TabIndex = 3;
             // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
-            lblCategory.Location = new Point(476, 10);
+            lblCategory.Location = new Point(554, 10);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(64, 18);
             lblCategory.TabIndex = 4;
@@ -400,15 +404,15 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             cboCategory.FormattingEnabled = true;
             cboCategory.Items.AddRange(new object[] { "進貨驗收", "委外加工", "總務支出", "採購預付", "其他暫付" });
-            cboCategory.Location = new Point(552, 6);
+            cboCategory.Location = new Point(628, 6);
             cboCategory.Name = "cboCategory";
-            cboCategory.Size = new Size(120, 25);
+            cboCategory.Size = new Size(118, 25);
             cboCategory.TabIndex = 5;
             // 
             // lblCertType
             // 
             lblCertType.AutoSize = true;
-            lblCertType.Location = new Point(690, 10);
+            lblCertType.Location = new Point(764, 10);
             lblCertType.Name = "lblCertType";
             lblCertType.Size = new Size(64, 18);
             lblCertType.TabIndex = 6;
@@ -417,7 +421,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // cboCertType
             // 
             cboCertType.FormattingEnabled = true;
-            cboCertType.Location = new Point(764, 6);
+            cboCertType.Location = new Point(838, 6);
             cboCertType.Name = "cboCertType";
             cboCertType.Size = new Size(84, 25);
             cboCertType.TabIndex = 7;
@@ -425,7 +429,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblPayDate
             // 
             lblPayDate.AutoSize = true;
-            lblPayDate.Location = new Point(866, 10);
+            lblPayDate.Location = new Point(940, 10);
             lblPayDate.Name = "lblPayDate";
             lblPayDate.Size = new Size(64, 18);
             lblPayDate.TabIndex = 8;
@@ -434,7 +438,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // dtPayDate
             // 
             dtPayDate.Format = DateTimePickerFormat.Short;
-            dtPayDate.Location = new Point(940, 6);
+            dtPayDate.Location = new Point(1014, 6);
             dtPayDate.Name = "dtPayDate";
             dtPayDate.Size = new Size(130, 25);
             dtPayDate.TabIndex = 9;
@@ -450,7 +454,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSupplierNo
             // 
-            txtSupplierNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtSupplierNo.BackColor = Color.WhiteSmoke;
             txtSupplierNo.Location = new Point(82, 42);
             txtSupplierNo.Name = "txtSupplierNo";
             txtSupplierNo.ReadOnly = true;
@@ -471,7 +475,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblSupplierName
             // 
             lblSupplierName.AutoSize = true;
-            lblSupplierName.Location = new Point(240, 46);
+            lblSupplierName.Location = new Point(288, 46);
             lblSupplierName.Name = "lblSupplierName";
             lblSupplierName.Size = new Size(64, 18);
             lblSupplierName.TabIndex = 13;
@@ -479,17 +483,17 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtSupplierName
             // 
-            txtSupplierName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtSupplierName.Location = new Point(314, 42);
+            txtSupplierName.BackColor = Color.WhiteSmoke;
+            txtSupplierName.Location = new Point(362, 42);
             txtSupplierName.Name = "txtSupplierName";
             txtSupplierName.ReadOnly = true;
-            txtSupplierName.Size = new Size(534, 25);
+            txtSupplierName.Size = new Size(560, 25);
             txtSupplierName.TabIndex = 14;
             // 
             // lblInvoiceNo
             // 
             lblInvoiceNo.AutoSize = true;
-            lblInvoiceNo.Location = new Point(866, 44);
+            lblInvoiceNo.Location = new Point(942, 45);
             lblInvoiceNo.Name = "lblInvoiceNo";
             lblInvoiceNo.Size = new Size(64, 18);
             lblInvoiceNo.TabIndex = 15;
@@ -497,7 +501,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtInvoiceNo
             // 
-            txtInvoiceNo.Location = new Point(936, 40);
+            txtInvoiceNo.Location = new Point(1012, 41);
             txtInvoiceNo.Name = "txtInvoiceNo";
             txtInvoiceNo.Size = new Size(134, 25);
             txtInvoiceNo.TabIndex = 16;
@@ -513,7 +517,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtVoucher
             // 
-            txtVoucher.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtVoucher.BackColor = Color.WhiteSmoke;
             txtVoucher.Location = new Point(82, 78);
             txtVoucher.Name = "txtVoucher";
             txtVoucher.ReadOnly = true;
@@ -523,7 +527,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblCurrency
             // 
             lblCurrency.AutoSize = true;
-            lblCurrency.Location = new Point(212, 82);
+            lblCurrency.Location = new Point(288, 82);
             lblCurrency.Name = "lblCurrency";
             lblCurrency.Size = new Size(36, 18);
             lblCurrency.TabIndex = 21;
@@ -533,16 +537,16 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             cboCurrency.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCurrency.FormattingEnabled = true;
-            cboCurrency.Location = new Point(262, 78);
+            cboCurrency.Location = new Point(362, 80);
             cboCurrency.Name = "cboCurrency";
-            cboCurrency.Size = new Size(72, 25);
+            cboCurrency.Size = new Size(70, 25);
             cboCurrency.TabIndex = 22;
             cboCurrency.SelectedIndexChanged += cboCurrency_SelectedIndexChanged;
             // 
             // lblExRate
             // 
             lblExRate.AutoSize = true;
-            lblExRate.Location = new Point(342, 82);
+            lblExRate.Location = new Point(438, 82);
             lblExRate.Name = "lblExRate";
             lblExRate.Size = new Size(36, 18);
             lblExRate.TabIndex = 23;
@@ -550,15 +554,15 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtExRate
             // 
-            txtExRate.Location = new Point(388, 78);
+            txtExRate.Location = new Point(481, 78);
             txtExRate.Name = "txtExRate";
-            txtExRate.Size = new Size(80, 25);
+            txtExRate.Size = new Size(63, 25);
             txtExRate.TabIndex = 24;
             // 
             // lblRequester
             // 
             lblRequester.AutoSize = true;
-            lblRequester.Location = new Point(478, 82);
+            lblRequester.Location = new Point(554, 82);
             lblRequester.Name = "lblRequester";
             lblRequester.Size = new Size(64, 18);
             lblRequester.TabIndex = 25;
@@ -566,7 +570,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtRequester
             // 
-            txtRequester.Location = new Point(552, 78);
+            txtRequester.Location = new Point(628, 78);
             txtRequester.Name = "txtRequester";
             txtRequester.Size = new Size(120, 25);
             txtRequester.TabIndex = 26;
@@ -574,7 +578,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblBankAmt
             // 
             lblBankAmt.AutoSize = true;
-            lblBankAmt.Location = new Point(1086, 12);
+            lblBankAmt.Location = new Point(1160, 12);
             lblBankAmt.Name = "lblBankAmt";
             lblBankAmt.Size = new Size(64, 18);
             lblBankAmt.TabIndex = 31;
@@ -582,16 +586,16 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtBankAmt
             // 
-            txtBankAmt.Location = new Point(1160, 8);
+            txtBankAmt.Location = new Point(1234, 8);
             txtBankAmt.Name = "txtBankAmt";
-            txtBankAmt.Size = new Size(110, 25);
+            txtBankAmt.Size = new Size(122, 25);
             txtBankAmt.TabIndex = 32;
             txtBankAmt.Leave += txtBankAmt_Leave;
             // 
             // lblCheckAmt
             // 
             lblCheckAmt.AutoSize = true;
-            lblCheckAmt.Location = new Point(1086, 46);
+            lblCheckAmt.Location = new Point(1162, 47);
             lblCheckAmt.Name = "lblCheckAmt";
             lblCheckAmt.Size = new Size(36, 18);
             lblCheckAmt.TabIndex = 35;
@@ -599,16 +603,16 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCheckAmt
             // 
-            txtCheckAmt.Location = new Point(1160, 42);
+            txtCheckAmt.Location = new Point(1236, 43);
             txtCheckAmt.Name = "txtCheckAmt";
-            txtCheckAmt.Size = new Size(110, 25);
+            txtCheckAmt.Size = new Size(120, 25);
             txtCheckAmt.TabIndex = 36;
             txtCheckAmt.Leave += txtCheckAmt_Leave;
             // 
             // lblPayTotal
             // 
             lblPayTotal.AutoSize = true;
-            lblPayTotal.Location = new Point(1086, 80);
+            lblPayTotal.Location = new Point(1162, 80);
             lblPayTotal.Name = "lblPayTotal";
             lblPayTotal.Size = new Size(36, 18);
             lblPayTotal.TabIndex = 37;
@@ -617,7 +621,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // txtPayTotal
             // 
             txtPayTotal.BackColor = Color.LightYellow;
-            txtPayTotal.Location = new Point(1160, 76);
+            txtPayTotal.Location = new Point(1236, 76);
             txtPayTotal.Name = "txtPayTotal";
             txtPayTotal.ReadOnly = true;
             txtPayTotal.Size = new Size(120, 25);
@@ -626,7 +630,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblClosed
             // 
             lblClosed.AutoSize = true;
-            lblClosed.Location = new Point(774, 82);
+            lblClosed.Location = new Point(860, 82);
             lblClosed.Name = "lblClosed";
             lblClosed.Size = new Size(36, 18);
             lblClosed.TabIndex = 39;
@@ -634,7 +638,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // chkClosed
             // 
-            chkClosed.Location = new Point(820, 78);
+            chkClosed.Location = new Point(906, 78);
             chkClosed.Name = "chkClosed";
             chkClosed.Size = new Size(24, 24);
             chkClosed.TabIndex = 40;
@@ -646,10 +650,11 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             btnSingleClose.FlatStyle = FlatStyle.Flat;
             btnSingleClose.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
             btnSingleClose.ForeColor = Color.White;
-            btnSingleClose.Location = new Point(688, 80);
+            btnSingleClose.Location = new Point(764, 80);
             btnSingleClose.Name = "btnSingleClose";
             btnSingleClose.Size = new Size(80, 24);
             btnSingleClose.TabIndex = 43;
+            btnSingleClose.Tag = "btn-modify";
             btnSingleClose.Text = "單筆結案";
             btnSingleClose.UseVisualStyleBackColor = false;
             btnSingleClose.Click += btnSingleClose_Click;
@@ -657,7 +662,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // lblRemark
             // 
             lblRemark.AutoSize = true;
-            lblRemark.Location = new Point(866, 80);
+            lblRemark.Location = new Point(942, 80);
             lblRemark.Name = "lblRemark";
             lblRemark.Size = new Size(36, 18);
             lblRemark.TabIndex = 41;
@@ -665,7 +670,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtRemark
             // 
-            txtRemark.Location = new Point(938, 76);
+            txtRemark.Location = new Point(1014, 76);
             txtRemark.Name = "txtRemark";
             txtRemark.Size = new Size(132, 25);
             txtRemark.TabIndex = 42;
@@ -790,7 +795,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtReviewer
             // 
-            txtReviewer.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtReviewer.BackColor = Color.WhiteSmoke;
             txtReviewer.Location = new Point(92, 14);
             txtReviewer.Name = "txtReviewer";
             txtReviewer.ReadOnly = true;
@@ -808,7 +813,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtReviewDate
             // 
-            txtReviewDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtReviewDate.BackColor = Color.WhiteSmoke;
             txtReviewDate.Location = new Point(288, 14);
             txtReviewDate.Name = "txtReviewDate";
             txtReviewDate.ReadOnly = true;
@@ -826,7 +831,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtModifier
             // 
-            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtModifier.BackColor = Color.WhiteSmoke;
             txtModifier.Location = new Point(512, 14);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
@@ -844,7 +849,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtModifyDate
             // 
-            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtModifyDate.BackColor = Color.WhiteSmoke;
             txtModifyDate.Location = new Point(708, 14);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
@@ -862,7 +867,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCreator
             // 
-            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtCreator.BackColor = Color.WhiteSmoke;
             txtCreator.Location = new Point(932, 14);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
@@ -880,7 +885,7 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             // 
             // txtCreateDate
             // 
-            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtCreateDate.BackColor = Color.WhiteSmoke;
             txtCreateDate.Location = new Point(1128, 14);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;

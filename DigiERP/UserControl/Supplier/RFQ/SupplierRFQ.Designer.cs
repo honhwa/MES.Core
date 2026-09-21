@@ -84,13 +84,13 @@
             panelToolbar.Dock = DockStyle.Top;
             panelToolbar.Location = new Point(0, 0);
             panelToolbar.Name = "panelToolbar";
-            panelToolbar.Size = new Size(1497, 56);
+            panelToolbar.Size = new Size(1497, 60);
             panelToolbar.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -104,6 +104,7 @@
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(140, 28);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "採購詢價";
             // 
             // btnHistory
@@ -113,6 +114,7 @@
             btnHistory.Name = "btnHistory";
             btnHistory.Size = new Size(130, 36);
             btnHistory.TabIndex = 1;
+            btnHistory.Tag = "btn-modify";
             btnHistory.Text = "採購詢價歷程";
             btnHistory.UseVisualStyleBackColor = false;
             btnHistory.Click += btnHistory_Click;
@@ -124,6 +126,7 @@
             btnEditMaterialSetting.Name = "btnEditMaterialSetting";
             btnEditMaterialSetting.Size = new Size(120, 36);
             btnEditMaterialSetting.TabIndex = 2;
+            btnEditMaterialSetting.Tag = "btn-modify";
             btnEditMaterialSetting.Text = "編修材料設定";
             btnEditMaterialSetting.UseVisualStyleBackColor = false;
             btnEditMaterialSetting.Click += btnEditMaterialSetting_Click;
@@ -135,6 +138,7 @@
             btnAddPreQueryMaterial.Name = "btnAddPreQueryMaterial";
             btnAddPreQueryMaterial.Size = new Size(120, 36);
             btnAddPreQueryMaterial.TabIndex = 3;
+            btnAddPreQueryMaterial.Tag = "btn-modify";
             btnAddPreQueryMaterial.Text = "新增預詢材料";
             btnAddPreQueryMaterial.UseVisualStyleBackColor = false;
             btnAddPreQueryMaterial.Click += btnAddPreQueryMaterial_Click;
@@ -146,6 +150,7 @@
             btnAddRFQ.Name = "btnAddRFQ";
             btnAddRFQ.Size = new Size(110, 36);
             btnAddRFQ.TabIndex = 4;
+            btnAddRFQ.Tag = "btn-modify";
             btnAddRFQ.Text = "新增詢價單";
             btnAddRFQ.UseVisualStyleBackColor = false;
             btnAddRFQ.Click += btnAddRFQ_Click;
@@ -157,6 +162,7 @@
             btnSaveRecord.Name = "btnSaveRecord";
             btnSaveRecord.Size = new Size(110, 36);
             btnSaveRecord.TabIndex = 5;
+            btnSaveRecord.Tag = "btn-modify";
             btnSaveRecord.Text = "儲存紀錄";
             btnSaveRecord.UseVisualStyleBackColor = false;
             btnSaveRecord.Click += btnSaveRecord_Click;
@@ -176,7 +182,7 @@
             panelFilter1.Controls.Add(lblProductCode);
             panelFilter1.Controls.Add(txtProductCode);
             panelFilter1.Dock = DockStyle.Top;
-            panelFilter1.Location = new Point(0, 56);
+            panelFilter1.Location = new Point(0, 60);
             panelFilter1.Name = "panelFilter1";
             panelFilter1.Size = new Size(1497, 40);
             panelFilter1.TabIndex = 1;
@@ -242,7 +248,7 @@
             // txtCategory
             // 
             txtCategory.Font = new Font("微軟正黑體", 10F);
-            txtCategory.Location = new Point(548, 8);
+            txtCategory.Location = new Point(566, 9);
             txtCategory.Name = "txtCategory";
             txtCategory.Size = new Size(66, 25);
             txtCategory.TabIndex = 6;
@@ -251,7 +257,7 @@
             // 
             lblSubCategory.AutoSize = true;
             lblSubCategory.Font = new Font("微軟正黑體", 10F);
-            lblSubCategory.Location = new Point(624, 12);
+            lblSubCategory.Location = new Point(642, 13);
             lblSubCategory.Name = "lblSubCategory";
             lblSubCategory.Size = new Size(50, 18);
             lblSubCategory.TabIndex = 7;
@@ -260,7 +266,7 @@
             // txtSubCategory
             // 
             txtSubCategory.Font = new Font("微軟正黑體", 10F);
-            txtSubCategory.Location = new Point(684, 8);
+            txtSubCategory.Location = new Point(718, 9);
             txtSubCategory.Name = "txtSubCategory";
             txtSubCategory.Size = new Size(60, 25);
             txtSubCategory.TabIndex = 8;
@@ -269,7 +275,7 @@
             // 
             lblProductCode.AutoSize = true;
             lblProductCode.Font = new Font("微軟正黑體", 10F);
-            lblProductCode.Location = new Point(754, 12);
+            lblProductCode.Location = new Point(788, 13);
             lblProductCode.Name = "lblProductCode";
             lblProductCode.Size = new Size(64, 18);
             lblProductCode.TabIndex = 9;
@@ -278,7 +284,7 @@
             // txtProductCode
             // 
             txtProductCode.Font = new Font("微軟正黑體", 10F);
-            txtProductCode.Location = new Point(828, 8);
+            txtProductCode.Location = new Point(862, 9);
             txtProductCode.Name = "txtProductCode";
             txtProductCode.Size = new Size(286, 25);
             txtProductCode.TabIndex = 10;
@@ -299,7 +305,7 @@
             panelFilter2.Controls.Add(lblInnerDia);
             panelFilter2.Controls.Add(txtInnerDia);
             panelFilter2.Dock = DockStyle.Top;
-            panelFilter2.Location = new Point(0, 96);
+            panelFilter2.Location = new Point(0, 100);
             panelFilter2.Name = "panelFilter2";
             panelFilter2.Size = new Size(1497, 40);
             panelFilter2.TabIndex = 2;
@@ -319,14 +325,14 @@
             txtSpec.Font = new Font("微軟正黑體", 10F);
             txtSpec.Location = new Point(84, 8);
             txtSpec.Name = "txtSpec";
-            txtSpec.Size = new Size(386, 25);
+            txtSpec.Size = new Size(396, 25);
             txtSpec.TabIndex = 1;
             // 
             // lblLength
             // 
             lblLength.AutoSize = true;
             lblLength.Font = new Font("微軟正黑體", 10F);
-            lblLength.Location = new Point(480, 12);
+            lblLength.Location = new Point(494, 12);
             lblLength.Name = "lblLength";
             lblLength.Size = new Size(64, 18);
             lblLength.TabIndex = 2;
@@ -335,16 +341,16 @@
             // txtLength
             // 
             txtLength.Font = new Font("微軟正黑體", 10F);
-            txtLength.Location = new Point(552, 8);
+            txtLength.Location = new Point(566, 8);
             txtLength.Name = "txtLength";
-            txtLength.Size = new Size(62, 25);
+            txtLength.Size = new Size(66, 25);
             txtLength.TabIndex = 3;
             // 
             // lblWidth
             // 
             lblWidth.AutoSize = true;
             lblWidth.Font = new Font("微軟正黑體", 10F);
-            lblWidth.Location = new Point(624, 12);
+            lblWidth.Location = new Point(642, 12);
             lblWidth.Name = "lblWidth";
             lblWidth.Size = new Size(64, 18);
             lblWidth.TabIndex = 4;
@@ -353,16 +359,16 @@
             // txtWidth
             // 
             txtWidth.Font = new Font("微軟正黑體", 10F);
-            txtWidth.Location = new Point(700, 8);
+            txtWidth.Location = new Point(718, 8);
             txtWidth.Name = "txtWidth";
-            txtWidth.Size = new Size(58, 25);
+            txtWidth.Size = new Size(60, 25);
             txtWidth.TabIndex = 5;
             // 
             // lblThickness
             // 
             lblThickness.AutoSize = true;
             lblThickness.Font = new Font("微軟正黑體", 10F);
-            lblThickness.Location = new Point(768, 12);
+            lblThickness.Location = new Point(788, 12);
             lblThickness.Name = "lblThickness";
             lblThickness.Size = new Size(36, 18);
             lblThickness.TabIndex = 6;
@@ -371,7 +377,7 @@
             // txtThickness
             // 
             txtThickness.Font = new Font("微軟正黑體", 10F);
-            txtThickness.Location = new Point(820, 8);
+            txtThickness.Location = new Point(862, 8);
             txtThickness.Name = "txtThickness";
             txtThickness.Size = new Size(52, 25);
             txtThickness.TabIndex = 7;
@@ -380,7 +386,7 @@
             // 
             lblOuterDia.AutoSize = true;
             lblOuterDia.Font = new Font("微軟正黑體", 10F);
-            lblOuterDia.Location = new Point(882, 12);
+            lblOuterDia.Location = new Point(929, 11);
             lblOuterDia.Name = "lblOuterDia";
             lblOuterDia.Size = new Size(36, 18);
             lblOuterDia.TabIndex = 8;
@@ -389,7 +395,7 @@
             // txtOuterDia
             // 
             txtOuterDia.Font = new Font("微軟正黑體", 10F);
-            txtOuterDia.Location = new Point(932, 8);
+            txtOuterDia.Location = new Point(979, 7);
             txtOuterDia.Name = "txtOuterDia";
             txtOuterDia.Size = new Size(54, 25);
             txtOuterDia.TabIndex = 9;
@@ -398,7 +404,7 @@
             // 
             lblInnerDia.AutoSize = true;
             lblInnerDia.Font = new Font("微軟正黑體", 10F);
-            lblInnerDia.Location = new Point(996, 12);
+            lblInnerDia.Location = new Point(1043, 11);
             lblInnerDia.Name = "lblInnerDia";
             lblInnerDia.Size = new Size(36, 18);
             lblInnerDia.TabIndex = 10;
@@ -407,7 +413,7 @@
             // txtInnerDia
             // 
             txtInnerDia.Font = new Font("微軟正黑體", 10F);
-            txtInnerDia.Location = new Point(1052, 8);
+            txtInnerDia.Location = new Point(1099, 7);
             txtInnerDia.Name = "txtInnerDia";
             txtInnerDia.Size = new Size(48, 25);
             txtInnerDia.TabIndex = 11;
@@ -416,9 +422,9 @@
             // 
             panelGrid.Controls.Add(dataGridView1);
             panelGrid.Dock = DockStyle.Fill;
-            panelGrid.Location = new Point(0, 136);
+            panelGrid.Location = new Point(0, 140);
             panelGrid.Name = "panelGrid";
-            panelGrid.Size = new Size(1497, 540);
+            panelGrid.Size = new Size(1497, 536);
             panelGrid.TabIndex = 3;
             // 
             // dataGridView1
@@ -436,7 +442,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 28;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1497, 540);
+            dataGridView1.Size = new Size(1497, 536);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellBeginEdit += dataGridView1_CellBeginEdit;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;

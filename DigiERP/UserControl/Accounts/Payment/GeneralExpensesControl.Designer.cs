@@ -56,7 +56,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1467, 64);
+            panel1.Size = new Size(1467, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -91,6 +91,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(100, 32);
             btnOpen.TabIndex = 1;
+            btnOpen.Tag = "btn-modify";
             btnOpen.Text = "未結案";
             btnOpen.UseVisualStyleBackColor = false;
             btnOpen.Click += btnOpen_Click;
@@ -105,6 +106,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             btnClosed.Name = "btnClosed";
             btnClosed.Size = new Size(100, 32);
             btnClosed.TabIndex = 2;
+            btnClosed.Tag = "btn-modify";
             btnClosed.Text = "已結案";
             btnClosed.UseVisualStyleBackColor = false;
             btnClosed.Click += btnClosed_Click;
@@ -141,9 +143,9 @@ namespace DigiERP.UserControl.Accounts.Payment
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 64);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1467, 600);
+            panel2.Size = new Size(1467, 604);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -162,7 +164,7 @@ namespace DigiERP.UserControl.Accounts.Payment
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1467, 600);
+            dataGridView1.Size = new Size(1467, 604);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
