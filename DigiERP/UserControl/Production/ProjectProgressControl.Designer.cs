@@ -90,13 +90,13 @@ namespace DigiERP.UserControl.Production
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,6 +123,7 @@ namespace DigiERP.UserControl.Production
             btnScheduleQuery.Name = "btnScheduleQuery";
             btnScheduleQuery.Size = new Size(140, 32);
             btnScheduleQuery.TabIndex = 1;
+            btnScheduleQuery.Tag = "btn-modify";
             btnScheduleQuery.Text = "專案排程查詢";
             btnScheduleQuery.UseVisualStyleBackColor = false;
             btnScheduleQuery.Click += btnScheduleQuery_Click;
@@ -146,9 +147,9 @@ namespace DigiERP.UserControl.Production
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(panelGroupHeader);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 56);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1900, 600);
+            panel2.Size = new Size(1900, 596);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -167,7 +168,7 @@ namespace DigiERP.UserControl.Production
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1900, 574);
+            dataGridView1.Size = new Size(1900, 570);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.VisibleChanged += dataGridView1_VisibleChanged;

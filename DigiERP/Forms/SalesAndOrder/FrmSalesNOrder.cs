@@ -1,4 +1,5 @@
-﻿using MES.WebAPI.Controllers;
+﻿using DigiERP.Common;
+using MES.WebAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DigiERP.Forms.SalesAndOrder
 {
-    public partial class FrmSalesNOrder : Form
+    public partial class FrmSalesNOrder : BaseForm
     {
         private bool isloaded = false;
         private static string moduleId = "54406A92-A15C-4E20-90F2-57D7C033BE95";
@@ -22,6 +23,7 @@ namespace DigiERP.Forms.SalesAndOrder
             InitializeComponent();
             initMenu();
             treeView.SelectedNode = null;
+            DigiERP.Common.UIStyle.ApplyControlStyle(this);
             ToggleDrawer(null, null);
             ToggleDrawer(null, null);
             isloaded = true;

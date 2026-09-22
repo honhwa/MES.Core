@@ -78,7 +78,6 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_裝機 = new Label();
             lbl_電流 = new Label();
             lbl_焊接電壓 = new Label();
-            lbl_控制電壓 = new Label();
             lbl_審圖需求 = new Label();
             lbl_安規要求 = new Label();
             lbl_生產速率 = new Label();
@@ -126,6 +125,7 @@ namespace DigiERP.UserControl.Production.Spec
             txtF_核准日 = new TextBox();
             txtF_修改日 = new TextBox();
             txtF_建檔日 = new TextBox();
+            lbl_控制電壓 = new Label();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBody.SuspendLayout();
@@ -150,13 +150,13 @@ namespace DigiERP.UserControl.Production.Spec
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1330, 44);
+            panelHeader.Size = new Size(1419, 60);
             panelHeader.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -168,10 +168,11 @@ namespace DigiERP.UserControl.Production.Spec
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 12F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(42, 10);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(90, 21);
             lblTitle.TabIndex = 1;
+            lblTitle.Tag = "title";
             lblTitle.Text = "產品規格單";
             // 
             // lblHint
@@ -194,6 +195,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnClose2.Name = "btnClose2";
             btnClose2.Size = new Size(49, 27);
             btnClose2.TabIndex = 4;
+            btnClose2.Tag = "btn-modify";
             btnClose2.Text = "結案";
             btnClose2.UseVisualStyleBackColor = false;
             btnClose2.Click += btnClose2_Click;
@@ -208,6 +210,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnReopen.Name = "btnReopen";
             btnReopen.Size = new Size(68, 27);
             btnReopen.TabIndex = 3;
+            btnReopen.Tag = "btn-modify";
             btnReopen.Text = "取消結案";
             btnReopen.UseVisualStyleBackColor = false;
             btnReopen.Click += btnReopen_Click;
@@ -222,6 +225,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(49, 27);
             btnEdit.TabIndex = 5;
+            btnEdit.Tag = "btn-modify";
             btnEdit.Text = "修改";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -236,6 +240,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(49, 27);
             btnSave.TabIndex = 6;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -250,6 +255,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnApprove.Name = "btnApprove";
             btnApprove.Size = new Size(49, 27);
             btnApprove.TabIndex = 7;
+            btnApprove.Tag = "btn-modify";
             btnApprove.Text = "生效";
             btnApprove.UseVisualStyleBackColor = false;
             btnApprove.Click += btnApprove_Click;
@@ -264,6 +270,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnUnapprove.Name = "btnUnapprove";
             btnUnapprove.Size = new Size(69, 27);
             btnUnapprove.TabIndex = 8;
+            btnUnapprove.Tag = "btn-modify";
             btnUnapprove.Text = "取消生效";
             btnUnapprove.UseVisualStyleBackColor = false;
             btnUnapprove.Click += btnUnapprove_Click;
@@ -278,6 +285,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(49, 27);
             btnPrint.TabIndex = 10;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -292,13 +300,14 @@ namespace DigiERP.UserControl.Production.Spec
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(65, 27);
             btnOverview.TabIndex = 9;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Click += btnOverview_Click;
             // 
             // btnExit
             // 
-            btnExit.BackColor = Color.SteelBlue;
+            btnExit.BackColor = Color.Red;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
             btnExit.ForeColor = Color.White;
@@ -306,7 +315,7 @@ namespace DigiERP.UserControl.Production.Spec
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(49, 27);
             btnExit.TabIndex = 11;
-            btnExit.Text = "關閉";
+            btnExit.Text = "EXIT";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
@@ -395,9 +404,9 @@ namespace DigiERP.UserControl.Production.Spec
             panelBody.Controls.Add(lbl_機台驗收規範);
             panelBody.Controls.Add(lbl_機台驗收規範2);
             panelBody.Dock = DockStyle.Fill;
-            panelBody.Location = new Point(0, 44);
+            panelBody.Location = new Point(0, 60);
             panelBody.Name = "panelBody";
-            panelBody.Size = new Size(1330, 760);
+            panelBody.Size = new Size(1419, 744);
             panelBody.TabIndex = 1;
             // 
             // lbl_專案負責人
@@ -405,7 +414,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_專案負責人.ForeColor = Color.DimGray;
             lbl_專案負責人.Location = new Point(12, 143);
             lbl_專案負責人.Name = "lbl_專案負責人";
-            lbl_專案負責人.Size = new Size(113, 23);
+            lbl_專案負責人.Size = new Size(68, 23);
             lbl_專案負責人.TabIndex = 0;
             lbl_專案負責人.Text = "專案負責人";
             lbl_專案負責人.TextAlign = ContentAlignment.MiddleLeft;
@@ -423,7 +432,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_機台重點.ForeColor = Color.DimGray;
             lbl_機台重點.Location = new Point(11, 173);
             lbl_機台重點.Name = "lbl_機台重點";
-            lbl_機台重點.Size = new Size(113, 23);
+            lbl_機台重點.Size = new Size(69, 23);
             lbl_機台重點.TabIndex = 2;
             lbl_機台重點.Text = "機台重點";
             lbl_機台重點.TextAlign = ContentAlignment.MiddleLeft;
@@ -432,7 +441,7 @@ namespace DigiERP.UserControl.Production.Spec
             // 
             txt_客戶需求陳述.Location = new Point(128, 173);
             txt_客戶需求陳述.Name = "txt_客戶需求陳述";
-            txt_客戶需求陳述.Size = new Size(1176, 23);
+            txt_客戶需求陳述.Size = new Size(1179, 23);
             txt_客戶需求陳述.TabIndex = 3;
             // 
             // lbl_驗收物件規格
@@ -440,7 +449,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_驗收物件規格.ForeColor = Color.DimGray;
             lbl_驗收物件規格.Location = new Point(11, 204);
             lbl_驗收物件規格.Name = "lbl_驗收物件規格";
-            lbl_驗收物件規格.Size = new Size(113, 23);
+            lbl_驗收物件規格.Size = new Size(85, 23);
             lbl_驗收物件規格.TabIndex = 4;
             lbl_驗收物件規格.Text = "驗收物件規格";
             lbl_驗收物件規格.TextAlign = ContentAlignment.MiddleLeft;
@@ -449,7 +458,7 @@ namespace DigiERP.UserControl.Production.Spec
             // 
             txt_驗收物件規格.Location = new Point(128, 204);
             txt_驗收物件規格.Name = "txt_驗收物件規格";
-            txt_驗收物件規格.Size = new Size(1176, 23);
+            txt_驗收物件規格.Size = new Size(1180, 23);
             txt_驗收物件規格.TabIndex = 5;
             // 
             // lbl_設計參考及機構說明
@@ -464,9 +473,10 @@ namespace DigiERP.UserControl.Production.Spec
             // 
             // txt_驗收基本要求1
             // 
-            txt_驗收基本要求1.Location = new Point(42, 296);
+            txt_驗收基本要求1.Location = new Point(45, 296);
+            txt_驗收基本要求1.Multiline = true;
             txt_驗收基本要求1.Name = "txt_驗收基本要求1";
-            txt_驗收基本要求1.Size = new Size(605, 23);
+            txt_驗收基本要求1.Size = new Size(602, 252);
             txt_驗收基本要求1.TabIndex = 7;
             // 
             // lbl_機台能力區間
@@ -474,7 +484,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_機台能力區間.ForeColor = Color.DimGray;
             lbl_機台能力區間.Location = new Point(11, 234);
             lbl_機台能力區間.Name = "lbl_機台能力區間";
-            lbl_機台能力區間.Size = new Size(113, 23);
+            lbl_機台能力區間.Size = new Size(85, 23);
             lbl_機台能力區間.TabIndex = 8;
             lbl_機台能力區間.Text = "機台能力區間";
             lbl_機台能力區間.TextAlign = ContentAlignment.MiddleLeft;
@@ -483,7 +493,7 @@ namespace DigiERP.UserControl.Production.Spec
             // 
             txt_機台最大及最小能力.Location = new Point(128, 234);
             txt_機台最大及最小能力.Name = "txt_機台最大及最小能力";
-            txt_機台最大及最小能力.Size = new Size(1176, 23);
+            txt_機台最大及最小能力.Size = new Size(1180, 23);
             txt_機台最大及最小能力.TabIndex = 9;
             // 
             // lbl_出貨相關要求
@@ -491,7 +501,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_出貨相關要求.ForeColor = Color.DimGray;
             lbl_出貨相關要求.Location = new Point(12, 264);
             lbl_出貨相關要求.Name = "lbl_出貨相關要求";
-            lbl_出貨相關要求.Size = new Size(113, 23);
+            lbl_出貨相關要求.Size = new Size(84, 23);
             lbl_出貨相關要求.TabIndex = 10;
             lbl_出貨相關要求.Text = "出貨相關要求";
             lbl_出貨相關要求.TextAlign = ContentAlignment.MiddleLeft;
@@ -500,14 +510,15 @@ namespace DigiERP.UserControl.Production.Spec
             // 
             txt_補充說明.Location = new Point(130, 264);
             txt_補充說明.Name = "txt_補充說明";
-            txt_補充說明.Size = new Size(1174, 23);
+            txt_補充說明.Size = new Size(1178, 23);
             txt_補充說明.TabIndex = 11;
             // 
             // txt_機台動作規劃1
             // 
             txt_機台動作規劃1.Location = new Point(703, 295);
+            txt_機台動作規劃1.Multiline = true;
             txt_機台動作規劃1.Name = "txt_機台動作規劃1";
-            txt_機台動作規劃1.Size = new Size(605, 23);
+            txt_機台動作規劃1.Size = new Size(605, 253);
             txt_機台動作規劃1.TabIndex = 12;
             // 
             // cmb_MQC_油壓委外單元
@@ -625,7 +636,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_專案序號.ForeColor = Color.DimGray;
             lbl_專案序號.Location = new Point(11, 8);
             lbl_專案序號.Name = "lbl_專案序號";
-            lbl_專案序號.Size = new Size(72, 19);
+            lbl_專案序號.Size = new Size(59, 19);
             lbl_專案序號.TabIndex = 25;
             lbl_專案序號.Text = "專案序號";
             lbl_專案序號.TextAlign = ContentAlignment.MiddleLeft;
@@ -636,7 +647,7 @@ namespace DigiERP.UserControl.Production.Spec
             txt_專案序號.Location = new Point(86, 8);
             txt_專案序號.Name = "txt_專案序號";
             txt_專案序號.ReadOnly = true;
-            txt_專案序號.Size = new Size(231, 23);
+            txt_專案序號.Size = new Size(209, 23);
             txt_專案序號.TabIndex = 26;
             // 
             // lbl_參考序號
@@ -644,7 +655,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_參考序號.ForeColor = Color.DimGray;
             lbl_參考序號.Location = new Point(11, 36);
             lbl_參考序號.Name = "lbl_參考序號";
-            lbl_參考序號.Size = new Size(72, 19);
+            lbl_參考序號.Size = new Size(59, 19);
             lbl_參考序號.TabIndex = 27;
             lbl_參考序號.Text = "參考序號";
             lbl_參考序號.TextAlign = ContentAlignment.MiddleLeft;
@@ -655,7 +666,7 @@ namespace DigiERP.UserControl.Production.Spec
             txt_參考序號.Location = new Point(86, 35);
             txt_參考序號.Name = "txt_參考序號";
             txt_參考序號.ReadOnly = true;
-            txt_參考序號.Size = new Size(231, 23);
+            txt_參考序號.Size = new Size(209, 23);
             txt_參考序號.TabIndex = 28;
             // 
             // lbl_機台型號
@@ -663,7 +674,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_機台型號.ForeColor = Color.DimGray;
             lbl_機台型號.Location = new Point(11, 62);
             lbl_機台型號.Name = "lbl_機台型號";
-            lbl_機台型號.Size = new Size(72, 19);
+            lbl_機台型號.Size = new Size(59, 19);
             lbl_機台型號.TabIndex = 29;
             lbl_機台型號.Text = "機台型號";
             lbl_機台型號.TextAlign = ContentAlignment.MiddleLeft;
@@ -674,7 +685,7 @@ namespace DigiERP.UserControl.Production.Spec
             txt_機台型號.Location = new Point(86, 62);
             txt_機台型號.Name = "txt_機台型號";
             txt_機台型號.ReadOnly = true;
-            txt_機台型號.Size = new Size(231, 23);
+            txt_機台型號.Size = new Size(209, 23);
             txt_機台型號.TabIndex = 30;
             // 
             // lbl_機台名稱
@@ -682,7 +693,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_機台名稱.ForeColor = Color.DimGray;
             lbl_機台名稱.Location = new Point(11, 115);
             lbl_機台名稱.Name = "lbl_機台名稱";
-            lbl_機台名稱.Size = new Size(72, 19);
+            lbl_機台名稱.Size = new Size(59, 19);
             lbl_機台名稱.TabIndex = 31;
             lbl_機台名稱.Text = "機台名稱";
             lbl_機台名稱.TextAlign = ContentAlignment.MiddleLeft;
@@ -701,7 +712,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_驗機日期.ForeColor = Color.DimGray;
             lbl_驗機日期.Location = new Point(998, 37);
             lbl_驗機日期.Name = "lbl_驗機日期";
-            lbl_驗機日期.Size = new Size(72, 19);
+            lbl_驗機日期.Size = new Size(60, 19);
             lbl_驗機日期.TabIndex = 33;
             lbl_驗機日期.Text = "驗機日期";
             lbl_驗機日期.TextAlign = ContentAlignment.MiddleLeft;
@@ -720,7 +731,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_交貨日期.ForeColor = Color.DimGray;
             lbl_交貨日期.Location = new Point(998, 90);
             lbl_交貨日期.Name = "lbl_交貨日期";
-            lbl_交貨日期.Size = new Size(72, 19);
+            lbl_交貨日期.Size = new Size(60, 19);
             lbl_交貨日期.TabIndex = 35;
             lbl_交貨日期.Text = "交貨日期";
             lbl_交貨日期.TextAlign = ContentAlignment.MiddleLeft;
@@ -748,7 +759,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_廠驗.ForeColor = Color.DimGray;
             lbl_廠驗.Location = new Point(998, 62);
             lbl_廠驗.Name = "lbl_廠驗";
-            lbl_廠驗.Size = new Size(72, 19);
+            lbl_廠驗.Size = new Size(60, 19);
             lbl_廠驗.TabIndex = 38;
             lbl_廠驗.Text = "廠驗";
             lbl_廠驗.TextAlign = ContentAlignment.MiddleLeft;
@@ -758,7 +769,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_裝機.ForeColor = Color.DimGray;
             lbl_裝機.Location = new Point(998, 115);
             lbl_裝機.Name = "lbl_裝機";
-            lbl_裝機.Size = new Size(72, 19);
+            lbl_裝機.Size = new Size(60, 19);
             lbl_裝機.TabIndex = 39;
             lbl_裝機.Text = "裝機";
             lbl_裝機.TextAlign = ContentAlignment.MiddleLeft;
@@ -766,9 +777,9 @@ namespace DigiERP.UserControl.Production.Spec
             // lbl_電流
             // 
             lbl_電流.ForeColor = Color.DimGray;
-            lbl_電流.Location = new Point(332, 36);
+            lbl_電流.Location = new Point(316, 36);
             lbl_電流.Name = "lbl_電流";
-            lbl_電流.Size = new Size(72, 19);
+            lbl_電流.Size = new Size(53, 19);
             lbl_電流.TabIndex = 40;
             lbl_電流.Text = "電流";
             lbl_電流.TextAlign = ContentAlignment.MiddleLeft;
@@ -776,29 +787,19 @@ namespace DigiERP.UserControl.Production.Spec
             // lbl_焊接電壓
             // 
             lbl_焊接電壓.ForeColor = Color.DimGray;
-            lbl_焊接電壓.Location = new Point(332, 62);
+            lbl_焊接電壓.Location = new Point(316, 62);
             lbl_焊接電壓.Name = "lbl_焊接電壓";
-            lbl_焊接電壓.Size = new Size(72, 19);
+            lbl_焊接電壓.Size = new Size(69, 19);
             lbl_焊接電壓.TabIndex = 41;
             lbl_焊接電壓.Text = "焊接電壓";
             lbl_焊接電壓.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // lbl_控制電壓
-            // 
-            lbl_控制電壓.ForeColor = Color.DimGray;
-            lbl_控制電壓.Location = new Point(332, 89);
-            lbl_控制電壓.Name = "lbl_控制電壓";
-            lbl_控制電壓.Size = new Size(71, 19);
-            lbl_控制電壓.TabIndex = 42;
-            lbl_控制電壓.Text = "控制電壓";
-            lbl_控制電壓.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lbl_審圖需求
             // 
             lbl_審圖需求.ForeColor = Color.DimGray;
             lbl_審圖需求.Location = new Point(666, 36);
             lbl_審圖需求.Name = "lbl_審圖需求";
-            lbl_審圖需求.Size = new Size(71, 19);
+            lbl_審圖需求.Size = new Size(63, 19);
             lbl_審圖需求.TabIndex = 43;
             lbl_審圖需求.Text = "審圖需求";
             lbl_審圖需求.TextAlign = ContentAlignment.MiddleLeft;
@@ -808,7 +809,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_安規要求.ForeColor = Color.DimGray;
             lbl_安規要求.Location = new Point(666, 62);
             lbl_安規要求.Name = "lbl_安規要求";
-            lbl_安規要求.Size = new Size(71, 19);
+            lbl_安規要求.Size = new Size(63, 19);
             lbl_安規要求.TabIndex = 44;
             lbl_安規要求.Text = "安規要求";
             lbl_安規要求.TextAlign = ContentAlignment.MiddleLeft;
@@ -818,7 +819,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_生產速率.ForeColor = Color.DimGray;
             lbl_生產速率.Location = new Point(666, 89);
             lbl_生產速率.Name = "lbl_生產速率";
-            lbl_生產速率.Size = new Size(71, 19);
+            lbl_生產速率.Size = new Size(63, 19);
             lbl_生產速率.TabIndex = 45;
             lbl_生產速率.Text = "生產速率";
             lbl_生產速率.TextAlign = ContentAlignment.MiddleLeft;
@@ -862,28 +863,28 @@ namespace DigiERP.UserControl.Production.Spec
             // txt_電流
             // 
             txt_電流.BackColor = SystemColors.Control;
-            txt_電流.Location = new Point(407, 35);
+            txt_電流.Location = new Point(391, 34);
             txt_電流.Name = "txt_電流";
             txt_電流.ReadOnly = true;
-            txt_電流.Size = new Size(241, 23);
+            txt_電流.Size = new Size(269, 23);
             txt_電流.TabIndex = 50;
             // 
             // txt_焊接電壓
             // 
             txt_焊接電壓.BackColor = SystemColors.Control;
-            txt_焊接電壓.Location = new Point(567, 62);
+            txt_焊接電壓.Location = new Point(563, 61);
             txt_焊接電壓.Name = "txt_焊接電壓";
             txt_焊接電壓.ReadOnly = true;
-            txt_焊接電壓.Size = new Size(81, 23);
+            txt_焊接電壓.Size = new Size(97, 23);
             txt_焊接電壓.TabIndex = 51;
             // 
             // txt_焊接物
             // 
             txt_焊接物.BackColor = SystemColors.Control;
-            txt_焊接物.Location = new Point(407, 89);
+            txt_焊接物.Location = new Point(391, 88);
             txt_焊接物.Name = "txt_焊接物";
             txt_焊接物.ReadOnly = true;
-            txt_焊接物.Size = new Size(242, 23);
+            txt_焊接物.Size = new Size(269, 23);
             txt_焊接物.TabIndex = 52;
             // 
             // lbl_機台類型
@@ -891,7 +892,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_機台類型.ForeColor = Color.DimGray;
             lbl_機台類型.Location = new Point(11, 89);
             lbl_機台類型.Name = "lbl_機台類型";
-            lbl_機台類型.Size = new Size(72, 19);
+            lbl_機台類型.Size = new Size(59, 19);
             lbl_機台類型.TabIndex = 53;
             lbl_機台類型.Text = "機台類型";
             lbl_機台類型.TextAlign = ContentAlignment.MiddleLeft;
@@ -902,12 +903,13 @@ namespace DigiERP.UserControl.Production.Spec
             txt_機台類型.Location = new Point(86, 89);
             txt_機台類型.Name = "txt_機台類型";
             txt_機台類型.ReadOnly = true;
-            txt_機台類型.Size = new Size(231, 23);
+            txt_機台類型.Size = new Size(209, 23);
             txt_機台類型.TabIndex = 54;
             // 
             // txt_驗收規範說明1
             // 
             txt_驗收規範說明1.Location = new Point(45, 567);
+            txt_驗收規範說明1.Multiline = true;
             txt_驗收規範說明1.Name = "txt_驗收規範說明1";
             txt_驗收規範說明1.Size = new Size(605, 23);
             txt_驗收規範說明1.TabIndex = 55;
@@ -968,9 +970,9 @@ namespace DigiERP.UserControl.Production.Spec
             // lbl_訂單日期
             // 
             lbl_訂單日期.ForeColor = Color.DimGray;
-            lbl_訂單日期.Location = new Point(332, 8);
+            lbl_訂單日期.Location = new Point(316, 8);
             lbl_訂單日期.Name = "lbl_訂單日期";
-            lbl_訂單日期.Size = new Size(72, 19);
+            lbl_訂單日期.Size = new Size(69, 19);
             lbl_訂單日期.TabIndex = 63;
             lbl_訂單日期.Text = "訂單日期";
             lbl_訂單日期.TextAlign = ContentAlignment.MiddleLeft;
@@ -978,10 +980,10 @@ namespace DigiERP.UserControl.Production.Spec
             // txt_訂單日期
             // 
             txt_訂單日期.BackColor = SystemColors.Control;
-            txt_訂單日期.Location = new Point(407, 8);
+            txt_訂單日期.Location = new Point(391, 7);
             txt_訂單日期.Name = "txt_訂單日期";
             txt_訂單日期.ReadOnly = true;
-            txt_訂單日期.Size = new Size(147, 23);
+            txt_訂單日期.Size = new Size(110, 23);
             txt_訂單日期.TabIndex = 64;
             // 
             // lbl_國家地區
@@ -989,7 +991,7 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_國家地區.ForeColor = Color.DimGray;
             lbl_國家地區.Location = new Point(1073, 7);
             lbl_國家地區.Name = "lbl_國家地區";
-            lbl_國家地區.Size = new Size(68, 19);
+            lbl_國家地區.Size = new Size(56, 19);
             lbl_國家地區.TabIndex = 65;
             lbl_國家地區.Text = "國家地區";
             lbl_國家地區.TextAlign = ContentAlignment.MiddleLeft;
@@ -1006,7 +1008,7 @@ namespace DigiERP.UserControl.Production.Spec
             // lbl_客戶
             // 
             lbl_客戶.ForeColor = Color.DimGray;
-            lbl_客戶.Location = new Point(732, 8);
+            lbl_客戶.Location = new Point(669, 7);
             lbl_客戶.Name = "lbl_客戶";
             lbl_客戶.Size = new Size(41, 19);
             lbl_客戶.TabIndex = 67;
@@ -1016,18 +1018,18 @@ namespace DigiERP.UserControl.Production.Spec
             // txt_客戶名稱
             // 
             txt_客戶名稱.BackColor = SystemColors.Control;
-            txt_客戶名稱.Location = new Point(777, 8);
+            txt_客戶名稱.Location = new Point(741, 8);
             txt_客戶名稱.Name = "txt_客戶名稱";
             txt_客戶名稱.ReadOnly = true;
-            txt_客戶名稱.Size = new Size(292, 23);
+            txt_客戶名稱.Size = new Size(235, 23);
             txt_客戶名稱.TabIndex = 68;
             // 
             // lbl_客戶簡稱
             // 
             lbl_客戶簡稱.ForeColor = Color.DimGray;
-            lbl_客戶簡稱.Location = new Point(566, 8);
+            lbl_客戶簡稱.Location = new Point(507, 7);
             lbl_客戶簡稱.Name = "lbl_客戶簡稱";
-            lbl_客戶簡稱.Size = new Size(72, 19);
+            lbl_客戶簡稱.Size = new Size(56, 19);
             lbl_客戶簡稱.TabIndex = 69;
             lbl_客戶簡稱.Text = "客戶簡稱";
             lbl_客戶簡稱.TextAlign = ContentAlignment.MiddleLeft;
@@ -1035,28 +1037,28 @@ namespace DigiERP.UserControl.Production.Spec
             // txt_客戶簡稱
             // 
             txt_客戶簡稱.BackColor = SystemColors.Control;
-            txt_客戶簡稱.Location = new Point(641, 8);
+            txt_客戶簡稱.Location = new Point(569, 7);
             txt_客戶簡稱.Name = "txt_客戶簡稱";
             txt_客戶簡稱.ReadOnly = true;
-            txt_客戶簡稱.Size = new Size(88, 23);
+            txt_客戶簡稱.Size = new Size(91, 23);
             txt_客戶簡稱.TabIndex = 70;
             // 
             // txt_焊接電壓v
             // 
             txt_焊接電壓v.BackColor = SystemColors.Control;
-            txt_焊接電壓v.Location = new Point(408, 62);
+            txt_焊接電壓v.Location = new Point(391, 61);
             txt_焊接電壓v.Name = "txt_焊接電壓v";
             txt_焊接電壓v.ReadOnly = true;
-            txt_焊接電壓v.Size = new Size(75, 23);
+            txt_焊接電壓v.Size = new Size(74, 23);
             txt_焊接電壓v.TabIndex = 71;
             // 
             // txt_焊接電壓hz
             // 
             txt_焊接電壓hz.BackColor = SystemColors.Control;
-            txt_焊接電壓hz.Location = new Point(488, 62);
+            txt_焊接電壓hz.Location = new Point(471, 61);
             txt_焊接電壓hz.Name = "txt_焊接電壓hz";
             txt_焊接電壓hz.ReadOnly = true;
-            txt_焊接電壓hz.Size = new Size(77, 23);
+            txt_焊接電壓hz.Size = new Size(86, 23);
             txt_焊接電壓hz.TabIndex = 72;
             // 
             // txt_流程路徑圖
@@ -1129,7 +1131,7 @@ namespace DigiERP.UserControl.Production.Spec
             panelFooter.Dock = DockStyle.Bottom;
             panelFooter.Location = new Point(0, 804);
             panelFooter.Name = "panelFooter";
-            panelFooter.Size = new Size(1330, 34);
+            panelFooter.Size = new Size(1419, 34);
             panelFooter.TabIndex = 2;
             // 
             // lblF_核准人員
@@ -1219,6 +1221,16 @@ namespace DigiERP.UserControl.Production.Spec
             txtF_建檔日.Size = new Size(166, 16);
             txtF_建檔日.TabIndex = 8;
             // 
+            // lbl_控制電壓
+            // 
+            lbl_控制電壓.ForeColor = Color.DimGray;
+            lbl_控制電壓.Location = new Point(316, 89);
+            lbl_控制電壓.Name = "lbl_控制電壓";
+            lbl_控制電壓.Size = new Size(69, 19);
+            lbl_控制電壓.TabIndex = 42;
+            lbl_控制電壓.Text = "控制電壓";
+            lbl_控制電壓.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // ProductSpecControl
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -1229,7 +1241,7 @@ namespace DigiERP.UserControl.Production.Spec
             Font = new Font("微軟正黑體", 9F);
             Margin = new Padding(4);
             Name = "ProductSpecControl";
-            Size = new Size(1330, 838);
+            Size = new Size(1419, 838);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
