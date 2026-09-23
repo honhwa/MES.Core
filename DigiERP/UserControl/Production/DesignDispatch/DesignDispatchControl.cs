@@ -107,9 +107,17 @@ namespace DigiERP.UserControl.Production
             }
             else if (e.ColumnIndex == colDesigner.Index)
             {
+                // 設計人員為 ComboBox 欄位，點擊時 DataGridView 會同時進入編輯/下拉；
+                // 若在 CellClick 內直接 ShowDialog，Grid 的編輯狀態會在 modal 迴圈中錯亂而拋 NullReference，
+                // 因此先取消編輯，並用 BeginInvoke 等 Grid 處理完這次點擊後再開窗
                 var row = dataGridView1.Rows[e.RowIndex].Tag as 設計派案;
-                using var frm = new FrmWorkLogEntry(row);
-                frm.ShowDialog(FindForm());
+                dataGridView1.CancelEdit();
+                dataGridView1.EndEdit();
+                BeginInvoke(new Action(() =>
+                {
+                    using var frm = new FrmWorkLogEntry(row);
+                    frm.ShowDialog(FindForm());
+                }));
             }
         }
 

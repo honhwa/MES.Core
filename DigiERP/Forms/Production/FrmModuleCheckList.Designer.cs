@@ -99,6 +99,7 @@ namespace DigiERP.Forms.Production
             btnAddItem.Name = "btnAddItem";
             btnAddItem.Size = new Size(90, 32);
             btnAddItem.TabIndex = 4;
+            btnAddItem.Tag = "btn-modify";
             btnAddItem.Text = "新增";
             btnAddItem.UseVisualStyleBackColor = false;
             btnAddItem.Click += btnAddItem_Click;
@@ -112,6 +113,7 @@ namespace DigiERP.Forms.Production
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 32);
             btnSave.TabIndex = 5;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -125,6 +127,7 @@ namespace DigiERP.Forms.Production
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(90, 32);
             btnEdit.TabIndex = 6;
+            btnEdit.Tag = "btn-modify";
             btnEdit.Text = "修改";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -138,6 +141,7 @@ namespace DigiERP.Forms.Production
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(90, 32);
             btnClose.TabIndex = 7;
+            btnClose.Tag = "btn-modify";
             btnClose.Text = "關閉";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;

@@ -1,3 +1,4 @@
+using DigiERP.Common;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using System.Windows.Forms;
 
 namespace DigiERP.Forms.Production
 {
-    public partial class FrmModuleCheckList : Form
+    public partial class FrmModuleCheckList : BaseForm
     {
         private string _category;
         private bool _isNew;
@@ -22,6 +23,7 @@ namespace DigiERP.Forms.Production
             txtCategory.Text = category?.檢查分類;
             txtCategory.ReadOnly = true;
 
+            UIStyle.ApplyControlStyle(this);
             LoadDutyList(category?.職務);
 
             disableAllControls(true);

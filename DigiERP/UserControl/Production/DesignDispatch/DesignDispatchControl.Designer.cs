@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.Production
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DesignDispatchControl));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             lblTitle = new Label();
             btnEdit = new Button();
             btnSave = new Button();
@@ -40,11 +41,10 @@ namespace DigiERP.UserControl.Production
             colAuditPassed = new DataGridViewCheckBoxColumn();
             colListNo = new DataGridViewTextBoxColumn();
             colCustName = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -59,17 +59,28 @@ namespace DigiERP.UserControl.Production
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(8, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
-            lblTitle.Location = new Point(72, 16);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(86, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "設計派案";
             // 
             // btnEdit
@@ -81,6 +92,7 @@ namespace DigiERP.UserControl.Production
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(90, 32);
             btnEdit.TabIndex = 1;
+            btnEdit.Tag = "btn-modify";
             btnEdit.Text = "修改";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -94,6 +106,7 @@ namespace DigiERP.UserControl.Production
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 32);
             btnSave.TabIndex = 2;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -108,6 +121,7 @@ namespace DigiERP.UserControl.Production
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(90, 32);
             btnPrint.TabIndex = 3;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -129,9 +143,9 @@ namespace DigiERP.UserControl.Production
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 56);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1900, 600);
+            panel2.Size = new Size(1900, 596);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -149,11 +163,11 @@ namespace DigiERP.UserControl.Production
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1900, 600);
+            dataGridView1.Size = new Size(1900, 596);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.DataError += dataGridView1_DataError;
-            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // colProjectNo
             // 
@@ -241,16 +255,6 @@ namespace DigiERP.UserControl.Production
             colCustName.Name = "colCustName";
             colCustName.ReadOnly = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 8);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // DesignDispatchControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -263,9 +267,9 @@ namespace DigiERP.UserControl.Production
             Size = new Size(1900, 656);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
