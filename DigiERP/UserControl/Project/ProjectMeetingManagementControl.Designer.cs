@@ -253,6 +253,7 @@ namespace DigiERP.UserControl.Project
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colProposer, colOwnerUnit, colTopic, colResolution, colNeedReply, colReplyPerson, colExpectDate, colActualDate, colReplyDesc, colManagerReview });
@@ -269,61 +270,51 @@ namespace DigiERP.UserControl.Project
             // 
             colProposer.HeaderText = "事項提議人";
             colProposer.Name = "colProposer";
-            colProposer.Width = 90;
             // 
             // colOwnerUnit
             // 
             colOwnerUnit.HeaderText = "主題";
             colOwnerUnit.Name = "colOwnerUnit";
-            colOwnerUnit.Width = 130;
             // 
             // colTopic
             // 
             colTopic.HeaderText = "問題或討論事項";
             colTopic.Name = "colTopic";
-            colTopic.Width = 280;
             // 
             // colResolution
             // 
             colResolution.HeaderText = "結論或執行方式";
             colResolution.Name = "colResolution";
-            colResolution.Width = 220;
             // 
             // colNeedReply
             // 
             colNeedReply.HeaderText = "需回覆";
             colNeedReply.Name = "colNeedReply";
-            colNeedReply.Width = 60;
             // 
             // colReplyPerson
             // 
             colReplyPerson.HeaderText = "應回報人員";
             colReplyPerson.Name = "colReplyPerson";
-            colReplyPerson.Width = 90;
             // 
             // colExpectDate
             // 
             colExpectDate.HeaderText = "預計回報日期";
             colExpectDate.Name = "colExpectDate";
-            colExpectDate.Width = 90;
             // 
             // colActualDate
             // 
             colActualDate.HeaderText = "實際回報日期";
             colActualDate.Name = "colActualDate";
-            colActualDate.Width = 90;
             // 
             // colReplyDesc
             // 
             colReplyDesc.HeaderText = "回覆說明";
             colReplyDesc.Name = "colReplyDesc";
-            colReplyDesc.Width = 200;
             // 
             // colManagerReview
             // 
             colManagerReview.HeaderText = "管理者審閱";
             colManagerReview.Name = "colManagerReview";
-            colManagerReview.Width = 70;
             // 
             // ProjectMeetingManagementControl
             // 
