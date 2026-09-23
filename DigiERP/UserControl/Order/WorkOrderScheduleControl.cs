@@ -1,6 +1,5 @@
 ﻿using DigiERP.Common;
 using DigiERP.Models;
-using DigiERP.UserControl.Production;
 using MES.Core.Model;
 using MES.WebAPI.Controllers;
 using System;
@@ -21,9 +20,12 @@ namespace DigiERP.UserControl.Order
     //    DLookUp/計算衍生欄位，非資料表實際欄位，本畫面改為依 工序代號 於本機
     //    快取之 工序設定 清單即時查表計算。
     //    按鈕邏輯對照原巨集：
-    //      專案進度追蹤 → 開啟既有 ProjectProgressDetailControl(單一專案多階段
-    //                     進度)，非新建。
-    //      總覽         → 開啟既有 ProjectProgressControl(跨專案總覽)，非新建。
+    //      專案進度追蹤 → 開啟新建 ProjectProgressGanttControl(同資料夾，
+    //                     12週滾動甘特圖，比照 P-專案管制進度；原先誤判為
+    //                     ProjectProgressDetailControl，已改正)。
+    //      總覽         → 開啟新建 ProjectScheduleListControl(同資料夾，全專案
+    //                     A~E工時總覽，比照 P-專案管制進度總覽；原先誤判為
+    //                     ProjectProgressControl，已改正)。
     //      日誌工時統計 → 開啟新建 WorkOrderScheduleStatsControl(同資料夾)，比
     //                     較5段(設計/加工/組裝/電控/試車)預估與實際耗用工時。
     //      修改/儲存/關閉 → 標準編輯流程 ─────────────────────────────────────
@@ -72,14 +74,14 @@ namespace DigiERP.UserControl.Order
             工令單 w = (!string.IsNullOrEmpty(woRep.ErrorMessage) || woRep.result == null) ? new 工令單() : woRep.result;
 
             txt專案序號.Text = w.專案序號;
-            txt訂單日期.Text = ShortDate(w.訂單日期);
+            SetDate(txt訂單日期, w.訂單日期);
             txt客戶簡稱.Text = w.客戶簡稱;
             txt客戶名稱.Text = w.客戶名稱;
             txt機台型號.Text = w.機台型號;
             txt機台類型.Text = w.機台類型;
             txt機台名稱.Text = w.機台名稱;
             txt驗機日期.Text = ShortDate(w.驗機日期);
-            txt交貨日期.Text = ShortDate(w.交貨日期);
+            SetDate(txt交貨日期, w.交貨日期);
             txt廠驗.Text = w.廠驗;
             txt裝機.Text = w.裝機;
             chk結案.Checked = ToBool(w.結案);
@@ -173,6 +175,11 @@ namespace DigiERP.UserControl.Order
             return sp > 0 ? dt.Substring(0, sp) : dt;
         }
 
+        private static void SetDate(DateTimePicker dtp, string value)
+        {
+            dtp.Value = DateTime.TryParse(value, out var d) ? d : DateTime.Parse("1900-01-01");
+        }
+
         private static bool ToBool(string v)
         {
             if (string.IsNullOrWhiteSpace(v)) return false;
@@ -250,8 +257,8 @@ namespace DigiERP.UserControl.Order
             SavedOrClosed?.Invoke();
         }
 
-        // ── 專案進度追蹤：原巨集 OpenForm "P-專案管制進度"，開啟既有
-        //    ProjectProgressDetailControl(單一專案) ───────────────────────────
+        // ── 專案進度追蹤：原巨集(Command223) OpenForm "P-專案管制進度"，
+        //    開啟新建 ProjectProgressGanttControl(同資料夾，12週滾動甘特圖) ────
         private void btnProgress_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(_projectNo))
@@ -259,16 +266,18 @@ namespace DigiERP.UserControl.Order
                 MessageBox.Show("請先選擇專案序號!");
                 return;
             }
-            OpenInTab("ProjectProgress_" + _projectNo, "專案進度追蹤-" + _projectNo,
-                () => { var ctrl = new ProjectProgressDetailControl { Dock = DockStyle.Fill }; ctrl.LoadData(_projectNo); return ctrl; });
+            OpenInTab("ProjectProgressGantt_" + _projectNo, "專案進度追蹤-" + _projectNo,
+                () => { var ctrl = new ProjectProgressGanttControl { Dock = DockStyle.Fill }; ctrl.LoadData(_projectNo); return ctrl; });
         }
 
-        // ── 總覽：原巨集 OpenForm "P-專案管制進度總覽"，開啟既有
-        //    ProjectProgressControl(跨專案總覽) ────────────────────────────────
+        // ── 總覽：原巨集(Command"總覽") OpenForm "P-專案管制進度總覽"(Caption=
+        //    "專案時程總覽")，開啟新建 ProjectScheduleListControl(同資料夾；原
+        //    先前誤植沿用 ProjectProgressControl，非同一物件，已改正)。原巨集
+        //    另會 Close 呼叫端 P-工令時程表，本畫面改採分頁並存，不強制關閉 ──
         private void btnOverview_Click(object sender, EventArgs e)
         {
-            OpenInTab("ProjectProgressOverview", "專案管制進度總覽",
-                () => new ProjectProgressControl { Dock = DockStyle.Fill });
+            OpenInTab("ProjectScheduleList", "專案時程總覽",
+                () => new ProjectScheduleListControl { Dock = DockStyle.Fill });
         }
 
         // ── 日誌工時統計：原巨集 OpenForm "P-工令時程"，開啟新建

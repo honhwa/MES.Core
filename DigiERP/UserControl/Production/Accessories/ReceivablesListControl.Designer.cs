@@ -25,6 +25,7 @@ namespace DigiERP.UserControl.Production.Accessories
         private void InitializeComponent()
         {
             panelHeader = new Panel();
+            picLogo = new PictureBox();
             lblTitle = new Label();
             lbl客戶篩選 = new Label();
             cmb客戶篩選 = new ComboBox();
@@ -41,6 +42,7 @@ namespace DigiERP.UserControl.Production.Accessories
             colBank = new DataGridViewTextBoxColumn();
             colPercent = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             panelHeader.SuspendLayout();
             SuspendLayout();
             //
@@ -50,20 +52,31 @@ namespace DigiERP.UserControl.Production.Accessories
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1160, 50);
+            panelHeader.Size = new Size(1160, 64);
             panelHeader.TabIndex = 0;
+            panelHeader.Controls.Add(picLogo);
             panelHeader.Controls.Add(lblTitle);
             panelHeader.Controls.Add(lbl客戶篩選);
             panelHeader.Controls.Add(cmb客戶篩選);
             panelHeader.Controls.Add(btnClearFilter);
             panelHeader.Controls.Add(btnExit);
             //
+            // picLogo
+            //
+            picLogo.Image = Properties.Resources.ReceivablesLogo;
+            picLogo.Location = new Point(8, 8);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(48, 48);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 4;
+            picLogo.TabStop = false;
+            //
             // lblTitle
             //
             lblTitle.AutoSize = false;
             lblTitle.Font = new Font("微軟正黑體", 12F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(69, 98, 135);
-            lblTitle.Location = new Point(11, 12);
+            lblTitle.Location = new Point(64, 19);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(220, 24);
             lblTitle.TabIndex = 0;
@@ -72,7 +85,7 @@ namespace DigiERP.UserControl.Production.Accessories
             // lbl客戶篩選
             //
             lbl客戶篩選.AutoSize = false;
-            lbl客戶篩選.Location = new Point(300, 14);
+            lbl客戶篩選.Location = new Point(300, 21);
             lbl客戶篩選.Size = new Size(70, 21);
             lbl客戶篩選.Text = "客戶篩選";
             lbl客戶篩選.TextAlign = ContentAlignment.MiddleLeft;
@@ -80,7 +93,7 @@ namespace DigiERP.UserControl.Production.Accessories
             // cmb客戶篩選
             //
             cmb客戶篩選.DropDownStyle = ComboBoxStyle.DropDown;
-            cmb客戶篩選.Location = new Point(375, 12);
+            cmb客戶篩選.Location = new Point(375, 19);
             cmb客戶篩選.Name = "cmb客戶篩選";
             cmb客戶篩選.Size = new Size(300, 25);
             cmb客戶篩選.TabIndex = 1;
@@ -92,7 +105,7 @@ namespace DigiERP.UserControl.Production.Accessories
             btnClearFilter.FlatStyle = FlatStyle.Flat;
             btnClearFilter.ForeColor = Color.White;
             btnClearFilter.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnClearFilter.Location = new Point(690, 11);
+            btnClearFilter.Location = new Point(690, 18);
             btnClearFilter.Name = "btnClearFilter";
             btnClearFilter.Size = new Size(90, 27);
             btnClearFilter.TabIndex = 2;
@@ -106,7 +119,7 @@ namespace DigiERP.UserControl.Production.Accessories
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.ForeColor = Color.White;
             btnExit.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnExit.Location = new Point(1060, 11);
+            btnExit.Location = new Point(1060, 18);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(90, 27);
             btnExit.TabIndex = 3;
@@ -154,6 +167,7 @@ namespace DigiERP.UserControl.Production.Accessories
             Name = "ReceivablesListControl";
             Size = new Size(1160, 600);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             panelHeader.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -161,6 +175,7 @@ namespace DigiERP.UserControl.Production.Accessories
         #endregion
 
         private Panel panelHeader;
+        private PictureBox picLogo;
         private Label lblTitle;
         private Label lbl客戶篩選;
         private ComboBox cmb客戶篩選;

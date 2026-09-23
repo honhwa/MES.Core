@@ -77,6 +77,23 @@ namespace MES.WebAPI.Controllers
             }
             return commonRep;
         }
+
+        [Route("api/GetProjectScheduleOverview"), HttpGet]
+        public CommonRep<專案時程總覽> GetProjectScheduleOverview()
+        {
+            CommonRep<專案時程總覽> commonRep = new CommonRep<專案時程總覽>();
+            WorkOrderScheduleMiddle middle = new WorkOrderScheduleMiddle();
+            try
+            {
+                commonRep.resultList = middle.getProjectScheduleOverview();
+            }
+            catch (Exception ex)
+            {
+                commonRep.ErrorMessage = ex.Message;
+                commonRep.WorkStatus = WorkStatus.Fail.ToString();
+            }
+            return commonRep;
+        }
     }
 
     public class SaveWorkOrderScheduleRequest

@@ -49,13 +49,13 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -67,10 +67,11 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 13F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(60, 16);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(136, 23);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "試機驗收單總覽";
             // 
             // btnAdd
@@ -78,10 +79,11 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             btnAdd.BackColor = Color.LightSteelBlue;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnAdd.Location = new Point(1648, 12);
+            btnAdd.Location = new Point(1430, 12);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(120, 32);
             btnAdd.TabIndex = 1;
+            btnAdd.Tag = "btn-modify";
             btnAdd.Text = "ADD";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
@@ -91,21 +93,22 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             btnExit.BackColor = Color.LightSteelBlue;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnExit.Location = new Point(1780, 12);
+            btnExit.Location = new Point(1562, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(120, 32);
             btnExit.TabIndex = 2;
             btnExit.Text = "EXIT";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Visible = false;
             btnExit.Click += btnExit_Click;
             // 
             // panel2
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 56);
+            panel2.Location = new Point(0, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1900, 600);
+            panel2.Size = new Size(1900, 596);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -124,10 +127,10 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1900, 600);
+            dataGridView1.Size = new Size(1900, 596);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            //
+            // 
             // colProjectNo
             // 
             colProjectNo.HeaderText = "專案序號";

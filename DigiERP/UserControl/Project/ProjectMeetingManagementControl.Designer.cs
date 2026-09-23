@@ -48,17 +48,17 @@ namespace DigiERP.UserControl.Project
             colResolution = new DataGridViewTextBoxColumn();
             colNeedReply = new DataGridViewCheckBoxColumn();
             colReplyPerson = new DataGridViewComboBoxColumn();
-            colExpectDate = new DataGridViewTextBoxColumn();
-            colActualDate = new DataGridViewTextBoxColumn();
+            colExpectDate = new DigiERP.Common.DataGridViewDateTimePickerColumn();
+            colActualDate = new DigiERP.Common.DataGridViewDateTimePickerColumn();
             colReplyDesc = new DataGridViewTextBoxColumn();
             colManagerReview = new DataGridViewCheckBoxColumn();
             panelHeader.SuspendLayout();
             panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            //
+            // 
             // panelHeader
-            //
+            // 
             panelHeader.BackColor = Color.FromArgb(223, 229, 237);
             panelHeader.Controls.Add(lblTitle);
             panelHeader.Controls.Add(lbl專案序號);
@@ -81,157 +81,177 @@ namespace DigiERP.UserControl.Project
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1360, 100);
             panelHeader.TabIndex = 0;
-            //
+            // 
             // lblTitle
-            //
+            // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 12F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(69, 98, 135);
             lblTitle.Location = new Point(11, 8);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(150, 24);
+            lblTitle.Size = new Size(122, 21);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "專案管理紀錄表";
-            //
+            // 
             // lbl專案序號
-            //
-            lbl專案序號.AutoSize = false;
+            // 
             lbl專案序號.Location = new Point(11, 44);
+            lbl專案序號.Name = "lbl專案序號";
             lbl專案序號.Size = new Size(72, 21);
+            lbl專案序號.TabIndex = 2;
             lbl專案序號.Text = "專案序號";
             lbl專案序號.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // txt專案序號
-            //
-            txt專案序號.Location = new Point(83, 44);
-            txt專案序號.Size = new Size(136, 23);
-            txt專案序號.ReadOnly = true;
+            // 
             txt專案序號.BackColor = SystemColors.Control;
-            //
+            txt專案序號.Location = new Point(83, 44);
+            txt專案序號.Name = "txt專案序號";
+            txt專案序號.ReadOnly = true;
+            txt專案序號.Size = new Size(136, 23);
+            txt專案序號.TabIndex = 3;
+            // 
             // lbl日期
-            //
-            lbl日期.AutoSize = false;
+            // 
             lbl日期.Location = new Point(227, 44);
+            lbl日期.Name = "lbl日期";
             lbl日期.Size = new Size(60, 21);
+            lbl日期.TabIndex = 4;
             lbl日期.Text = "日期";
             lbl日期.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // dt日期
-            //
+            // 
             dt日期.Format = DateTimePickerFormat.Short;
             dt日期.Location = new Point(298, 44);
+            dt日期.Name = "dt日期";
             dt日期.Size = new Size(136, 23);
-            //
+            dt日期.TabIndex = 5;
+            // 
             // lbl紀錄單號
-            //
-            lbl紀錄單號.AutoSize = false;
+            // 
             lbl紀錄單號.Location = new Point(458, 44);
+            lbl紀錄單號.Name = "lbl紀錄單號";
             lbl紀錄單號.Size = new Size(70, 21);
+            lbl紀錄單號.TabIndex = 6;
             lbl紀錄單號.Text = "紀錄單號";
             lbl紀錄單號.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // txt紀錄單號
-            //
+            // 
             txt紀錄單號.Location = new Point(529, 44);
+            txt紀錄單號.Name = "txt紀錄單號";
             txt紀錄單號.Size = new Size(167, 23);
-            //
+            txt紀錄單號.TabIndex = 7;
+            // 
             // lbl紀錄類別
-            //
-            lbl紀錄類別.AutoSize = false;
+            // 
             lbl紀錄類別.Location = new Point(11, 72);
+            lbl紀錄類別.Name = "lbl紀錄類別";
             lbl紀錄類別.Size = new Size(72, 21);
+            lbl紀錄類別.TabIndex = 8;
             lbl紀錄類別.Text = "紀錄類別";
             lbl紀錄類別.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // cmb紀錄類別
-            //
+            // 
             cmb紀錄類別.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb紀錄類別.Items.AddRange(new object[] { "開案會議", "內部討論", "追蹤反饋", "進度紀錄", "改善計畫", "客戶驗收" });
             cmb紀錄類別.Location = new Point(83, 72);
-            cmb紀錄類別.Size = new Size(136, 23);
-            //
+            cmb紀錄類別.Name = "cmb紀錄類別";
+            cmb紀錄類別.Size = new Size(136, 24);
+            cmb紀錄類別.TabIndex = 9;
+            // 
             // lbl記錄人員
-            //
-            lbl記錄人員.AutoSize = false;
+            // 
             lbl記錄人員.Location = new Point(227, 72);
+            lbl記錄人員.Name = "lbl記錄人員";
             lbl記錄人員.Size = new Size(60, 21);
+            lbl記錄人員.TabIndex = 10;
             lbl記錄人員.Text = "記錄人員";
             lbl記錄人員.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // txt記錄人員
-            //
+            // 
             txt記錄人員.Location = new Point(298, 72);
+            txt記錄人員.Name = "txt記錄人員";
             txt記錄人員.Size = new Size(136, 23);
-            //
+            txt記錄人員.TabIndex = 11;
+            // 
             // lbl備註
-            //
-            lbl備註.AutoSize = false;
+            // 
             lbl備註.Location = new Point(458, 72);
+            lbl備註.Name = "lbl備註";
             lbl備註.Size = new Size(70, 21);
+            lbl備註.TabIndex = 12;
             lbl備註.Text = "備註";
             lbl備註.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // txt備註
-            //
+            // 
             txt備註.Location = new Point(529, 72);
+            txt備註.Name = "txt備註";
             txt備註.Size = new Size(420, 23);
-            //
-            // btnSave (原Command37"儲存")
-            //
+            txt備註.TabIndex = 13;
+            // 
+            // btnSave
+            // 
             btnSave.BackColor = Color.FromArgb(166, 166, 166);
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.ForeColor = Color.White;
             btnSave.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(1090, 8);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(80, 27);
             btnSave.TabIndex = 20;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
-            //
-            // btnPrint (原Command39"列印")
-            //
+            // 
+            // btnPrint
+            // 
             btnPrint.BackColor = Color.FromArgb(166, 166, 166);
             btnPrint.FlatStyle = FlatStyle.Flat;
-            btnPrint.ForeColor = Color.White;
             btnPrint.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
+            btnPrint.ForeColor = Color.White;
             btnPrint.Location = new Point(1176, 8);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(80, 27);
             btnPrint.TabIndex = 21;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
-            //
-            // btnExit (原Command38"關閉")
-            //
+            // 
+            // btnExit
+            // 
             btnExit.BackColor = Color.FromArgb(166, 166, 166);
             btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.ForeColor = Color.White;
             btnExit.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
+            btnExit.ForeColor = Color.White;
             btnExit.Location = new Point(1262, 8);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(80, 27);
             btnExit.TabIndex = 22;
+            btnExit.Tag = "btn-modify";
             btnExit.Text = "關閉";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Visible = false;
             btnExit.Click += btnExit_Click;
-            //
+            // 
             // panelBody
-            //
+            // 
             panelBody.BackColor = Color.FromArgb(254, 251, 248);
+            panelBody.Controls.Add(dataGridView1);
             panelBody.Dock = DockStyle.Fill;
             panelBody.Location = new Point(0, 100);
             panelBody.Name = "panelBody";
             panelBody.Size = new Size(1360, 420);
             panelBody.TabIndex = 1;
-            panelBody.Controls.Add(dataGridView1);
-            //
-            // dataGridView1 (子表單「P-專案管理紀錄明細」)
-            //
-            dataGridView1.AllowUserToAddRows = true;
-            dataGridView1.AllowUserToDeleteRows = true;
+            // 
+            // dataGridView1
+            // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -244,50 +264,70 @@ namespace DigiERP.UserControl.Project
             dataGridView1.Size = new Size(1338, 398);
             dataGridView1.TabIndex = 30;
             dataGridView1.DataError += dataGridView1_DataError;
-            //
+            // 
             // colProposer
-            //
-            colProposer.HeaderText = "事項提議人"; colProposer.Name = "colProposer"; colProposer.Width = 90;
-            //
-            // colOwnerUnit (原Label"主題"，ControlSource=權責處理單位)
-            //
-            colOwnerUnit.HeaderText = "主題"; colOwnerUnit.Name = "colOwnerUnit"; colOwnerUnit.Width = 130;
-            //
-            // colTopic (原Label"問題或討論事項"，ControlSource=登載或注意事項)
-            //
-            colTopic.HeaderText = "問題或討論事項"; colTopic.Name = "colTopic"; colTopic.Width = 280;
-            //
-            // colResolution (原Label"結論或執行方式"，ControlSource=決議)
-            //
-            colResolution.HeaderText = "結論或執行方式"; colResolution.Name = "colResolution"; colResolution.Width = 220;
-            //
-            // colNeedReply (原Label"回覆要求"，ControlSource=回報要求)
-            //
-            colNeedReply.HeaderText = "需回覆"; colNeedReply.Name = "colNeedReply"; colNeedReply.Width = 60;
-            //
-            // colReplyPerson (原Label"應回覆人"，ControlSource=應回報人員)
-            //
-            colReplyPerson.HeaderText = "應回報人員"; colReplyPerson.Name = "colReplyPerson"; colReplyPerson.Width = 90;
-            //
-            // colExpectDate (原Label"預計回報日")
-            //
-            colExpectDate.HeaderText = "預計回報日期"; colExpectDate.Name = "colExpectDate"; colExpectDate.Width = 90;
-            //
-            // colActualDate (原Label"實際回報日")
-            //
-            colActualDate.HeaderText = "實際回報日期"; colActualDate.Name = "colActualDate"; colActualDate.Width = 90;
-            //
-            // colReplyDesc (原Label"回覆說明"，ControlSource=回報說明)
-            //
-            colReplyDesc.HeaderText = "回覆說明"; colReplyDesc.Name = "colReplyDesc"; colReplyDesc.Width = 200;
-            //
+            // 
+            colProposer.HeaderText = "事項提議人";
+            colProposer.Name = "colProposer";
+            colProposer.Width = 90;
+            // 
+            // colOwnerUnit
+            // 
+            colOwnerUnit.HeaderText = "主題";
+            colOwnerUnit.Name = "colOwnerUnit";
+            colOwnerUnit.Width = 130;
+            // 
+            // colTopic
+            // 
+            colTopic.HeaderText = "問題或討論事項";
+            colTopic.Name = "colTopic";
+            colTopic.Width = 280;
+            // 
+            // colResolution
+            // 
+            colResolution.HeaderText = "結論或執行方式";
+            colResolution.Name = "colResolution";
+            colResolution.Width = 220;
+            // 
+            // colNeedReply
+            // 
+            colNeedReply.HeaderText = "需回覆";
+            colNeedReply.Name = "colNeedReply";
+            colNeedReply.Width = 60;
+            // 
+            // colReplyPerson
+            // 
+            colReplyPerson.HeaderText = "應回報人員";
+            colReplyPerson.Name = "colReplyPerson";
+            colReplyPerson.Width = 90;
+            // 
+            // colExpectDate
+            // 
+            colExpectDate.HeaderText = "預計回報日期";
+            colExpectDate.Name = "colExpectDate";
+            colExpectDate.Width = 90;
+            // 
+            // colActualDate
+            // 
+            colActualDate.HeaderText = "實際回報日期";
+            colActualDate.Name = "colActualDate";
+            colActualDate.Width = 90;
+            // 
+            // colReplyDesc
+            // 
+            colReplyDesc.HeaderText = "回覆說明";
+            colReplyDesc.Name = "colReplyDesc";
+            colReplyDesc.Width = 200;
+            // 
             // colManagerReview
-            //
-            colManagerReview.HeaderText = "管理者審閱"; colManagerReview.Name = "colManagerReview"; colManagerReview.Width = 70;
-            //
+            // 
+            colManagerReview.HeaderText = "管理者審閱";
+            colManagerReview.Name = "colManagerReview";
+            colManagerReview.Width = 70;
+            // 
             // ProjectMeetingManagementControl
-            //
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            // 
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelBody);
             Controls.Add(panelHeader);
@@ -329,8 +369,8 @@ namespace DigiERP.UserControl.Project
         private DataGridViewTextBoxColumn colResolution;
         private DataGridViewCheckBoxColumn colNeedReply;
         private DataGridViewComboBoxColumn colReplyPerson;
-        private DataGridViewTextBoxColumn colExpectDate;
-        private DataGridViewTextBoxColumn colActualDate;
+        private DigiERP.Common.DataGridViewDateTimePickerColumn colExpectDate;
+        private DigiERP.Common.DataGridViewDateTimePickerColumn colActualDate;
         private DataGridViewTextBoxColumn colReplyDesc;
         private DataGridViewCheckBoxColumn colManagerReview;
     }

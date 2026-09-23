@@ -156,6 +156,7 @@ namespace DigiERP.UserControl.Production
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(90, 32);
             btnOverview.TabIndex = 1;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Visible = false;
@@ -163,14 +164,15 @@ namespace DigiERP.UserControl.Production
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.LightSteelBlue;
+            btnClose.BackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
+            btnClose.ForeColor = SystemColors.ButtonFace;
             btnClose.Location = new Point(1780, 12);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(100, 32);
             btnClose.TabIndex = 2;
-            btnClose.Text = "關閉";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Visible = false;
             btnClose.Click += btnClose_Click;

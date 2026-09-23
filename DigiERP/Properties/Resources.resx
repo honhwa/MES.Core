@@ -220,4 +220,22 @@
   <data name="able" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\able.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WorkOrderScheduleLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WorkOrderScheduleLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReceivablesLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReceivablesLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AccessoriesApplyLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AccessoriesApplyLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScheduleListLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScheduleListLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScheduleStatsLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScheduleStatsLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProjectMeetingLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProjectMeetingLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -205,6 +205,10 @@ namespace DigiERP.UserControl.Order
             {
                 chk.Checked = ToBool(value);
             }
+            else if (ctrl is DateTimePicker dtp)
+            {
+                dtp.Value = DateTime.TryParse(value, out var d) ? d : DateTime.Parse("1900-01-01");
+            }
             else if (ctrl is ComboBox || ctrl is TextBox)
             {
                 ctrl.Text = string.IsNullOrWhiteSpace(value) ? "" : ShortDate(value);
@@ -307,6 +311,7 @@ namespace DigiERP.UserControl.Order
         private static string GetControlValue(Control ctrl)
         {
             if (ctrl is CheckBox chk) return chk.Checked.ToString();
+            if (ctrl is DateTimePicker dtp) return dtp.Value.ToString("yyyy-MM-dd");
             return ctrl.Text;
         }
 

@@ -140,11 +140,70 @@ namespace MES.WebAPI.MiddleWare
             }
         }
 
+        // ── 專案時程總覽：比照「P-專案管制進度總覽」，交叉資料表查詢「工令時程_
+        //    交叉資料表」(工令時程表 依工序代號 PIVOT A~E統合工段，RIGHT JOIN
+        //    工令單 取得全部專案，排除專案序號開頭為"G"者) ─────────────────────
+        public List<專案時程總覽> getProjectScheduleOverview()
+        {
+            try
+            {
+                using (var conn = new SqlConnection(IRepository<string>.ConnStr))
+                {
+                    var headers = conn.Query<專案時程總覽>(@"
+                        SELECT 專案序號, 機台名稱, 機台類型, 訂單日期
+                        FROM 工令單
+                        WHERE LEFT(專案序號,1)<>'G'
+                        ORDER BY 專案序號 DESC").ToList();
+
+                    var phaseRows = conn.Query<PhaseRow>(@"
+                        SELECT 專案序號 AS ProjectNo, 工序代號 AS Code, CAST(SUM(預估工時) AS decimal(18,4)) AS Hours
+                        FROM 工令時程表
+                        WHERE 工序代號 IN ('A','B','C','D','E')
+                        GROUP BY 專案序號, 工序代號").ToList();
+
+                    var lookup = phaseRows.ToLookup(x => x.ProjectNo);
+                    foreach (var h in headers)
+                    {
+                        decimal a = 0, b = 0, c = 0, d = 0, e = 0;
+                        foreach (var p in lookup[h.專案序號])
+                        {
+                            switch (p.Code)
+                            {
+                                case "A": a = p.Hours; break;
+                                case "B": b = p.Hours; break;
+                                case "C": c = p.Hours; break;
+                                case "D": d = p.Hours; break;
+                                case "E": e = p.Hours; break;
+                            }
+                        }
+                        h.A設計工時 = a;
+                        h.B加工工時 = b;
+                        h.C組裝工時 = c;
+                        h.D電控工時 = d;
+                        h.E試車工時 = e;
+                        h.合計預估工時 = a + b + c + d + e;
+                    }
+                    return headers;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         // ── 內部小型結果類別，用於 GROUP BY 彙總查詢的字典轉換 ──────────────────
         private class PhaseSum
         {
             public string Key1 { get; set; }
             public decimal? Value1 { get; set; }
+        }
+
+        private class PhaseRow
+        {
+            public string ProjectNo { get; set; }
+            public string Code { get; set; }
+            public decimal Hours { get; set; }
         }
     }
 }

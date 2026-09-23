@@ -76,13 +76,14 @@ namespace DigiERP.UserControl.Order
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1300, 90);
+            panelHeader.Size = new Size(1593, 60);
             panelHeader.TabIndex = 0;
+            panelHeader.Tag = "";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -94,16 +95,17 @@ namespace DigiERP.UserControl.Order
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(58, 8);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(105, 24);
             lblTitle.TabIndex = 1;
+            lblTitle.Tag = "title";
             lblTitle.Text = "工令單總覽";
             // 
             // lblProjectNo
             // 
             lblProjectNo.AutoSize = true;
-            lblProjectNo.Location = new Point(60, 42);
+            lblProjectNo.Location = new Point(200, 28);
             lblProjectNo.Name = "lblProjectNo";
             lblProjectNo.Size = new Size(64, 18);
             lblProjectNo.TabIndex = 2;
@@ -111,7 +113,7 @@ namespace DigiERP.UserControl.Order
             // 
             // txtProjectNo
             // 
-            txtProjectNo.Location = new Point(136, 39);
+            txtProjectNo.Location = new Point(270, 25);
             txtProjectNo.Name = "txtProjectNo";
             txtProjectNo.Size = new Size(110, 25);
             txtProjectNo.TabIndex = 3;
@@ -119,7 +121,7 @@ namespace DigiERP.UserControl.Order
             // lblCustName
             // 
             lblCustName.AutoSize = true;
-            lblCustName.Location = new Point(257, 42);
+            lblCustName.Location = new Point(380, 28);
             lblCustName.Name = "lblCustName";
             lblCustName.Size = new Size(64, 18);
             lblCustName.TabIndex = 4;
@@ -127,7 +129,7 @@ namespace DigiERP.UserControl.Order
             // 
             // txtCustName
             // 
-            txtCustName.Location = new Point(331, 39);
+            txtCustName.Location = new Point(454, 25);
             txtCustName.Name = "txtCustName";
             txtCustName.Size = new Size(120, 25);
             txtCustName.TabIndex = 5;
@@ -135,7 +137,7 @@ namespace DigiERP.UserControl.Order
             // lblMachineType
             // 
             lblMachineType.AutoSize = true;
-            lblMachineType.Location = new Point(464, 42);
+            lblMachineType.Location = new Point(587, 28);
             lblMachineType.Name = "lblMachineType";
             lblMachineType.Size = new Size(64, 18);
             lblMachineType.TabIndex = 6;
@@ -145,7 +147,7 @@ namespace DigiERP.UserControl.Order
             // 
             cmbMachineType.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMachineType.Items.AddRange(new object[] { "", "S", "PJ", "FB", "GT", "G", "M", "H" });
-            cmbMachineType.Location = new Point(541, 39);
+            cmbMachineType.Location = new Point(664, 25);
             cmbMachineType.Name = "cmbMachineType";
             cmbMachineType.Size = new Size(80, 25);
             cmbMachineType.TabIndex = 7;
@@ -153,7 +155,7 @@ namespace DigiERP.UserControl.Order
             // chkOnlyOpen
             // 
             chkOnlyOpen.AutoSize = true;
-            chkOnlyOpen.Location = new Point(640, 41);
+            chkOnlyOpen.Location = new Point(763, 27);
             chkOnlyOpen.Name = "chkOnlyOpen";
             chkOnlyOpen.Size = new Size(111, 22);
             chkOnlyOpen.TabIndex = 8;
@@ -165,10 +167,11 @@ namespace DigiERP.UserControl.Order
             btnQuery.BackColor = Color.LightSteelBlue;
             btnQuery.FlatStyle = FlatStyle.Flat;
             btnQuery.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnQuery.Location = new Point(808, 40);
+            btnQuery.Location = new Point(1311, 15);
             btnQuery.Name = "btnQuery";
             btnQuery.Size = new Size(70, 30);
             btnQuery.TabIndex = 9;
+            btnQuery.Tag = "btn-modify";
             btnQuery.Text = "查詢";
             btnQuery.UseVisualStyleBackColor = false;
             btnQuery.Click += btnQuery_Click;
@@ -178,10 +181,11 @@ namespace DigiERP.UserControl.Order
             btnAddFromOrder.BackColor = Color.PaleGoldenrod;
             btnAddFromOrder.FlatStyle = FlatStyle.Flat;
             btnAddFromOrder.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnAddFromOrder.Location = new Point(808, 4);
+            btnAddFromOrder.Location = new Point(880, 16);
             btnAddFromOrder.Name = "btnAddFromOrder";
             btnAddFromOrder.Size = new Size(112, 30);
             btnAddFromOrder.TabIndex = 13;
+            btnAddFromOrder.Tag = "btn-modify";
             btnAddFromOrder.Text = "自訂單新增機台";
             btnAddFromOrder.UseVisualStyleBackColor = false;
             btnAddFromOrder.Click += btnAddFromOrder_Click;
@@ -191,10 +195,11 @@ namespace DigiERP.UserControl.Order
             btnCompare.BackColor = Color.LightCyan;
             btnCompare.FlatStyle = FlatStyle.Flat;
             btnCompare.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnCompare.Location = new Point(884, 40);
+            btnCompare.Location = new Point(1408, 14);
             btnCompare.Name = "btnCompare";
             btnCompare.Size = new Size(134, 30);
             btnCompare.TabIndex = 14;
+            btnCompare.Tag = "btn-modify";
             btnCompare.Text = "開啟對照工令單";
             btnCompare.UseVisualStyleBackColor = false;
             btnCompare.Click += btnCompare_Click;
@@ -204,10 +209,11 @@ namespace DigiERP.UserControl.Order
             btnAdd.BackColor = Color.LightGreen;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnAdd.Location = new Point(924, 4);
+            btnAdd.Location = new Point(1021, 16);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(128, 32);
             btnAdd.TabIndex = 10;
+            btnAdd.Tag = "btn-modify";
             btnAdd.Text = "直接新增機台專案";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
@@ -217,10 +223,11 @@ namespace DigiERP.UserControl.Order
             btnDelete.BackColor = Color.LightCoral;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnDelete.Location = new Point(1060, 4);
+            btnDelete.Location = new Point(1197, 15);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(90, 32);
             btnDelete.TabIndex = 11;
+            btnDelete.Tag = "btn-modify";
             btnDelete.Text = "刪除工令單";
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
@@ -230,21 +237,22 @@ namespace DigiERP.UserControl.Order
             btnExit.BackColor = Color.Gainsboro;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnExit.Location = new Point(1196, 4);
+            btnExit.Location = new Point(1208, 5);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(90, 32);
             btnExit.TabIndex = 12;
             btnExit.Text = "EXIT";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Visible = false;
             btnExit.Click += btnExit_Click;
             // 
             // panelBody
             // 
             panelBody.Controls.Add(dataGridView1);
             panelBody.Dock = DockStyle.Fill;
-            panelBody.Location = new Point(0, 90);
+            panelBody.Location = new Point(0, 60);
             panelBody.Name = "panelBody";
-            panelBody.Size = new Size(1300, 566);
+            panelBody.Size = new Size(1593, 596);
             panelBody.TabIndex = 1;
             // 
             // dataGridView1
@@ -263,7 +271,7 @@ namespace DigiERP.UserControl.Order
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1300, 566);
+            dataGridView1.Size = new Size(1593, 596);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
@@ -355,7 +363,7 @@ namespace DigiERP.UserControl.Order
             Font = new Font("微軟正黑體", 10F);
             Margin = new Padding(4);
             Name = "WorkOrderListControl";
-            Size = new Size(1300, 656);
+            Size = new Size(1593, 656);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
