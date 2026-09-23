@@ -26,7 +26,7 @@ namespace DigiERP.UserControl.Production
             lblProjectNo = new Label();
             txtProjectNo = new TextBox();
             lblOrderDate = new Label();
-            txtOrderDate = new TextBox();
+            txtOrderDate = new DigiERP.Common.CommonDateTimePicker();
             lblCustShort = new Label();
             txtCustShort = new TextBox();
             lblCustName = new Label();
@@ -36,9 +36,9 @@ namespace DigiERP.UserControl.Production
             lblMachineType = new Label();
             txtMachineType = new TextBox();
             lblInspectDate = new Label();
-            txtInspectDate = new TextBox();
+            txtInspectDate = new DigiERP.Common.CommonDateTimePicker();
             lblDeliveryDate = new Label();
-            txtDeliveryDate = new TextBox();
+            txtDeliveryDate = new DigiERP.Common.CommonDateTimePicker();
             lblMachineName = new Label();
             txtMachineName = new TextBox();
             panel2 = new Panel();
@@ -243,11 +243,11 @@ namespace DigiERP.UserControl.Production
             // 
             // txtOrderDate
             // 
-            txtOrderDate.BackColor = Color.WhiteSmoke;
+            txtOrderDate.Enabled = false;
+            txtOrderDate.Format = DateTimePickerFormat.Short;
             txtOrderDate.Location = new Point(374, 8);
             txtOrderDate.Name = "txtOrderDate";
-            txtOrderDate.ReadOnly = true;
-            txtOrderDate.Size = new Size(200, 25);
+            txtOrderDate.Size = new Size(176, 25);
             txtOrderDate.TabIndex = 3;
             // 
             // lblCustShort
@@ -265,13 +265,13 @@ namespace DigiERP.UserControl.Production
             txtCustShort.Location = new Point(664, 8);
             txtCustShort.Name = "txtCustShort";
             txtCustShort.ReadOnly = true;
-            txtCustShort.Size = new Size(200, 25);
+            txtCustShort.Size = new Size(129, 25);
             txtCustShort.TabIndex = 5;
             // 
             // lblCustName
             // 
             lblCustName.AutoSize = true;
-            lblCustName.Location = new Point(880, 12);
+            lblCustName.Location = new Point(808, 12);
             lblCustName.Name = "lblCustName";
             lblCustName.Size = new Size(64, 18);
             lblCustName.TabIndex = 6;
@@ -280,10 +280,10 @@ namespace DigiERP.UserControl.Production
             // txtCustName
             // 
             txtCustName.BackColor = Color.WhiteSmoke;
-            txtCustName.Location = new Point(954, 8);
+            txtCustName.Location = new Point(882, 8);
             txtCustName.Name = "txtCustName";
             txtCustName.ReadOnly = true;
-            txtCustName.Size = new Size(280, 25);
+            txtCustName.Size = new Size(124, 25);
             txtCustName.TabIndex = 7;
             // 
             // lblMachineModel
@@ -319,7 +319,7 @@ namespace DigiERP.UserControl.Production
             txtMachineType.Location = new Point(374, 40);
             txtMachineType.Name = "txtMachineType";
             txtMachineType.ReadOnly = true;
-            txtMachineType.Size = new Size(200, 25);
+            txtMachineType.Size = new Size(176, 25);
             txtMachineType.TabIndex = 11;
             // 
             // lblInspectDate
@@ -333,17 +333,17 @@ namespace DigiERP.UserControl.Production
             // 
             // txtInspectDate
             // 
-            txtInspectDate.BackColor = Color.WhiteSmoke;
+            txtInspectDate.Enabled = false;
+            txtInspectDate.Format = DateTimePickerFormat.Short;
             txtInspectDate.Location = new Point(664, 40);
             txtInspectDate.Name = "txtInspectDate";
-            txtInspectDate.ReadOnly = true;
-            txtInspectDate.Size = new Size(200, 25);
+            txtInspectDate.Size = new Size(129, 25);
             txtInspectDate.TabIndex = 13;
             // 
             // lblDeliveryDate
             // 
             lblDeliveryDate.AutoSize = true;
-            lblDeliveryDate.Location = new Point(880, 44);
+            lblDeliveryDate.Location = new Point(808, 44);
             lblDeliveryDate.Name = "lblDeliveryDate";
             lblDeliveryDate.Size = new Size(64, 18);
             lblDeliveryDate.TabIndex = 14;
@@ -351,11 +351,11 @@ namespace DigiERP.UserControl.Production
             // 
             // txtDeliveryDate
             // 
-            txtDeliveryDate.BackColor = Color.WhiteSmoke;
-            txtDeliveryDate.Location = new Point(954, 40);
+            txtDeliveryDate.Enabled = false;
+            txtDeliveryDate.Format = DateTimePickerFormat.Short;
+            txtDeliveryDate.Location = new Point(882, 40);
             txtDeliveryDate.Name = "txtDeliveryDate";
-            txtDeliveryDate.ReadOnly = true;
-            txtDeliveryDate.Size = new Size(200, 25);
+            txtDeliveryDate.Size = new Size(124, 25);
             txtDeliveryDate.TabIndex = 15;
             // 
             // lblMachineName
@@ -373,7 +373,7 @@ namespace DigiERP.UserControl.Production
             txtMachineName.Location = new Point(84, 72);
             txtMachineName.Name = "txtMachineName";
             txtMachineName.ReadOnly = true;
-            txtMachineName.Size = new Size(480, 25);
+            txtMachineName.Size = new Size(466, 25);
             txtMachineName.TabIndex = 17;
             // 
             // panel2
@@ -561,9 +561,9 @@ namespace DigiERP.UserControl.Production
             panelModuleTitle.Size = new Size(1900, 26);
             panelModuleTitle.TabIndex = 5;
             panelModuleTitle.Click += panelModuleTitle_Click;
-            //
+            // 
             // lblModuleTitle
-            //
+            // 
             lblModuleTitle.AutoSize = true;
             lblModuleTitle.Cursor = Cursors.Hand;
             lblModuleTitle.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
@@ -852,7 +852,7 @@ namespace DigiERP.UserControl.Production
             dataGridView1.Size = new Size(1900, 240);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
-            //
+            // 
             // colModuleCode
             // 
             colModuleCode.HeaderText = "模組編碼";
@@ -964,7 +964,7 @@ namespace DigiERP.UserControl.Production
         private Label lblProjectNo;
         private TextBox txtProjectNo;
         private Label lblOrderDate;
-        private TextBox txtOrderDate;
+        private DigiERP.Common.CommonDateTimePicker txtOrderDate;
         private Label lblCustShort;
         private TextBox txtCustShort;
         private Label lblCustName;
@@ -974,9 +974,9 @@ namespace DigiERP.UserControl.Production
         private Label lblMachineType;
         private TextBox txtMachineType;
         private Label lblInspectDate;
-        private TextBox txtInspectDate;
+        private DigiERP.Common.CommonDateTimePicker txtInspectDate;
         private Label lblDeliveryDate;
-        private TextBox txtDeliveryDate;
+        private DigiERP.Common.CommonDateTimePicker txtDeliveryDate;
         private Label lblMachineName;
         private TextBox txtMachineName;
         private Panel panel2;

@@ -73,14 +73,19 @@ namespace DigiERP.UserControl.Production
         {
             if (x == null) return;
             txtProjectNo.Text = x.專案序號;
-            txtOrderDate.Text = x.訂單日期;
+            SetDate(txtOrderDate, x.訂單日期);
             txtCustShort.Text = x.客戶簡稱;
             txtCustName.Text = x.客戶名稱;
             txtMachineModel.Text = x.機台型號;
             txtMachineType.Text = x.機台類型;
-            txtInspectDate.Text = x.驗機日期;
-            txtDeliveryDate.Text = x.交貨日期;
+            SetDate(txtInspectDate, x.驗機日期);
+            SetDate(txtDeliveryDate, x.交貨日期);
             txtMachineName.Text = x.機台名稱;
+        }
+
+        private static void SetDate(DateTimePicker dtp, string value)
+        {
+            dtp.Value = System.DateTime.TryParse(value, out var d) ? d : System.DateTime.Parse("1900-01-01");
         }
 
         private void FillGrid(List<設計派案> list)
