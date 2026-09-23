@@ -70,14 +70,15 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_機台名稱 = new Label();
             txt_機台名稱 = new TextBox();
             lbl_驗機日期 = new Label();
-            txt_驗機日期 = new TextBox();
+            dt_驗機日期 = new DigiERP.Common.CommonDateTimePicker();
             lbl_交貨日期 = new Label();
-            txt_交貨日期 = new TextBox();
+            dt_交貨日期 = new DigiERP.Common.CommonDateTimePicker();
             txt_生產速率 = new TextBox();
             lbl_廠驗 = new Label();
             lbl_裝機 = new Label();
             lbl_電流 = new Label();
             lbl_焊接電壓 = new Label();
+            lbl_控制電壓 = new Label();
             lbl_審圖需求 = new Label();
             lbl_安規要求 = new Label();
             lbl_生產速率 = new Label();
@@ -99,7 +100,7 @@ namespace DigiERP.UserControl.Production.Spec
             chk_結案 = new CheckBox();
             lbl_結案 = new Label();
             lbl_訂單日期 = new Label();
-            txt_訂單日期 = new TextBox();
+            dt_訂單日期 = new DigiERP.Common.CommonDateTimePicker();
             lbl_國家地區 = new Label();
             txt_國家地區 = new TextBox();
             lbl_客戶 = new Label();
@@ -125,7 +126,6 @@ namespace DigiERP.UserControl.Production.Spec
             txtF_核准日 = new TextBox();
             txtF_修改日 = new TextBox();
             txtF_建檔日 = new TextBox();
-            lbl_控制電壓 = new Label();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBody.SuspendLayout();
@@ -357,9 +357,9 @@ namespace DigiERP.UserControl.Production.Spec
             panelBody.Controls.Add(lbl_機台名稱);
             panelBody.Controls.Add(txt_機台名稱);
             panelBody.Controls.Add(lbl_驗機日期);
-            panelBody.Controls.Add(txt_驗機日期);
+            panelBody.Controls.Add(dt_驗機日期);
             panelBody.Controls.Add(lbl_交貨日期);
-            panelBody.Controls.Add(txt_交貨日期);
+            panelBody.Controls.Add(dt_交貨日期);
             panelBody.Controls.Add(txt_生產速率);
             panelBody.Controls.Add(lbl_廠驗);
             panelBody.Controls.Add(lbl_裝機);
@@ -387,7 +387,7 @@ namespace DigiERP.UserControl.Production.Spec
             panelBody.Controls.Add(chk_結案);
             panelBody.Controls.Add(lbl_結案);
             panelBody.Controls.Add(lbl_訂單日期);
-            panelBody.Controls.Add(txt_訂單日期);
+            panelBody.Controls.Add(dt_訂單日期);
             panelBody.Controls.Add(lbl_國家地區);
             panelBody.Controls.Add(txt_國家地區);
             panelBody.Controls.Add(lbl_客戶);
@@ -717,14 +717,14 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_驗機日期.Text = "驗機日期";
             lbl_驗機日期.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // txt_驗機日期
+            // dt_驗機日期
             // 
-            txt_驗機日期.BackColor = SystemColors.Control;
-            txt_驗機日期.Location = new Point(1073, 36);
-            txt_驗機日期.Name = "txt_驗機日期";
-            txt_驗機日期.ReadOnly = true;
-            txt_驗機日期.Size = new Size(230, 23);
-            txt_驗機日期.TabIndex = 34;
+            dt_驗機日期.Enabled = false;
+            dt_驗機日期.Format = DateTimePickerFormat.Short;
+            dt_驗機日期.Location = new Point(1073, 36);
+            dt_驗機日期.Name = "dt_驗機日期";
+            dt_驗機日期.Size = new Size(230, 23);
+            dt_驗機日期.TabIndex = 34;
             // 
             // lbl_交貨日期
             // 
@@ -736,14 +736,14 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_交貨日期.Text = "交貨日期";
             lbl_交貨日期.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // txt_交貨日期
+            // dt_交貨日期
             // 
-            txt_交貨日期.BackColor = SystemColors.Control;
-            txt_交貨日期.Location = new Point(1073, 90);
-            txt_交貨日期.Name = "txt_交貨日期";
-            txt_交貨日期.ReadOnly = true;
-            txt_交貨日期.Size = new Size(230, 23);
-            txt_交貨日期.TabIndex = 36;
+            dt_交貨日期.Enabled = false;
+            dt_交貨日期.Format = DateTimePickerFormat.Short;
+            dt_交貨日期.Location = new Point(1073, 90);
+            dt_交貨日期.Name = "dt_交貨日期";
+            dt_交貨日期.Size = new Size(230, 23);
+            dt_交貨日期.TabIndex = 36;
             // 
             // txt_生產速率
             // 
@@ -793,6 +793,16 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_焊接電壓.TabIndex = 41;
             lbl_焊接電壓.Text = "焊接電壓";
             lbl_焊接電壓.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lbl_控制電壓
+            // 
+            lbl_控制電壓.ForeColor = Color.DimGray;
+            lbl_控制電壓.Location = new Point(316, 89);
+            lbl_控制電壓.Name = "lbl_控制電壓";
+            lbl_控制電壓.Size = new Size(69, 19);
+            lbl_控制電壓.TabIndex = 42;
+            lbl_控制電壓.Text = "控制電壓";
+            lbl_控制電壓.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lbl_審圖需求
             // 
@@ -977,19 +987,19 @@ namespace DigiERP.UserControl.Production.Spec
             lbl_訂單日期.Text = "訂單日期";
             lbl_訂單日期.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // txt_訂單日期
+            // dt_訂單日期
             // 
-            txt_訂單日期.BackColor = SystemColors.Control;
-            txt_訂單日期.Location = new Point(391, 7);
-            txt_訂單日期.Name = "txt_訂單日期";
-            txt_訂單日期.ReadOnly = true;
-            txt_訂單日期.Size = new Size(110, 23);
-            txt_訂單日期.TabIndex = 64;
+            dt_訂單日期.Enabled = false;
+            dt_訂單日期.Format = DateTimePickerFormat.Short;
+            dt_訂單日期.Location = new Point(391, 7);
+            dt_訂單日期.Name = "dt_訂單日期";
+            dt_訂單日期.Size = new Size(110, 23);
+            dt_訂單日期.TabIndex = 64;
             // 
             // lbl_國家地區
             // 
             lbl_國家地區.ForeColor = Color.DimGray;
-            lbl_國家地區.Location = new Point(1073, 7);
+            lbl_國家地區.Location = new Point(1002, 7);
             lbl_國家地區.Name = "lbl_國家地區";
             lbl_國家地區.Size = new Size(56, 19);
             lbl_國家地區.TabIndex = 65;
@@ -999,10 +1009,10 @@ namespace DigiERP.UserControl.Production.Spec
             // txt_國家地區
             // 
             txt_國家地區.BackColor = SystemColors.Control;
-            txt_國家地區.Location = new Point(1146, 7);
+            txt_國家地區.Location = new Point(1074, 7);
             txt_國家地區.Name = "txt_國家地區";
             txt_國家地區.ReadOnly = true;
-            txt_國家地區.Size = new Size(93, 23);
+            txt_國家地區.Size = new Size(165, 23);
             txt_國家地區.TabIndex = 66;
             // 
             // lbl_客戶
@@ -1221,16 +1231,6 @@ namespace DigiERP.UserControl.Production.Spec
             txtF_建檔日.Size = new Size(166, 16);
             txtF_建檔日.TabIndex = 8;
             // 
-            // lbl_控制電壓
-            // 
-            lbl_控制電壓.ForeColor = Color.DimGray;
-            lbl_控制電壓.Location = new Point(316, 89);
-            lbl_控制電壓.Name = "lbl_控制電壓";
-            lbl_控制電壓.Size = new Size(69, 19);
-            lbl_控制電壓.TabIndex = 42;
-            lbl_控制電壓.Text = "控制電壓";
-            lbl_控制電壓.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // ProductSpecControl
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -1302,9 +1302,9 @@ namespace DigiERP.UserControl.Production.Spec
                 private Label lbl_機台名稱;
                 private TextBox txt_機台名稱;
                 private Label lbl_驗機日期;
-                private TextBox txt_驗機日期;
+                private DigiERP.Common.CommonDateTimePicker dt_驗機日期;
                 private Label lbl_交貨日期;
-                private TextBox txt_交貨日期;
+                private DigiERP.Common.CommonDateTimePicker dt_交貨日期;
                 private TextBox txt_生產速率;
                 private Label lbl_廠驗;
                 private Label lbl_裝機;
@@ -1332,7 +1332,7 @@ namespace DigiERP.UserControl.Production.Spec
                 private CheckBox chk_結案;
                 private Label lbl_結案;
                 private Label lbl_訂單日期;
-                private TextBox txt_訂單日期;
+                private DigiERP.Common.CommonDateTimePicker dt_訂單日期;
                 private Label lbl_國家地區;
                 private TextBox txt_國家地區;
                 private Label lbl_客戶;

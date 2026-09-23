@@ -94,8 +94,8 @@ namespace DigiERP.UserControl.Production.Spec
             _refControls["參考序號"] = txt_參考序號;
             _refControls["機台型號"] = txt_機台型號;
             _refControls["機台名稱"] = txt_機台名稱;
-            _refControls["驗機日期"] = txt_驗機日期;
-            _refControls["交貨日期"] = txt_交貨日期;
+            _refControls["驗機日期"] = dt_驗機日期;
+            _refControls["交貨日期"] = dt_交貨日期;
             _refControls["生產速率"] = txt_生產速率;
             _refControls["廠驗"] = txt_廠驗;
             _refControls["裝機"] = txt_裝機;
@@ -106,7 +106,7 @@ namespace DigiERP.UserControl.Production.Spec
             _refControls["焊接物"] = txt_焊接物;
             _refControls["機台類型"] = txt_機台類型;
             _refControls["結案"] = chk_結案;
-            _refControls["訂單日期"] = txt_訂單日期;
+            _refControls["訂單日期"] = dt_訂單日期;
             _refControls["國家地區"] = txt_國家地區;
             _refControls["客戶名稱"] = txt_客戶名稱;
             _refControls["客戶簡稱"] = txt_客戶簡稱;
@@ -209,6 +209,10 @@ namespace DigiERP.UserControl.Production.Spec
             if (ctrl is CheckBox chk)
             {
                 chk.Checked = ToBool(value);
+            }
+            else if (ctrl is DateTimePicker dtp)
+            {
+                dtp.Value = DateTime.TryParse(value, out var d) ? d : DateTime.Parse("1900-01-01");
             }
             else if (ctrl is ComboBox || ctrl is TextBox)
             {
