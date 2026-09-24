@@ -31,8 +31,8 @@ namespace DigiERP.UserControl.HR.Overtime
             txtEmpNo = new TextBox();
             lblName = new Label();
             txtName = new TextBox();
-            lblTitleJob = new Label();
-            txtTitleJob = new TextBox();
+            lblJobName = new Label();
+            txtJobName = new TextBox();
             lblDept = new Label();
             txtDept = new TextBox();
             lblHrNo = new Label();
@@ -174,8 +174,8 @@ namespace DigiERP.UserControl.HR.Overtime
             panelFormHeader.Controls.Add(txtEmpNo);
             panelFormHeader.Controls.Add(lblName);
             panelFormHeader.Controls.Add(txtName);
-            panelFormHeader.Controls.Add(lblTitleJob);
-            panelFormHeader.Controls.Add(txtTitleJob);
+            panelFormHeader.Controls.Add(lblJobName);
+            panelFormHeader.Controls.Add(txtJobName);
             panelFormHeader.Controls.Add(lblDept);
             panelFormHeader.Controls.Add(txtDept);
             panelFormHeader.Controls.Add(lblHrNo);
@@ -233,25 +233,25 @@ namespace DigiERP.UserControl.HR.Overtime
             txtName.Size = new Size(100, 23);
             txtName.TabIndex = 3;
             // 
-            // lblTitleJob
+            // lblJobName
             // 
-            lblTitleJob.AutoSize = true;
-            lblTitleJob.Font = new Font("微軟正黑體", 9F);
-            lblTitleJob.Location = new Point(386, 15);
-            lblTitleJob.Name = "lblTitleJob";
-            lblTitleJob.Size = new Size(34, 16);
-            lblTitleJob.TabIndex = 4;
-            lblTitleJob.Text = "職稱:";
+            lblJobName.AutoSize = true;
+            lblJobName.Font = new Font("微軟正黑體", 9F);
+            lblJobName.Location = new Point(386, 15);
+            lblJobName.Name = "lblJobName";
+            lblJobName.Size = new Size(34, 16);
+            lblJobName.TabIndex = 4;
+            lblJobName.Text = "職稱:";
             // 
-            // txtTitleJob
+            // txtJobName
             // 
-            txtTitleJob.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtTitleJob.Font = new Font("微軟正黑體", 9F);
-            txtTitleJob.Location = new Point(446, 12);
-            txtTitleJob.Name = "txtTitleJob";
-            txtTitleJob.ReadOnly = true;
-            txtTitleJob.Size = new Size(100, 23);
-            txtTitleJob.TabIndex = 5;
+            txtJobName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtJobName.Font = new Font("微軟正黑體", 9F);
+            txtJobName.Location = new Point(446, 12);
+            txtJobName.Name = "txtJobName";
+            txtJobName.ReadOnly = true;
+            txtJobName.Size = new Size(100, 23);
+            txtJobName.TabIndex = 5;
             // 
             // lblDept
             // 
@@ -526,8 +526,8 @@ namespace DigiERP.UserControl.HR.Overtime
         private TextBox txtEmpNo;
         private Label lblName;
         private TextBox txtName;
-        private Label lblTitleJob;
-        private TextBox txtTitleJob;
+        private Label lblJobName;
+        private TextBox txtJobName;
         private Label lblDept;
         private TextBox txtDept;
         private Label lblHrNo;

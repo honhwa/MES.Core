@@ -30,8 +30,8 @@ namespace DigiERP.UserControl.HR.ClockInOut
             txtEmpNo = new TextBox();
             lblNameT = new Label();
             txtName = new TextBox();
-            lblJobTitleT = new Label();
-            txtJobTitle = new TextBox();
+            lblJobNameT = new Label();
+            txtJobName = new TextBox();
             lblDeptT = new Label();
             txtDept = new TextBox();
             lblStartDateT = new Label();
@@ -175,8 +175,8 @@ namespace DigiERP.UserControl.HR.ClockInOut
             panelInfo.Controls.Add(txtEmpNo);
             panelInfo.Controls.Add(lblNameT);
             panelInfo.Controls.Add(txtName);
-            panelInfo.Controls.Add(lblJobTitleT);
-            panelInfo.Controls.Add(txtJobTitle);
+            panelInfo.Controls.Add(lblJobNameT);
+            panelInfo.Controls.Add(txtJobName);
             panelInfo.Controls.Add(lblDeptT);
             panelInfo.Controls.Add(txtDept);
             panelInfo.Controls.Add(lblStartDateT);
@@ -230,25 +230,25 @@ namespace DigiERP.UserControl.HR.ClockInOut
             txtName.Size = new Size(90, 23);
             txtName.TabIndex = 3;
             // 
-            // lblJobTitleT
+            // lblJobNameT
             // 
-            lblJobTitleT.AutoSize = true;
-            lblJobTitleT.Font = new Font("微軟正黑體", 9F);
-            lblJobTitleT.Location = new Point(210, 10);
-            lblJobTitleT.Name = "lblJobTitleT";
-            lblJobTitleT.Size = new Size(31, 16);
-            lblJobTitleT.TabIndex = 4;
-            lblJobTitleT.Text = "職稱";
+            lblJobNameT.AutoSize = true;
+            lblJobNameT.Font = new Font("微軟正黑體", 9F);
+            lblJobNameT.Location = new Point(210, 10);
+            lblJobNameT.Name = "lblJobNameT";
+            lblJobNameT.Size = new Size(31, 16);
+            lblJobNameT.TabIndex = 4;
+            lblJobNameT.Text = "職稱";
             // 
-            // txtJobTitle
+            // txtJobName
             // 
-            txtJobTitle.BackColor = Color.WhiteSmoke;
-            txtJobTitle.Font = new Font("微軟正黑體", 9F);
-            txtJobTitle.Location = new Point(210, 30);
-            txtJobTitle.Name = "txtJobTitle";
-            txtJobTitle.ReadOnly = true;
-            txtJobTitle.Size = new Size(90, 23);
-            txtJobTitle.TabIndex = 5;
+            txtJobName.BackColor = Color.WhiteSmoke;
+            txtJobName.Font = new Font("微軟正黑體", 9F);
+            txtJobName.Location = new Point(210, 30);
+            txtJobName.Name = "txtJobName";
+            txtJobName.ReadOnly = true;
+            txtJobName.Size = new Size(90, 23);
+            txtJobName.TabIndex = 5;
             // 
             // lblDeptT
             // 
@@ -498,8 +498,8 @@ namespace DigiERP.UserControl.HR.ClockInOut
         private TextBox txtEmpNo;
         private Label lblNameT;
         private TextBox txtName;
-        private Label lblJobTitleT;
-        private TextBox txtJobTitle;
+        private Label lblJobNameT;
+        private TextBox txtJobName;
         private Label lblDeptT;
         private TextBox txtDept;
         private Label lblStartDateT;

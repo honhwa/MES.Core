@@ -82,9 +82,9 @@ namespace DigiERP.UserControl.HR
             txtEmpNo.Text = x.工號;
             txtName.Text = x.姓名;
             txtCardNo.Text = x.卡號;
-            txtBirthday.Text = x.生日;
+            SetDate(dtpBirthday, x.生日);
             txtDept.Text = x.部門;
-            txtJobTitle.Text = x.職稱;
+            txtJobName.Text = x.職稱;
             txtHRNo.Text = x.人事編號;
             txtStatus.Text = x.狀況;
         }
@@ -120,8 +120,8 @@ namespace DigiERP.UserControl.HR
             txtId.Text = x.識別碼.ToString();
             numGrade.Value = x.職等 ?? 0;
             numRank.Value = x.職級 ?? 0;
-            txtSalaryDate.Text = x.核薪日;
-            txtResignDate.Text = x.離職日;
+            SetDate(dtpSalaryDate, x.核薪日);
+            SetDate(dtpResignDate, x.離職日);
             numBaseSalary.Value = x.本薪 ?? 0;
             numPositionAllowance.Value = x.職務加給 ?? 0;
             numSupervisorAllowance.Value = x.主管津貼 ?? 0;
@@ -157,11 +157,31 @@ namespace DigiERP.UserControl.HR
             btnInvalidate.Visible = hasRecord && approved;
         }
 
+        // ── 日期欄位以字串(yyyy/MM/dd)存放；空值或無法解析時取消勾選，表示未填 ──
+        private static void SetDate(DateTimePicker dtp, string value)
+        {
+            if (DateTime.TryParse(value, out var date))
+            {
+                dtp.Value = date;
+                dtp.Checked = true;
+            }
+            else
+            {
+                dtp.Value = DateTime.Today;
+                dtp.Checked = false;
+            }
+        }
+
+        private static string GetDate(DateTimePicker dtp)
+        {
+            return dtp.Checked ? dtp.Value.ToString("yyyy/MM/dd") : "";
+        }
+
         private void ClearFields()
         {
             txtId.Text = "";
             numGrade.Value = 0; numRank.Value = 0;
-            txtSalaryDate.Text = ""; txtResignDate.Text = "";
+            SetDate(dtpSalaryDate, null); SetDate(dtpResignDate, null);
             numBaseSalary.Value = 0; numPositionAllowance.Value = 0; numSupervisorAllowance.Value = 0;
             numMealAllowance.Value = 0; numDailyWage.Value = 0; numHourlyWage.Value = 0;
             numBonus.Value = 0; numOtherAdd.Value = 0; numInsuranceGrade.Value = 0;
@@ -201,8 +221,8 @@ namespace DigiERP.UserControl.HR
             {
                 num.ReadOnly = !editing;
             }
-            txtSalaryDate.ReadOnly = !editing;
-            txtResignDate.ReadOnly = !editing;
+            dtpSalaryDate.Enabled = editing;
+            dtpResignDate.Enabled = editing;
             txtNote1.ReadOnly = !editing;
             txtNote2.ReadOnly = !editing;
             txtNote3.ReadOnly = !editing;
@@ -229,8 +249,8 @@ namespace DigiERP.UserControl.HR
                 工號 = _empNo,
                 職等 = (int)numGrade.Value,
                 職級 = (int)numRank.Value,
-                核薪日 = txtSalaryDate.Text,
-                離職日 = txtResignDate.Text,
+                核薪日 = GetDate(dtpSalaryDate),
+                離職日 = GetDate(dtpResignDate),
                 本薪 = (int)numBaseSalary.Value,
                 職務加給 = (int)numPositionAllowance.Value,
                 主管津貼 = (int)numSupervisorAllowance.Value,

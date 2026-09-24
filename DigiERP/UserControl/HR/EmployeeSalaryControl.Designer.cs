@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.HR
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeSalaryControl));
             panelHeader = new Panel();
+            pictureBox1 = new PictureBox();
             lblTitle = new Label();
             btnPrev = new Button();
             btnNext = new Button();
@@ -37,11 +38,11 @@ namespace DigiERP.UserControl.HR
             lblCardNoT = new Label();
             txtCardNo = new TextBox();
             lblBirthdayT = new Label();
-            txtBirthday = new TextBox();
+            dtpBirthday = new DateTimePicker();
             lblDeptT = new Label();
             txtDept = new TextBox();
-            lblJobTitleT = new Label();
-            txtJobTitle = new TextBox();
+            lblJobNameT = new Label();
+            txtJobName = new TextBox();
             lblHRNoT = new Label();
             txtHRNo = new TextBox();
             lblStatusT = new Label();
@@ -61,9 +62,9 @@ namespace DigiERP.UserControl.HR
             lblRankT = new Label();
             numRank = new NumericUpDown();
             lblSalaryDateT = new Label();
-            txtSalaryDate = new TextBox();
+            dtpSalaryDate = new DateTimePicker();
             lblResignDateT = new Label();
-            txtResignDate = new TextBox();
+            dtpResignDate = new DateTimePicker();
             lblBaseSalaryT = new Label();
             numBaseSalary = new NumericUpDown();
             lblInsuranceGradeT = new Label();
@@ -111,8 +112,8 @@ namespace DigiERP.UserControl.HR
             btnRecPrev = new Button();
             btnRecNext = new Button();
             btnRecNew = new Button();
-            pictureBox1 = new PictureBox();
             panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelInfo.SuspendLayout();
             panelBody.SuspendLayout();
             panelSalaryFooter.SuspendLayout();
@@ -136,7 +137,6 @@ namespace DigiERP.UserControl.HR
             ((System.ComponentModel.ISupportInitialize)numOtherAdd).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPensionCompany).BeginInit();
             panelSalaryNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelHeader
@@ -156,8 +156,18 @@ namespace DigiERP.UserControl.HR
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1060, 56);
+            panelHeader.Size = new Size(1236, 56);
             panelHeader.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
@@ -188,7 +198,7 @@ namespace DigiERP.UserControl.HR
             btnNext.BackColor = Color.Gainsboro;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnNext.Location = new Point(345, 12);
+            btnNext.Location = new Point(386, 12);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(40, 32);
             btnNext.TabIndex = 2;
@@ -202,10 +212,11 @@ namespace DigiERP.UserControl.HR
             btnModify.FlatStyle = FlatStyle.Flat;
             btnModify.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnModify.ForeColor = Color.White;
-            btnModify.Location = new Point(410, 12);
+            btnModify.Location = new Point(504, 12);
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(90, 32);
             btnModify.TabIndex = 3;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -216,10 +227,11 @@ namespace DigiERP.UserControl.HR
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(505, 12);
+            btnSave.Location = new Point(599, 12);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 32);
             btnSave.TabIndex = 4;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -230,10 +242,11 @@ namespace DigiERP.UserControl.HR
             btnValidate.FlatStyle = FlatStyle.Flat;
             btnValidate.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
             btnValidate.ForeColor = Color.White;
-            btnValidate.Location = new Point(600, 12);
+            btnValidate.Location = new Point(694, 12);
             btnValidate.Name = "btnValidate";
             btnValidate.Size = new Size(90, 32);
             btnValidate.TabIndex = 5;
+            btnValidate.Tag = "btn-modify";
             btnValidate.Text = "生效";
             btnValidate.UseVisualStyleBackColor = false;
             btnValidate.Click += btnValidate_Click;
@@ -256,10 +269,11 @@ namespace DigiERP.UserControl.HR
             btnPrint.BackColor = Color.Gainsboro;
             btnPrint.FlatStyle = FlatStyle.Flat;
             btnPrint.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnPrint.Location = new Point(700, 12);
+            btnPrint.Location = new Point(794, 12);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(90, 32);
             btnPrint.TabIndex = 7;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -269,24 +283,27 @@ namespace DigiERP.UserControl.HR
             btnOverview.BackColor = Color.Gainsboro;
             btnOverview.FlatStyle = FlatStyle.Flat;
             btnOverview.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnOverview.Location = new Point(870, 12);
+            btnOverview.Location = new Point(911, 12);
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(90, 32);
             btnOverview.TabIndex = 8;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Click += btnOverview_Click;
             // 
             // btnExit
             // 
-            btnExit.BackColor = Color.Gainsboro;
+            btnExit.BackColor = Color.Red;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnExit.Location = new Point(965, 12);
+            btnExit.ForeColor = SystemColors.ButtonHighlight;
+            btnExit.Location = new Point(1020, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(90, 32);
             btnExit.TabIndex = 9;
-            btnExit.Text = "關閉";
+            btnExit.Tag = "btn-modify";
+            btnExit.Text = "EXIT";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
@@ -300,11 +317,11 @@ namespace DigiERP.UserControl.HR
             panelInfo.Controls.Add(lblCardNoT);
             panelInfo.Controls.Add(txtCardNo);
             panelInfo.Controls.Add(lblBirthdayT);
-            panelInfo.Controls.Add(txtBirthday);
+            panelInfo.Controls.Add(dtpBirthday);
             panelInfo.Controls.Add(lblDeptT);
             panelInfo.Controls.Add(txtDept);
-            panelInfo.Controls.Add(lblJobTitleT);
-            panelInfo.Controls.Add(txtJobTitle);
+            panelInfo.Controls.Add(lblJobNameT);
+            panelInfo.Controls.Add(txtJobName);
             panelInfo.Controls.Add(lblHRNoT);
             panelInfo.Controls.Add(txtHRNo);
             panelInfo.Controls.Add(lblStatusT);
@@ -313,7 +330,7 @@ namespace DigiERP.UserControl.HR
             panelInfo.Dock = DockStyle.Top;
             panelInfo.Location = new Point(0, 56);
             panelInfo.Name = "panelInfo";
-            panelInfo.Size = new Size(1060, 76);
+            panelInfo.Size = new Size(1236, 76);
             panelInfo.TabIndex = 1;
             // 
             // lblEmpNoT
@@ -386,21 +403,23 @@ namespace DigiERP.UserControl.HR
             lblBirthdayT.TabIndex = 6;
             lblBirthdayT.Text = "生日";
             // 
-            // txtBirthday
+            // dtpBirthday
             // 
-            txtBirthday.BackColor = Color.WhiteSmoke;
-            txtBirthday.Font = new Font("微軟正黑體", 9F);
-            txtBirthday.Location = new Point(310, 30);
-            txtBirthday.Name = "txtBirthday";
-            txtBirthday.ReadOnly = true;
-            txtBirthday.Size = new Size(90, 23);
-            txtBirthday.TabIndex = 7;
+            dtpBirthday.CustomFormat = "yyyy/MM/dd";
+            dtpBirthday.Enabled = false;
+            dtpBirthday.Font = new Font("微軟正黑體", 9F);
+            dtpBirthday.Format = DateTimePickerFormat.Custom;
+            dtpBirthday.Location = new Point(310, 30);
+            dtpBirthday.Name = "dtpBirthday";
+            dtpBirthday.ShowCheckBox = true;
+            dtpBirthday.Size = new Size(120, 23);
+            dtpBirthday.TabIndex = 7;
             // 
             // lblDeptT
             // 
             lblDeptT.AutoSize = true;
             lblDeptT.Font = new Font("微軟正黑體", 9F);
-            lblDeptT.Location = new Point(410, 10);
+            lblDeptT.Location = new Point(440, 10);
             lblDeptT.Name = "lblDeptT";
             lblDeptT.Size = new Size(31, 16);
             lblDeptT.TabIndex = 8;
@@ -410,37 +429,37 @@ namespace DigiERP.UserControl.HR
             // 
             txtDept.BackColor = Color.WhiteSmoke;
             txtDept.Font = new Font("微軟正黑體", 9F);
-            txtDept.Location = new Point(410, 30);
+            txtDept.Location = new Point(440, 30);
             txtDept.Name = "txtDept";
             txtDept.ReadOnly = true;
             txtDept.Size = new Size(90, 23);
             txtDept.TabIndex = 9;
             // 
-            // lblJobTitleT
+            // lblJobNameT
             // 
-            lblJobTitleT.AutoSize = true;
-            lblJobTitleT.Font = new Font("微軟正黑體", 9F);
-            lblJobTitleT.Location = new Point(510, 10);
-            lblJobTitleT.Name = "lblJobTitleT";
-            lblJobTitleT.Size = new Size(31, 16);
-            lblJobTitleT.TabIndex = 10;
-            lblJobTitleT.Text = "職稱";
+            lblJobNameT.AutoSize = true;
+            lblJobNameT.Font = new Font("微軟正黑體", 9F);
+            lblJobNameT.Location = new Point(540, 10);
+            lblJobNameT.Name = "lblJobNameT";
+            lblJobNameT.Size = new Size(31, 16);
+            lblJobNameT.TabIndex = 10;
+            lblJobNameT.Text = "職稱";
             // 
-            // txtJobTitle
+            // txtJobName
             // 
-            txtJobTitle.BackColor = Color.WhiteSmoke;
-            txtJobTitle.Font = new Font("微軟正黑體", 9F);
-            txtJobTitle.Location = new Point(510, 30);
-            txtJobTitle.Name = "txtJobTitle";
-            txtJobTitle.ReadOnly = true;
-            txtJobTitle.Size = new Size(90, 23);
-            txtJobTitle.TabIndex = 11;
+            txtJobName.BackColor = Color.WhiteSmoke;
+            txtJobName.Font = new Font("微軟正黑體", 9F);
+            txtJobName.Location = new Point(540, 30);
+            txtJobName.Name = "txtJobName";
+            txtJobName.ReadOnly = true;
+            txtJobName.Size = new Size(90, 23);
+            txtJobName.TabIndex = 11;
             // 
             // lblHRNoT
             // 
             lblHRNoT.AutoSize = true;
             lblHRNoT.Font = new Font("微軟正黑體", 9F);
-            lblHRNoT.Location = new Point(610, 10);
+            lblHRNoT.Location = new Point(640, 10);
             lblHRNoT.Name = "lblHRNoT";
             lblHRNoT.Size = new Size(55, 16);
             lblHRNoT.TabIndex = 12;
@@ -450,7 +469,7 @@ namespace DigiERP.UserControl.HR
             // 
             txtHRNo.BackColor = Color.WhiteSmoke;
             txtHRNo.Font = new Font("微軟正黑體", 9F);
-            txtHRNo.Location = new Point(610, 30);
+            txtHRNo.Location = new Point(640, 30);
             txtHRNo.Name = "txtHRNo";
             txtHRNo.ReadOnly = true;
             txtHRNo.Size = new Size(90, 23);
@@ -460,7 +479,7 @@ namespace DigiERP.UserControl.HR
             // 
             lblStatusT.AutoSize = true;
             lblStatusT.Font = new Font("微軟正黑體", 9F);
-            lblStatusT.Location = new Point(710, 10);
+            lblStatusT.Location = new Point(740, 10);
             lblStatusT.Name = "lblStatusT";
             lblStatusT.Size = new Size(31, 16);
             lblStatusT.TabIndex = 14;
@@ -470,7 +489,7 @@ namespace DigiERP.UserControl.HR
             // 
             txtStatus.BackColor = Color.WhiteSmoke;
             txtStatus.Font = new Font("微軟正黑體", 9F);
-            txtStatus.Location = new Point(710, 30);
+            txtStatus.Location = new Point(740, 30);
             txtStatus.Name = "txtStatus";
             txtStatus.ReadOnly = true;
             txtStatus.Size = new Size(90, 23);
@@ -482,10 +501,11 @@ namespace DigiERP.UserControl.HR
             btnEditPersonal.FlatStyle = FlatStyle.Flat;
             btnEditPersonal.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
             btnEditPersonal.ForeColor = Color.White;
-            btnEditPersonal.Location = new Point(820, 26);
+            btnEditPersonal.Location = new Point(842, 26);
             btnEditPersonal.Name = "btnEditPersonal";
             btnEditPersonal.Size = new Size(120, 30);
             btnEditPersonal.TabIndex = 16;
+            btnEditPersonal.Tag = "btn-modify";
             btnEditPersonal.Text = "修改員工個資";
             btnEditPersonal.UseVisualStyleBackColor = false;
             btnEditPersonal.Click += btnEditPersonal_Click;
@@ -499,7 +519,7 @@ namespace DigiERP.UserControl.HR
             panelBody.Dock = DockStyle.Fill;
             panelBody.Location = new Point(0, 132);
             panelBody.Name = "panelBody";
-            panelBody.Size = new Size(1060, 460);
+            panelBody.Size = new Size(1236, 513);
             panelBody.TabIndex = 2;
             // 
             // panelSalaryFooter
@@ -512,9 +532,9 @@ namespace DigiERP.UserControl.HR
             panelSalaryFooter.Controls.Add(lblMaintainerT);
             panelSalaryFooter.Controls.Add(txtMaintainer);
             panelSalaryFooter.Dock = DockStyle.Bottom;
-            panelSalaryFooter.Location = new Point(0, 410);
+            panelSalaryFooter.Location = new Point(0, 463);
             panelSalaryFooter.Name = "panelSalaryFooter";
-            panelSalaryFooter.Size = new Size(1060, 50);
+            panelSalaryFooter.Size = new Size(1236, 50);
             panelSalaryFooter.TabIndex = 2;
             // 
             // lblTotalT
@@ -589,9 +609,9 @@ namespace DigiERP.UserControl.HR
             panelSalaryFields.Controls.Add(lblRankT);
             panelSalaryFields.Controls.Add(numRank);
             panelSalaryFields.Controls.Add(lblSalaryDateT);
-            panelSalaryFields.Controls.Add(txtSalaryDate);
+            panelSalaryFields.Controls.Add(dtpSalaryDate);
             panelSalaryFields.Controls.Add(lblResignDateT);
-            panelSalaryFields.Controls.Add(txtResignDate);
+            panelSalaryFields.Controls.Add(dtpResignDate);
             panelSalaryFields.Controls.Add(lblBaseSalaryT);
             panelSalaryFields.Controls.Add(numBaseSalary);
             panelSalaryFields.Controls.Add(lblInsuranceGradeT);
@@ -637,7 +657,7 @@ namespace DigiERP.UserControl.HR
             panelSalaryFields.Dock = DockStyle.Fill;
             panelSalaryFields.Location = new Point(0, 36);
             panelSalaryFields.Name = "panelSalaryFields";
-            panelSalaryFields.Size = new Size(1060, 424);
+            panelSalaryFields.Size = new Size(1236, 477);
             panelSalaryFields.TabIndex = 1;
             // 
             // lblGradeT
@@ -653,7 +673,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numGrade
             // 
-            numGrade.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numGrade.BackColor = Color.WhiteSmoke;
             numGrade.Font = new Font("微軟正黑體", 9F);
             numGrade.Location = new Point(92, 8);
             numGrade.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
@@ -676,7 +696,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numRank
             // 
-            numRank.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numRank.BackColor = Color.WhiteSmoke;
             numRank.Font = new Font("微軟正黑體", 9F);
             numRank.Location = new Point(272, 8);
             numRank.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
@@ -697,36 +717,40 @@ namespace DigiERP.UserControl.HR
             lblSalaryDateT.TabIndex = 4;
             lblSalaryDateT.Text = "薪給生效起日";
             // 
-            // txtSalaryDate
+            // dtpSalaryDate
             // 
-            txtSalaryDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtSalaryDate.Font = new Font("微軟正黑體", 9F);
-            txtSalaryDate.Location = new Point(465, 8);
-            txtSalaryDate.Name = "txtSalaryDate";
-            txtSalaryDate.ReadOnly = true;
-            txtSalaryDate.Size = new Size(100, 23);
-            txtSalaryDate.TabIndex = 5;
+            dtpSalaryDate.CustomFormat = "yyyy/MM/dd";
+            dtpSalaryDate.Enabled = false;
+            dtpSalaryDate.Font = new Font("微軟正黑體", 9F);
+            dtpSalaryDate.Format = DateTimePickerFormat.Custom;
+            dtpSalaryDate.Location = new Point(465, 8);
+            dtpSalaryDate.Name = "dtpSalaryDate";
+            dtpSalaryDate.ShowCheckBox = true;
+            dtpSalaryDate.Size = new Size(120, 23);
+            dtpSalaryDate.TabIndex = 5;
             // 
             // lblResignDateT
             // 
             lblResignDateT.AutoSize = true;
             lblResignDateT.BackColor = Color.LightSkyBlue;
             lblResignDateT.Font = new Font("微軟正黑體", 9F);
-            lblResignDateT.Location = new Point(578, 12);
+            lblResignDateT.Location = new Point(600, 12);
             lblResignDateT.Name = "lblResignDateT";
             lblResignDateT.Size = new Size(120, 16);
             lblResignDateT.TabIndex = 6;
             lblResignDateT.Text = "薪給有效訖日/離職日";
             // 
-            // txtResignDate
+            // dtpResignDate
             // 
-            txtResignDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtResignDate.Font = new Font("微軟正黑體", 9F);
-            txtResignDate.Location = new Point(720, 8);
-            txtResignDate.Name = "txtResignDate";
-            txtResignDate.ReadOnly = true;
-            txtResignDate.Size = new Size(100, 23);
-            txtResignDate.TabIndex = 7;
+            dtpResignDate.CustomFormat = "yyyy/MM/dd";
+            dtpResignDate.Enabled = false;
+            dtpResignDate.Font = new Font("微軟正黑體", 9F);
+            dtpResignDate.Format = DateTimePickerFormat.Custom;
+            dtpResignDate.Location = new Point(742, 8);
+            dtpResignDate.Name = "dtpResignDate";
+            dtpResignDate.ShowCheckBox = true;
+            dtpResignDate.Size = new Size(120, 23);
+            dtpResignDate.TabIndex = 7;
             // 
             // lblBaseSalaryT
             // 
@@ -741,7 +765,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numBaseSalary
             // 
-            numBaseSalary.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numBaseSalary.BackColor = Color.WhiteSmoke;
             numBaseSalary.Font = new Font("微軟正黑體", 9F);
             numBaseSalary.Location = new Point(92, 44);
             numBaseSalary.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -763,7 +787,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numInsuranceGrade
             // 
-            numInsuranceGrade.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numInsuranceGrade.BackColor = Color.WhiteSmoke;
             numInsuranceGrade.Font = new Font("微軟正黑體", 9F);
             numInsuranceGrade.Location = new Point(272, 44);
             numInsuranceGrade.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
@@ -785,7 +809,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numPositionAllowance
             // 
-            numPositionAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numPositionAllowance.BackColor = Color.WhiteSmoke;
             numPositionAllowance.Font = new Font("微軟正黑體", 9F);
             numPositionAllowance.Location = new Point(92, 80);
             numPositionAllowance.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -807,7 +831,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numDependents
             // 
-            numDependents.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numDependents.BackColor = Color.WhiteSmoke;
             numDependents.Font = new Font("微軟正黑體", 9F);
             numDependents.Location = new Point(272, 80);
             numDependents.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
@@ -829,7 +853,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numSupervisorAllowance
             // 
-            numSupervisorAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numSupervisorAllowance.BackColor = Color.WhiteSmoke;
             numSupervisorAllowance.Font = new Font("微軟正黑體", 9F);
             numSupervisorAllowance.Location = new Point(92, 116);
             numSupervisorAllowance.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -851,7 +875,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numLaborIns
             // 
-            numLaborIns.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numLaborIns.BackColor = Color.WhiteSmoke;
             numLaborIns.Font = new Font("微軟正黑體", 9F);
             numLaborIns.Location = new Point(272, 116);
             numLaborIns.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -873,7 +897,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numMealAllowance
             // 
-            numMealAllowance.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numMealAllowance.BackColor = Color.WhiteSmoke;
             numMealAllowance.Font = new Font("微軟正黑體", 9F);
             numMealAllowance.Location = new Point(92, 152);
             numMealAllowance.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
@@ -895,7 +919,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numHealthIns
             // 
-            numHealthIns.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numHealthIns.BackColor = Color.WhiteSmoke;
             numHealthIns.Font = new Font("微軟正黑體", 9F);
             numHealthIns.Location = new Point(272, 152);
             numHealthIns.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -917,7 +941,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numDailyWage
             // 
-            numDailyWage.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numDailyWage.BackColor = Color.WhiteSmoke;
             numDailyWage.Font = new Font("微軟正黑體", 9F);
             numDailyWage.Location = new Point(92, 188);
             numDailyWage.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
@@ -939,7 +963,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numDependentIns
             // 
-            numDependentIns.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numDependentIns.BackColor = Color.WhiteSmoke;
             numDependentIns.Font = new Font("微軟正黑體", 9F);
             numDependentIns.Location = new Point(272, 188);
             numDependentIns.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -961,7 +985,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numHourlyWage
             // 
-            numHourlyWage.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numHourlyWage.BackColor = Color.WhiteSmoke;
             numHourlyWage.DecimalPlaces = 2;
             numHourlyWage.Font = new Font("微軟正黑體", 9F);
             numHourlyWage.Location = new Point(92, 224);
@@ -984,7 +1008,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numPensionSelf
             // 
-            numPensionSelf.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numPensionSelf.BackColor = Color.WhiteSmoke;
             numPensionSelf.Font = new Font("微軟正黑體", 9F);
             numPensionSelf.Location = new Point(272, 224);
             numPensionSelf.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1006,7 +1030,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numBonus
             // 
-            numBonus.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numBonus.BackColor = Color.WhiteSmoke;
             numBonus.Font = new Font("微軟正黑體", 9F);
             numBonus.Location = new Point(92, 260);
             numBonus.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1028,7 +1052,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numOtherDeduct
             // 
-            numOtherDeduct.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numOtherDeduct.BackColor = Color.WhiteSmoke;
             numOtherDeduct.Font = new Font("微軟正黑體", 9F);
             numOtherDeduct.Location = new Point(272, 260);
             numOtherDeduct.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1050,7 +1074,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numOtherAdd
             // 
-            numOtherAdd.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numOtherAdd.BackColor = Color.WhiteSmoke;
             numOtherAdd.Font = new Font("微軟正黑體", 9F);
             numOtherAdd.Location = new Point(92, 296);
             numOtherAdd.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1072,7 +1096,7 @@ namespace DigiERP.UserControl.HR
             // 
             // numPensionCompany
             // 
-            numPensionCompany.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            numPensionCompany.BackColor = Color.WhiteSmoke;
             numPensionCompany.Font = new Font("微軟正黑體", 9F);
             numPensionCompany.Location = new Point(272, 296);
             numPensionCompany.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
@@ -1096,7 +1120,7 @@ namespace DigiERP.UserControl.HR
             lblNote1T.AutoSize = true;
             lblNote1T.Font = new Font("微軟正黑體", 9F);
             lblNote1T.ForeColor = Color.RoyalBlue;
-            lblNote1T.Location = new Point(578, 44);
+            lblNote1T.Location = new Point(599, 51);
             lblNote1T.Name = "lblNote1T";
             lblNote1T.Size = new Size(43, 16);
             lblNote1T.TabIndex = 41;
@@ -1104,9 +1128,9 @@ namespace DigiERP.UserControl.HR
             // 
             // txtNote1
             // 
-            txtNote1.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtNote1.BackColor = Color.WhiteSmoke;
             txtNote1.Font = new Font("微軟正黑體", 9F);
-            txtNote1.Location = new Point(578, 64);
+            txtNote1.Location = new Point(599, 71);
             txtNote1.Multiline = true;
             txtNote1.Name = "txtNote1";
             txtNote1.ReadOnly = true;
@@ -1118,7 +1142,7 @@ namespace DigiERP.UserControl.HR
             lblNote2T.AutoSize = true;
             lblNote2T.Font = new Font("微軟正黑體", 9F);
             lblNote2T.ForeColor = Color.RoyalBlue;
-            lblNote2T.Location = new Point(578, 124);
+            lblNote2T.Location = new Point(599, 131);
             lblNote2T.Name = "lblNote2T";
             lblNote2T.Size = new Size(43, 16);
             lblNote2T.TabIndex = 45;
@@ -1126,9 +1150,9 @@ namespace DigiERP.UserControl.HR
             // 
             // txtNote2
             // 
-            txtNote2.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtNote2.BackColor = Color.WhiteSmoke;
             txtNote2.Font = new Font("微軟正黑體", 9F);
-            txtNote2.Location = new Point(578, 144);
+            txtNote2.Location = new Point(599, 151);
             txtNote2.Multiline = true;
             txtNote2.Name = "txtNote2";
             txtNote2.ReadOnly = true;
@@ -1140,7 +1164,7 @@ namespace DigiERP.UserControl.HR
             lblNote3T.AutoSize = true;
             lblNote3T.Font = new Font("微軟正黑體", 9F);
             lblNote3T.ForeColor = Color.RoyalBlue;
-            lblNote3T.Location = new Point(578, 204);
+            lblNote3T.Location = new Point(599, 211);
             lblNote3T.Name = "lblNote3T";
             lblNote3T.Size = new Size(43, 16);
             lblNote3T.TabIndex = 47;
@@ -1148,9 +1172,9 @@ namespace DigiERP.UserControl.HR
             // 
             // txtNote3
             // 
-            txtNote3.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtNote3.BackColor = Color.WhiteSmoke;
             txtNote3.Font = new Font("微軟正黑體", 9F);
-            txtNote3.Location = new Point(578, 224);
+            txtNote3.Location = new Point(599, 231);
             txtNote3.Multiline = true;
             txtNote3.Name = "txtNote3";
             txtNote3.ReadOnly = true;
@@ -1161,7 +1185,7 @@ namespace DigiERP.UserControl.HR
             // 
             lblIdT.AutoSize = true;
             lblIdT.Font = new Font("微軟正黑體", 9F);
-            lblIdT.Location = new Point(890, 44);
+            lblIdT.Location = new Point(911, 51);
             lblIdT.Name = "lblIdT";
             lblIdT.Size = new Size(43, 16);
             lblIdT.TabIndex = 43;
@@ -1172,7 +1196,7 @@ namespace DigiERP.UserControl.HR
             // 
             txtId.BackColor = Color.WhiteSmoke;
             txtId.Font = new Font("微軟正黑體", 9F);
-            txtId.Location = new Point(890, 64);
+            txtId.Location = new Point(911, 71);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(66, 23);
@@ -1185,10 +1209,11 @@ namespace DigiERP.UserControl.HR
             btnDeleteRecord.FlatStyle = FlatStyle.Flat;
             btnDeleteRecord.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
             btnDeleteRecord.ForeColor = Color.White;
-            btnDeleteRecord.Location = new Point(578, 284);
+            btnDeleteRecord.Location = new Point(599, 291);
             btnDeleteRecord.Name = "btnDeleteRecord";
             btnDeleteRecord.Size = new Size(130, 32);
             btnDeleteRecord.TabIndex = 49;
+            btnDeleteRecord.Tag = "btn-modify";
             btnDeleteRecord.Text = "刪除此筆紀錄";
             btnDeleteRecord.UseVisualStyleBackColor = false;
             btnDeleteRecord.Click += btnDeleteRecord_Click;
@@ -1203,7 +1228,7 @@ namespace DigiERP.UserControl.HR
             panelSalaryNav.Dock = DockStyle.Top;
             panelSalaryNav.Location = new Point(0, 0);
             panelSalaryNav.Name = "panelSalaryNav";
-            panelSalaryNav.Size = new Size(1060, 36);
+            panelSalaryNav.Size = new Size(1236, 36);
             panelSalaryNav.TabIndex = 0;
             // 
             // lblRecInfo
@@ -1215,7 +1240,7 @@ namespace DigiERP.UserControl.HR
             lblRecInfo.Size = new Size(77, 16);
             lblRecInfo.TabIndex = 0;
             lblRecInfo.Text = "薪資紀錄 0/0";
-            //
+            // 
             // btnRecPrev
             // 
             btnRecPrev.FlatStyle = FlatStyle.Flat;
@@ -1232,7 +1257,7 @@ namespace DigiERP.UserControl.HR
             // 
             btnRecNext.FlatStyle = FlatStyle.Flat;
             btnRecNext.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnRecNext.Location = new Point(190, 4);
+            btnRecNext.Location = new Point(239, 4);
             btnRecNext.Name = "btnRecNext";
             btnRecNext.Size = new Size(34, 28);
             btnRecNext.TabIndex = 2;
@@ -1244,23 +1269,13 @@ namespace DigiERP.UserControl.HR
             // 
             btnRecNew.FlatStyle = FlatStyle.Flat;
             btnRecNew.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
-            btnRecNew.Location = new Point(240, 4);
+            btnRecNew.Location = new Point(310, 4);
             btnRecNew.Name = "btnRecNew";
             btnRecNew.Size = new Size(90, 28);
             btnRecNew.TabIndex = 3;
             btnRecNew.Text = "新增一筆";
             btnRecNew.UseVisualStyleBackColor = true;
             btnRecNew.Click += btnRecNew_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
             // 
             // EmployeeSalaryControl
             // 
@@ -1272,9 +1287,10 @@ namespace DigiERP.UserControl.HR
             Font = new Font("微軟正黑體", 10F);
             Margin = new Padding(4);
             Name = "EmployeeSalaryControl";
-            Size = new Size(1060, 592);
+            Size = new Size(1236, 645);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelInfo.ResumeLayout(false);
             panelInfo.PerformLayout();
             panelBody.ResumeLayout(false);
@@ -1302,7 +1318,6 @@ namespace DigiERP.UserControl.HR
             ((System.ComponentModel.ISupportInitialize)numPensionCompany).EndInit();
             panelSalaryNav.ResumeLayout(false);
             panelSalaryNav.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1327,11 +1342,11 @@ namespace DigiERP.UserControl.HR
         private Label lblCardNoT;
         private TextBox txtCardNo;
         private Label lblBirthdayT;
-        private TextBox txtBirthday;
+        private DateTimePicker dtpBirthday;
         private Label lblDeptT;
         private TextBox txtDept;
-        private Label lblJobTitleT;
-        private TextBox txtJobTitle;
+        private Label lblJobNameT;
+        private TextBox txtJobName;
         private Label lblHRNoT;
         private TextBox txtHRNo;
         private Label lblStatusT;
@@ -1349,9 +1364,9 @@ namespace DigiERP.UserControl.HR
         private Label lblRankT;
         private NumericUpDown numRank;
         private Label lblSalaryDateT;
-        private TextBox txtSalaryDate;
+        private DateTimePicker dtpSalaryDate;
         private Label lblResignDateT;
-        private TextBox txtResignDate;
+        private DateTimePicker dtpResignDate;
         private Label lblBaseSalaryT;
         private NumericUpDown numBaseSalary;
         private Label lblInsuranceGradeT;

@@ -34,8 +34,8 @@ namespace DigiERP.Forms.HR
             txtIdNo = new TextBox();
             lblBirthday = new Label();
             dtpBirthday = new DateTimePicker();
-            lblJobTitle = new Label();
-            txtJobTitle = new TextBox();
+            lblJobName = new Label();
+            txtJobName = new TextBox();
             lblStatus = new Label();
             cboStatus = new ComboBox();
             lblResignDate = new Label();
@@ -114,8 +114,8 @@ namespace DigiERP.Forms.HR
             panelBody.Controls.Add(txtIdNo);
             panelBody.Controls.Add(lblBirthday);
             panelBody.Controls.Add(dtpBirthday);
-            panelBody.Controls.Add(lblJobTitle);
-            panelBody.Controls.Add(txtJobTitle);
+            panelBody.Controls.Add(lblJobName);
+            panelBody.Controls.Add(txtJobName);
             panelBody.Controls.Add(lblStatus);
             panelBody.Controls.Add(cboStatus);
             panelBody.Controls.Add(lblResignDate);
@@ -242,23 +242,23 @@ namespace DigiERP.Forms.HR
             dtpBirthday.Size = new Size(180, 25);
             dtpBirthday.TabIndex = 11;
             // 
-            // lblJobTitle
+            // lblJobName
             // 
-            lblJobTitle.AutoSize = true;
-            lblJobTitle.Font = new Font("微軟正黑體", 10F);
-            lblJobTitle.Location = new Point(30, 150);
-            lblJobTitle.Name = "lblJobTitle";
-            lblJobTitle.Size = new Size(36, 18);
-            lblJobTitle.TabIndex = 12;
-            lblJobTitle.Text = "職稱";
+            lblJobName.AutoSize = true;
+            lblJobName.Font = new Font("微軟正黑體", 10F);
+            lblJobName.Location = new Point(30, 150);
+            lblJobName.Name = "lblJobName";
+            lblJobName.Size = new Size(36, 18);
+            lblJobName.TabIndex = 12;
+            lblJobName.Text = "職稱";
             // 
-            // txtJobTitle
+            // txtJobName
             // 
-            txtJobTitle.Font = new Font("微軟正黑體", 10F);
-            txtJobTitle.Location = new Point(110, 146);
-            txtJobTitle.Name = "txtJobTitle";
-            txtJobTitle.Size = new Size(180, 25);
-            txtJobTitle.TabIndex = 13;
+            txtJobName.Font = new Font("微軟正黑體", 10F);
+            txtJobName.Location = new Point(110, 146);
+            txtJobName.Name = "txtJobName";
+            txtJobName.Size = new Size(180, 25);
+            txtJobName.TabIndex = 13;
             // 
             // lblStatus
             // 
@@ -398,8 +398,8 @@ namespace DigiERP.Forms.HR
         private TextBox txtIdNo;
         private Label lblBirthday;
         private DateTimePicker dtpBirthday;
-        private Label lblJobTitle;
-        private TextBox txtJobTitle;
+        private Label lblJobName;
+        private TextBox txtJobName;
         private Label lblStatus;
         private ComboBox cboStatus;
         private Label lblResignDate;

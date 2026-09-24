@@ -74,7 +74,7 @@ namespace DigiERP.UserControl.HR.ClockInOut
             _employee = x;
             txtEmpNo.Text = x.工號;
             txtName.Text = x.姓名;
-            txtJobTitle.Text = x.職稱;
+            txtJobName.Text = x.職稱;
             txtDept.Text = x.部門;
         }
 

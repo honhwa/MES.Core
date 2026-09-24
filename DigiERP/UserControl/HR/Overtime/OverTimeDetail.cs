@@ -86,7 +86,7 @@ namespace DigiERP.UserControl.HR.Overtime
             if (_employeeList.Count == 0)
             {
                 _currentIndex = -1;
-                txtEmpNo.Text = txtName.Text = txtTitleJob.Text = txtDept.Text = txtHrNo.Text = txtCardNo.Text = "";
+                txtEmpNo.Text = txtName.Text = txtJobName.Text = txtDept.Text = txtHrNo.Text = txtCardNo.Text = "";
                 dataGridView1.Rows.Clear();
                 UpdateSummary();
                 return;
@@ -98,7 +98,7 @@ namespace DigiERP.UserControl.HR.Overtime
             var emp = _employeeList[_currentIndex];
             txtEmpNo.Text = emp.工號;
             txtName.Text = emp.姓名;
-            txtTitleJob.Text = emp.職稱;
+            txtJobName.Text = emp.職稱;
             txtDept.Text = emp.部門;
             txtHrNo.Text = emp.人事編號;
             txtCardNo.Text = emp.卡號;

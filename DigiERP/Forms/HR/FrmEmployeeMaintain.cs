@@ -50,7 +50,7 @@ namespace DigiERP.Forms.HR
             txtSkill.Text = x.職能;
             txtAddress.Text = x.地址;
             dtpBirthday.Value = DateTime.TryParse(x.生日, out var birthday) ? birthday : DateTime.Today;
-            txtJobTitle.Text = x.職稱;
+            txtJobName.Text = x.職稱;
             txtIdNo.Text = x.身分證號;
             txtHRNo.Text = x.人事編號;
             txtCardNo.Text = x.卡號;
@@ -105,7 +105,7 @@ namespace DigiERP.Forms.HR
                 職能 = txtSkill.Text.Trim(),
                 地址 = txtAddress.Text.Trim(),
                 生日 = dtpBirthday.Value.ToString("yyyy/MM/dd"),
-                職稱 = txtJobTitle.Text.Trim(),
+                職稱 = txtJobName.Text.Trim(),
                 狀況 = cboStatus.Text,
                 身分證號 = txtIdNo.Text.Trim(),
                 人事編號 = txtHRNo.Text.Trim(),
