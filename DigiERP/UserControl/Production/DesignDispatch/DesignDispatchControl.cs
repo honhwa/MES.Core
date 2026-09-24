@@ -135,23 +135,15 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "DesignAuditMaintain_" + listNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, listNo + " 設計審查清單", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DesignAuditMaintainControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(listNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(listNo + " 設計審查清單") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            tabControl.SizeMode = TabSizeMode.Normal;
+                var ctrl = new DesignAuditMaintainControl();
+                if (ctrl.IsDisposed) return ctrl;
+                ctrl.LoadData(listNo);
+                ctrl.Dock = DockStyle.Fill;
+                tabControl.SizeMode = TabSizeMode.Normal;
+                return ctrl;
+            });
         }
 
         // ── 跟其他 Maintain 畫面一致：按「修改」前，可編輯欄位皆為 Disable ──

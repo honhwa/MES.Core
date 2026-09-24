@@ -595,19 +595,7 @@ namespace DigiERP.UserControl.HR.Overtime
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "OvertimeOverview";
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new OverTimeOverviewControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("加班申請明細查詢") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "加班申請明細查詢", () => new OverTimeOverviewControl { Dock = DockStyle.Fill });
         }
 
         // ── 員工別加班紀錄表：開啟(或切換至)頁籤，比照原巨集依「財管權限」
@@ -623,19 +611,7 @@ namespace DigiERP.UserControl.HR.Overtime
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "OvertimeStaffReport";
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new OverTimeDetail { Dock = DockStyle.Fill };
-            var tab = new TabPage("員工加班紀錄表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "員工加班紀錄表", () => new OverTimeDetail { Dock = DockStyle.Fill });
         }
 
         private void btnPrint_Click(object sender, EventArgs e) => MessageBox.Show("此功能尚未開放");

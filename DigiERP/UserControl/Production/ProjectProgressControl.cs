@@ -136,22 +136,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ElecControlProgress_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, projectNo + " 電控進度表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ElecControlProgressControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(projectNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(projectNo + " 電控進度表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ElecControlProgressControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(projectNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -161,22 +153,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ModuleAssemTestProgress_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, projectNo + "組測進度表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ModuleAssemTestProgressControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(projectNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(projectNo + "組測進度表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ModuleAssemTestProgressControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(projectNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -186,22 +170,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ModuleProcurementProgress_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, projectNo + " 採購進度表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ModuleProcurementProgressControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(projectNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(projectNo + " 採購進度表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ModuleProcurementProgressControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(projectNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -211,22 +187,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ModuleDesignProgress_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, projectNo + " 設計進度表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ModuleDesignProgressControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(projectNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(projectNo + " 設計進度表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ModuleDesignProgressControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(projectNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -236,22 +204,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ProjectProgressDetail_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, projectNo + " 專案管控表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var detail = new ProjectProgressDetailControl();
-            if (detail.IsDisposed) return;
-            detail.LoadData(projectNo);
-            detail.Dock = DockStyle.Fill;
-            var tab = new TabPage(projectNo + " 專案管控表") { Name = tabName };
-            tab.Controls.Add(detail);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var detail = new ProjectProgressDetailControl();
+                if (detail.IsDisposed) return null;
+                detail.LoadData(projectNo);
+                detail.Dock = DockStyle.Fill;
+                return detail;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -261,21 +221,13 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "ProjectScheduleQuery";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "專案排程查詢", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProjectScheduleQueryControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("專案排程查詢") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ProjectScheduleQueryControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 

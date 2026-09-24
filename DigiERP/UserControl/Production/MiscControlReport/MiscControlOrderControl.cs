@@ -175,6 +175,11 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             }));
         }
 
+        private static void SetDate(DateTimePicker dtp, string value)
+        {
+            dtp.Value = DateTime.TryParse(value, out var d) ? d : DateTime.Parse("1900-01-01");
+        }
+
         private 採購計畫 _current;
 
         // ── 由「零件管制報告總覽」點選零件管制單號開啟：載入表頭資料 ─────────
@@ -189,10 +194,10 @@ namespace DigiERP.UserControl.Production.MiscControlReport
 
             var x = _current = rep.result;
             txtControlNo.Text = x?.零件管制單號;
-            txtStockInDate.Text = x?.入庫移轉日;
+            SetDate(txtStockInDate, x?.入庫移轉日);
             txtPartNo.Text = x?.零件號碼;
             txtProjectNo.Text = x?.專案序號;
-            txtAcceptDate.Text = x?.驗收日期;
+            SetDate(txtAcceptDate, x?.驗收日期);
             txtPartName.Text = x?.品名;
             txtModuleCode.Text = x?.模組編碼;
             cboAcceptStaff.Text = x?.驗收人員;
@@ -480,20 +485,12 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "AbnormalCorrection_" + _current.零件管制單號;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "異常矯正單-" + _current.零件管制單號, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new AbnormalCorrectionReportControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("異常矯正單-" + _current.零件管制單號) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadBySourceDoc(_current.零件管制單號, _current.專案序號, _current.模組編碼, _current.模組名稱);
+                var ctrl = new AbnormalCorrectionReportControl { Dock = DockStyle.Fill };
+                ctrl.LoadBySourceDoc(_current.零件管制單號, _current.專案序號, _current.模組編碼, _current.模組名稱);
+                return ctrl;
+            });
         }
 
         // ── 取消生效：清空核准/核准日 ─────────────────────────────

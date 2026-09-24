@@ -94,21 +94,13 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "MiscControlOrder_" + controlNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "零件管制報告書-" + controlNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new MiscControlOrderControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("零件管制報告書-" + controlNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            tabControl.SizeMode = TabSizeMode.Normal;
-            ctrl.LoadData(controlNo);
+                var ctrl = new MiscControlOrderControl { Dock = DockStyle.Fill };
+                tabControl.SizeMode = TabSizeMode.Normal;
+                ctrl.LoadData(controlNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

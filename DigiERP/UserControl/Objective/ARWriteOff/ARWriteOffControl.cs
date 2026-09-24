@@ -105,22 +105,14 @@ namespace DigiERP.UserControl.Objective.ARWriteOff
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = mode == "新增" ? "ARWriteOffMaintain_New" : $"ARWriteOffMaintain_{no}";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, mode == "新增" ? "收款單-新增" : $"收款單-{no}", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ARWriteOffMaintainControl { Dock = DockStyle.Fill };
-            ctrl.Saved += (s, args) => initGrid();
-            var tab = new TabPage(mode == "新增" ? "收款單-新增" : $"收款單-{no}") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ARWriteOffMaintainControl { Dock = DockStyle.Fill };
+                ctrl.Saved += (s, args) => initGrid();
+                ctrl.LoadData(mode, no);
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
-            ctrl.LoadData(mode, no);
         }
     }
 }

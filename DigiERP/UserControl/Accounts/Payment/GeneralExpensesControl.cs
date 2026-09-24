@@ -129,23 +129,15 @@ namespace DigiERP.UserControl.Accounts.Payment
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = mode == "新增" ? "GeneralExpensesMaintain_New" : $"GeneralExpensesMaintain_{no}";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, mode == "新增" ? "總務支出單-新增" : $"總務支出單-{no}", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new GeneralExpensesMaintainControl();
-            ctrl.Dock = DockStyle.Fill;
-            ctrl.Saved += (s, args) => initGrid();
-            var tab = new TabPage(mode == "新增" ? "總務支出單-新增" : $"總務支出單-{no}") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new GeneralExpensesMaintainControl();
+                ctrl.Dock = DockStyle.Fill;
+                ctrl.Saved += (s, args) => initGrid();
+                ctrl.LoadData(mode, no);
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
-            ctrl.LoadData(mode, no);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

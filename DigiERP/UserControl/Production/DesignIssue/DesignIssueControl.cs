@@ -100,22 +100,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ModuleMaterialMaintain_" + bomNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, bomNo + " 專案模組用料", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ModuleMaterialMaintainControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(bomNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(bomNo + " 專案模組用料") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ModuleMaterialMaintainControl();
+                if (ctrl.IsDisposed) return ctrl;
+                ctrl.LoadData(bomNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 

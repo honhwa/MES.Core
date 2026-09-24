@@ -415,19 +415,11 @@ namespace DigiERP.UserControl.Production.Spec
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "ProductSpecOverview";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "產品規格單總覽", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProductSpecListControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("產品規格單總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ProductSpecListControl { Dock = DockStyle.Fill };
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e) => CloseTab();

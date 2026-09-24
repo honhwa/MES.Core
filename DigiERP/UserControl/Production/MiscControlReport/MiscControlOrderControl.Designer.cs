@@ -32,14 +32,14 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             lblControlNo = new Label();
             txtControlNo = new TextBox();
             lblStockInDate = new Label();
-            txtStockInDate = new TextBox();
+            txtStockInDate = new DigiERP.Common.CommonDateTimePicker();
             lblPartNo = new Label();
             txtPartNo = new TextBox();
             lblNote = new Label();
             lblProjectNo = new Label();
             txtProjectNo = new TextBox();
             lblAcceptDate = new Label();
-            txtAcceptDate = new TextBox();
+            txtAcceptDate = new DigiERP.Common.CommonDateTimePicker();
             lblPartName = new Label();
             txtPartName = new TextBox();
             lblModuleCode = new Label();
@@ -227,14 +227,15 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.Gainsboro;
+            btnClose.BackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("微軟正黑體", 9F, FontStyle.Bold);
+            btnClose.ForeColor = SystemColors.ButtonFace;
             btnClose.Location = new Point(964, 12);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(98, 32);
             btnClose.TabIndex = 7;
-            btnClose.Text = "關閉";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -285,7 +286,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtControlNo
             // 
-            txtControlNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtControlNo.BackColor = Color.WhiteSmoke;
             txtControlNo.Location = new Point(100, 8);
             txtControlNo.Name = "txtControlNo";
             txtControlNo.ReadOnly = true;
@@ -303,17 +304,17 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtStockInDate
             // 
-            txtStockInDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtStockInDate.Enabled = false;
+            txtStockInDate.Format = DateTimePickerFormat.Short;
             txtStockInDate.Location = new Point(372, 8);
             txtStockInDate.Name = "txtStockInDate";
-            txtStockInDate.ReadOnly = true;
-            txtStockInDate.Size = new Size(160, 25);
+            txtStockInDate.Size = new Size(136, 25);
             txtStockInDate.TabIndex = 3;
             // 
             // lblPartNo
             // 
             lblPartNo.AutoSize = true;
-            lblPartNo.Location = new Point(552, 12);
+            lblPartNo.Location = new Point(538, 12);
             lblPartNo.Name = "lblPartNo";
             lblPartNo.Size = new Size(64, 18);
             lblPartNo.TabIndex = 4;
@@ -321,8 +322,8 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtPartNo
             // 
-            txtPartNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtPartNo.Location = new Point(644, 8);
+            txtPartNo.BackColor = Color.WhiteSmoke;
+            txtPartNo.Location = new Point(630, 8);
             txtPartNo.Name = "txtPartNo";
             txtPartNo.ReadOnly = true;
             txtPartNo.Size = new Size(300, 25);
@@ -331,7 +332,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // lblNote
             // 
             lblNote.ForeColor = Color.Red;
-            lblNote.Location = new Point(1220, 4);
+            lblNote.Location = new Point(950, 3);
             lblNote.Name = "lblNote";
             lblNote.Size = new Size(408, 148);
             lblNote.TabIndex = 6;
@@ -348,7 +349,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtProjectNo
             // 
-            txtProjectNo.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtProjectNo.BackColor = Color.WhiteSmoke;
             txtProjectNo.Location = new Point(100, 44);
             txtProjectNo.Name = "txtProjectNo";
             txtProjectNo.ReadOnly = true;
@@ -366,17 +367,17 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtAcceptDate
             // 
-            txtAcceptDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtAcceptDate.Enabled = false;
+            txtAcceptDate.Format = DateTimePickerFormat.Short;
             txtAcceptDate.Location = new Point(372, 44);
             txtAcceptDate.Name = "txtAcceptDate";
-            txtAcceptDate.ReadOnly = true;
-            txtAcceptDate.Size = new Size(160, 25);
+            txtAcceptDate.Size = new Size(136, 25);
             txtAcceptDate.TabIndex = 10;
             // 
             // lblPartName
             // 
             lblPartName.AutoSize = true;
-            lblPartName.Location = new Point(552, 48);
+            lblPartName.Location = new Point(538, 48);
             lblPartName.Name = "lblPartName";
             lblPartName.Size = new Size(36, 18);
             lblPartName.TabIndex = 11;
@@ -384,8 +385,8 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtPartName
             // 
-            txtPartName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtPartName.Location = new Point(644, 44);
+            txtPartName.BackColor = Color.WhiteSmoke;
+            txtPartName.Location = new Point(630, 44);
             txtPartName.Name = "txtPartName";
             txtPartName.ReadOnly = true;
             txtPartName.Size = new Size(300, 25);
@@ -402,7 +403,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModuleCode
             // 
-            txtModuleCode.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtModuleCode.BackColor = Color.WhiteSmoke;
             txtModuleCode.Location = new Point(100, 80);
             txtModuleCode.Name = "txtModuleCode";
             txtModuleCode.ReadOnly = true;
@@ -424,13 +425,13 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             cboAcceptStaff.FormattingEnabled = true;
             cboAcceptStaff.Location = new Point(372, 80);
             cboAcceptStaff.Name = "cboAcceptStaff";
-            cboAcceptStaff.Size = new Size(160, 25);
+            cboAcceptStaff.Size = new Size(136, 25);
             cboAcceptStaff.TabIndex = 16;
             // 
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(552, 84);
+            lblDesc.Location = new Point(538, 84);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(36, 18);
             lblDesc.TabIndex = 17;
@@ -438,8 +439,8 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtDesc
             // 
-            txtDesc.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtDesc.Location = new Point(644, 80);
+            txtDesc.BackColor = Color.WhiteSmoke;
+            txtDesc.Location = new Point(630, 80);
             txtDesc.Name = "txtDesc";
             txtDesc.ReadOnly = true;
             txtDesc.Size = new Size(300, 25);
@@ -456,7 +457,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModuleName
             // 
-            txtModuleName.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtModuleName.BackColor = Color.WhiteSmoke;
             txtModuleName.Location = new Point(100, 116);
             txtModuleName.Name = "txtModuleName";
             txtModuleName.ReadOnly = true;
@@ -478,13 +479,13 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             cboWarehouseStaff.FormattingEnabled = true;
             cboWarehouseStaff.Location = new Point(372, 116);
             cboWarehouseStaff.Name = "cboWarehouseStaff";
-            cboWarehouseStaff.Size = new Size(160, 25);
+            cboWarehouseStaff.Size = new Size(136, 25);
             cboWarehouseStaff.TabIndex = 22;
             // 
             // lblQty
             // 
             lblQty.AutoSize = true;
-            lblQty.Location = new Point(552, 120);
+            lblQty.Location = new Point(538, 120);
             lblQty.Name = "lblQty";
             lblQty.Size = new Size(36, 18);
             lblQty.TabIndex = 23;
@@ -492,17 +493,17 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtQty
             // 
-            txtQty.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
-            txtQty.Location = new Point(644, 116);
+            txtQty.BackColor = Color.WhiteSmoke;
+            txtQty.Location = new Point(630, 116);
             txtQty.Name = "txtQty";
             txtQty.ReadOnly = true;
-            txtQty.Size = new Size(140, 25);
+            txtQty.Size = new Size(65, 25);
             txtQty.TabIndex = 24;
             // 
             // lblAcceptResult
             // 
             lblAcceptResult.AutoSize = true;
-            lblAcceptResult.Location = new Point(804, 120);
+            lblAcceptResult.Location = new Point(711, 120);
             lblAcceptResult.Name = "lblAcceptResult";
             lblAcceptResult.Size = new Size(64, 18);
             lblAcceptResult.TabIndex = 25;
@@ -512,9 +513,9 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             cboAcceptResult.Enabled = false;
             cboAcceptResult.FormattingEnabled = true;
-            cboAcceptResult.Location = new Point(896, 116);
+            cboAcceptResult.Location = new Point(803, 116);
             cboAcceptResult.Name = "cboAcceptResult";
-            cboAcceptResult.Size = new Size(160, 25);
+            cboAcceptResult.Size = new Size(127, 25);
             cboAcceptResult.TabIndex = 26;
             // 
             // splitContainer1
@@ -567,35 +568,38 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             colWorkStation.HeaderText = "工作站";
             colWorkStation.Name = "colWorkStation";
-            //
+            // 
             // colProductionUnit
-            //
+            // 
             colProductionUnit.HeaderText = "產製單位";
             colProductionUnit.Name = "colProductionUnit";
-            //
+            // 
             // colOperator
-            //
+            // 
             colOperator.HeaderText = "作業人員";
             colOperator.Name = "colOperator";
-            //
+            // 
             // colStartDate
-            //
+            // 
             colStartDate.HeaderText = "開工日期";
             colStartDate.Name = "colStartDate";
-            //
+            // 
             // colDueDate
-            //
+            // 
             colDueDate.HeaderText = "預交日期";
             colDueDate.Name = "colDueDate";
-            //
+            // 
             // colFinishDate
-            //
+            // 
             colFinishDate.HeaderText = "完工日期";
             colFinishDate.Name = "colFinishDate";
-            //
+            // 
             // colFinishQty
-            //
+            // 
+            colFinishQty.DecimalPlaces = 0;
             colFinishQty.HeaderText = "完工數量";
+            colFinishQty.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            colFinishQty.Minimum = new decimal(new int[] { 0, 0, 0, 0 });
             colFinishQty.Name = "colFinishQty";
             // 
             // lblProcessTitle
@@ -612,7 +616,6 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // dataGridView2
             // 
-            dataGridView2.AllowUserToAddRows = true;
             dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.BackgroundColor = Color.White;
@@ -629,49 +632,49 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             dataGridView2.TabIndex = 0;
             dataGridView2.CellClick += dataGridView2_CellClick;
             dataGridView2.DataError += dataGridView2_DataError;
-            //
+            // 
             // colCheckDate
-            //
+            // 
             colCheckDate.HeaderText = "檢查日期";
             colCheckDate.Name = "colCheckDate";
-            //
+            // 
             // colChecker
-            //
+            // 
             colChecker.HeaderText = "檢查人員";
             colChecker.Name = "colChecker";
-            //
+            // 
             // colSizeSpec
-            //
+            // 
             colSizeSpec.HeaderText = "尺寸精度";
             colSizeSpec.Name = "colSizeSpec";
-            //
+            // 
             // colGeoSpec
-            //
+            // 
             colGeoSpec.HeaderText = "幾何精度";
             colGeoSpec.Name = "colGeoSpec";
-            //
+            // 
             // colMaterialSpec
-            //
+            // 
             colMaterialSpec.HeaderText = "材質標準";
             colMaterialSpec.Name = "colMaterialSpec";
-            //
+            // 
             // colSurfaceSpec
-            //
+            // 
             colSurfaceSpec.HeaderText = "表面工藝";
             colSurfaceSpec.Name = "colSurfaceSpec";
-            //
+            // 
             // colHardnessSpec
-            //
+            // 
             colHardnessSpec.HeaderText = "硬度要求";
             colHardnessSpec.Name = "colHardnessSpec";
-            //
+            // 
             // colBurrTrim
-            //
+            // 
             colBurrTrim.HeaderText = "毛邊修整";
             colBurrTrim.Name = "colBurrTrim";
-            //
+            // 
             // colMicroCrack
-            //
+            // 
             colMicroCrack.HeaderText = "微觀裂痕";
             colMicroCrack.Name = "colMicroCrack";
             // 
@@ -697,7 +700,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtReasonNote
             // 
-            txtReasonNote.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtReasonNote.BackColor = Color.WhiteSmoke;
             txtReasonNote.Location = new Point(100, 4);
             txtReasonNote.Name = "txtReasonNote";
             txtReasonNote.ReadOnly = true;
@@ -748,7 +751,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtApprover
             // 
-            txtApprover.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtApprover.BackColor = Color.WhiteSmoke;
             txtApprover.Location = new Point(92, 14);
             txtApprover.Name = "txtApprover";
             txtApprover.ReadOnly = true;
@@ -766,7 +769,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtApproveDate
             // 
-            txtApproveDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtApproveDate.BackColor = Color.WhiteSmoke;
             txtApproveDate.Location = new Point(288, 14);
             txtApproveDate.Name = "txtApproveDate";
             txtApproveDate.ReadOnly = true;
@@ -784,7 +787,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModifier
             // 
-            txtModifier.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtModifier.BackColor = Color.WhiteSmoke;
             txtModifier.Location = new Point(512, 14);
             txtModifier.Name = "txtModifier";
             txtModifier.ReadOnly = true;
@@ -802,7 +805,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtModifyDate
             // 
-            txtModifyDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtModifyDate.BackColor = Color.WhiteSmoke;
             txtModifyDate.Location = new Point(708, 14);
             txtModifyDate.Name = "txtModifyDate";
             txtModifyDate.ReadOnly = true;
@@ -820,7 +823,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtCreator
             // 
-            txtCreator.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtCreator.BackColor = Color.WhiteSmoke;
             txtCreator.Location = new Point(932, 14);
             txtCreator.Name = "txtCreator";
             txtCreator.ReadOnly = true;
@@ -838,7 +841,7 @@ namespace DigiERP.UserControl.Production.MiscControlReport
             // 
             // txtCreateDate
             // 
-            txtCreateDate.BackColor = DigiERP.Common.UIStyle.ReadOnlyBackColor;
+            txtCreateDate.BackColor = Color.WhiteSmoke;
             txtCreateDate.Location = new Point(1128, 14);
             txtCreateDate.Name = "txtCreateDate";
             txtCreateDate.ReadOnly = true;
@@ -891,14 +894,14 @@ namespace DigiERP.UserControl.Production.MiscControlReport
         private Label lblControlNo;
         private TextBox txtControlNo;
         private Label lblStockInDate;
-        private TextBox txtStockInDate;
+        private DigiERP.Common.CommonDateTimePicker txtStockInDate;
         private Label lblPartNo;
         private TextBox txtPartNo;
         private Label lblNote;
         private Label lblProjectNo;
         private TextBox txtProjectNo;
         private Label lblAcceptDate;
-        private TextBox txtAcceptDate;
+        private DigiERP.Common.CommonDateTimePicker txtAcceptDate;
         private Label lblPartName;
         private TextBox txtPartName;
         private Label lblModuleCode;

@@ -43,22 +43,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "DesignSchedule";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "週排程-設計", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DesignScheduleControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value, dtpWeek5.Value, dtpWeek6.Value);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("週排程-設計") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new DesignScheduleControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value, dtpWeek5.Value, dtpWeek6.Value);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
         // ── 點擊採購，開啟週排程-採購頁籤 ──────────────────────────────────
@@ -67,22 +59,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "ProcurementScheduling";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "週排程-採購", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProcurementSchedulingControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("週排程-採購") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ProcurementSchedulingControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
         // ── 點擊機加工，開啟週排程-機加工頁籤 ────────────────────────────
@@ -91,22 +75,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "MachiningScheduling";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "週排程-機加工", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new MachiningSchedulingControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("週排程-機加工") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new MachiningSchedulingControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
         // ── 點擊後製程，開啟週排程-後製程頁籤 ────────────────────────────
@@ -115,22 +91,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "PostProcessScheduling";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "週排程-後製程", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new PostProcessSchedulingControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData();
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("週排程-後製程") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new PostProcessSchedulingControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData();
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
         // ── 點擊組測，開啟週排程-組裝測試頁籤 ────────────────────────────
@@ -139,22 +107,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "AssemTestScheduling";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "週排程-組裝測試", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new AssemTestSchedulingControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("週排程-組裝測試") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new AssemTestSchedulingControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(dtpStartDate.Value, dtpWeek1.Value, dtpWeek2.Value, dtpWeek3.Value, dtpWeek4.Value);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
         private void btnElecControl_Click(object sender, EventArgs e) => MessageBox.Show("此功能尚未開放");

@@ -507,19 +507,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "SalaryVoucherQuery";
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new VoucherQueryControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("會計傳票查詢") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "會計傳票查詢", () => new VoucherQueryControl { Dock = DockStyle.Fill });
         }
 
         // ── 查詢：開啟(或切換至)「薪資月結總覽」頁籤 ────────────────────────
@@ -528,19 +516,7 @@ namespace DigiERP.UserControl.HR.EmployeeSalary
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "SalaryCloseOverview";
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new EmployeeSalaryCloseOverviewControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("薪資月結總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "薪資月結總覽", () => new EmployeeSalaryCloseOverviewControl { Dock = DockStyle.Fill });
         }
 
         private static int ToInt(object value)

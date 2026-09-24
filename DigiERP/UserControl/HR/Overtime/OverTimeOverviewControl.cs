@@ -99,19 +99,7 @@ namespace DigiERP.UserControl.HR.Overtime
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "OvertimeStaffReport";
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new OverTimeDetail { Dock = DockStyle.Fill };
-            var tab = new TabPage("員工加班紀錄表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "員工加班紀錄表", () => new OverTimeDetail { Dock = DockStyle.Fill });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

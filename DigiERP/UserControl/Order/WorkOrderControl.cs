@@ -399,20 +399,12 @@ namespace DigiERP.UserControl.Order
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ProductSpec_" + _loadedProjectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "產品規格單-" + _loadedProjectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DigiERP.UserControl.Production.Spec.ProductSpecControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("產品規格單-" + _loadedProjectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(_loadedProjectNo);
+                var ctrl = new DigiERP.UserControl.Production.Spec.ProductSpecControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(_loadedProjectNo);
+                return ctrl;
+            });
         }
 
         // ── 工程分析表 (原Command263)：開啟 P-工程 對應的 EngineeringAnalysisControl ──
@@ -431,20 +423,12 @@ namespace DigiERP.UserControl.Order
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "Engineering_" + _loadedProjectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "工程分析表-" + _loadedProjectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DigiERP.UserControl.Production.Engineering.EngineeringAnalysisControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("工程分析表-" + _loadedProjectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(_loadedProjectNo);
+                var ctrl = new DigiERP.UserControl.Production.Engineering.EngineeringAnalysisControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(_loadedProjectNo);
+                return ctrl;
+            });
         }
 
         // ── 專案會議紀錄 (原Command264)：開啟 P-會議 對應的 ProjectMeetingControl ──
@@ -463,20 +447,12 @@ namespace DigiERP.UserControl.Order
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "Meeting_" + _loadedProjectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "專案會議履歷-" + _loadedProjectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DigiERP.UserControl.Project.ProjectMeetingControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("專案會議履歷-" + _loadedProjectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(_loadedProjectNo);
+                var ctrl = new DigiERP.UserControl.Project.ProjectMeetingControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(_loadedProjectNo);
+                return ctrl;
+            });
         }
 
         // ── 工令時程表：開啟(或切換至) WorkOrderScheduleControl 分頁，比照
@@ -496,20 +472,8 @@ namespace DigiERP.UserControl.Order
             }
             TabControl scheduleTabControl = (TabControl)((TabPage)Parent).Parent;
             string scheduleTabName = "Schedule_" + _loadedProjectNo;
-            foreach (TabPage page in scheduleTabControl.TabPages)
-            {
-                if (page.Name == scheduleTabName)
-                {
-                    scheduleTabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var scheduleCtrl = new WorkOrderScheduleControl { Dock = DockStyle.Fill };
-            var scheduleTab = new TabPage("工令時程表-" + _loadedProjectNo) { Name = scheduleTabName };
-            scheduleTab.Controls.Add(scheduleCtrl);
-            scheduleTabControl.TabPages.Add(scheduleTab);
-            scheduleTabControl.SelectedTab = scheduleTab;
-            scheduleCtrl.LoadData(_loadedProjectNo);
+            DigiERP.Common.TabNavigator.Open(scheduleTabControl, scheduleTabName, "工令時程表-" + _loadedProjectNo,
+                () => { var scheduleCtrl = new WorkOrderScheduleControl { Dock = DockStyle.Fill }; scheduleCtrl.LoadData(_loadedProjectNo); return scheduleCtrl; });
         }
 
         // ── 總覽/關閉：皆為關閉本分頁，回到工令單總覽 ─────────────────────────

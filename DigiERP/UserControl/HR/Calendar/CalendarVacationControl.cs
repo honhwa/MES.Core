@@ -242,19 +242,7 @@ namespace DigiERP.UserControl.HR.Calendar
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "CalendarOverview";
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new CalendarControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("日曆總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "日曆總覽", () => new CalendarControl { Dock = DockStyle.Fill });
         }
 
         // ── 年度假別統計/列印：原表單分屬 Access Report 及查無既有畫面的獨立

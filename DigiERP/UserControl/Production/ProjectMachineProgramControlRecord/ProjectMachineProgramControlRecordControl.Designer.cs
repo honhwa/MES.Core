@@ -61,13 +61,13 @@ namespace DigiERP.UserControl.Production
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -83,6 +83,7 @@ namespace DigiERP.UserControl.Production
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(172, 23);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "專案機台程控紀錄表";
             // 
             // btnExit
@@ -96,13 +97,14 @@ namespace DigiERP.UserControl.Production
             btnExit.TabIndex = 1;
             btnExit.Text = "關閉";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Visible = false;
             btnExit.Click += btnExit_Click;
             // 
             // panelContext
             // 
             panelContext.BackColor = Color.FromArgb(255, 224, 192);
             panelContext.Dock = DockStyle.Top;
-            panelContext.Location = new Point(0, 56);
+            panelContext.Location = new Point(0, 60);
             panelContext.Name = "panelContext";
             panelContext.Size = new Size(1900, 160);
             panelContext.TabIndex = 1;
@@ -110,7 +112,7 @@ namespace DigiERP.UserControl.Production
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 216);
+            splitContainer1.Location = new Point(0, 220);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
             // 
@@ -123,8 +125,8 @@ namespace DigiERP.UserControl.Production
             // 
             splitContainer1.Panel2.Controls.Add(dataGridView2);
             splitContainer1.Panel2.Controls.Add(lblHistoryTitle);
-            splitContainer1.Size = new Size(1900, 520);
-            splitContainer1.SplitterDistance = 260;
+            splitContainer1.Size = new Size(1900, 516);
+            splitContainer1.SplitterDistance = 258;
             splitContainer1.TabIndex = 2;
             // 
             // dataGridView1
@@ -137,46 +139,52 @@ namespace DigiERP.UserControl.Production
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colProcess, colDesc, colStaff, colStartDate, colPlanFinishDate, colActualFinishDate });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Font = new Font("微軟正黑體", 9F);
-            dataGridView1.Location = new Point(0, 26);
+            dataGridView1.Location = new Point(0, 39);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1900, 234);
+            dataGridView1.Size = new Size(1900, 219);
             dataGridView1.TabIndex = 0;
-            //
+            // 
             // colProcess
-            //
+            // 
             colProcess.HeaderText = "電控工序";
             colProcess.Name = "colProcess";
-            //
+            colProcess.ReadOnly = true;
+            // 
             // colDesc
-            //
+            // 
             colDesc.FillWeight = 200F;
             colDesc.HeaderText = "簡要描述";
             colDesc.Name = "colDesc";
-            //
+            colDesc.ReadOnly = true;
+            // 
             // colStaff
-            //
+            // 
             colStaff.HeaderText = "程控人員";
             colStaff.Name = "colStaff";
-            //
+            colStaff.ReadOnly = true;
+            // 
             // colStartDate
-            //
+            // 
             colStartDate.HeaderText = "開始作業日期";
             colStartDate.Name = "colStartDate";
-            //
+            colStartDate.ReadOnly = true;
+            // 
             // colPlanFinishDate
-            //
+            // 
             colPlanFinishDate.HeaderText = "預計完成日期";
             colPlanFinishDate.Name = "colPlanFinishDate";
-            //
+            colPlanFinishDate.ReadOnly = true;
+            // 
             // colActualFinishDate
-            //
+            // 
             colActualFinishDate.HeaderText = "實際完成日期";
             colActualFinishDate.Name = "colActualFinishDate";
-            //
+            colActualFinishDate.ReadOnly = true;
+            // 
             // lblScheduleTitle
             // 
             lblScheduleTitle.BackColor = Color.Gainsboro;
@@ -185,7 +193,7 @@ namespace DigiERP.UserControl.Production
             lblScheduleTitle.Location = new Point(0, 0);
             lblScheduleTitle.Name = "lblScheduleTitle";
             lblScheduleTitle.Padding = new Padding(6, 4, 0, 4);
-            lblScheduleTitle.Size = new Size(1900, 26);
+            lblScheduleTitle.Size = new Size(1900, 39);
             lblScheduleTitle.TabIndex = 1;
             lblScheduleTitle.Text = "專案程控排程";
             // 
@@ -199,59 +207,67 @@ namespace DigiERP.UserControl.Production
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { colLogDate, colLogStaff, colLogModuleCode, colLogProcess, colLogTaskCategory, colLogWorkItem, colLogTestStatus, colLogAction });
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Font = new Font("微軟正黑體", 9F);
-            dataGridView2.Location = new Point(0, 26);
+            dataGridView2.Location = new Point(0, 43);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowTemplate.Height = 26;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(1900, 230);
+            dataGridView2.Size = new Size(1900, 211);
             dataGridView2.TabIndex = 0;
-            //
+            // 
             // colLogDate
-            //
+            // 
             colLogDate.HeaderText = "日期";
             colLogDate.Name = "colLogDate";
-            //
+            colLogDate.ReadOnly = true;
+            // 
             // colLogStaff
-            //
+            // 
             colLogStaff.HeaderText = "程控人員";
             colLogStaff.Name = "colLogStaff";
-            //
+            colLogStaff.ReadOnly = true;
+            // 
             // colLogModuleCode
-            //
+            // 
             colLogModuleCode.HeaderText = "模組";
             colLogModuleCode.Name = "colLogModuleCode";
-            //
+            colLogModuleCode.ReadOnly = true;
+            // 
             // colLogProcess
-            //
+            // 
             colLogProcess.FillWeight = 150F;
             colLogProcess.HeaderText = "電控工序";
             colLogProcess.Name = "colLogProcess";
-            //
+            colLogProcess.ReadOnly = true;
+            // 
             // colLogTaskCategory
-            //
+            // 
             colLogTaskCategory.HeaderText = "任務分類";
             colLogTaskCategory.Name = "colLogTaskCategory";
-            //
+            colLogTaskCategory.ReadOnly = true;
+            // 
             // colLogWorkItem
-            //
+            // 
             colLogWorkItem.FillWeight = 220F;
             colLogWorkItem.HeaderText = "工作項目";
             colLogWorkItem.Name = "colLogWorkItem";
-            //
+            colLogWorkItem.ReadOnly = true;
+            // 
             // colLogTestStatus
-            //
+            // 
             colLogTestStatus.FillWeight = 150F;
             colLogTestStatus.HeaderText = "實測狀態";
             colLogTestStatus.Name = "colLogTestStatus";
-            //
+            colLogTestStatus.ReadOnly = true;
+            // 
             // colLogAction
-            //
+            // 
             colLogAction.FillWeight = 150F;
             colLogAction.HeaderText = "處置措施";
             colLogAction.Name = "colLogAction";
-            //
+            colLogAction.ReadOnly = true;
+            // 
             // lblHistoryTitle
             // 
             lblHistoryTitle.BackColor = Color.Gainsboro;
@@ -260,7 +276,7 @@ namespace DigiERP.UserControl.Production
             lblHistoryTitle.Location = new Point(0, 0);
             lblHistoryTitle.Name = "lblHistoryTitle";
             lblHistoryTitle.Padding = new Padding(6, 4, 0, 4);
-            lblHistoryTitle.Size = new Size(1900, 26);
+            lblHistoryTitle.Size = new Size(1900, 43);
             lblHistoryTitle.TabIndex = 1;
             lblHistoryTitle.Text = "專案程控履歷";
             // 

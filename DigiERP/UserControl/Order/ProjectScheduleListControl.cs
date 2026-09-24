@@ -77,7 +77,8 @@ namespace DigiERP.UserControl.Order
                 () => { var ctrl = new WorkOrderScheduleControl { Dock = DockStyle.Fill }; ctrl.LoadData(projectNo); return ctrl; });
         }
 
-        // ── 共用：於同一 TabControl 開啟(或切換至)指定名稱的分頁 ─────────────────
+        // ── 共用：於同一 TabControl 開啟(或切換至)指定名稱的分頁。關閉時自動切回
+        //    開啟當下所在的來源分頁，邏輯見 DigiERP.Common.TabNavigator ────────
         private void OpenInTab(string tabName, string tabTitle, Func<Control> createControl)
         {
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl))
@@ -87,19 +88,7 @@ namespace DigiERP.UserControl.Order
                 return;
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = createControl();
-            var tab = new TabPage(tabTitle) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, tabTitle, createControl);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

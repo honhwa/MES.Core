@@ -427,19 +427,11 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "AbnormalCorrectionOverview";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "異常報告總覽", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new AbnormalCorrectionReportOverviewControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("異常報告總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new AbnormalCorrectionReportOverviewControl { Dock = DockStyle.Fill };
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

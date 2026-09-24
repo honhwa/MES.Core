@@ -109,20 +109,12 @@ namespace DigiERP.UserControl.Production.Accessories
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "AccessoriesApply_" + orderNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "零件申請單-" + orderNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new AccessoriesApplyControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("零件申請單-" + orderNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(orderNo);
+                var ctrl = new AccessoriesApplyControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(orderNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -58,7 +58,7 @@ namespace DigiERP.UserControl.Production.ProgramControl
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -70,10 +70,11 @@ namespace DigiERP.UserControl.Production.ProgramControl
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 13F, FontStyle.Bold);
             lblTitle.ForeColor = Color.Firebrick;
-            lblTitle.Location = new Point(60, 16);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(82, 23);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "電控排程";
             // 
             // btnModify
@@ -85,6 +86,7 @@ namespace DigiERP.UserControl.Production.ProgramControl
             btnModify.Name = "btnModify";
             btnModify.Size = new Size(98, 32);
             btnModify.TabIndex = 1;
+            btnModify.Tag = "btn-modify";
             btnModify.Text = "修改";
             btnModify.UseVisualStyleBackColor = false;
             btnModify.Click += btnModify_Click;
@@ -98,6 +100,7 @@ namespace DigiERP.UserControl.Production.ProgramControl
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(98, 32);
             btnSave.TabIndex = 2;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -111,6 +114,7 @@ namespace DigiERP.UserControl.Production.ProgramControl
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(98, 32);
             btnPrint.TabIndex = 3;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -126,6 +130,7 @@ namespace DigiERP.UserControl.Production.ProgramControl
             btnClose.TabIndex = 4;
             btnClose.Text = "關閉";
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Visible = false;
             btnClose.Click += btnClose_Click;
             // 
             // panel2
@@ -154,9 +159,9 @@ namespace DigiERP.UserControl.Production.ProgramControl
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1900, 600);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.DataError += dataGridView1_DataError;
             dataGridView1.EditingControlShowing += dataGridView1_EditingControlShowing;
-            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // colProjectNo
             // 

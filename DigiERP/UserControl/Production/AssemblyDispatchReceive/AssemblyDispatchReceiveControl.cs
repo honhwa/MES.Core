@@ -149,22 +149,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ProjectMachineTestRecord_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, projectNo + " 專案機台組測紀錄表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProjectMachineTestRecordControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(projectNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(projectNo + " 專案機台組測紀錄表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ProjectMachineTestRecordControl();
+                if (ctrl.IsDisposed) return ctrl;
+                ctrl.LoadData(projectNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -249,22 +241,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "AbnormalCorrectionReport_" + sourceDoc;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, sourceDoc + " 異常矯正措施報告", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new AbnormalCorrectionReportControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadBySourceDoc(sourceDoc, projectNo, moduleCode, moduleName);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(sourceDoc + " 異常矯正措施報告") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new AbnormalCorrectionReportControl();
+                if (ctrl.IsDisposed) return ctrl;
+                ctrl.LoadBySourceDoc(sourceDoc, projectNo, moduleCode, moduleName);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 

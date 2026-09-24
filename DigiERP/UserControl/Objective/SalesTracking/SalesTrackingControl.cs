@@ -114,16 +114,16 @@ namespace DigiERP.UserControl.Objective.SalesTracking
                 MessageBox.Show("查無此客戶資料");
                 return;
             }
-            var ctrl = new CustomerMaintainControl();
-            ctrl.Dock = DockStyle.Fill;
-            ctrl.form = custRep.result;
-            var lblMode = ctrl.Controls.Find("lblMode", true).FirstOrDefault() as Label;
-            if (lblMode != null) lblMode.Text = "修改";
-            ctrl.initForm();
-            var tab = new TabPage($"客戶維護") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, $"客戶維護", () =>
+            {
+                var ctrl = new CustomerMaintainControl();
+                ctrl.Dock = DockStyle.Fill;
+                ctrl.form = custRep.result;
+                var lblMode = ctrl.Controls.Find("lblMode", true).FirstOrDefault() as Label;
+                if (lblMode != null) lblMode.Text = "修改";
+                ctrl.initForm();
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 

@@ -51,13 +51,13 @@ namespace DigiERP.UserControl.Production
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Location = new Point(8, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(48, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -72,6 +72,7 @@ namespace DigiERP.UserControl.Production
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(154, 23);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "異常矯正措施報告";
             // 
             // btnEdit
@@ -79,10 +80,11 @@ namespace DigiERP.UserControl.Production
             btnEdit.BackColor = Color.LightSteelBlue;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnEdit.Location = new Point(1200, 12);
+            btnEdit.Location = new Point(948, 12);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(90, 32);
             btnEdit.TabIndex = 1;
+            btnEdit.Tag = "btn-modify";
             btnEdit.Text = "修改";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -92,10 +94,11 @@ namespace DigiERP.UserControl.Production
             btnSave.BackColor = Color.LightSteelBlue;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnSave.Location = new Point(1298, 12);
+            btnSave.Location = new Point(1046, 12);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 32);
             btnSave.TabIndex = 2;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -105,10 +108,11 @@ namespace DigiERP.UserControl.Production
             btnActivate.BackColor = Color.LightGreen;
             btnActivate.FlatStyle = FlatStyle.Flat;
             btnActivate.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnActivate.Location = new Point(1396, 12);
+            btnActivate.Location = new Point(1144, 12);
             btnActivate.Name = "btnActivate";
             btnActivate.Size = new Size(80, 32);
             btnActivate.TabIndex = 3;
+            btnActivate.Tag = "btn-modify";
             btnActivate.Text = "生效";
             btnActivate.UseVisualStyleBackColor = false;
             btnActivate.Click += btnActivate_Click;
@@ -118,10 +122,11 @@ namespace DigiERP.UserControl.Production
             btnDeactivate.BackColor = Color.LightGray;
             btnDeactivate.FlatStyle = FlatStyle.Flat;
             btnDeactivate.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnDeactivate.Location = new Point(1484, 12);
+            btnDeactivate.Location = new Point(1232, 12);
             btnDeactivate.Name = "btnDeactivate";
             btnDeactivate.Size = new Size(90, 32);
             btnDeactivate.TabIndex = 4;
+            btnDeactivate.Tag = "btn-modify";
             btnDeactivate.Text = "取消生效";
             btnDeactivate.UseVisualStyleBackColor = false;
             btnDeactivate.Click += btnDeactivate_Click;
@@ -131,10 +136,11 @@ namespace DigiERP.UserControl.Production
             btnPrint.BackColor = Color.LightGray;
             btnPrint.FlatStyle = FlatStyle.Flat;
             btnPrint.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnPrint.Location = new Point(1582, 12);
+            btnPrint.Location = new Point(1330, 12);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(80, 32);
             btnPrint.TabIndex = 5;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Click += btnPrint_Click;
@@ -144,10 +150,11 @@ namespace DigiERP.UserControl.Production
             btnOverview.BackColor = Color.LightGray;
             btnOverview.FlatStyle = FlatStyle.Flat;
             btnOverview.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnOverview.Location = new Point(1670, 12);
+            btnOverview.Location = new Point(1418, 12);
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(80, 32);
             btnOverview.TabIndex = 6;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Click += btnOverview_Click;
@@ -157,10 +164,11 @@ namespace DigiERP.UserControl.Production
             btnExit.BackColor = Color.LightSteelBlue;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnExit.Location = new Point(1758, 12);
+            btnExit.Location = new Point(1506, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(98, 32);
             btnExit.TabIndex = 7;
+            btnExit.Tag = "btn-modify";
             btnExit.Text = "關閉";
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -169,7 +177,7 @@ namespace DigiERP.UserControl.Production
             // 
             panelContext.BackColor = Color.Cornsilk;
             panelContext.Dock = DockStyle.Top;
-            panelContext.Location = new Point(0, 56);
+            panelContext.Location = new Point(0, 60);
             panelContext.Name = "panelContext";
             panelContext.Size = new Size(1900, 176);
             panelContext.TabIndex = 1;
@@ -177,18 +185,18 @@ namespace DigiERP.UserControl.Production
             // panelLeft
             // 
             panelLeft.Dock = DockStyle.Fill;
-            panelLeft.Location = new Point(0, 232);
+            panelLeft.Location = new Point(0, 236);
             panelLeft.Name = "panelLeft";
-            panelLeft.Size = new Size(1600, 428);
+            panelLeft.Size = new Size(1489, 424);
             panelLeft.TabIndex = 2;
             // 
             // panelRight
             // 
             panelRight.BackColor = Color.WhiteSmoke;
             panelRight.Dock = DockStyle.Right;
-            panelRight.Location = new Point(1600, 232);
+            panelRight.Location = new Point(1489, 236);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(300, 428);
+            panelRight.Size = new Size(411, 424);
             panelRight.TabIndex = 3;
             // 
             // panelFooter

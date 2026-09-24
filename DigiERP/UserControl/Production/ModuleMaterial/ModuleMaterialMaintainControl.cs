@@ -322,21 +322,13 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "DesignIssueOverview";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "專案用料總覽", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DesignIssueControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("專案用料總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new DesignIssueControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 

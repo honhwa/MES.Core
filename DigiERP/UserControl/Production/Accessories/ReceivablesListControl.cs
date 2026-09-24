@@ -97,20 +97,12 @@ namespace DigiERP.UserControl.Production.Accessories
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "Receivables_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "收款進度查詢-" + projectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ReceivablesControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("收款進度查詢-" + projectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(projectNo);
+                var ctrl = new ReceivablesControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(projectNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

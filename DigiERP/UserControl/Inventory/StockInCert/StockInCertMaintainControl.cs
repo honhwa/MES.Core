@@ -478,22 +478,14 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = $"PaymentOffsetMaintain_{no}";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, $"付款沖帳單-{no}", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new PaymentOffsetMaintainControl();
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage($"付款沖帳單-{no}") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new PaymentOffsetMaintainControl();
+                ctrl.Dock = DockStyle.Fill;
+                ctrl.LoadData("修改", no);
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
-            ctrl.LoadData("修改", no);
         }
 
         // ── 付款明細導入：比照 Access 巨集 — 驗證單號/發票號碼、權限檢查、已覆核禁止增添，依付款類別開啟對應核銷選單 ──
@@ -573,20 +565,12 @@ namespace DigiERP.UserControl.Inventory.StockInCert
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "PaymentOffsetOverview";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "付款沖帳總覽", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new PaymentOffsetOverviewControl();
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("付款沖帳總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new PaymentOffsetOverviewControl();
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
         private void btnVoucherEntry_Click(object sender, EventArgs e) => MessageBox.Show("此功能尚未開放");

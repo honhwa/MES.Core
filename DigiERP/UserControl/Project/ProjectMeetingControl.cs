@@ -51,15 +51,15 @@ namespace DigiERP.UserControl.Project
             }
 
             txt專案序號.Text = model.專案序號;
-            txt訂單日期.Text = ShortDate(model.訂單日期);
+            txt訂單日期.Text = ShortDate(model.訂單日期??new DateTime(1900, 01, 01).ToString("yyyy-MM-dd"));
             txt客戶簡稱.Text = model.客戶簡稱;
             txt客戶名稱.Text = model.客戶名稱;
             txt國家地區.Text = model.國家地區;
-            chk結案.Checked = ToBool(model.結案);
+            chk結案.Checked = ToBool(model.結案??"false");
             txt參考序號.Text = model.參考序號;
             txt電流.Text = model.電流;
             txt圖面設計.Text = model.圖面設計;
-            txt驗機日期.Text = ShortDate(model.驗機日期);
+            txt驗機日期.Text = ShortDate(model.驗機日期 ?? new DateTime(1900, 01, 01).ToString("yyyy-MM-dd"));
             txt機台型號.Text = model.機台型號;
             txt焊接電壓v.Text = model.焊接電壓v;
             txt焊接電壓hz.Text = model.焊接電壓hz;
@@ -68,8 +68,9 @@ namespace DigiERP.UserControl.Project
             txt廠驗.Text = model.廠驗;
             txt機台類型.Text = model.機台類型;
             txt焊接物.Text = model.焊接物;
+
             txt生產速率.Text = model.生產速率;
-            txt交貨日期.Text = ShortDate(model.交貨日期);
+            txt交貨日期.Text = ShortDate(model.交貨日期 ?? new DateTime(1900, 01, 01).ToString("yyyy-MM-dd"));
             txt機台名稱.Text = model.機台名稱;
             txt裝機.Text = model.裝機;
 
@@ -151,25 +152,24 @@ namespace DigiERP.UserControl.Project
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = isNew ? "MeetingMgmt_NEW_" + _loadedProjectNo : "MeetingMgmt_" + recordNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, isNew ? "新增會議紀錄" : "會議紀錄-" + recordNo, () =>
             {
-                if (page.Name == tabName)
+                var ctrl = new ProjectMeetingManagementControl { Dock = DockStyle.Fill };
+                ctrl.SavedOrClosed += () =>
                 {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProjectMeetingManagementControl { Dock = DockStyle.Fill };
-            var tab = new TabPage(isNew ? "新增會議紀錄" : "會議紀錄-" + recordNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.SavedOrClosed += () =>
-            {
-                tabControl.TabPages.Remove(tab);
-                LoadTrackList();
-            };
-            ctrl.LoadData(_loadedProjectNo, recordNo);
+                    foreach (TabPage page in tabControl.TabPages)
+                    {
+                        if (page.Name == tabName)
+                        {
+                            tabControl.TabPages.Remove(page);
+                            break;
+                        }
+                    }
+                    LoadTrackList();
+                };
+                ctrl.LoadData(_loadedProjectNo, recordNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

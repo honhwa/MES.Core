@@ -215,22 +215,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "ModuleDesignProgress";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "模組設計進度表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ModuleDesignProgressControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData();
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage("模組設計進度表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ModuleDesignProgressControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData();
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
@@ -241,22 +233,14 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ModuleAssemTestProgress_" + _projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, _projectNo + " 模組組測進度表", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ModuleAssemTestProgressControl();
-            if (ctrl.IsDisposed) return;
-            ctrl.LoadData(_projectNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(_projectNo + " 模組組測進度表") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new ModuleAssemTestProgressControl();
+                if (ctrl.IsDisposed) return null;
+                ctrl.LoadData(_projectNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 

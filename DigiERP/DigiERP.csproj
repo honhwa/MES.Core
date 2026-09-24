@@ -61,9 +61,7 @@
     <Compile Update="Forms\Objective\FrmObjective.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Production\FrmProduction.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Forms\Production\FrmProduction.cs" />
     <Compile Update="Forms\Supplier\FrmSupplier.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>

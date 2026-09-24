@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.Production
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DesignAuditMaintainControl));
             panelToolbar = new Panel();
+            pictureBox1 = new PictureBox();
             lblTitle = new Label();
             btnRefresh = new Button();
             btnSelectItem = new Button();
@@ -40,12 +41,11 @@ namespace DigiERP.UserControl.Production
             colMatch = new DataGridViewCheckBoxColumn();
             panelFooter = new Panel();
             lblNote = new Label();
-            pictureBox1 = new PictureBox();
             panelToolbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelToolbar
@@ -69,14 +69,25 @@ namespace DigiERP.UserControl.Production
             panelToolbar.Size = new Size(1900, 56);
             panelToolbar.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(8, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("微軟正黑體", 14F, FontStyle.Bold);
-            lblTitle.Location = new Point(55, 16);
+            lblTitle.Location = new Point(73, 14);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(124, 24);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "設計審查清單";
             // 
             // btnRefresh
@@ -84,10 +95,11 @@ namespace DigiERP.UserControl.Production
             btnRefresh.BackColor = Color.LightSteelBlue;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnRefresh.Location = new Point(190, 12);
+            btnRefresh.Location = new Point(502, 12);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(110, 32);
             btnRefresh.TabIndex = 1;
+            btnRefresh.Tag = "btn-modify";
             btnRefresh.Text = "重新整理";
             btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
@@ -97,10 +109,11 @@ namespace DigiERP.UserControl.Production
             btnSelectItem.BackColor = Color.LightSteelBlue;
             btnSelectItem.FlatStyle = FlatStyle.Flat;
             btnSelectItem.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnSelectItem.Location = new Point(308, 12);
+            btnSelectItem.Location = new Point(620, 12);
             btnSelectItem.Name = "btnSelectItem";
             btnSelectItem.Size = new Size(130, 32);
             btnSelectItem.TabIndex = 2;
+            btnSelectItem.Tag = "btn-modify";
             btnSelectItem.Text = "選擇審查項目";
             btnSelectItem.UseVisualStyleBackColor = false;
             btnSelectItem.Click += btnSelectItem_Click;
@@ -111,10 +124,11 @@ namespace DigiERP.UserControl.Production
             btnDrawingToBom.Enabled = false;
             btnDrawingToBom.FlatStyle = FlatStyle.Flat;
             btnDrawingToBom.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnDrawingToBom.Location = new Point(446, 12);
+            btnDrawingToBom.Location = new Point(758, 12);
             btnDrawingToBom.Name = "btnDrawingToBom";
             btnDrawingToBom.Size = new Size(140, 32);
             btnDrawingToBom.TabIndex = 3;
+            btnDrawingToBom.Tag = "btn-modify";
             btnDrawingToBom.Text = "圖面發行轉BOM";
             btnDrawingToBom.UseVisualStyleBackColor = false;
             btnDrawingToBom.Click += btnDrawingToBom_Click;
@@ -124,10 +138,11 @@ namespace DigiERP.UserControl.Production
             btnEdit.BackColor = Color.LightSteelBlue;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnEdit.Location = new Point(594, 12);
+            btnEdit.Location = new Point(906, 12);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(90, 32);
             btnEdit.TabIndex = 4;
+            btnEdit.Tag = "btn-modify";
             btnEdit.Text = "修改";
             btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
@@ -137,10 +152,11 @@ namespace DigiERP.UserControl.Production
             btnSave.BackColor = Color.LightSteelBlue;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnSave.Location = new Point(692, 12);
+            btnSave.Location = new Point(1004, 12);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 32);
             btnSave.TabIndex = 5;
+            btnSave.Tag = "btn-modify";
             btnSave.Text = "儲存";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
@@ -151,10 +167,11 @@ namespace DigiERP.UserControl.Production
             btnActivate.Enabled = false;
             btnActivate.FlatStyle = FlatStyle.Flat;
             btnActivate.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnActivate.Location = new Point(790, 12);
+            btnActivate.Location = new Point(1102, 12);
             btnActivate.Name = "btnActivate";
             btnActivate.Size = new Size(90, 32);
             btnActivate.TabIndex = 6;
+            btnActivate.Tag = "btn-modify";
             btnActivate.Text = "生效";
             btnActivate.UseVisualStyleBackColor = false;
             btnActivate.Click += btnActivate_Click;
@@ -165,10 +182,11 @@ namespace DigiERP.UserControl.Production
             btnDeactivate.Enabled = false;
             btnDeactivate.FlatStyle = FlatStyle.Flat;
             btnDeactivate.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnDeactivate.Location = new Point(888, 12);
+            btnDeactivate.Location = new Point(1200, 12);
             btnDeactivate.Name = "btnDeactivate";
             btnDeactivate.Size = new Size(100, 32);
             btnDeactivate.TabIndex = 7;
+            btnDeactivate.Tag = "btn-modify";
             btnDeactivate.Text = "取消生效";
             btnDeactivate.UseVisualStyleBackColor = false;
             btnDeactivate.Click += btnDeactivate_Click;
@@ -178,10 +196,11 @@ namespace DigiERP.UserControl.Production
             btnOverview.BackColor = Color.LightSteelBlue;
             btnOverview.FlatStyle = FlatStyle.Flat;
             btnOverview.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnOverview.Location = new Point(996, 12);
+            btnOverview.Location = new Point(1308, 12);
             btnOverview.Name = "btnOverview";
             btnOverview.Size = new Size(90, 32);
             btnOverview.TabIndex = 8;
+            btnOverview.Tag = "btn-modify";
             btnOverview.Text = "總覽";
             btnOverview.UseVisualStyleBackColor = false;
             btnOverview.Visible = false;
@@ -193,10 +212,11 @@ namespace DigiERP.UserControl.Production
             btnPrint.Enabled = false;
             btnPrint.FlatStyle = FlatStyle.Flat;
             btnPrint.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnPrint.Location = new Point(1094, 12);
+            btnPrint.Location = new Point(1406, 12);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(90, 32);
             btnPrint.TabIndex = 9;
+            btnPrint.Tag = "btn-modify";
             btnPrint.Text = "列印";
             btnPrint.UseVisualStyleBackColor = false;
             btnPrint.Visible = false;
@@ -204,14 +224,16 @@ namespace DigiERP.UserControl.Production
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.LightSteelBlue;
+            btnClose.BackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
-            btnClose.Location = new Point(1192, 12);
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(1504, 12);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(90, 32);
             btnClose.TabIndex = 10;
-            btnClose.Text = "關閉";
+            btnClose.Tag = "";
+            btnClose.Text = "EXIT";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
@@ -307,16 +329,6 @@ namespace DigiERP.UserControl.Production
             lblNote.TabIndex = 0;
             lblNote.Text = "※本單於有權發行者按『生效』後即完成審圖驗收，圖面發行之授權人員可操作『圖面發行轉BOM』之執行按鈕!";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 8);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
-            // 
             // DesignAuditMaintainControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -331,11 +343,11 @@ namespace DigiERP.UserControl.Production
             Size = new Size(1900, 656);
             panelToolbar.ResumeLayout(false);
             panelToolbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelDetail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

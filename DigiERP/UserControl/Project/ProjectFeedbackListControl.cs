@@ -88,20 +88,12 @@ namespace DigiERP.UserControl.Project
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = string.IsNullOrEmpty(recordNo) ? "MeetingMgmt_NEW_" + projectNo : "MeetingMgmt_" + recordNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "會議紀錄-" + (string.IsNullOrEmpty(recordNo) ? projectNo : recordNo), () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProjectMeetingManagementControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("會議紀錄-" + (string.IsNullOrEmpty(recordNo) ? projectNo : recordNo)) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(projectNo, recordNo);
+                var ctrl = new ProjectMeetingManagementControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(projectNo, recordNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

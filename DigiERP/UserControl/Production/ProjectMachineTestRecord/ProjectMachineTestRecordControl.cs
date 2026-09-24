@@ -99,24 +99,25 @@ namespace DigiERP.UserControl.Production
             };
 
             int by = 8;
-            int bx = 1112;
+            int bx = 1392;
             foreach (var (buttonText, key) in buttonRows)
             {
-                var btn = new Button
+                var btn = new Label
                 {
                     Text = buttonText,
                     Location = new Point(bx, by),
                     Size = new Size(110, 26),
-                    BackColor = Color.LightSteelBlue,
+                    Tag="btn-modify",
+                    //BackColor = Color.LightSteelBlue,
                     FlatStyle = FlatStyle.Flat,
                 };
-                btn.Click += (s, e) => MessageBox.Show("此功能尚未開放");
+                //btn.Click += (s, e) => MessageBox.Show("此功能尚未開放");
                 panelContext.Controls.Add(btn);
 
                 var input = new TextBox
                 {
                     Location = new Point(bx + 114, by + 1),
-                    Size = new Size(300, 26),
+                    Size = new Size(150, 26),
                     ReadOnly = true,
                 };
                 panelContext.Controls.Add(input);

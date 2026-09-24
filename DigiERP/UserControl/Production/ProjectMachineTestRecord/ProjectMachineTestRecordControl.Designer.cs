@@ -19,6 +19,7 @@ namespace DigiERP.UserControl.Production
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectMachineTestRecordControl));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             lblTitle = new Label();
             btnExit = new Button();
             panelContext = new Panel();
@@ -41,15 +42,14 @@ namespace DigiERP.UserControl.Production
             colWorkItem = new DataGridViewTextBoxColumn();
             colTestStatus = new DataGridViewTextBoxColumn();
             colAction = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -61,8 +61,18 @@ namespace DigiERP.UserControl.Production
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1900, 56);
+            panel1.Size = new Size(1900, 60);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(8, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
@@ -72,6 +82,7 @@ namespace DigiERP.UserControl.Production
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(172, 23);
             lblTitle.TabIndex = 0;
+            lblTitle.Tag = "title";
             lblTitle.Text = "專案機台組測紀錄表";
             // 
             // btnExit
@@ -91,7 +102,7 @@ namespace DigiERP.UserControl.Production
             // 
             panelContext.BackColor = Color.Honeydew;
             panelContext.Dock = DockStyle.Top;
-            panelContext.Location = new Point(0, 56);
+            panelContext.Location = new Point(0, 60);
             panelContext.Name = "panelContext";
             panelContext.Size = new Size(1900, 110);
             panelContext.TabIndex = 1;
@@ -99,7 +110,7 @@ namespace DigiERP.UserControl.Production
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 166);
+            splitContainer1.Location = new Point(0, 170);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
             // 
@@ -110,8 +121,8 @@ namespace DigiERP.UserControl.Production
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(dataGridView2);
-            splitContainer1.Size = new Size(1900, 570);
-            splitContainer1.SplitterDistance = 280;
+            splitContainer1.Size = new Size(1900, 566);
+            splitContainer1.SplitterDistance = 278;
             splitContainer1.TabIndex = 2;
             // 
             // dataGridView1
@@ -129,10 +140,10 @@ namespace DigiERP.UserControl.Production
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 26;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1900, 280);
+            dataGridView1.Size = new Size(1900, 278);
             dataGridView1.TabIndex = 0;
             dataGridView1.DataError += dataGridView1_DataError;
-            //
+            // 
             // colModuleCode
             // 
             colModuleCode.HeaderText = "模組";
@@ -157,7 +168,7 @@ namespace DigiERP.UserControl.Production
             // 
             colAssemblyStaff.HeaderText = "組裝人員";
             colAssemblyStaff.Name = "colAssemblyStaff";
-            //
+            // 
             // colStartDate
             // 
             colStartDate.HeaderText = "開工日期";
@@ -179,9 +190,9 @@ namespace DigiERP.UserControl.Production
             // colCloseReport
             // 
             colCloseReport.HeaderText = "結案回報";
-            colCloseReport.Name = "colCloseReport";
             colCloseReport.Items.AddRange(new object[] { "", "合規", "特採", "設變" });
-            //
+            colCloseReport.Name = "colCloseReport";
+            // 
             // dataGridView2
             // 
             dataGridView2.AllowUserToAddRows = false;
@@ -198,7 +209,7 @@ namespace DigiERP.UserControl.Production
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.RowTemplate.Height = 26;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(1900, 286);
+            dataGridView2.Size = new Size(1900, 284);
             dataGridView2.TabIndex = 0;
             // 
             // colTestDate
@@ -252,16 +263,6 @@ namespace DigiERP.UserControl.Production
             colAction.Name = "colAction";
             colAction.ReadOnly = true;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // ProjectMachineTestRecordControl
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -275,13 +276,13 @@ namespace DigiERP.UserControl.Production
             Size = new Size(1900, 736);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

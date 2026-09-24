@@ -795,19 +795,11 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "TestValidationReportOverview";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "試機驗收單總覽", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new TestValidationReportControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("試機驗收單總覽") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new TestValidationReportControl { Dock = DockStyle.Fill };
+                return ctrl;
+            });
         }
 
         private void btnClose_Click(object sender, EventArgs e)

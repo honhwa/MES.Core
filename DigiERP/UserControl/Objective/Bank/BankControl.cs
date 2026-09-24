@@ -97,23 +97,15 @@ namespace DigiERP.UserControl.Objective.Bank
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = mode == "新增" ? "BankMaintain_New" : $"BankMaintain_{bankCode}";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, mode == "新增" ? "銀行設定-新增" : $"銀行設定-{bankCode}", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new BankMaintainControl();
-            ctrl.Dock = DockStyle.Fill;
-            ctrl.Saved += (s, args) => LoadData();
-            var tab = new TabPage(mode == "新增" ? "銀行設定-新增" : $"銀行設定-{bankCode}") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new BankMaintainControl();
+                ctrl.Dock = DockStyle.Fill;
+                ctrl.Saved += (s, args) => LoadData();
+                ctrl.LoadData(mode, bankCode);
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
-            ctrl.LoadData(mode, bankCode);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

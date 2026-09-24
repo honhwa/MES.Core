@@ -56,20 +56,12 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "TestValidationReport_NEW";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "賣方廠驗收單-新增", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new TestValidationMaintainControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("賣方廠驗收單-新增") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadBlank();
+                var ctrl = new TestValidationMaintainControl { Dock = DockStyle.Fill };
+                ctrl.LoadBlank();
+                return ctrl;
+            });
         }
 
         // ── 點選專案序號，開啟(或切換至)對應的賣方廠驗收單頁籤 ──────────────
@@ -82,20 +74,12 @@ namespace DigiERP.UserControl.Production.TestValidationReport
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "TestValidationReport_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "賣方廠驗收單-" + projectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new TestValidationMaintainControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("賣方廠驗收單-" + projectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(projectNo);
+                var ctrl = new TestValidationMaintainControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(projectNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

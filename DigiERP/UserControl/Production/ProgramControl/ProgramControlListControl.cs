@@ -154,20 +154,12 @@ namespace DigiERP.UserControl.Production.ProgramControl
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ProjectMachineProgramControlRecord_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "專案機台程控紀錄表-" + projectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProjectMachineProgramControlRecordControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("專案機台程控紀錄表-" + projectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(projectNo);
+                var ctrl = new ProjectMachineProgramControlRecordControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(projectNo);
+                return ctrl;
+            });
         }
 
         private void btnModify_Click(object sender, EventArgs e)

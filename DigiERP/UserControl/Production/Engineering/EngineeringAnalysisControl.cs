@@ -348,19 +348,11 @@ namespace DigiERP.UserControl.Production.Engineering
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             const string tabName = "EngineeringOverview";
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "工程分析表篩選單", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new EngineeringAnalysisListControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("工程分析表篩選單") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new EngineeringAnalysisListControl { Dock = DockStyle.Fill };
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -92,9 +92,9 @@ namespace DigiERP.Forms.Production
             // 
             // btnAddItem
             // 
-            btnAddItem.BackColor = Color.LightSteelBlue;
+            btnAddItem.BackColor = Color.LightGray;
             btnAddItem.FlatStyle = FlatStyle.Flat;
-            btnAddItem.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
+            btnAddItem.Font = new Font("微軟正黑體", 9.75F);
             btnAddItem.Location = new Point(460, 10);
             btnAddItem.Name = "btnAddItem";
             btnAddItem.Size = new Size(90, 32);
@@ -106,9 +106,9 @@ namespace DigiERP.Forms.Production
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.LightSteelBlue;
+            btnSave.BackColor = Color.LightGray;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
+            btnSave.Font = new Font("微軟正黑體", 9.75F);
             btnSave.Location = new Point(558, 10);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(90, 32);
@@ -120,9 +120,9 @@ namespace DigiERP.Forms.Production
             // 
             // btnEdit
             // 
-            btnEdit.BackColor = Color.LightSteelBlue;
+            btnEdit.BackColor = Color.LightGray;
             btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
+            btnEdit.Font = new Font("微軟正黑體", 9.75F);
             btnEdit.Location = new Point(656, 10);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(90, 32);
@@ -134,9 +134,9 @@ namespace DigiERP.Forms.Production
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.LightSteelBlue;
+            btnClose.BackColor = Color.LightGray;
             btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("微軟正黑體", 10F, FontStyle.Bold);
+            btnClose.Font = new Font("微軟正黑體", 9.75F);
             btnClose.Location = new Point(754, 10);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(90, 32);
@@ -144,6 +144,7 @@ namespace DigiERP.Forms.Production
             btnClose.Tag = "btn-modify";
             btnClose.Text = "關閉";
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Visible = false;
             btnClose.Click += btnClose_Click;
             // 
             // dataGridView1

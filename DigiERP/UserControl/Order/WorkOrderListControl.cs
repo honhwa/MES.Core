@@ -219,26 +219,25 @@ namespace DigiERP.UserControl.Order
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = isNew ? "WorkOrder_NEW" : (readOnly ? "WorkOrderView_" : "WorkOrder_") + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
-            {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new WorkOrderControl { Dock = DockStyle.Fill };
             string tabText = isNew ? "新增工令單" : (readOnly ? "工令單對照-" + projectNo : "工令單-" + projectNo);
-            var tab = new TabPage(tabText) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.SavedOrClosed += () =>
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, tabText, () =>
             {
-                tabControl.TabPages.Remove(tab);
-                LoadData();
-            };
-            ctrl.LoadData(projectNo, isNew, readOnly);
+                var ctrl = new WorkOrderControl { Dock = DockStyle.Fill };
+                ctrl.SavedOrClosed += () =>
+                {
+                    foreach (TabPage page in tabControl.TabPages)
+                    {
+                        if (page.Name == tabName)
+                        {
+                            tabControl.TabPages.Remove(page);
+                            break;
+                        }
+                    }
+                    LoadData();
+                };
+                ctrl.LoadData(projectNo, isNew, readOnly);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

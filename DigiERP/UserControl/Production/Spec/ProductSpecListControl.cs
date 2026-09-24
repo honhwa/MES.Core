@@ -85,20 +85,12 @@ namespace DigiERP.UserControl.Production.Spec
             }
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = "ProductSpec_" + projectNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, "產品規格單-" + projectNo, () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new ProductSpecControl { Dock = DockStyle.Fill };
-            var tab = new TabPage("產品規格單-" + projectNo) { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
-            ctrl.LoadData(projectNo);
+                var ctrl = new ProductSpecControl { Dock = DockStyle.Fill };
+                ctrl.LoadData(projectNo);
+                return ctrl;
+            });
         }
 
         private void btnExit_Click(object sender, EventArgs e)

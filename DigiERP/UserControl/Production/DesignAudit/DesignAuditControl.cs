@@ -87,23 +87,15 @@ namespace DigiERP.UserControl.Production
             if (!(Parent is TabPage) || !(((TabPage)Parent).Parent is TabControl)) return;
             TabControl tabControl = (TabControl)((TabPage)Parent).Parent;
             string tabName = string.IsNullOrEmpty(listNo) ? "DesignAuditMaintain_New" : "DesignAuditMaintain_" + listNo;
-            foreach (TabPage page in tabControl.TabPages)
+            DigiERP.Common.TabNavigator.Open(tabControl, tabName, string.IsNullOrEmpty(listNo) ? "新增審查清單" : "設計審查清單", () =>
             {
-                if (page.Name == tabName)
-                {
-                    tabControl.SelectedTab = page;
-                    return;
-                }
-            }
-            var ctrl = new DesignAuditMaintainControl();
-            if (ctrl.IsDisposed) return;
-            if (string.IsNullOrEmpty(listNo)) ctrl.LoadNew();
-            else ctrl.LoadData(listNo);
-            ctrl.Dock = DockStyle.Fill;
-            var tab = new TabPage(string.IsNullOrEmpty(listNo) ? "新增審查清單" :"設計審查清單") { Name = tabName };
-            tab.Controls.Add(ctrl);
-            tabControl.TabPages.Add(tab);
-            tabControl.SelectedTab = tab;
+                var ctrl = new DesignAuditMaintainControl();
+                if (ctrl.IsDisposed) return ctrl;
+                if (string.IsNullOrEmpty(listNo)) ctrl.LoadNew();
+                else ctrl.LoadData(listNo);
+                ctrl.Dock = DockStyle.Fill;
+                return ctrl;
+            });
             tabControl.SizeMode = TabSizeMode.Normal;
         }
 
