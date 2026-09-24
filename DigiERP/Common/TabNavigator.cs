@@ -8,7 +8,8 @@ namespace DigiERP.Common
     //    「來源分頁」(存於新分頁的 Tag)；該分頁日後被關閉(TabPages.Remove)時，
     //    透過掛在 TabControl 上的 ControlRemoved 事件自動切回來源分頁，取代
     //    TabControl 預設「回到清單第一個分頁」的行為。呼叫端的關閉按鈕/方法完全
-    //    不需修改，只要開啟分頁時改呼叫 Open() 即可 ─────────────────────────
+    //    不需修改，只要開啟分頁時改呼叫 Open() 即可。切回來源分頁時，同時強制把
+    //    該分頁內容的縮放重置回 100%(不延續使用者先前對它做過的縮放) ─────────
     public static class TabNavigator
     {
         private static readonly HashSet<TabControl> _wired = new HashSet<TabControl>();
@@ -43,6 +44,10 @@ namespace DigiERP.Common
                 if (e.Control is TabPage removedPage && removedPage.Tag is TabPage originTab && tabControl.TabPages.Contains(originTab))
                 {
                     tabControl.SelectedTab = originTab;
+                    if (originTab.Controls.Count > 0)
+                    {
+                        ZoomMessageFilter.Reset(originTab.Controls[0]);
+                    }
                 }
             };
         }

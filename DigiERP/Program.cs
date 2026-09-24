@@ -14,6 +14,7 @@ namespace DigiERP
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.SetDefaultFont(DigiERP.Common.UIStyle.FormFont);
+            Application.AddMessageFilter(new DigiERP.Common.ZoomMessageFilter());
             FileInfo connFile = new FileInfo(@".\settings.conf");
             if (!connFile.Exists )
             {
